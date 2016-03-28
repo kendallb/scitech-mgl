@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PM_setFileTime</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PM_setFileTime
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Function to set the file time and date for a specific file.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool PMAPI PM_setFileTime(<br />
+        &#160;&#160;&#160; const char *filename,<br />
+        &#160;&#160;&#160; ibool gmTime,<br />
+        &#160;&#160;&#160; PM_time *time)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                filename
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Full path to filename for file to set date and time for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gmTime
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if time should be in the GMT timezone
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                time
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Time to set for the file
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True on success, false on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to set the file date and time stamp for a specific
+        file. If the gmTime parameter is true, the time passed in should be in
+        the GMT time zone, otherwise it is in the local machine time zone.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="PM_getFileTime.html">PM_getFileTime</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

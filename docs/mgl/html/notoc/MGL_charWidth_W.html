@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_charWidth_W</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_charWidth_W
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Returns the width of a wide character in pixels.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int MGLAPI MGL_charWidth_W(<br />
+        &#160;&#160;&#160; wchar_t ch)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:64.5pt;padding:'0in .5pt 0in .5pt';" width="108" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ch
+              </p>
+            </td>
+            <td style="width:335.0pt;padding:'0in .5pt 0in .5pt';" width="558" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Wide character to measure
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Width of the wide character in pixels (will depend on currently active
+        font)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Return the width of the specified wide character, given the currently
+        active font and attribute settings. This function is the same as <a href="MGL_charWidth.html">MGL_charWidth</a>,
+        but provides support for Unicode wide characters (for far-east
+        languages).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_textWidth_W.html">MGL_textWidth_W</a>, <a href="MGL_textHeight.html">MGL_textHeight</a>,
+        <a href="MGL_useFont.html">MGL_useFont</a>, <a href="MGL_charWidth.html">MGL_charWidth</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

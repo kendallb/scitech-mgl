@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_busType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_busType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaUnknownBus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0,<br />
+        &#160;&#160;&#160; gaISABus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        1,<br />
+        &#160;&#160;&#160; gaMCABus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        2,<br />
+        &#160;&#160;&#160; gaVLBBus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        3,<br />
+        &#160;&#160;&#160; gaPCIBus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        4,<br />
+        &#160;&#160;&#160; gaAGPBus&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        5<br />
+        &#160;&#160;&#160; } GA_busType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This enumeration defines the values stored in the BusType field of the <a href="GA_devCtx.html">GA_devCtx</a> structure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaUnknownBus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bus type is not known
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaISABus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device is an ISA bus device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaMCABus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device is a Micro-Channel bus device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVLBBus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device is a VESA Local Bus device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaPCIBus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device is a PCI bus device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaAGPBus
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device is an AGP bus device
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

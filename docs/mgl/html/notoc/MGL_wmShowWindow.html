@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_wmShowWindow</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_wmShowWindow
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Shows or hides the window
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_wmShowWindow(<br />
+        &#160;&#160;&#160; window_t *wnd,<br />
+        &#160;&#160;&#160; ibool show)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:74.5pt;padding:'0in .5pt 0in .5pt';" width="124" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                wnd
+              </p>
+            </td>
+            <td style="width:325.0pt;padding:'0in .5pt 0in .5pt';" width="542" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                the window
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:74.5pt;padding:'0in .5pt 0in .5pt';" width="124" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                show
+              </p>
+            </td>
+            <td style="width:325.0pt;padding:'0in .5pt 0in .5pt';" width="542" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                true if the window shall be shown, false if hidden
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If show is true, shows the window and invalidates device context
+        appropriately. If show is false, hides the window.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Hidden window is not visible, does not accept events and <a href="MGL_wmGetWindowAtPosition.html">MGL_wmGetWindowAtPosition</a> will
+        never test against it. It is still a valid window, though, and you can
+        manipulate it just like any other window.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

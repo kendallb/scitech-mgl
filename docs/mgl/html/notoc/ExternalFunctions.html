@@ -1,0 +1,4378 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>External Functions</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading2">
+        External Functions
+      </p>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_getProcessorName.html">CPU_getProcessorName</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_getProcessorSpeed.html">CPU_getProcessorSpeed</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_getProcessorSpeedInHZ.html">CPU_getProcessorSpeedInHZ</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_getProcessorType.html">CPU_getProcessorType</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_have3DNow.html">CPU_have3DNow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_haveMMX.html">CPU_haveMMX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_haveRDTSC.html">CPU_haveRDTSC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CPU_haveSSE.html">CPU_haveSSE</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_allowLEDS.html">EVT_allowLEDS</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_asciiCode.html">EVT_asciiCode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_flush.html">EVT_flush</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_getCodePage.html">EVT_getCodePage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_getHeartBeatCallback.html">EVT_getHeartBeatCallback</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_getMousePos.html">EVT_getMousePos</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_getNext.html">EVT_getNext</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_halt.html">EVT_halt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_isKeyDown.html">EVT_isKeyDown</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_joyIsPresent.html">EVT_joyIsPresent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_joySetCenter.html">EVT_joySetCenter</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_joySetLowerRight.html">EVT_joySetLowerRight</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_joySetUpperLeft.html">EVT_joySetUpperLeft</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_peekNext.html">EVT_peekNext</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_pollJoystick.html">EVT_pollJoystick</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_post.html">EVT_post</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_repeatCount.html">EVT_repeatCount</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_scanCode.html">EVT_scanCode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_setCodePage.html">EVT_setCodePage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_setHeartBeatCallback.html">EVT_setHeartBeatCallback</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_setMousePos.html">EVT_setMousePos</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EVT_setUserEventFilter.html">EVT_setUserEventFilter</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_chooseMode.html">GM_chooseMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_cleanup.html">GM_cleanup</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_exit.html">GM_exit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_findMode.html">GM_findMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_getDoDraw.html">GM_getDoDraw</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_getExitMainLoop.html">GM_getExitMainLoop</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_getHaveWin95.html">GM_getHaveWin95</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_getHaveWinNT.html">GM_getHaveWinNT</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_init.html">GM_init</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_initPath.html">GM_initPath</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_initSysPalNoStatic.html">GM_initSysPalNoStatic</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_initWindowPos.html">GM_initWindowPos</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_mainLoop.html">GM_mainLoop</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_processEvents.html">GM_processEvents</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_processEventsWin.html">GM_processEventsWin</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_realizePalette.html">GM_realizePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_registerEventProc.html">GM_registerEventProc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_registerMainWindow.html">GM_registerMainWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setAppActivate.html">GM_setAppActivate</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setDrawFunc.html">GM_setDrawFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setDriverOptions.html">GM_setDriverOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setEventFunc.html">GM_setEventFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setExitFunc.html">GM_setExitFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setGameLogicFunc.html">GM_setGameLogicFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setKeyDownFunc.html">GM_setKeyDownFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setKeyRepeatFunc.html">GM_setKeyRepeatFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setKeyUpFunc.html">GM_setKeyUpFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setLeftBuffer.html">GM_setLeftBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setMode.html">GM_setMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setModeExt.html">GM_setModeExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setModeFilterFunc.html">GM_setModeFilterFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setModeSwitchFunc.html">GM_setModeSwitchFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setMouseDownFunc.html">GM_setMouseDownFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setMouseMoveFunc.html">GM_setMouseMoveFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setMouseUpFunc.html">GM_setMouseUpFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setPalette.html">GM_setPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setPreModeSwitchFunc.html">GM_setPreModeSwitchFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setRightBuffer.html">GM_setRightBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_setSuspendAppCallback.html">GM_setSuspendAppCallback</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_startOpenGL.html">GM_startOpenGL</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_startStereo.html">GM_startStereo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_stopStereo.html">GM_stopStereo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_swapBuffers.html">GM_swapBuffers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GM_swapDirtyBuffers.html">GM_swapDirtyBuffers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerCount.html">LZTimerCount</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerCountExt.html">LZTimerCountExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerLap.html">LZTimerLap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerLapExt.html">LZTimerLapExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerOff.html">LZTimerOff</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerOffExt.html">LZTimerOffExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerOn.html">LZTimerOn</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LZTimerOnExt.html">LZTimerOnExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_FixDiv.html">MGL_FixDiv</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_FixMul.html">MGL_FixMul</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_FixMulDiv.html">MGL_FixMulDiv</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_addCustomMode.html">MGL_addCustomMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availableBitmap.html">MGL_availableBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availableCursor.html">MGL_availableCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availableFont.html">MGL_availableFont</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availableIcon.html">MGL_availableIcon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availableJPEG.html">MGL_availableJPEG</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availablePCX.html">MGL_availablePCX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availablePNG.html">MGL_availablePNG</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_availablePages.html">MGL_availablePages</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_backfacing.html">MGL_backfacing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_beginDirectAccess.html">MGL_beginDirectAccess</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_beginDirectAccessDC.html">MGL_beginDirectAccessDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_beginPaint.html">MGL_beginPaint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_beginPixel.html">MGL_beginPixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBlt.html">MGL_bitBlt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBltCoord.html">MGL_bitBltCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBltFx.html">MGL_bitBltFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBltFxCoord.html">MGL_bitBltFxCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBltPatt.html">MGL_bitBltPatt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_bitBltPattCoord.html">MGL_bitBltPattCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_buildMonoMask.html">MGL_buildMonoMask</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_charWidth.html">MGL_charWidth</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_charWidth_W.html">MGL_charWidth_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_clearDevice.html">MGL_clearDevice</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_clearRegion.html">MGL_clearRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_clearViewport.html">MGL_clearViewport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_closeFontLib.html">MGL_closeFontLib</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_computePixelAddr.html">MGL_computePixelAddr</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyBitmapToBuffer.html">MGL_copyBitmapToBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyIntoRegion.html">MGL_copyIntoRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyPage.html">MGL_copyPage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyPageCoord.html">MGL_copyPageCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyRegion.html">MGL_copyRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createBuffer.html">MGL_createBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createCustomDC.html">MGL_createCustomDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createDisplayDC.html">MGL_createDisplayDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createMemoryDC.html">MGL_createMemoryDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createOffscreenDC.html">MGL_createOffscreenDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createScrollingDC.html">MGL_createScrollingDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createStereoDisplayDC.html">MGL_createStereoDisplayDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_createWindowedDC.html">MGL_createWindowedDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_defRect.html">MGL_defRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_defRectPt.html">MGL_defRectPt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_defaultAttributes.html">MGL_defaultAttributes</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_defaultColor.html">MGL_defaultColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_destroyBuffer.html">MGL_destroyBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_destroyDC.html">MGL_destroyDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_diffRegion.html">MGL_diffRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_diffRegionRect.html">MGL_diffRegionRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_disableDriver.html">MGL_disableDriver</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_disjointRect.html">MGL_disjointRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_divotSize.html">MGL_divotSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_divotSizeCoord.html">MGL_divotSizeCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_doubleBuffer.html">MGL_doubleBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawGlyph.html">MGL_drawGlyph</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawRegion.html">MGL_drawRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawStr.html">MGL_drawStr</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawStrXY.html">MGL_drawStrXY</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawStrXY_W.html">MGL_drawStrXY_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_drawStr_W.html">MGL_drawStr_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_dstTransBlt.html">MGL_dstTransBlt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_dstTransBltCoord.html">MGL_dstTransBltCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipse.html">MGL_ellipse</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipseArc.html">MGL_ellipseArc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipseArcCoord.html">MGL_ellipseArcCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipseArcEngine.html">MGL_ellipseArcEngine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipseCoord.html">MGL_ellipseCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ellipseEngine.html">MGL_ellipseEngine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_emptyRect.html">MGL_emptyRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_emptyRegion.html">MGL_emptyRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_enableAllDrivers.html">MGL_enableAllDrivers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_enableOpenGLDrivers.html">MGL_enableOpenGLDrivers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_endDirectAccess.html">MGL_endDirectAccess</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_endDirectAccessDC.html">MGL_endDirectAccessDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_endPaint.html">MGL_endPaint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_endPixel.html">MGL_endPixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_enumerateFonts.html">MGL_enumerateFonts</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_equalPoint.html">MGL_equalPoint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_equalRect.html">MGL_equalRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_equalRegion.html">MGL_equalRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_errorMsg.html">MGL_errorMsg</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_exit.html">MGL_exit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fadePalette.html">MGL_fadePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fatalError.html">MGL_fatalError</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fclose.html">MGL_fclose</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillEllipse.html">MGL_fillEllipse</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillEllipseArc.html">MGL_fillEllipseArc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillEllipseArcCoord.html">MGL_fillEllipseArcCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillEllipseCoord.html">MGL_fillEllipseCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillPolygon.html">MGL_fillPolygon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillPolygonCnvx.html">MGL_fillPolygonCnvx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillPolygonCnvxFX.html">MGL_fillPolygonCnvxFX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillPolygonFX.html">MGL_fillPolygonFX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillRect.html">MGL_fillRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillRectCoord.html">MGL_fillRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fillRectPt.html">MGL_fillRectPt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_findMode.html">MGL_findMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fopen.html">MGL_fopen</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fread.html">MGL_fread</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_freeRegion.html">MGL_freeRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fseek.html">MGL_fseek</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ftell.html">MGL_ftell</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_fwrite.html">MGL_fwrite</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getActivePage.html">MGL_getActivePage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getAlphaValue.html">MGL_getAlphaValue</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getArcCoords.html">MGL_getArcCoords</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getAspectRatio.html">MGL_getAspectRatio</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getAttributes.html">MGL_getAttributes</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBackColor.html">MGL_getBackColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBackMode.html">MGL_getBackMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBitmapFromDC.html">MGL_getBitmapFromDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBitmapSize.html">MGL_getBitmapSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBitmapSizeExt.html">MGL_getBitmapSizeExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBitsPerPixel.html">MGL_getBitsPerPixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getBlendFunc.html">MGL_getBlendFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getCP.html">MGL_getCP</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getCharMetrics.html">MGL_getCharMetrics</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getCharMetrics_W.html">MGL_getCharMetrics_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getClipRect.html">MGL_getClipRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getClipRectDC.html">MGL_getClipRectDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getClipRegion.html">MGL_getClipRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getClipRegionDC.html">MGL_getClipRegionDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getColor.html">MGL_getColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getCurrentScanLine.html">MGL_getCurrentScanLine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDefaultPalette.html">MGL_getDefaultPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDisplayStart.html">MGL_getDisplayStart</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDitherMode.html">MGL_getDitherMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDivot.html">MGL_getDivot</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDivotCoord.html">MGL_getDivotCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getDotsPerInch.html">MGL_getDotsPerInch</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getFont.html">MGL_getFont</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getFontAntiAliasPalette.html">MGL_getFontAntiAliasPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getFontBlendMode.html">MGL_getFontBlendMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getFontMetrics.html">MGL_getFontMetrics</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getFullScreenWindow.html">MGL_getFullScreenWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getGammaRamp.html">MGL_getGammaRamp</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getGlyphHeight.html">MGL_getGlyphHeight</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getGlyphWidth.html">MGL_getGlyphWidth</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getHalfTonePalette.html">MGL_getHalfTonePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getHardwareFlags.html">MGL_getHardwareFlags</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getJPEGSize.html">MGL_getJPEGSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getJPEGSizeExt.html">MGL_getJPEGSizeExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getLineStipple.html">MGL_getLineStipple</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getLineStippleCount.html">MGL_getLineStippleCount</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getLineStyle.html">MGL_getLineStyle</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPCXSize.html">MGL_getPCXSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPCXSizeExt.html">MGL_getPCXSizeExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPNGSize.html">MGL_getPNGSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPNGSizeExt.html">MGL_getPNGSizeExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPalette.html">MGL_getPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPaletteEntry.html">MGL_getPaletteEntry</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPaletteSize.html">MGL_getPaletteSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPaletteSnowLevel.html">MGL_getPaletteSnowLevel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPenBitmapPattern.html">MGL_getPenBitmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPenPixmapPattern.html">MGL_getPenPixmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPenPixmapTransparent.html">MGL_getPenPixmapTransparent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPenSize.html">MGL_getPenSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPenStyle.html">MGL_getPenStyle</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPixel.html">MGL_getPixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPixelCoord.html">MGL_getPixelCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPixelCoordFast.html">MGL_getPixelCoordFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPixelFast.html">MGL_getPixelFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPixelFormat.html">MGL_getPixelFormat</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPlaneMask.html">MGL_getPlaneMask</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getPolygonType.html">MGL_getPolygonType</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getSpaceExtra.html">MGL_getSpaceExtra</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getTextDirection.html">MGL_getTextDirection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getTextJustify.html">MGL_getTextJustify</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getTextSettings.html">MGL_getTextSettings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getTextSize.html">MGL_getTextSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getViewport.html">MGL_getViewport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getViewportDC.html">MGL_getViewportDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getViewportOrg.html">MGL_getViewportOrg</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getViewportOrgDC.html">MGL_getViewportOrgDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getVisualPage.html">MGL_getVisualPage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getWriteMode.html">MGL_getWriteMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getX.html">MGL_getX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_getY.html">MGL_getY</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glChooseVisual.html">MGL_glChooseVisual</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glCreateContext.html">MGL_glCreateContext</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glDeleteContext.html">MGL_glDeleteContext</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glDisableMGLFuncs.html">MGL_glDisableMGLFuncs</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glEnableMGLFuncs.html">MGL_glEnableMGLFuncs</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glEnumerateDrivers.html">MGL_glEnumerateDrivers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glGetProcAddress.html">MGL_glGetProcAddress</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glGetVisual.html">MGL_glGetVisual</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glHaveHWOpenGL.html">MGL_glHaveHWOpenGL</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glMakeCurrent.html">MGL_glMakeCurrent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glRealizePalette.html">MGL_glRealizePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glResizeBuffers.html">MGL_glResizeBuffers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glSetDriver.html">MGL_glSetDriver</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glSetOpenGLType.html">MGL_glSetOpenGLType</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glSetPalette.html">MGL_glSetPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glSetVisual.html">MGL_glSetVisual</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_glSwapBuffers.html">MGL_glSwapBuffers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_globalToLocal.html">MGL_globalToLocal</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_globalToLocalDC.html">MGL_globalToLocalDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_halfTonePixel.html">MGL_halfTonePixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_halfTonePixel555.html">MGL_halfTonePixel555</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_halfTonePixel565.html">MGL_halfTonePixel565</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_haveWidePalette.html">MGL_haveWidePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_init.html">MGL_init</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_insetRect.html">MGL_insetRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isCurrentDC.html">MGL_isCurrentDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isDisplayDC.html">MGL_isDisplayDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isMemoryDC.html">MGL_isMemoryDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isOffscreenDC.html">MGL_isOffscreenDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isOverlayDC.html">MGL_isOverlayDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isSimpleRegion.html">MGL_isSimpleRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isStereoDC.html">MGL_isStereoDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isVSync.html">MGL_isVSync</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_isWindowedDC.html">MGL_isWindowedDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_leftTop.html">MGL_leftTop</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_line.html">MGL_line</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineCoord.html">MGL_lineCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineCoordExt.html">MGL_lineCoordExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineEngine.html">MGL_lineEngine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineExt.html">MGL_lineExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineRel.html">MGL_lineRel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineRelCoord.html">MGL_lineRelCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineTo.html">MGL_lineTo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lineToCoord.html">MGL_lineToCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadBitmap.html">MGL_loadBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadBitmapExt.html">MGL_loadBitmapExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadBitmapIntoDC.html">MGL_loadBitmapIntoDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadBitmapIntoDCExt.html">MGL_loadBitmapIntoDCExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadCursor.html">MGL_loadCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadCursorExt.html">MGL_loadCursorExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadFont.html">MGL_loadFont</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadFontExt.html">MGL_loadFontExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadFontInstance.html">MGL_loadFontInstance</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadIcon.html">MGL_loadIcon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadIconExt.html">MGL_loadIconExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadJPEG.html">MGL_loadJPEG</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadJPEGExt.html">MGL_loadJPEGExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadJPEGIntoDC.html">MGL_loadJPEGIntoDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadJPEGIntoDCExt.html">MGL_loadJPEGIntoDCExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPCX.html">MGL_loadPCX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPCXExt.html">MGL_loadPCXExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPCXIntoDC.html">MGL_loadPCXIntoDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPCXIntoDCExt.html">MGL_loadPCXIntoDCExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPNG.html">MGL_loadPNG</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPNGExt.html">MGL_loadPNGExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPNGIntoDC.html">MGL_loadPNGIntoDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_loadPNGIntoDCExt.html">MGL_loadPNGIntoDCExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_localToGlobal.html">MGL_localToGlobal</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_localToGlobalDC.html">MGL_localToGlobalDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lockBuffer.html">MGL_lockBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_lockToFrameRate.html">MGL_lockToFrameRate</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_makeCurrentDC.html">MGL_makeCurrentDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_mapToPalette.html">MGL_mapToPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxCharWidth.html">MGL_maxCharWidth</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxColor.html">MGL_maxColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxPage.html">MGL_maxPage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxx.html">MGL_maxx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxxDC.html">MGL_maxxDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxy.html">MGL_maxy</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_maxyDC.html">MGL_maxyDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memcpy.html">MGL_memcpy</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memcpyVIRTDST.html">MGL_memcpyVIRTDST</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memcpyVIRTSRC.html">MGL_memcpyVIRTSRC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memset.html">MGL_memset</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memsetl.html">MGL_memsetl</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_memsetw.html">MGL_memsetw</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_mirrorGlyph.html">MGL_mirrorGlyph</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_modeDriverName.html">MGL_modeDriverName</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_modeFlags.html">MGL_modeFlags</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_modeResolution.html">MGL_modeResolution</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_moveRel.html">MGL_moveRel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_moveRelCoord.html">MGL_moveRelCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_moveTo.html">MGL_moveTo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_moveToCoord.html">MGL_moveToCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_newRegion.html">MGL_newRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_offsetRect.html">MGL_offsetRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_offsetRegion.html">MGL_offsetRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_openFontLib.html">MGL_openFontLib</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_openFontLibExt.html">MGL_openFontLibExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_optimizeRegion.html">MGL_optimizeRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_packColor.html">MGL_packColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_packColorExt.html">MGL_packColorExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_packColorFast.html">MGL_packColorFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_packColorFastExt.html">MGL_packColorFastExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_pixel.html">MGL_pixel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_pixelCoord.html">MGL_pixelCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_pixelCoordFast.html">MGL_pixelCoordFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_pixelFast.html">MGL_pixelFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_polyLine.html">MGL_polyLine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_polyPoint.html">MGL_polyPoint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ptInRect.html">MGL_ptInRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ptInRectCoord.html">MGL_ptInRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ptInRegion.html">MGL_ptInRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_ptInRegionCoord.html">MGL_ptInRegionCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmap.html">MGL_putBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapDstTrans.html">MGL_putBitmapDstTrans</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapDstTransSection.html">MGL_putBitmapDstTransSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapFx.html">MGL_putBitmapFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapFxSection.html">MGL_putBitmapFxSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapMask.html">MGL_putBitmapMask</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapPatt.html">MGL_putBitmapPatt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapPattSection.html">MGL_putBitmapPattSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapSection.html">MGL_putBitmapSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapSrcTrans.html">MGL_putBitmapSrcTrans</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBitmapSrcTransSection.html">MGL_putBitmapSrcTransSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBuffer.html">MGL_putBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferDstTrans.html">MGL_putBufferDstTrans</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferDstTransSection.html">MGL_putBufferDstTransSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferFx.html">MGL_putBufferFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferFxSection.html">MGL_putBufferFxSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferPatt.html">MGL_putBufferPatt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferPattSection.html">MGL_putBufferPattSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferSection.html">MGL_putBufferSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferSrcTrans.html">MGL_putBufferSrcTrans</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putBufferSrcTransSection.html">MGL_putBufferSrcTransSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putDivot.html">MGL_putDivot</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putIcon.html">MGL_putIcon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_putMonoImage.html">MGL_putMonoImage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_quickInit.html">MGL_quickInit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_random.html">MGL_random</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_randoml.html">MGL_randoml</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_realColor.html">MGL_realColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_realizePalette.html">MGL_realizePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rect.html">MGL_rect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rectCoord.html">MGL_rectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rectPt.html">MGL_rectPt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_registerEventProc.html">MGL_registerEventProc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_registerFullScreenWindow.html">MGL_registerFullScreenWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_restoreAttributes.html">MGL_restoreAttributes</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_result.html">MGL_result</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_resume.html">MGL_resume</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgbColor.html">MGL_rgbColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnEllipse.html">MGL_rgnEllipse</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnEllipseArc.html">MGL_rgnEllipseArc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnGetArcCoords.html">MGL_rgnGetArcCoords</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnLine.html">MGL_rgnLine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnLineCoord.html">MGL_rgnLineCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnPolygon.html">MGL_rgnPolygon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnPolygonCnvx.html">MGL_rgnPolygonCnvx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnPolygonCnvxFX.html">MGL_rgnPolygonCnvxFX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnPolygonFX.html">MGL_rgnPolygonFX</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnSolidEllipse.html">MGL_rgnSolidEllipse</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnSolidEllipseArc.html">MGL_rgnSolidEllipseArc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnSolidRect.html">MGL_rgnSolidRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnSolidRectCoord.html">MGL_rgnSolidRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rgnSolidRectPt.html">MGL_rgnSolidRectPt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rightBottom.html">MGL_rightBottom</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rotateGlyph.html">MGL_rotateGlyph</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_rotatePalette.html">MGL_rotatePalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_saveBitmapFromDC.html">MGL_saveBitmapFromDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_saveJPEGFromDC.html">MGL_saveJPEGFromDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_savePCXFromDC.html">MGL_savePCXFromDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_savePNGFromDC.html">MGL_savePNGFromDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_savePNGFromDCExt.html">MGL_savePNGFromDCExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_scanLine.html">MGL_scanLine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRect.html">MGL_sectRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRectCoord.html">MGL_sectRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRectFast.html">MGL_sectRectFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRectFastCoord.html">MGL_sectRectFastCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRegion.html">MGL_sectRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sectRegionRect.html">MGL_sectRegionRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_selectDisplayDevice.html">MGL_selectDisplayDevice</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setActivePage.html">MGL_setActivePage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setAlphaValue.html">MGL_setAlphaValue</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setAspectRatio.html">MGL_setAspectRatio</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setBackColor.html">MGL_setBackColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setBackMode.html">MGL_setBackMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setBlendFunc.html">MGL_setBlendFunc</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setBlueCodeIndex.html">MGL_setBlueCodeIndex</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setBufSize.html">MGL_setBufSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setClipRect.html">MGL_setClipRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setClipRectDC.html">MGL_setClipRectDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setClipRegion.html">MGL_setClipRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setClipRegionDC.html">MGL_setClipRegionDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setColor.html">MGL_setColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setColorCI.html">MGL_setColorCI</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setColorRGB.html">MGL_setColorRGB</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setDefaultPalette.html">MGL_setDefaultPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setDisplayStart.html">MGL_setDisplayStart</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setDitherMode.html">MGL_setDitherMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setDotsPerInch.html">MGL_setDotsPerInch</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setFileIO.html">MGL_setFileIO</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setFontAntiAliasPalette.html">MGL_setFontAntiAliasPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setFontBlendMode.html">MGL_setFontBlendMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setGammaRamp.html">MGL_setGammaRamp</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setLineStipple.html">MGL_setLineStipple</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setLineStippleCount.html">MGL_setLineStippleCount</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setLineStyle.html">MGL_setLineStyle</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setOpenGLFuncs.html">MGL_setOpenGLFuncs</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPalette.html">MGL_setPalette</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPaletteEntry.html">MGL_setPaletteEntry</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPaletteSnowLevel.html">MGL_setPaletteSnowLevel</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPenBitmapPattern.html">MGL_setPenBitmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPenPixmapPattern.html">MGL_setPenPixmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPenPixmapTransparent.html">MGL_setPenPixmapTransparent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPenSize.html">MGL_setPenSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPenStyle.html">MGL_setPenStyle</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPlaneMask.html">MGL_setPlaneMask</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setPolygonType.html">MGL_setPolygonType</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setRelViewport.html">MGL_setRelViewport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setRelViewportDC.html">MGL_setRelViewportDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setResult.html">MGL_setResult</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setSpaceExtra.html">MGL_setSpaceExtra</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setSuspendAppCallback.html">MGL_setSuspendAppCallback</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setTextDirection.html">MGL_setTextDirection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setTextEncoding.html">MGL_setTextEncoding</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setTextJustify.html">MGL_setTextJustify</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setTextSettings.html">MGL_setTextSettings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setTextSize.html">MGL_setTextSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setViewport.html">MGL_setViewport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setViewportDC.html">MGL_setViewportDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setViewportOrg.html">MGL_setViewportOrg</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setViewportOrgDC.html">MGL_setViewportOrgDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setVisualPage.html">MGL_setVisualPage</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_setWriteMode.html">MGL_setWriteMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_singleBuffer.html">MGL_singleBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sizex.html">MGL_sizex</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_sizey.html">MGL_sizey</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_srand.html">MGL_srand</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_srcTransBlt.html">MGL_srcTransBlt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_srcTransBltCoord.html">MGL_srcTransBltCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_startStereo.html">MGL_startStereo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stopStereo.html">MGL_stopStereo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBitmap.html">MGL_stretchBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBitmapFx.html">MGL_stretchBitmapFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBitmapFxSection.html">MGL_stretchBitmapFxSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBitmapSection.html">MGL_stretchBitmapSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBlt.html">MGL_stretchBlt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBltCoord.html">MGL_stretchBltCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBltFx.html">MGL_stretchBltFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBltFxCoord.html">MGL_stretchBltFxCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBuffer.html">MGL_stretchBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBufferFx.html">MGL_stretchBufferFx</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBufferFxSection.html">MGL_stretchBufferFxSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_stretchBufferSection.html">MGL_stretchBufferSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_surfaceAccessType.html">MGL_surfaceAccessType</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_suspend.html">MGL_suspend</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_swapBuffers.html">MGL_swapBuffers</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_textBounds.html">MGL_textBounds</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_textBounds_W.html">MGL_textBounds_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_textHeight.html">MGL_textHeight</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_textWidth.html">MGL_textWidth</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_textWidth_W.html">MGL_textWidth_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_traverseRegion.html">MGL_traverseRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_underScoreLocation.html">MGL_underScoreLocation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_underScoreLocation_W.html">MGL_underScoreLocation_W</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unionRect.html">MGL_unionRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unionRectCoord.html">MGL_unionRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unionRegion.html">MGL_unionRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unionRegionOfs.html">MGL_unionRegionOfs</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unionRegionRect.html">MGL_unionRegionRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unloadBitmap.html">MGL_unloadBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unloadCursor.html">MGL_unloadCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unloadFont.html">MGL_unloadFont</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unloadFontInstance.html">MGL_unloadFontInstance</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unloadIcon.html">MGL_unloadIcon</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unlockBuffer.html">MGL_unlockBuffer</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unpackColor.html">MGL_unpackColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unpackColorExt.html">MGL_unpackColorExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unpackColorFast.html">MGL_unpackColorFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_unpackColorFastExt.html">MGL_unpackColorFastExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_updateBufferCache.html">MGL_updateBufferCache</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_updateFromBufferCache.html">MGL_updateFromBufferCache</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_useFont.html">MGL_useFont</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_usePenBitmapPattern.html">MGL_usePenBitmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_usePenPixmapPattern.html">MGL_usePenPixmapPattern</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_vSync.html">MGL_vSync</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_vecFontEngine.html">MGL_vecFontEngine</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmBeginPaint.html">MGL_wmBeginPaint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmCaptureEvents.html">MGL_wmCaptureEvents</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmCoordGlobalToLocal.html">MGL_wmCoordGlobalToLocal</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmCoordLocalToGlobal.html">MGL_wmCoordLocalToGlobal</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmCreate.html">MGL_wmCreate</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmCreateWindow.html">MGL_wmCreateWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmDestroy.html">MGL_wmDestroy</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmDestroyWindow.html">MGL_wmDestroyWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmEndPaint.html">MGL_wmEndPaint</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmGetRootWindow.html">MGL_wmGetRootWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmGetWindowAtPosition.html">MGL_wmGetWindowAtPosition</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmGetWindowFlags.html">MGL_wmGetWindowFlags</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmGetWindowParent.html">MGL_wmGetWindowParent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmGetWindowUserData.html">MGL_wmGetWindowUserData</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmInvalidateRect.html">MGL_wmInvalidateRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmInvalidateRegion.html">MGL_wmInvalidateRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmInvalidateWindow.html">MGL_wmInvalidateWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmInvalidateWindowRect.html">MGL_wmInvalidateWindowRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmInvalidateWindowRegion.html">MGL_wmInvalidateWindowRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmLowerWindow.html">MGL_wmLowerWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmPopGlobalEventHandler.html">MGL_wmPopGlobalEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmPopWindowEventHandler.html">MGL_wmPopWindowEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmProcessEvent.html">MGL_wmProcessEvent</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmPushGlobalEventHandler.html">MGL_wmPushGlobalEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmPushWindowEventHandler.html">MGL_wmPushWindowEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmRaiseWindow.html">MGL_wmRaiseWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmRemoveGlobalEventHandler.html">MGL_wmRemoveGlobalEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmRemoveWindowEventHandler.html">MGL_wmRemoveWindowEventHandler</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmReparentWindow.html">MGL_wmReparentWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetGlobalCursor.html">MGL_wmSetGlobalCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowCursor.html">MGL_wmSetWindowCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowDestructor.html">MGL_wmSetWindowDestructor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowFlags.html">MGL_wmSetWindowFlags</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowPainter.html">MGL_wmSetWindowPainter</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowPosition.html">MGL_wmSetWindowPosition</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmSetWindowUserData.html">MGL_wmSetWindowUserData</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmShowWindow.html">MGL_wmShowWindow</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmUncaptureEvents.html">MGL_wmUncaptureEvents</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MGL_wmUpdateDC.html">MGL_wmUpdateDC</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_getPos.html">MS_getPos</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_hide.html">MS_hide</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_moveTo.html">MS_moveTo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_obscure.html">MS_obscure</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_setCursor.html">MS_setCursor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_setCursorColor.html">MS_setCursorColor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_setCursorColorExt.html">MS_setCursorColorExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MS_show.html">MS_show</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_destroyBitmap.html">SPR_destroyBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_draw.html">SPR_draw</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_drawExt.html">SPR_drawExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_drawSection.html">SPR_drawSection</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_drawSectionExt.html">SPR_drawSectionExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_mgrAddOpaqueBitmap.html">SPR_mgrAddOpaqueBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_mgrAddTransparentBitmap.html">SPR_mgrAddTransparentBitmap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_mgrEmpty.html">SPR_mgrEmpty</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_mgrExit.html">SPR_mgrExit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SPR_mgrInit.html">SPR_mgrInit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZElapsedTime.html">ULZElapsedTime</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZReadTime.html">ULZReadTime</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZTimerCount.html">ULZTimerCount</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZTimerLap.html">ULZTimerLap</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZTimerOff.html">ULZTimerOff</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZTimerOn.html">ULZTimerOn</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ULZTimerResolution.html">ULZTimerResolution</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ZTimerInit.html">ZTimerInit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ZTimerInitExt.html">ZTimerInitExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="demo.html">demo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="writeCursor.html">writeCursor</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

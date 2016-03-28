@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_stretchBufferFxSection</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_stretchBufferFx" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_stretchBufferFx.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_stretchBufferFx" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_stretchBufferSection" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_stretchBufferSection.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_stretchBufferSection" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_stretchBufferFxSection
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Stretches a section of an offscreen buffer to the specified device
+        context, while applying different effects in the process.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_stretchBufferFxSection(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; int left,<br />
+        &#160;&#160;&#160; int top,<br />
+        &#160;&#160;&#160; int right,<br />
+        &#160;&#160;&#160; int bottom,<br />
+        &#160;&#160;&#160; int dstLeft,<br />
+        &#160;&#160;&#160; int dstTop,<br />
+        &#160;&#160;&#160; int dstRight,<br />
+        &#160;&#160;&#160; int dstBottom,<br />
+        &#160;&#160;&#160; MGLBUF *buf,<br />
+        &#160;&#160;&#160; bltfx_t *fx)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to copy buffer to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                right
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate to stretch buffer to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate to stretch buffer to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstRight
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate to stretch buffer to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstBottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate to stretch buffer to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                buf
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer to display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fx
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Information describing the effects to apply to the blit (<a href="bltfx_t.html">bltfx_t</a>)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Stretches a section of an offscreen buffer to the destination rectangle
+        on the specified device context, while applying optional effects. You
+        can use the flags member of the <a href="bltfx_t.html">bltfx_t</a> structure
+        to define whether stretching is done using nearest color stretching or
+        if pixel interpolation will be used. If you don't specify any flags,
+        nearest color stretching will be used.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function will fail if you attempt to copy
+          a buffer to a device context that is not the device context that the
+          original buffer was allocated for.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a>, <a href="MGL_copyBitmapToBuffer.html">MGL_copyBitmapToBuffer</a>,
+        <a href="MGL_updateBufferCache.html">MGL_updateBufferCache</a>, <a href="MGL_updateFromBufferCache.html">MGL_updateFromBufferCache</a>,
+        <a href="MGL_putBuffer.html">MGL_putBuffer</a>, <a href="MGL_putBufferSection.html">MGL_putBufferSection</a>,
+        <a href="MGL_putBufferSrcTrans.html">MGL_putBufferSrcTrans</a>, <a href="MGL_putBufferSrcTransSection.html">MGL_putBufferSrcTransSection</a>,
+        <a href="MGL_putBufferDstTrans.html">MGL_putBufferDstTrans</a>, <a href="MGL_putBufferDstTransSection.html">MGL_putBufferDstTransSection</a>,
+        <a href="MGL_putBufferPatt.html">MGL_putBufferPatt</a>, <a href="MGL_putBufferPattSection.html">MGL_putBufferPattSection</a>,
+        <a href="MGL_putBufferFx.html">MGL_putBufferFx</a>, <a href="MGL_putBufferFxSection.html">MGL_putBufferFxSection</a>,
+        <a href="MGL_stretchBuffer.html">MGL_stretchBuffer</a>, <a href="MGL_stretchBufferSection.html">MGL_stretchBufferSection</a>,
+        <a href="MGL_stretchBufferFx.html">MGL_stretchBufferFx</a>, <a href="MGL_stretchBufferFxSection.html">MGL_stretchBufferFxSection</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

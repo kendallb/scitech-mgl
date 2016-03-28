@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PM_findNextFile</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PM_findNextFile
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Function to find the next file matching a search criteria in a directory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool PMAPI PM_findNextFile(<br />
+        &#160;&#160;&#160; void *handle,<br />
+        &#160;&#160;&#160; PM_findData *findData)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                handle
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Handle return from <a href="PM_findFirstFile.html">PM_findFirstFile</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                findData
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to return the found file data
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True if another file is found, false if not.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to find the next file matching the same search
+        criteria passed to <a href="PM_findFirstFile.html">PM_findFirstFile</a>.
+        You can keep calling <a href="PM_findNextFile.html">PM_findNextFile</a> to
+        find each file that matches until this function returns false,
+        indicating there are no more files that match. When you are done, make
+        sure you call <a href="PM_findClose.html">PM_findClose</a> to free the
+        handle returned by the <a href="PM_findFirstFile.html">PM_findFirstFile</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="PM_findFirstFile.html">PM_findFirstFile</a>, <a href="PM_findClose.html">PM_findClose</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

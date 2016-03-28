@@ -1,0 +1,67 @@
+#***************************************************************************
+#
+#                    SciTech SNAP Graphics Architecture
+#
+#  ========================================================================
+#
+#   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+#
+#   This file may be distributed and/or modified under the terms of the
+#   GNU General Public License version 2 as published by the Free
+#   Software Foundation and appearing in the file LICENSE.GPL included
+#   in the packaging of this file.
+#
+#   Licensees holding a valid Commercial License for this product from
+#   SciTech Software, Inc. may use this file in accordance with the
+#   Commercial License Agreement provided with the Software.
+#
+#   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+#   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+#   PURPOSE.
+#
+#   See http://www.scitechsoft.com/license/ for information about
+#   the licensing options available and how to purchase a Commercial
+#   License Agreement.
+#
+#   Contact license@scitechsoft.com if any conditions of this licensing
+#   are not clear to you, or you have questions about licensing options.
+#
+#  ========================================================================
+#
+# Language:    GAS
+# Environment: 32-bit MIPS CPUs in a SYS V ABI environment.
+#
+# Description: Module to implement the call stubs for SNAP driver
+#              C runtime library.
+#
+#***************************************************************************
+
+.include "mipsmacros.i"               # Memory model macros
+
+BEGIN_IMPORTS_DEF ___imports
+DECLARE_IMP xabort
+DECLARE_IMP ___atexit
+DECLARE_IMP ___calloc
+DECLARE_IMP xexit
+DECLARE_IMP xfree
+DECLARE_IMP xgetenv
+DECLARE_IMP xmalloc
+DECLARE_IMP ___realloc
+DECLARE_IMP xsystem
+DECLARE_IMP xputenv
+DECLARE_IMP xopen
+DECLARE_IMP xaccess
+DECLARE_IMP xclose
+DECLARE_IMP xlseek
+DECLARE_IMP xread
+DECLARE_IMP xunlink
+DECLARE_IMP xwrite
+DECLARE_IMP xisatty
+DECLARE_IMP xremove
+DECLARE_IMP xrename
+DECLARE_IMP xraise
+DECLARE_IMP xsignal
+DECLARE_IMP xtime
+DECLARE_IMP _OS_setfileattr
+DECLARE_IMP _OS_getcurrentdate
+END_IMPORTS_DEF

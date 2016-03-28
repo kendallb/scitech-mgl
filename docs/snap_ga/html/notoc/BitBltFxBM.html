@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>BitBltFxBM</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        BitBltFxBM
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Copy a linear block of video memory to another location in video memory
+        with optional effects and bus mastering.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::BitBltFxBM(<br />
+        &#160;&#160;&#160; void *srcAddr,<br />
+        &#160;&#160;&#160; N_int32 srcPhysAddr,<br />
+        &#160;&#160;&#160; N_int32 srcPitch,<br />
+        &#160;&#160;&#160; N_int32 srcLeft,<br />
+        &#160;&#160;&#160; N_int32 srcTop,<br />
+        &#160;&#160;&#160; N_int32 srcWidth,<br />
+        &#160;&#160;&#160; N_int32 srcHeight,<br />
+        &#160;&#160;&#160; N_int32 dstLeft,<br />
+        &#160;&#160;&#160; N_int32 dstTop,<br />
+        &#160;&#160;&#160; N_int32 dstWidth,<br />
+        &#160;&#160;&#160; N_int32 dstHeight,<br />
+        &#160;&#160;&#160; GA_bltFx *fx)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcAddr
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Address of source bitmap in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcPhysAddr
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical address of source bitmap in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcPitch
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pitch of source bitmap in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcLeft
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of the source rectangle to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcTop
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of the source rectangle to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcWidth
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the source rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcHeight
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the source rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstWidth
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the destination rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstHeight
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the destination rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fx
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                <a href="GA_bltFx.html">GA_bltFx</a> structure describing the
+                requested effects
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function copies a bitmap from system memory with a physical starting
+        address of srcPhysAddr to video memory with the optional features
+        described in the <a href="GA_bltFx.html">GA_bltFx</a> structure.
+        Currently this function can perform stretching, source and destination
+        transparency and flipping depending on what features the underlying
+        hardware supports, with an optional mix code. This routine will copy
+        the region (srcLeft, srcTop, srcLeft+srcWidth-1, srcTop+srcHeight-1)
+        from the source bitmap to (dstLeft, dstTop, dstLeft+dstWidth-1,
+        dstTop+dstHeight-1) in video memory. The srcPhysAddr value points to
+        the start of the bitmap data in system memory as a physical memory
+        address, not a linear memory address that the application software
+        normally deals with. It is up to the calling application to use the
+        necessary OS services to allocate a block of contiguous physical memory
+        for the bitmap data, and to obtain the physical memory address to be
+        passed into this function. Note that the source and destination
+        rectangle dimensions may be different in, which is the case for doing a
+        copy with bitmap stretching. If the <a href="GA_bltFx.html">GA_bltFx</a> structure
+        does not indicate stretching is in effect, the dstHeight and dstWidth
+        parameters will be ignored and only the srcWidth and srcHeight
+        parameters will be used.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This version is different to the <a href="BitBltFxSys.html">BitBltFxSys</a> function
+        in that the bitmap data is copied using Bus Mastering by the graphics
+        accelerator, which allows this function to return before the copy has
+        completed and the accelerator will complete the copy in the background
+        with a DMA Bus Master operation. If this hardware supports Bus
+        Mastering and this function is available, it will usually be the
+        fastest method to copy a block of system memory to video memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that the srcLeft and srcTop coordinates define an offset within the
+        source bitmap to be copied, so it will copy only a portion of the
+        memory bitmap.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; Some of the features may not be supported at
+          the same time, and it is up to the application programmer to call the
+          <a href="BitBltFxTest.html">BitBltFxTest</a> function to determine
+          what features are supported before calling this function. Calling
+          this function with an unsupported set of features will result in
+          undefined behaviour.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="BitBltFxTest.html">BitBltFxTest</a>, <a href="BitBltFx.html">BitBltFx</a>,
+        <a href="BitBltFxLin.html">BitBltFxLin</a>, <a href="BitBltFxBM.html">BitBltFxBM</a>,
+        <a href="SrcTransBlt.html">SrcTransBlt</a>, <a href="DstTransBlt.html">DstTransBlt</a>,
+        <a href="BitBlt.html">BitBlt</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

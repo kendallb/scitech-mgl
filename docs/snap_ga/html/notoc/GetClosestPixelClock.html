@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GetClosestPixelClock</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        GetClosestPixelClock
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Finds the closest pixel clock to the requested pixel clock.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        N_uint32 NAPI GA_initFuncs::GetClosestPixelClock(<br />
+        &#160;&#160;&#160; N_int32 xRes,<br />
+        &#160;&#160;&#160; N_int32 yRes,<br />
+        &#160;&#160;&#160; N_int32 bitsPerPixel,<br />
+        &#160;&#160;&#160; N_uint32 pixelClock)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                xRes
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical X resolution for the display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                yRes
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical Y resolution for the display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitsPerPixel
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Color depth for the display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pixelClock
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Requested pixel clock in units of Hz.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Closest pixel clock in units of Hz.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function allows an application to determine if a particular pixel
+        clock is available. When this function is called it will run the
+        requested pixel clock through the internal PLL programming routines and
+        return the actual pixel clock that will be programmed into the
+        hardware. The process of running the PLL clock computation routines may
+        cause the returned pixel clock to be rounded slightly up or down from
+        the requested value, however the driver should implement the algorithms
+        to attempt to find clocks that are the same as or higher than the
+        requested value. Note that the calling application must also pass in
+        the physical display resolution and color depth for the mode that will
+        be using this pixel clock to this function. This information is
+        necessary so that the driver can determine any necessary hardware
+        limitations internally for the display mode before looking for the
+        closest physical pixel clock.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the driver implementation uses a table driven clock programming
+        approach, it should always attempt to find the next highest pixel clock
+        in the table to the requested clock. The exception to this is if there
+        is a lower clock in the table that is within a tolerance of 1% of the
+        requested clock in which case this clock should be returned (and the
+        next highest pixel clock is not within 1% of the requested clock).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This pixel clock can then be used by the application to compute the exact
+        GTF CRTC timing parameters for the mode. Note that for hardware that is
+        not fully programmable, the returned pixel clock that is the closest
+        the one desired may be substantially different (ie: you could get back
+        39Mhz when you request 35Mhz). It is up the calling application to
+        determine if the clock is suitable and to attempt to choose a different
+        clock if not suitable. The pixel clocks passed in and returned occupy
+        32-bits and represents the pixel clock in units of Hz (ie: a pixel
+        clock of 25.18Mhz is represented with a value of 25180000).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetVideoMode.html">SetVideoMode</a>, <a href="SetCustomVideoMode.html">SetCustomVideoMode</a>,
+        <a href="GetVideoModeInfo.html">GetVideoModeInfo</a>, <a href="GetCustomVideoModeInfo.html">GetCustomVideoModeInfo</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

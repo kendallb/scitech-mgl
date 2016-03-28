@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_setSuspendAppCallback</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GM_setRightBuffer" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GM_setRightBuffer.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GM_setRightBuffer" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GM_startOpenGL" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GM_startOpenGL.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GM_startOpenGL" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_setSuspendAppCallback
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the suspend app callback function
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI GM_setSuspendAppCallback(<br />
+        &#160;&#160;&#160; MGL_suspend_cb_t saveState)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function sets the suspend app callback function for your Game
+        Framework game and is called by the Game Framework whenever the user
+        switches away from your game (suspends it, such as with Alt-Tab). The
+        Game Framework registers a default suspend application callback with
+        the MGL to do most of the handling for you. Note however that by
+        default the Game Framework suspend app callback passes a return value
+        of MGL_SUSPEND_APP back to the MGL which will suspend execution of your
+        game until it has been restored. The Game Framework has code to
+        automatically ensure that the draw callback is not called when the game
+        is minimised and gets re-enabled when the game is restored again if you
+        return a value of MGL_NO_SUSPEND_APP from your registered callback
+        (this way you can continue to run networking code in the background to
+        keep other network players running if the server is temporarily
+        minimised).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        You should register your own version of this function to handle extra
+        things during suspend and restores such as suspending CD-Audio sound
+        playback or other stuff not automatically handled by the underlying
+        multi-media libraries. A typical suspend application callback might be
+        coded as follows:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int _ASMAPI SuspendAppProc(MGLDC *dc,int flags)<br />
+        {<br />
+        &#160;&#160;&#160; if (flags == MGL_DEACTIVATE) {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; // Disable CD-Audio<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; // Do other disabling stuff<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; return MGL_NO_SUSPEND_APP;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; else if (flags == MGL_REACTIVATE) {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; // Re-enable CD-Audio<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; // Do other re-enabling
+        stuff<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; return MGL_NO_SUSPEND_APP;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GM_init.html">GM_init</a>, GM_setSuspendAppProc
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

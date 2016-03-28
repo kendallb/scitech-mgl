@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_wmProcessEvent</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_wmPopWindowEventHandler" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_wmPopWindowEventHandler.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_wmPopWindowEventHandler" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_wmPushGlobalEventHandler" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_wmPushGlobalEventHandler.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_wmPushGlobalEventHandler" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_wmProcessEvent
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Processes event and distributes it to windows.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool MGLAPI MGL_wmProcessEvent(<br />
+        &#160;&#160;&#160; winmng_t *wm,<br />
+        &#160;&#160;&#160; event_t *event)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                wm
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                window manager
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                event
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                event to distribute
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Returns true if the event was processed or false otherwise.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_wmProcessEvent.html">MGL_wmProcessEvent</a> distributes
+        events to windows and passes them to event handlers that the user
+        attached to windows. This happens in several steps:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        First, global event handlers (see <a href="MGL_wmPushGlobalEventHandler.html">MGL_wmPushGlobalEventHandler</a>)
+        are searched for one that can handle this event (by ANDing
+        event-&gt;what with the mask) and if such handler exists, the event is
+        passed to it. If global handler returns true, processing ends and <a href="MGL_wmProcessEvent.html">MGL_wmProcessEvent</a> returns
+        true. If the handler returns false, search continues among other global
+        handlers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Next, redirection table is searched for windows that have captured events
+        of this type. If such window is found, it will be used in the next
+        step. Otherwise, <a href="MGL_wmProcessEvent.html">MGL_wmProcessEvent</a> uses
+        the window under mouse pointer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Finally, event table of the window determined in the previous step is
+        searched for a handler that accepts this type of events and the event
+        is passed to it. If the handler returns true, the function returns with
+        true, otherwise it continues with the rest of handlers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If none of the above steps succeeded, false is returned.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function also handles changes of mouse
+          cursor as the pointer moves from one window to another.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Mouse position information in <a href="event_t.html">event_t</a> is
+          NOT translated to window's local coordinates!
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; A typical application will run in event loop
+          and repeatedly call <a href="EVT_halt.html">EVT_halt</a>, <a href="MGL_wmProcessEvent.html">MGL_wmProcessEvent</a> and
+          <a href="MGL_wmUpdateDC.html">MGL_wmUpdateDC</a>.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_wmPushWindowEventHandler.html">MGL_wmPushWindowEventHandler</a>,
+        <a href="MGL_wmPopWindowEventHandler.html">MGL_wmPopWindowEventHandler</a>,
+        <a href="MGL_wmRemoveWindowEventHandler.html">MGL_wmRemoveWindowEventHandler</a>,
+        <a href="MGL_wmPushGlobalEventHandler.html">MGL_wmPushGlobalEventHandler</a>,
+        <a href="MGL_wmPopGlobalEventHandler.html">MGL_wmPopGlobalEventHandler</a>,
+        MGL_wmRemoveGlobalEventHander, <a href="MGL_wmCaptureEvents.html">MGL_wmCaptureEvents</a>,
+        <a href="MGL_wmUncaptureEvents.html">MGL_wmUncaptureEvents</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

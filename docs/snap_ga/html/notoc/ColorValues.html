@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Color Values</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Color Values
+      </h3>
+      <p class="MsoBodyText">
+        All color values passed to the accelerated rendering functions are packed
+        pixel values, that will need to be pre-packed into the proper format
+        required by the current framebuffer mode. In 8 bit color index modes,
+        this is simply a color index between 0 and 255. In the 15 bits per
+        pixel and above modes, you will need to pack the color values according
+        to the RGB pixel format information stored in the <a href="GA_modeInfo.html">GA_modeInfo</a> information
+        block. The RGB pixel format information specifies the mask size and bit
+        positions for all red, green, blue and alpha components (alpha is
+        generally ignored for framebuffer values). These mask should be used by
+        the application to pack the appropriate RGB color values into a 32-bit
+        integer to be passed to the appropriate rendering routines.
+      </p>
+      <p class="MsoBodyText">
+        Currently the alpha component in 15-bit and 32-bits per pixel modes is
+        unused, and should always be set to 0 for normal 2D rendering
+        operations, as on some controllers these bits may be significant. For
+        alpha blended operations, these bits can be used to control the
+        blending of pixel colors during rendering.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

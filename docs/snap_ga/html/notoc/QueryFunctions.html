@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>QueryFunctions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        QueryFunctions
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Returns the function pointers for the specified function group.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool NAPI GA_loaderFuncs::QueryFunctions(<br />
+        &#160;&#160;&#160; N_uint32 id,<br />
+        &#160;&#160;&#160; N_int32 safetyLevel,<br />
+        &#160;&#160;&#160; void _FAR_ *funcs)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                id
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Identifier for the function group to get pointers for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                safetyLevel
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Safety level requested
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                funcs
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to function block to fill in
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True if the requested function group is available, false if not.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is the main function that is used by the graphics
+        application code to get a block of function pointers for a specified
+        function group. The function groups are defined <a href="GA_funcGroupsType.html">GA_funcGroupsType</a> enumeration,
+        and breaks up the functions in the device driver API into groups of
+        logically similar functions. For instance to get the block of functions
+        for the hardware cursor, you would call this function with the
+        GA_GET_CURSORFUNCS identifier.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The safetyLevel parameter defines the safety level of those functions
+        that are returned by the driver. The safety level essentially defines
+        what runtime requirements those functions have, such as requiring
+        kernel mode access to registers etc. There are currently three safety
+        levels defined:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                safetyLevel
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Description
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                0
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Level 0 is defined as 'unsafe', which means that the functions
+                must be executed in kernel mode as they require access to I/O
+                space registers. Essentially requesting level 0 function
+                pointers will return pointers to all available functions in
+                that function group.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                1
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Level 1 is defined as 'mostly safe', which means that the
+                functions only access memory mapped registers and do not
+                require any I/O space register access. These functions can thus
+                be exectued in user space provided that all the memory mapped
+                register regions are mapped into user space.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                2
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Level 2 is defined as 'safe', which means that the functions only
+                access memory mapped registers via the 'safe' IOMemMaps[2] and
+                IOMemMaps[3] regions (the first two will only be mapped into
+                kernel space by the loader code). The idea here is that the
+                driver separates 'safe' and 'unsafe' registers (defined below).
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that with the above defined safety levels, it is possible for the
+        display driver in the operating system to provide a compromise between
+        maximum performance and maximum security as a user level setting.
+        Maximum security would be achieved if the graphics functions where only
+        ever called from kernel mode, but would incur the overhead of user mode
+        to kernel mode switching for all graphics output. Better performance
+        can be achieved if safety level 2 functions are executed in the user
+        mode component of the display driver, but this requires specific
+        hardware that is designed to separate 'safe' and 'unsafe' registers by
+        at least 8Kb (so they can be indivudally mapped into user+kernel or
+        just kernel space). Even higher performance can be achieved if all
+        functions which only use memory mapped register access are executed in
+        user space, which can be done with all modern PC graphics hardware.
+        However this does expose the possibility of an errant application
+        accidentally writing to the user space registers and causing the
+        graphics hardware to lock.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; Application code should not call this function
+          directly, but instead call <a href="GA_queryFunctions.html">GA_queryFunctions</a>.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; To allow for future compatibility, all function
+          blocks begin with a dwSize member. The caller is expected to fill in
+          the dwSize member with the size of the function block being retrieved
+          before calling <a href="QueryFunctions.html">QueryFunctions</a>. If
+          the driver exports more functions than the application knows about,
+          only a subset of the functions are copied to the application. If the
+          application expects more functions than the driver provides, the
+          non-existant functions are set to NULL pointers by <a href="QueryFunctions.html">QueryFunctions</a>,
+          and the remainder copies from the driver.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The OS loader code will only map the
+          IOMemMaps[2] and IOMemMaps[3] regions into user space, and will map
+          all memory mapped I/O regions into kernel space. This allows unsafe
+          registers (that would potentially cause the system to lock) to not be
+          mapped into user space and potentially compromising system stability.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; This mechanism also provides for a clean and
+          simple upgrade path for future drivers, while ensuring maximum
+          compatibility with existing specifications. New functions for a
+          particular group can simply be added to the end of the function group
+          to extend that group. Totally new function groups can be added by
+          defining new identifiers for that function group, and older drivers
+          will return a NULL if that funciton group is requested. Finally if a
+          function group requires a complete redesign to achieve maximum
+          peformance for next generation hardware, a new extended function
+          group can be defined (and drivers can continue to export the older
+          and slower function group for backwards compatibility).
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Safety levels other than 0 are not implemented
+          in SNAP 1.0
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="InitDriver.html">InitDriver</a>, <a href="QueryFunctions.html">QueryFunctions</a>,
+        <a href="UnloadDriver.html">UnloadDriver</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

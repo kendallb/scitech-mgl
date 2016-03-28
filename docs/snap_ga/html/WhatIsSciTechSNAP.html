@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>What is SciTech SNAP?</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Introduction" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('Introduction.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Introduction" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="What is SciTech SNAP Graphics Architecture?" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('WhatIsSciTechSNAPGraphicsArchitecture.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="What is SciTech SNAP Graphics Architecture?" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Introduction" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('Introduction.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Introduction" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        What is SciTech SNAP?
+      </h2>
+      <p class="MsoBodyText">
+        The SciTech System Neutral Access Protocol, or SNAP, is an operating
+        system portable, dynamically loadable, 32-bit device driver
+        architecture. SciTech SNAP defines the architecture for loading an
+        operating system neutral binary device driver for any type of hardware
+        device, be it a graphics controller, audio controller, SCSI controller
+        or network controller. SciTech SNAP drivers are source code portable
+        between different microprocessor platforms, and the binary drivers are
+        operating system portable within a particular microprocessor family.
+        Hence the Intel x86 drivers can work on any 386+ CPU with any 32-bit
+        operating system or environment supported on that CPU.
+      </p>
+      <p class="MsoBodyText">
+        The main SciTech SNAP library for a particular device type is always
+        contained in a single file that we call a ‘Binary Portable DLL’, or
+        .bpd file. In the case of the Graphics Architecture, the driver file is
+        named ‘graphics.bpd’ and always lives in the operating system specific
+        SciTech SNAP driver directory, or in the drivers directory of the
+        application using it. Internally the complete set of device support
+        files may be spread across multiple files inside subdirectories, or all
+        files may be optionally bound into a single, large binary file. The
+        internal architecture of SNAP is such that only the necessary code to
+        communicate with a specific device is actually loaded into memory at
+        runtime, regardless of whether everything is bound into a single large
+        binary file or maintained separately on disk. Loading only the
+        necessary portions at runtime keeps the runtime memory footprint for
+        the drivers exceptionally low. For instance even though the complete,
+        statically bound graphics driver file may be well in excess of 8Mb,
+        only a small portion of that (say around 250Kb) is actually loaded in
+        memory at runtime to support a particular graphics device.
+      </p>
+      <p class="MsoBodyText">
+        Due to the dynamic nature of the SciTech SNAP architecture, it is
+        possible to bind together support for only a few specific hardware
+        devices in a single binary library. For instance an industrial
+        developer may only require support for the three graphics chipsets they
+        install in their machines on a production line, so the total static
+        size of the SNAP binaries can be significantly smaller. This can help
+        save on disk and flash ROM space in highly embedded and industrial
+        applications. SciTech SNAP also allows certain features to be ‘bound
+        out’ of the resulting binary, further reducing disk space if those
+        features are not required for a particular environment.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

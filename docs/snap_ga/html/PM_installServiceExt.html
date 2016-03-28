@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PM_installServiceExt</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PM_installService" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PM_installService.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PM_installService" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PM_int86" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PM_int86.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PM_int86" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions_2.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PM_installServiceExt
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Installs a Windows NT/2000/XP service.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ulong PMAPI PM_installServiceExt(<br />
+        &#160;&#160;&#160; const char *szDriverName,<br />
+        &#160;&#160;&#160; const char *szServiceName,<br />
+        &#160;&#160;&#160; const char *szLoadGroup,<br />
+        &#160;&#160;&#160; ulong dwServiceType,<br />
+        &#160;&#160;&#160; ulong dwStartType)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                szDriverName
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Actual name of the driver to install in the system
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                szServiceName
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Name of the service to create
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                szLoadGroup
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Load group for the driver (NULL for normal drivers)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwServiceType
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Service type to create
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwStartType
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Service start type to create
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        ERROR_SUCCESS on success, error code on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function does all the work to install the system service into the
+        system (ie: a Windows NT style device driver). The driver is not
+        however activated; for that you must use the <a href="PM_startService.html">PM_startService</a> function.
+        This version also allows you to specify the service start type.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function is Windows specific! It is quite
+          useful so it is documented here.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="PM_installService.html">PM_installService</a>, <a href="PM_startService.html">PM_startService</a>,
+        <a href="PM_stopService.html">PM_stopService</a>, <a href="PM_removeService.html">PM_removeService</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

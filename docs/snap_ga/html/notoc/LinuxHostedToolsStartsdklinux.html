@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Linux hosted tools (start-sdk.linux)</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Linux hosted tools (start-sdk.linux)
+      </h3>
+      <p class="MsoBodyText">
+        The first thing you need to do is edit the bin/set-vars-linux.sh script
+        file to reference the location where you have installed the files, and
+        the locations where all your compilers are installed. See the comments
+        in set-vars-linux.sh for more information.
+      </p>
+      <p class="MsoBodyText">
+        Once you have the startup file configured, you then need to run the
+        following each time you start a command shell to enable the SciTech
+        makefile utilities (a good idea to put into your startup scripts such
+        as .bash_profile):
+      </p>
+      <p class="Preformatted">
+        . ~/scitech/bin/set-vars-linux.sh<br />
+        . ~/scitech/bin/gcc-linux.sh
+      </p>
+      <p class="MsoBodyText">
+        The second script file sets up the compiler configuration for your
+        default compiler. The line above sets up for GNU C/C++ for Linux
+        (eventually other compilers will be supported such as Borland Kylix).
+      </p>
+      <p class="MsoBodyText">
+        Note that in the above script code, you need to source the script files
+        to ensure the environment variables are exported to your regular shell.
+        Hence make sure the leading '.' is included!
+      </p>
+      <p class="MsoBodyText">
+        If you are developing on an older libc5 based system (as opposed to the
+        newer glibc as used by Red Hat 5.x and later), you will also need to
+        set the LIBC=1 environment variable. This will tell our script files
+        that you running on an older system and need to use the libc5 compiled
+        binaries, and to put your compiled libraries into the libc5
+        directories.
+      </p>
+      <p class="MsoBodyText">
+        Also in order to build the SNAP libraries, you should have the latest
+        Linux 2.x kernel sources installed. The PM library depends upon a
+        number of header files from the 2.x kernels (joystick.h and mtrr.h) in
+        order to build. You can build for older kernels if you wish, but you
+        will need to modify the PM library makefile to do this.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

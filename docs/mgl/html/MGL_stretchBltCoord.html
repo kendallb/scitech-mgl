@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_stretchBltCoord</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_stretchBlt" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_stretchBlt.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_stretchBlt" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_stretchBltFx" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_stretchBltFx.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_stretchBltFx" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_stretchBltCoord
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Stretches a block of image data from one device context to another.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_stretchBltCoord(<br />
+        &#160;&#160;&#160; MGLDC *dst,<br />
+        &#160;&#160;&#160; MGLDC *src,<br />
+        &#160;&#160;&#160; int left,<br />
+        &#160;&#160;&#160; int top,<br />
+        &#160;&#160;&#160; int right,<br />
+        &#160;&#160;&#160; int bottom,<br />
+        &#160;&#160;&#160; int dstLeft,<br />
+        &#160;&#160;&#160; int dstTop,<br />
+        &#160;&#160;&#160; int dstRight,<br />
+        &#160;&#160;&#160; int dstBottom,<br />
+        &#160;&#160;&#160; int op)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dst
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Destination device context
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                src
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Source device context
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of source image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of source image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                right
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of source image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of source image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of destination image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstRight
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of destination image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstBottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of destination image
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                op
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Write mode to use during Blt
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Copies a block of bitmap data form one device context to another,
+        stretching or shrinking the image as necessary to fit the destination
+        rectangle for the destination device context.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The source and destination device context may be the same, however the
+        source and destination rectangles may not overlap. This routine has
+        been highly optimized for absolute maximum performance, so it will
+        provide the fastest method of stretching bitmap data between device
+        contexts, and can also be used to stretch bitmap data from a memory
+        device context to a windowed device context.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function will correctly handle StretchBlt's across device contexts
+        with differing pixel depths, and will perform the necessary pixel
+        format translation to convert from the source device to the destination
+        device. Note that although the code to implement this is highly
+        optimized, this can be a time consuming operation so you should attempt
+        to pre-convert all bitmaps to the current display device pixel format
+        for maximum performance if possible.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When this function is called for 4 and 8 bit source bitmaps being copied
+        to either 4 or 8bpp destination device contexts, MGL first checks if
+        the color palettes for the source and destination bitmaps are the same.
+        If they are not, MGL translates the pixel values from the source bitmap
+        to the destination color palette, looking for the closest match color
+        if an exact match is not found. In order to obtain maximum performance
+        for blt’ing bitmaps in color index modes, you should ensure that the
+        color palette in the source device matches the color palette in the
+        destination device to avoid on the fly palette translation. If you know
+        in advance that the palette is identical for a series of blit
+        operations, you can turn off all identity palette checking in MGL with
+        the <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When this function is called for 4 and 8 bit source bitmaps being copied
+        to RGB destination device contexts, MGL will convert the pixels in the
+        source bitmap using the source bitmap palette to map them to the
+        destination pixel format. If however you know in advance that the
+        palette for all source bitmaps is identical for a series of blit
+        operations, you can use the <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> function
+        to disable source palette translation. In this case the MGL will
+        translate all color index bitmaps using the pre-defined color
+        translation palette stored in the destination device context. You would
+        then set the destination device context palette to the common palette
+        for all blit operations using <a href="MGL_setPalette.html">MGL_setPalette</a>.
+        If you are translating a lot of color index bitmaps, this will increase
+        performance by avoiding the need to convert the palette entries to the
+        destination pixel format for every blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The source and destination rectangles are clipped according to the
+        current clipping rectangles for the source and destination device
+        contexts respectively, however the zoom factor is determined using the
+        unclipped source and destination rectangles.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_bitBlt.html">MGL_bitBlt</a>, <a href="MGL_bitBltCoord.html">MGL_bitBltCoord</a>,
+        <a href="MGL_srcTransBlt.html">MGL_srcTransBlt</a>, <a href="MGL_srcTransBltCoord.html">MGL_srcTransBltCoord</a>,
+        <a href="MGL_dstTransBlt.html">MGL_dstTransBlt</a>, <a href="MGL_dstTransBltCoord.html">MGL_dstTransBltCoord</a>,
+        <a href="MGL_bitBltPatt.html">MGL_bitBltPatt</a>, <a href="MGL_bitBltPattCoord.html">MGL_bitBltPattCoord</a>,
+        <a href="MGL_bitBltFx.html">MGL_bitBltFx</a>, <a href="MGL_bitBltFxCoord.html">MGL_bitBltFxCoord</a>,
+        <a href="MGL_stretchBlt.html">MGL_stretchBlt</a>, <a href="MGL_stretchBltCoord.html">MGL_stretchBltCoord</a>,
+        <a href="MGL_stretchBltFx.html">MGL_stretchBltFx</a>, <a href="MGL_stretchBltFxCoord.html">MGL_stretchBltFxCoord</a>,
+        <a href="MGL_copyPage.html">MGL_copyPage</a>, <a href="MGL_copyPageCoord.html">MGL_copyPageCoord</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

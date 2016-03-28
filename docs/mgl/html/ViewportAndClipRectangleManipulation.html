@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Viewport and clip rectangle manipulation</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Color and palette manipulation" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ColorAndPaletteManipulation.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Color and palette manipulation" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Double buffering support" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DoubleBufferingSupport.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Double buffering support" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL Library Overview" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGLLibraryOverview.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL Library Overview" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        Viewport and clip rectangle manipulation
+      </h2>
+      <p class="MsoBodyText">
+        The following functions provide the ability to change the current
+        viewport that is used to display all subsequent drawing operations, and
+        to change the current clipping rectangle or clipping region within the
+        current viewport. The clip rectangle or clip region is always set in
+        local viewport coordinates, and can never be larger than the current
+        viewport (it will be clipped to the viewport boundary). Complex clip
+        regions are fully supported and allow the SciTech MGL to clip output to
+        a non-rectangle area of the screen. This is primarily used for GUI and
+        window manager libraries.
+      </p>
+      <p class="MsoBodyText">
+        Also provided are functions for converting coordinates between global
+        screen coordinates and local viewport coordinates, and for obtaining
+        the dimensions of the current viewport.
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getClipRect.html">MGL_getClipRect</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getClipRectDC.html">MGL_getClipRectDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getClipRegion.html">MGL_getClipRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getClipRegionDC.html">MGL_getClipRegionDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getViewport.html">MGL_getViewport</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getViewportDC.html">MGL_getViewportDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getViewportOrg.html">MGL_getViewportOrg</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getViewportOrgDC.html">MGL_getViewportOrgDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_globalToLocal.html">MGL_globalToLocal</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_globalToLocalDC.html">MGL_globalToLocalDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_localToGlobal.html">MGL_localToGlobal</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_localToGlobalDC.html">MGL_localToGlobalDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxx.html">MGL_maxx</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxxDC.html">MGL_maxxDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxy.html">MGL_maxy</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxyDC.html">MGL_maxyDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setClipRect.html">MGL_setClipRect</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setClipRectDC.html">MGL_setClipRectDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setClipRegion.html">MGL_setClipRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setClipRegionDC.html">MGL_setClipRegionDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setRelViewport.html">MGL_setRelViewport</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setRelViewportDC.html">MGL_setRelViewportDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setViewport.html">MGL_setViewport</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setViewportDC.html">MGL_setViewportDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setViewportOrg.html">MGL_setViewportOrg</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setViewportOrgDC.html">MGL_setViewportOrgDC</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

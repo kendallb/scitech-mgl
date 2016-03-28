@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_FixMul</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_FixMul
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Multiplies two fixed point number in 16.16 format
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        fix32_t MGLAPI MGL_FixMul(<br />
+        &#160;&#160;&#160; fix32_t f,<br />
+        &#160;&#160;&#160; fix32_t g)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Result of the multiplication.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Multiplies two fixed point number in 16.16 format together and returns
+        the result. We cannot simply multiply the two 32 bit numbers together
+        since we need to shift the 64 bit result right 16 bits, but the result
+        of a FXFixed multiply is only ever 32 bits! Thus we must resort to
+        computing it from first principles (this is slow and should ideally be
+        re-coded in assembler for the target machine).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        We can visualise the fixed point number as having two parts, a whole part
+        and a fractional part:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        FXFixed = (whole + frac * 2^-16)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Thus if we multiply two of these numbers together we get a 64 bit result:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        (f_whole + f_frac * 2^-16) * (g_whole + g_frac * 2^-16) =<br />
+        &#160;&#160;&#160; (f_whole * g_whole) +<br />
+        &#160;&#160;&#160; (f_whole * g_frac)*2^-16 +<br />
+        &#160;&#160;&#160; (g_whole * f_frac)*2^-16 +<br />
+        &#160;&#160;&#160; (f_frac * g_frac)*2^-32
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        To convert this back to a 64 bit fixed point number to 32 bit format we
+        simply shift it right by 16 bits (we can round it by adding 2^-17
+        before doing this shift). The formula with the shift integrated is what
+        is used below. Natrually you can alleviate most of this if the target
+        machine can perform a native 32 by 32 bit multiplication (since it will
+        produce a 64 bit result).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_FixDiv.html">MGL_FixDiv</a>, <a href="MGL_FixMulDiv.html">MGL_FixMulDiv</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

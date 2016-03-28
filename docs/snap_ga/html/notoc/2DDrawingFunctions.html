@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>2D Drawing Functions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <h3>
+        2D Drawing Functions
+      </h3>
+      <p class="MsoBodyText">
+        These functions are members of the <a href="GA_2DRenderFuncs.html">GA_2DRenderFuncs</a> group.
+        These functions provide support for drawing all the different 2D
+        primitives that the device driver supports.
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBlt.html">BitBlt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltBM.html">BitBltBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltColorPatt.html">BitBltColorPatt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltColorPattBM.html">BitBltColorPattBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltColorPattLin.html">BitBltColorPattLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltColorPattSys.html">BitBltColorPattSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltFx.html">BitBltFx</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltFxBM.html">BitBltFxBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltFxLin.html">BitBltFxLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltFxSys.html">BitBltFxSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltFxTest.html">BitBltFxTest</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltLin.html">BitBltLin</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPatt.html">BitBltPatt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPattBM.html">BitBltPattBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPattLin.html">BitBltPattLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPattSys.html">BitBltPattSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPlaneMasked.html">BitBltPlaneMasked</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPlaneMaskedBM.html">BitBltPlaneMaskedBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPlaneMaskedLin.html">BitBltPlaneMaskedLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltPlaneMaskedSys.html">BitBltPlaneMaskedSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="BitBltSys.html">BitBltSys</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipEllipse.html">ClipEllipse</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageLSBBM.html">ClipMonoImageLSBBM</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageLSBLin.html">ClipMonoImageLSBLin</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageLSBSys.html">ClipMonoImageLSBSys</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageMSBBM.html">ClipMonoImageMSBBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageMSBLin.html">ClipMonoImageMSBLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="ClipMonoImageMSBSys.html">ClipMonoImageMSBSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawBresenhamLine.html">DrawBresenhamLine</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawBresenhamStippleLine">GA_2DRenderFuncs_DrawBresenhamStippleLine</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawBresenhamStyleLine.html">DrawBresenhamStyleLine</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawClippedBresenhamLine">GA_2DRenderFuncs_DrawClippedBresenhamLine</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawClippedBresenhamStippleLine">GA_2DRenderFuncs_DrawClippedBresenhamStippleLine</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawClippedBresenhamStyleLine">GA_2DRenderFuncs_DrawClippedBresenhamStyleLine</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawClippedLineInt.html">DrawClippedLineInt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawClippedStippleLineInt">GA_2DRenderFuncs_DrawClippedStippleLineInt</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawClippedStyleLineInt.html">DrawClippedStyleLineInt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawColorPattEllipseList">GA_2DRenderFuncs_DrawColorPattEllipseList</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="#GA_2DRenderFuncs_DrawColorPattFatEllipseList">GA_2DRenderFuncs_DrawColorPattFatEllipseList</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawColorPattRect.html">DrawColorPattRect</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawColorPattScanList.html">DrawColorPattScanList</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawColorPattTrap.html">DrawColorPattTrap</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawEllipse.html">DrawEllipse</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawEllipseList.html">DrawEllipseList</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawFatEllipseList.html">DrawFatEllipseList</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawLineInt.html">DrawLineInt</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawPattEllipseList.html">DrawPattEllipseList</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawPattFatEllipseList.html">DrawPattFatEllipseList</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawPattRect.html">DrawPattRect</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawPattScanList.html">DrawPattScanList</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawPattTrap.html">DrawPattTrap</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawRect.html">DrawRect</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawRectExt.html">DrawRectExt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawRectLin.html">DrawRectLin</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawScanList.html">DrawScanList</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawStippleLineInt.html">DrawStippleLineInt</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawStyleLineInt.html">DrawStyleLineInt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DrawTrap.html">DrawTrap</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DstTransBlt.html">DstTransBlt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DstTransBltBM.html">DstTransBltBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DstTransBltLin.html">DstTransBltLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="DstTransBltSys.html">DstTransBltSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="GetBitmapBM.html">GetBitmapBM</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="GetBitmapSys.html">GetBitmapSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="GetPixel.html">GetPixel</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageLSBBM.html">PutMonoImageLSBBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageLSBLin.html">PutMonoImageLSBLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageLSBSys.html">PutMonoImageLSBSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageMSBBM.html">PutMonoImageMSBBM</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageMSBLin.html">PutMonoImageMSBLin</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutMonoImageMSBSys.html">PutMonoImageMSBSys</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="PutPixel.html">PutPixel</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="SrcTransBlt.html">SrcTransBlt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="SrcTransBltBM.html">SrcTransBltBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="SrcTransBltLin.html">SrcTransBltLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="SrcTransBltSys.html">SrcTransBltSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="StretchBlt.html">StretchBlt</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="StretchBltBM.html">StretchBltBM</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="StretchBltLin.html">StretchBltLin</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="StretchBltSys.html">StretchBltSys</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              <a href="UpdateScreen.html">UpdateScreen</a>
+            </p>
+          </td>
+          <td style="width:189.0pt;padding:'0in 5.4pt 0in 5.4pt';" width="315" valign="top">
+            <p class="TableText">
+              &nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Virtual Buffer Scrolling</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Virtual Buffer Scrolling
+      </h3>
+      <p class="MsoBodyText">
+        Virtual scrolling functionality is selected by passing values other than
+        -1 for the VirtualX and VirtualY parameters to the <a href="SetVideoMode.html">SetVideoMode</a> function.
+        By passing values other than -1 for the X and Y dimentions of the
+        display mode, you will get a virtual mode such that the width of height
+        of the mode is larger than the physically displayed image. Then you can
+        use the <a href="SetDisplayStart.html">SetDisplayStart</a> function to
+        change the display start address and scroll around within the display
+        memory. The value passed to the <a href="SetDisplayStart.html">SetDisplayStart</a> function
+        is a byte address in video memory for 8-bit and higher modes, so to
+        move the display start address to the 10th pixel and 50th line you
+        would use the following code:
+      </p>
+      <p class="Preformatted">
+        &#160;&#160;&#160; if (driver.SetDisplayStart(<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; modeInfo.BytesPerScanLine *
+        50 + <br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; 10 * bytesPerPixel);
+      </p>
+      <p class="MsoBodyText">
+        Don’t forget that if you set a virtual display mode, that you must set
+        the drawBuf.Stride value to the bytesPerLine value that was returned by
+        the <a href="SetVideoMode.html">SetVideoMode</a> function and not the
+        value stored in the <a href="GA_modeInfo.html">GA_modeInfo</a> structure
+        for the mode! Some hardware devices have restrictions on the pitch that
+        can be programmed for display modes, and this is taken into account
+        when the driver initializes a virtual scrolling mode.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

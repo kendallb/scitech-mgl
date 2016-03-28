@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Setting up your client mapping</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Setting up your client mapping
+      </h3>
+      <p class="MsoBodyText">
+        Once you are able to connect, you need to set up your client mapping
+        since by default it will be empty. The client space is what allows you
+        to map in only the portions of the software repository that you care
+        about, and where to put them on your local system. The client
+        information is then stored remotely on our server so it knows what
+        files you have on your system and where they live (so if you delete
+        stuff manually you will need to do a forced sync!).
+      </p>
+      <p class="MsoBodyText">
+        To set up your client mapping, type:
+      </p>
+      <p class="Preformatted">
+        p4 client
+      </p>
+      <p class="MsoBodyText">
+        which will bring you into your editor of choice. It will include comments
+        at the top about what parts of the file are used for what. There are
+        two parts that you need to modify; the 'root' definition and the 'view'
+        definition. The 'root' field is the root directory where all files get
+        checked out onto your system, and this should be the root of the
+        scitech directory (ie: /home/KendallB/scitech is where I put the
+        sources on Unix systems, or c:\scitech for DOS, Windows and OS/2
+        systems). For example:
+      </p>
+      <p class="Preformatted">
+        Root:&#160;&#160;&#160;&#160; /home/KendallB/scitech
+      </p>
+      <p class="MsoBodyText">
+        The 'options' field defines what options are in effect for that client.
+        The most important one you will want to change is the 'nocompress'
+        option to 'compress'. By enabling compression, you will drastically
+        reduce the time required for syncs over an internet connection! The
+        second most useful option is to change the ‘normdir’ option to ‘rmdir’.
+        This will have Perforce remove empty directories from the file system
+        when all the files managed by Perforce are deleted and the directory is
+        empty.
+      </p>
+      <p class="MsoBodyText">
+        The 'view' field defines what parts of the perforce repository you want
+        mapped to your local drive. The simplest mapping will pull down all the
+        source files you would need (and the one you should probably use) would
+        be:
+      </p>
+      <p class="Preformatted">
+        View:<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; //depot/gpl/...
+        //YOURNAME_YOURMACHINE_YOUROS/...
+      </p>
+      <p class="MsoBodyText">
+        where you would replace the YOURNAME_YOURMACHINE_YOUROS above with the
+        name of your client. This line indicates that all files and directories
+        get mapped to the root of the client (or /home/KendallB/scitech if you
+        uses the above root field). Now once you have the client view defined,
+        exit your editor and it will send the changes to the perforce server.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

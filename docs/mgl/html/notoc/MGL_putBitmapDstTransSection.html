@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_putBitmapDstTransSection</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_putBitmapDstTransSection
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draw a section of a transparent lightweight bitmap at the specified
+        location with destination transparency.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_putBitmapDstTransSection(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; int left,<br />
+        &#160;&#160;&#160; int top,<br />
+        &#160;&#160;&#160; int right,<br />
+        &#160;&#160;&#160; int bottom,<br />
+        &#160;&#160;&#160; int dstLeft,<br />
+        &#160;&#160;&#160; int dstTop,<br />
+        &#160;&#160;&#160; const bitmap_t *bitmap,<br />
+        &#160;&#160;&#160; color_t transparent,<br />
+        &#160;&#160;&#160; int op)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to display bitmap on
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                right
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bottom
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination of bitmap section
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate for destination of bitmap section
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitmap
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bitmap to display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                transparent
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Transparent color for the bitmap
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                op
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Write mode to use when drawing bitmap
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws a section of a transparent lightweight bitmap at the specified
+        location with destination transparency. When transferring the data with
+        destination transparency, pixels in the destination image that are
+        equal to the specified transparent color will be updated, and those
+        pixels that are not the same will be skipped. This is effectively the
+        operation performed for 'blueScreen'ing or color keying and can also be
+        used for drawing transparent sprites. Note however that destination
+        transparency is very slow in software compared to source transparency!
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If you are doing pixel format conversion at the
+          same time (ie: color depth for source bitmap is different to the
+          destination bitmap), then the transparent color value must be set to
+          the traslated destination pixel format. Ie: if you are blitting an
+          8bpp bitmap to a 32bpp device context, the transparent color must be
+          a 32bpp value.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; This routine also only works with pixel depths
+          that are at least 4 bits deep.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_loadBitmap.html">MGL_loadBitmap</a>, <a href="MGL_putBitmap.html">MGL_putBitmap</a>,
+        <a href="MGL_putBitmapSection.html">MGL_putBitmapSection</a>, <a href="MGL_putBitmapSrcTrans.html">MGL_putBitmapSrcTrans</a>,
+        <a href="MGL_putBitmapSrcTransSection.html">MGL_putBitmapSrcTransSection</a>,
+        <a href="MGL_putBitmapDstTrans.html">MGL_putBitmapDstTrans</a>, <a href="MGL_putBitmapDstTransSection.html">MGL_putBitmapDstTransSection</a>,
+        <a href="MGL_putBitmapMask.html">MGL_putBitmapMask</a>, <a href="MGL_putBitmapPatt.html">MGL_putBitmapPatt</a>,
+        <a href="MGL_putBitmapPattSection.html">MGL_putBitmapPattSection</a>, <a href="MGL_putBitmapFx.html">MGL_putBitmapFx</a>,
+        <a href="MGL_putBitmapFxSection.html">MGL_putBitmapFxSection</a>, <a href="MGL_stretchBitmap.html">MGL_stretchBitmap</a>,
+        <a href="MGL_stretchBitmapSection.html">MGL_stretchBitmapSection</a>, <a href="MGL_stretchBitmapFx.html">MGL_stretchBitmapFx</a>,
+        <a href="MGL_stretchBitmapFxSection.html">MGL_stretchBitmapFxSection</a>,
+        <a href="MGL_putIcon.html">MGL_putIcon</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

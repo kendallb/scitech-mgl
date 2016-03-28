@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_setModeSwitchFunc</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_setModeSwitchFunc
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the mode switch callback function
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI GM_setModeSwitchFunc(<br />
+        &#160;&#160;&#160; GM_modeSwitchFunc func)<br />
+        typedef void (*GM_modeSwitchFunc)(<br />
+        &#160;&#160;&#160; GM_modeInfo *mode,<br />
+        &#160;&#160;&#160; ibool windowed)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:74.5pt;padding:'0in .5pt 0in .5pt';" width="124" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                func
+              </p>
+            </td>
+            <td style="width:325.0pt;padding:'0in .5pt 0in .5pt';" width="542" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode switch callback function to register
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function sets the mode switch callback function for your Game
+        Framework game and is called by the Game Framework when automatically
+        switching on the fly between windowed and fullscreen modes. By default
+        this handler is set to NULL, and unless you call this function support
+        for switching on the fly between windowed and fullscreen modes is
+        disabled. By default the Game Framework contains code to provide two
+        methods of switching to fullscreen modes when running in windowed
+        modes:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:59.5pt;padding:'0in .5pt 0in .5pt';" width="99" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                1
+              </p>
+            </td>
+            <td style="width:340.0pt;padding:'0in .5pt 0in .5pt';" width="567" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                When the user hits the Alt-Enter key combination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:59.5pt;padding:'0in .5pt 0in .5pt';" width="99" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                2
+              </p>
+            </td>
+            <td style="width:340.0pt;padding:'0in .5pt 0in .5pt';" width="567" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                When the user clicks the Maximise button on the games title bar
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Likewise when the game is running in a fullscreen mode and the user hits
+        the Alt-Enter key, the video mode will automatically be switched to
+        windowed mode. In order to support auto-switching between fullscreen
+        and windowed modes, all the MGL device contexts will be destroyed and
+        re-created during the switch, so you will have to include other code to
+        re-initialize the MGL to the state that the game is currently in (ie:
+        setting the color palette etc.) in your mode switch callback. You will
+        also need to code your game in such as way that it can handle dynamic
+        resolution changes on the fly.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GM_init.html">GM_init</a>, <a href="GM_setMode.html">GM_setMode</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

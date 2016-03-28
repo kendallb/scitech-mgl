@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GetGammaCorrectDataExt</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        GetGammaCorrectDataExt
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Returns the current hardware gamma correction table using 16-bit per
+        color channel
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_driverFuncs::GetGammaCorrectDataExt(<br />
+        &#160;&#160;&#160; GA_paletteExt *pal,<br />
+        &#160;&#160;&#160; N_int32 num,<br />
+        &#160;&#160;&#160; N_int32 index)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pal
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to return the gamma data
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                num
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of gamma entries to read
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                index
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Index of first entry to read
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function reads the hardware gamma correction tables for 15 bit and
+        above graphics modes. The gamma correction tables are used in these
+        graphics modes to adjust the response curves of each of the three color
+        guns for color matching purposes. The gamma correction tables are
+        assumed to be 256 entries deep with three independent channels for each
+        of red, green and blue. Each value in the gamma tables are 16-bits
+        wide, with a range of 0 to 65535. Note that this is different to the
+        regular <a href="GetGammaCorrectData.html">GetGammaCorrectData</a> function,
+        which takes 8-bit wide values. Internally the driver will convert the
+        16-bit palette values to 8-bits if this is what the underlying hardware
+        supports.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If this hardware does not support gamma
+          correction, this function will be a NULL pointer.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetPaletteDataExt.html">SetPaletteDataExt</a>, <a href="GetPaletteDataExt.html">GetPaletteDataExt</a>,
+        <a href="SetGammaCorrectDataExt.html">SetGammaCorrectDataExt</a>, <a href="GetGammaCorrectData.html">GetGammaCorrectData</a>,
+        <a href="SetPaletteData_2.html">SetPaletteData</a>, <a href="GetPaletteData_2.html">GetPaletteData</a>,
+        <a href="SetGammaCorrectData.html">SetGammaCorrectData</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

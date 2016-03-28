@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PMEnableWriteCombineFlags</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PMEnableWriteCombineFlags
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; PM_MTRR_UNCACHABLE&#160;&#160;&#160;&#160;&#160; =
+        0,<br />
+        &#160;&#160;&#160; PM_MTRR_WRCOMB&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        1,<br />
+        &#160;&#160;&#160; PM_MTRR_WRTHROUGH&#160;&#160;&#160;&#160;&#160;&#160; =
+        4,<br />
+        &#160;&#160;&#160; PM_MTRR_WRPROT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        5,<br />
+        &#160;&#160;&#160; PM_MTRR_WRBACK&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        6,<br />
+        &#160;&#160;&#160; PM_MTRR_MAX&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        6<br />
+        &#160;&#160;&#160; } PMEnableWriteCombineFlags
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags passed to <a href="PM_enableWriteCombine.html">PM_enableWriteCombine</a>
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_UNCACHABLE
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Make region uncacheable
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_WRCOMB
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Make region write combineable
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_WRTHROUGH
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Make region write through cached
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_WRPROT
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Make region write protected
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_WRBACK
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Make region write back cached
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_MTRR_MAX
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum value allowed
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

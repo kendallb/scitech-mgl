@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>EVT_eventModMaskType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="EVT_eventMaskType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('EVT_eventMaskType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="EVT_eventMaskType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="EVT_eventMouseMaskType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('EVT_eventMouseMaskType.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="EVT_eventMouseMaskType" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        EVT_eventModMaskType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; EVT_LEFTBUT&#160;&#160;&#160;&#160; = 0x00000001,<br />
+        &#160;&#160;&#160; EVT_RIGHTBUT&#160;&#160;&#160; = 0x00000002,<br />
+        &#160;&#160;&#160; EVT_MIDDLEBUT&#160;&#160; = 0x00000004,<br />
+        &#160;&#160;&#160; EVT_RIGHTSHIFT&#160; = 0x00000008,<br />
+        &#160;&#160;&#160; EVT_LEFTSHIFT&#160;&#160; = 0x00000010,<br />
+        &#160;&#160;&#160; EVT_RIGHTCTRL&#160;&#160; = 0x00000020,<br />
+        &#160;&#160;&#160; EVT_RIGHTALT&#160;&#160;&#160; = 0x00000040,<br />
+        &#160;&#160;&#160; EVT_LEFTCTRL&#160;&#160;&#160; = 0x00000080,<br />
+        &#160;&#160;&#160; EVT_LEFTALT&#160;&#160;&#160;&#160; = 0x00000100,<br />
+        &#160;&#160;&#160; EVT_SHIFTKEY&#160;&#160;&#160; = 0x00000018,<br />
+        &#160;&#160;&#160; EVT_CTRLSTATE&#160;&#160; = 0x000000A0,<br />
+        &#160;&#160;&#160; EVT_ALTSTATE&#160;&#160;&#160; = 0x00000140,<br />
+        &#160;&#160;&#160; EVT_SCROLLLOCK&#160; = 0x00000200,<br />
+        &#160;&#160;&#160; EVT_NUMLOCK&#160;&#160;&#160;&#160; = 0x00000400,<br />
+        &#160;&#160;&#160; EVT_CAPSLOCK&#160;&#160;&#160; = 0x00000800<br />
+        &#160;&#160;&#160; } EVT_eventModMaskType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        event.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the event modifier masks. These are the masks used to extract the
+        modifier information from the modifiers field of the <a href="event_t.html">event_t</a> structure.
+        Note that the values in the modifiers field represent the values of
+        these modifier keys at the time the event occurred, not the time you
+        decided to process the event.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_LEFTBUT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if left mouse button was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_RIGHTBUT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if right mouse button was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_MIDDLEBUT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if the middle button was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_RIGHTSHIFT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if right shift was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_LEFTSHIFT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if left shift was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_RIGHTCTRL
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if right ctrl key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_RIGHTALT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if right alt key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_LEFTCTRL
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if left ctrl key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_LEFTALT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if left alt key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_SHIFTKEY
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any shift key down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_CTRLSTATE
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if ctrl key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_ALTSTATE
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set if alt key was down
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_CAPSLOCK
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Caps lock is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_NUMLOCK
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Num lock is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_SCROLLLOCK
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Scroll lock is active
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

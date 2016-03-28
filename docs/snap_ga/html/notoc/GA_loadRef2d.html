@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_loadRef2d</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_loadRef2d
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Loads the 2D reference rasteriser device driver chain, including filter
+        drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool NAPI GA_loadRef2d(<br />
+        &#160;&#160;&#160; GA_devCtx _FAR_ *dc,<br />
+        &#160;&#160;&#160; N_int32 shared,<br />
+        &#160;&#160;&#160; GA_modeInfo _FAR_ *modeInfo,<br />
+        &#160;&#160;&#160; N_int32 transferStart,<br />
+        &#160;&#160;&#160; REF2D_driver _FAR_ *_FAR_ *drv)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device to load reference rasteriser for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                shared
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if the device driver should be loaded into shared memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                modeInfo
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode information for the hardware display mode in use
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                transferStart
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Start of the offscreen transfer buffer area in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                drv
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to the place to store loaded driver address
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True on success, false on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function loads a copy of the SNAP 2D Reference Rasteriser from disk
+        for use with the specified hardware display mode. If the user has
+        enabled rotation display support, or multi-controller display support,
+        this function will load and initialise all the necessary SNAP filter
+        drivers to enable those functions for the specified display mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The transferStart parameter is used to determine where the start of the
+        offscreen display memory transfer buffer is located. This transfer
+        buffer is used by the Portrait and Multi-Controller filter drivers for
+        storing temporary bitmap images in offscreen display memory for
+        enhanced performance. If the amount of memory from the start of the
+        transfer area to the end of available offscreen display memory is large
+        enough to hold the transfer buffer (no more than an entire display
+        screen is ever required), then the filter drivers will use that memory
+        as necessary. If the amount of available memory is less than required,
+        the filter drivers will use system memory buffers instead. To disable
+        the use of the transfer buffer, simply pass in a value that is equal to
+        the amount of video memory on the graphics adapter in bytes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GA_unloadRef2d.html">GA_unloadRef2d</a>, <a href="GA_unloadDriver.html">GA_unloadDriver</a>,
+        <a href="GA_getCurrentRef2d.html">GA_getCurrentRef2d</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

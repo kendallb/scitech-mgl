@@ -1,0 +1,1 @@
+/* autoconf type defines can come here */

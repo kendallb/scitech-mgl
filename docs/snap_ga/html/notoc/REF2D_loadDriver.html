@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>REF2D_loadDriver</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        REF2D_loadDriver
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Loads the 2D reference rasteriser device driver from disk.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool NAPI REF2D_loadDriver(<br />
+        &#160;&#160;&#160; GA_devCtx _FAR_ *hwCtx,<br />
+        &#160;&#160;&#160; N_int32 bitsPerPixel,<br />
+        &#160;&#160;&#160; N_int32 shared,<br />
+        &#160;&#160;&#160; REF2D_driver _FAR_ *_FAR_ *drv,<br />
+        &#160;&#160;&#160; PE_MODULE _FAR_ *_FAR_ *hModRef,<br />
+        &#160;&#160;&#160; ulong _FAR_ *size)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/ref2d.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                hwCtx
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware context to load driver for (if any)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitsPerPixel
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pixel depth for driver to load (1,4,8,16,24 or 32)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                shared
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True to load into shared memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                drv
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to the place to store loaded driver address
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                hModRef
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to the place to store the load driver module handle
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                size
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to the place to store the size of the driver
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True on success, false on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function loads a copy of the SNAP 2D Reference Rasteriser for the
+        specific color depth from disk. This function will always load the SNAP
+        reference rasteriser driver from the public MGL directories, and should
+        not be used to load the reference rasteriser driver for use with a
+        hardware device context. Rather you should use the <a href="GA_loadRef2d.html">GA_loadRef2d</a> function
+        which automatically handles support for loading and initialising the
+        Portait Display and Multi-Controller SNAP filter drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        However if you wish to load and use the SNAP reference rasteriser for
+        drawing to system memory bitmaps, you can use this function instead.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GA_loadRef2d.html">GA_loadRef2d</a>, <a href="REF2D_unloadDriver.html">REF2D_unloadDriver</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_glContextFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_glContextFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MGL_GL_VISUAL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x8000,<br />
+        &#160;&#160;&#160; MGL_GL_FORCEMEM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x4000,<br />
+        &#160;&#160;&#160; MGL_GL_RGB&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0000,<br />
+        &#160;&#160;&#160; MGL_GL_INDEX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0001,<br />
+        &#160;&#160;&#160; MGL_GL_SINGLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0000,<br />
+        &#160;&#160;&#160; MGL_GL_DOUBLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0002,<br />
+        &#160;&#160;&#160; MGL_GL_ACCUM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0004,<br />
+        &#160;&#160;&#160; MGL_GL_ALPHA&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0008,<br />
+        &#160;&#160;&#160; MGL_GL_DEPTH&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0010,<br />
+        &#160;&#160;&#160; MGL_GL_STENCIL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0020,<br />
+        &#160;&#160;&#160; MGL_GL_STEREO&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0040<br />
+        &#160;&#160;&#160; } MGL_glContextFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_glCreateContext.html">MGL_glCreateContext</a> flags to
+        initialize the pixel format used by the OpenGL rendering context. If
+        you pass in MGL_GL_VISUAL, the visual used will be the one currently
+        selected by the previous call to <a href="MGL_glSetVisual.html">MGL_glSetVisual</a>,
+        and provides the application programmer with complete control over the
+        pixel formats used.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        You can pass in a combination of any of the other flags (ie: MGL_GL_RGB |
+        MGL_GL_DOUBLE | MGL_GL_DEPTH) to let the MGL know what you want and to
+        have it automatically select an appropriate visual for you. This
+        provides a quick and simple way to get application code up and running.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_VISUAL
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Use curently assigned visual from call to <a href="MGL_glSetVisual.html">MGL_glSetVisual</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_FORCEMEM
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Force system memory back buffer for all rendering
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_RGB
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Select RGB rendering mode (/default/)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_INDEX
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Select color index display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_SINGLE
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Select single buffered display mode (/default/)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_DOUBLE
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Select double buffered display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_ACCUM
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable accumulation buffer (16 bits)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_ALPHA
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable alpha buffer (8 bit)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_DEPTH
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable depth buffer (16 bits)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_STENCIL
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable stencil buffer (8 bits)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_GL_STEREO
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable stereo mode
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

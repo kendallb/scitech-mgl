@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_loadPNG</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_loadPNG
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Load a PNG bitmap file from disk.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        bitmap_t * MGLAPI MGL_loadPNG(<br />
+        &#160;&#160;&#160; const char *PNGName,<br />
+        &#160;&#160;&#160; ibool loadPalette)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PNGName
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Name of PNG file to load
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                loadPalette
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if you wish to load the images palette Only valid on PNG
+                files with a bit depth of 8 or below
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the loaded PNG file, NULL on error.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to load the bitmap as a different color depth or pixel format
+        use the <a href="MGL_loadPNGIntoDC.html">MGL_loadPNGIntoDC</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When MGL is searching for PNG files it will first attempt to find the
+        files just by using the filename itself. Hence if you wish to look for
+        a specific PNG file, you should pass the full pathname to the file that
+        you are interested in. If the filename is a simple relative filename
+        (i.e. “MYBMP.PNG”), MGL will then search in the BITMAPS directory
+        relative to the path specified in mglpath variable that was passed to <a href="MGL_init.html">MGL_init</a>.
+        As a final resort MGL will also look for the files in the BITMAPS
+        directory relative to the MGL_ROOT environment variable.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the PNG file was not found, or an error occurred while reading the PNG
+        file, this function will return NULL. You can check the <a href="MGL_result.html">MGL_result</a> error
+        code to determine the cause.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_unloadBitmap.html">MGL_unloadBitmap</a>, <a href="MGL_availablePNG.html">MGL_availablePNG</a>,
+        <a href="MGL_getPNGSize.html">MGL_getPNGSize</a>, <a href="MGL_loadPNGIntoDC.html">MGL_loadPNGIntoDC</a>,
+        <a href="MGL_savePNGFromDC.html">MGL_savePNGFromDC</a>, <a href="MGL_putBitmap.html">MGL_putBitmap</a>,
+        <a href="MGL_loadPNGExt.html">MGL_loadPNGExt</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

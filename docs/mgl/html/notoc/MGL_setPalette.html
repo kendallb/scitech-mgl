@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_setPalette</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_setPalette
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the palette values for a device context.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_setPalette(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; palette_t *pal,<br />
+        &#160;&#160;&#160; int numColors,<br />
+        &#160;&#160;&#160; int startIndex)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to set palette values for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pal
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to array of palette values to set
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numColors
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of color values to set
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                startIndex
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Starting index of first color value to set
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function sets part or all of the color palette for the device
+        context. You can specify only a subset of the palette values to be
+        modified with the startIndex and numColors arguments. Thus:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        MGL_setPalette(dc,pal,10,50);
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        will program the 10 color indices from 50-60 with the values stored in
+        the palette buffer 'pal'.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; This routine does not actually change the value
+          of the hardware palette.&#160; If you wish to change the hardware
+          palette to reflect the new values, you will need to call the <a href="MGL_realizePalette.html">MGL_realizePalette</a> function
+          to update the hardware palette.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; You must ensure that you do not attempt to
+          program invalid color indices! Use <a href="MGL_maxColor.html">MGL_maxColor</a>()
+          to find the largest color index in color index modes.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function is also valid for RGB device
+          contexts, and will simply set the color translation tables for these
+          devices (used for drawing color index bitmaps and translating color
+          index color values to RGB values).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_getPalette.html">MGL_getPalette</a>, <a href="MGL_setPaletteEntry.html">MGL_setPaletteEntry</a>,
+        <a href="MGL_realizePalette.html">MGL_realizePalette</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

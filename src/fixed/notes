@@ -1,0 +1,25 @@
+
+Notes about the fast 80387 assembler routines
+---------------------------------------------
+
+Currently tested and works on:
+
+    Borland C++ 3.1/4.0 16 and 32 bit modes
+    Watcom C++ 10.0 16 and 32 bit modes
+    Symantec C++ 6.1 16 and 32 bit modes
+
+Does not work for (check floating point parameter passing and return
+techniques):
+
+    Visual C++ 16 and 32 bit modes
+    Metaware C++ (not tested because of linking problems)
+
+When using Borland C++ 4.0 with the 32rtm DPMI server, 32rtm provides a 387
+co-processor emulation library and hence the direct 80387 assembler routines
+work correctly on a machine without an FPU (in fact they are orders of
+magnitude faster than the standard math library routines!!).
+
+Also, if the program is 32 bit protected mode running under a DPMI server
+that provides a floating point emulator (such as an OS/2 DOS box) then
+the direct floating point code will also work correctly.
+

@@ -1,0 +1,154 @@
+#***************************************************************************
+#
+#                    SciTech SNAP Graphics Architecture
+#
+#  ========================================================================
+#
+#   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+#
+#   This file may be distributed and/or modified under the terms of the
+#   GNU General Public License version 2.0 as published by the Free
+#   Software Foundation and appearing in the file LICENSE.GPL included
+#   in the packaging of this file.
+#
+#   Licensees holding a valid Commercial License for this product from
+#   SciTech Software, Inc. may use this file in accordance with the
+#   Commercial License Agreement provided with the Software.
+#
+#   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+#   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+#   PURPOSE.
+#
+#   See http://www.scitechsoft.com/license/ for information about
+#   the licensing options available and how to purchase a Commercial
+#   License Agreement.
+#
+#   Contact license@scitechsoft.com if any conditions of this licensing
+#   are not clear to you, or you have questions about licensing options.
+#
+#  ========================================================================
+#
+# Language:    GAS
+# Environment: PowerPC in SYSV ABI environment.
+#
+# Description: Module to implement the import stubs for all the SNAP
+#              Graphics API functions for PowerPC binary compatible drivers.
+#
+#***************************************************************************
+
+.include "ppcmacros.i"           # Memory model macros
+
+BEGIN_IMPORTS_DEF   __GA_exports
+SKIP_IMP    GA_status,0                     # Implemented in C code
+SKIP_PTR    GA_errorMsg,1                   # Implemented in C code
+SKIP_IMP    GA_getDaysLeft,1                # Implemented in C code
+SKIP_IMP    GA_registerLicense,2            # Implemented in C code
+SKIP_IMP    GA_enumerateDevices,1           # Implemented in C code
+SKIP_IMP    GA_loadDriver,2                 # Implemented in C code
+DECLARE_IMP GA_setActiveDevice,1
+SKIP_IMP    GA_reserved1,0                  # OBSOLETE FUNCTION!
+DECLARE_IMP GA_unloadDriver,1
+DECLARE_IMP REF2D_loadDriver,6
+DECLARE_IMP REF2D_unloadDriver,2
+DECLARE_IMP GA_loadRef2d,5
+DECLARE_IMP GA_unloadRef2d,1
+DECLARE_IMP GA_softStereoInit,1
+DECLARE_IMP GA_softStereoOn,0
+DECLARE_IMP GA_softStereoScheduleFlip,2
+DECLARE_IMP GA_softStereoGetFlipStatus,0
+DECLARE_IMP GA_softStereoWaitTillFlipped,0
+DECLARE_IMP GA_softStereoOff,0
+DECLARE_IMP GA_softStereoExit,0
+DECLARE_IMP GA_saveModeProfile,2
+DECLARE_IMP GA_saveOptions,2
+DECLARE_IMP GA_saveCRTCTimingsV1,1          # OBSOLETE FUNCTION!
+DECLARE_IMP GA_restoreCRTCTimingsV1,1       # OBSOLETE FUNCTION!
+DECLARE_IMP DDC_init,1
+DECLARE_IMP DDC_readEDID,5
+DECLARE_IMP EDID_parse,3
+DECLARE_IMP MCS_begin,1
+DECLARE_IMP MCS_getCapabilitiesString,2
+DECLARE_IMP MCS_isControlSupported,1
+DECLARE_IMP MCS_enableControl,2
+DECLARE_IMP MCS_getControlMax,2
+DECLARE_IMP MCS_getControlValue,2
+DECLARE_IMP MCS_getControlValues,3
+DECLARE_IMP MCS_setControlValue,2
+DECLARE_IMP MCS_setControlValues,3
+DECLARE_IMP MCS_resetControl,1
+DECLARE_IMP MCS_saveCurrentSettings,0
+DECLARE_IMP MCS_getTimingReport,3
+DECLARE_IMP MCS_getSelfTestReport,3
+DECLARE_IMP MCS_end,0
+SKIP_IMP    GA_loadInGUI,1                  # Implemented in C code
+DECLARE_IMP DDC_writeEDID,6
+DECLARE_IMP GA_useDoubleScan,1
+DECLARE_IMP GA_getMaxRefreshRateV1,4        # OBSOLETE FUNCTION!
+DECLARE_IMP GA_computeCRTCTimingsV1,6       # OBSOLETE FUNCTION!
+DECLARE_IMP GA_addMode,5
+DECLARE_IMP GA_addRefresh,5
+DECLARE_IMP GA_delMode,5
+DECLARE_IMP N_getLogName,0
+SKIP_IMP2   N_log
+DECLARE_IMP MDBX_getErrCode,0
+DECLARE_IMP MDBX_getErrorMsg,0
+DECLARE_IMP MDBX_open,1
+DECLARE_IMP MDBX_close,0
+DECLARE_IMP MDBX_first,1
+DECLARE_IMP MDBX_last,1
+DECLARE_IMP MDBX_next,1
+DECLARE_IMP MDBX_prev,1
+DECLARE_IMP MDBX_insert,1
+DECLARE_IMP MDBX_update,1
+DECLARE_IMP MDBX_flush,0
+DECLARE_IMP MDBX_importINF,2
+SKIP_IMP    GA_getGlobalOptions,2           # Implemented in C code
+SKIP_IMP    GA_setGlobalOptions,1           # Implemented in C code
+SKIP_IMP    GA_saveGlobalOptions,1          # Implemented in C code
+DECLARE_IMP GA_getInternalName,1
+DECLARE_IMP GA_getSNAPConfigPath,0
+DECLARE_IMP GA_getFakePCIID,0
+SKIP_IMP    GA_loadLibrary,3                # Implemented in C code
+SKIP_IMP    GA_isOEMVersion,1               # Implemented in C code
+DECLARE_IMP GA_isLiteVersion,1
+DECLARE_IMP GA_getDisplaySerialNo,1
+DECLARE_IMP GA_getDisplayUserName,1
+SKIP_IMP    GA_reserved6,0                  # OBSOLETE FUNCTION!
+SKIP_IMP    GA_getCurrentRef2d,1            # Implemented in C code
+SKIP_PTR    GA_getLicensedDevices,1         # Implemented in C code
+DECLARE_IMP DDC_initExt,2
+DECLARE_IMP MCS_beginExt,2
+DECLARE_IMP GA_loadRegionMgr,3
+DECLARE_IMP GA_unloadRegionMgr,1
+DECLARE_IMP GA_getProcAddress,2
+DECLARE_IMP GA_enableVBEMode,5
+DECLARE_IMP GA_disableVBEMode,5
+DECLARE_IMP GA_loadModeProfile,2
+DECLARE_IMP GA_getCRTCTimingsV1,4           # OBSOLETE FUNCTION!
+DECLARE_IMP GA_setCRTCTimingsV1,4           # OBSOLETE FUNCTION!
+DECLARE_IMP GA_setDefaultRefreshV1,6        # OBSOLETE FUNCTION!
+DECLARE_IMP GA_saveMonitorInfoV1,2          # OBSOLETE FUNCTION!
+DECLARE_IMP GA_detectPnPMonitorV1,3         # OBSOLETE FUNCTION!
+SKIP_IMP3   GA_queryFunctions
+SKIP_IMP3   REF2D_queryFunctions
+DECLARE_IMP GA_getParsedEDID,2
+DECLARE_IMP GA_programMTRRegisters,1
+DECLARE_IMP GA_setExportTable,1
+SKIP_IMP    GA_setMinimumDriverVersion,3    # Implemented in C code
+DECLARE_IMP GA_getRecommendedModesV1,6      # OBSOLETE FUNCTION!
+DECLARE_IMP GA_glLoadDriver,2
+DECLARE_IMP GA_glQueryFunctions,3
+DECLARE_IMP GA_glUnloadDriver,1
+DECLARE_IMP GA_getCRTCTimings,5
+DECLARE_IMP GA_setCRTCTimings,5
+DECLARE_IMP GA_setDefaultRefresh,7
+DECLARE_IMP GA_saveCRTCTimings,2
+DECLARE_IMP GA_restoreCRTCTimings,2
+DECLARE_IMP GA_saveMonitorInfo,3
+DECLARE_IMP GA_detectPnPMonitor,4
+DECLARE_IMP GA_getRecommendedModes,9
+DECLARE_IMP GA_getMaxRefreshRate,5
+DECLARE_IMP GA_computeCRTCTimings,7
+DECLARE_IMP GA_freeLibrary,1
+DECLARE_IMP GA_getActiveDevice,0
+END_IMPORTS_DEF

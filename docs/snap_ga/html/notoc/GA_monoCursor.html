@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_monoCursor</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_monoCursor
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160; XORMask[512];<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160; ANDMask[512];<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160; HotX;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160; HotY;<br />
+        &#160;&#160;&#160; } GA_monoCursor
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Hardware monochrome cursor structure. This structure defines a monochrome
+        hardware cursor that is downloaded to the hardware. The cursor is
+        defined as a 64x64 image with an AND and XOR mask. The definition of
+        the AND mask, XOR mask and the pixels that will appear on the screen is
+        as follows (same as the Microsoft Windows cursor format):
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        AND XOR Result<br />
+        0&#160;&#160; 0&#160;&#160; Transparent (color from screen memory)<br />
+        0&#160;&#160; 1&#160;&#160; Invert (complement of color from screen
+        memory)<br />
+        1&#160;&#160; 0&#160;&#160; Cursor background color<br />
+        1&#160;&#160; 1&#160;&#160; Cursor foreground color
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The HotX and HotY members define the hot spot for the cursor, which is
+        the location where the logical mouse pointer is located in the cursor
+        image. When you click the mouse, the pixel under the hot-spot is the
+        pixel selected.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                XORMask
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor XOR mask
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ANDMask
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor AND mask
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HotX
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor X coordinate hot spot
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HotY
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor Y coordinate hot spot
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

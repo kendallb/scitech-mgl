@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_detectPnPMonitor</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_detectPnPMonitor
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Detects a Plug and Play monitor attached to the graphics card
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int NAPI GA_detectPnPMonitor(<br />
+        &#160;&#160;&#160; GA_devCtx *dc,<br />
+        &#160;&#160;&#160; GA_monitor *monitor,<br />
+        &#160;&#160;&#160; ibool *hasChanged)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context for the device to do detection for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                monitor
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to store the returned monitor information.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                hasChanged
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to store whether the monitor has changed
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        0 if no DDC monitor, 1 if found, 2 if found without operational limits
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function performs DDC monitor detection for the passed in device
+        context. If the monitor is found, it is returned in the monitor
+        parameter. Note that if we detect an older DDC monitor that does not
+        have operational limits, we use the PNPID from the monitor EDID to
+        search for the correct entry in our monitor database and return those
+        values instead. This allows us to correct for badly formed monitor EDID
+        information present in early monitors (ie: EDID's prior to 1.1).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that this function will also return whether the monitor information
+        has changed from the monitor record passed into the function. If the
+        values have changed in anyway the 'changed' parameter will be set to
+        true otherwise it will be set to false.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function assumes that the system is
+          already in graphics mode. Some device's will not allow PnP monitor
+          detection unless the graphics card is running in hires graphics mode,
+          so you should ensure this is the case before calling this function.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        GA_saveMonitor, <a href="GA_getParsedEDID.html">GA_getParsedEDID</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

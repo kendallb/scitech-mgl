@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>UpdateScreen</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        UpdateScreen
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Update the screen from the shadow buffer for the specified rectangle
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::UpdateScreen(<br />
+        &#160;&#160;&#160; N_int32 left,<br />
+        &#160;&#160;&#160; N_int32 top,<br />
+        &#160;&#160;&#160; N_int32 width,<br />
+        &#160;&#160;&#160; N_int32 height)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of screen to update
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of screen to update
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to update the screen from a shadow buffer if the
+        application or shell driver did any custom drawing to the shadow buffer
+        without using the SNAP driver functions. If the mode is using a shadow
+        buffer (usually only for 4bpp modes and 8bpp banked modes) this
+        function will be implemented and must be used, otherwise the function
+        will be NULL.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This fuction may also be used by rotation, flipped and other geometry
+        changing filter drivers to ensure that any custom drawing is properly
+        managed on the hardware framebuffer.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_glEnableMGLFuncs</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_glEnableMGLFuncs
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Enables MGL 2D drawing functions using an OpenGL surface
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_glEnableMGLFuncs(<br />
+        &#160;&#160;&#160; MGLDC *dc)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:64.5pt;padding:'0in .5pt 0in .5pt';" width="108" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:335.0pt;padding:'0in .5pt 0in .5pt';" width="558" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to enable 2D MGL functions for
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function enable support for MGL 2D functions for hardware
+        accelerated OpenGL surfaces. In order to be able to draw to a hardware
+        OpenGL surface using 2D OpenGL drawing functions, the MGL needs to
+        re-program the state of the OpenGL rendering context such that it maps
+        to a 2D integer coordinate system rather than the 2D or 3D coordinate
+        system the user application code is using for OpenGL drawing. Hence
+        this function saves the the state of the OpenGL rendering context so it
+        can be restored with <a href="MGL_glDisableMGLFuncs.html">MGL_glDisableMGLFuncs</a>,
+        and sets the rendring context into a state that is suitable for 2D
+        drawing via internal functions in the MGL.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Although it is not necessary to call this function to use the MGL 2D
+        drawing functions (such as <a href="MGL_fillRect.html">MGL_fillRect</a>,
+        <a href="MGL_bitBlt.html">MGL_bitBlt</a>, <a href="MGL_drawStr.html">MGL_drawStr</a> etc),
+        the process of saving and restoring the rendering context is expensive.
+        Internally the MGL will call this function before doing any 2D
+        operations, which means the state is saved and restore for every 2D MGL
+        function that is called. Hence if you will be calling a number of 2D
+        MGL drawing functions, you can bracket your code with <a href="MGL_glEnableMGLFuncs.html">MGL_glEnableMGLFuncs</a> and
+        <a href="MGL_glDisableMGLFuncs.html">MGL_glDisableMGLFuncs</a> to
+        ensure that the MGL only saves and restores the rendering context once
+        for all MGL 2D drawing functions you call.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_glDisableMGLFuncs.html">MGL_glDisableMGLFuncs</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

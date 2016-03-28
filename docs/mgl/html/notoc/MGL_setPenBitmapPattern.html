@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_setPenBitmapPattern</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_setPenBitmapPattern
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Downloads a new bitmap pattern into the driver.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_setPenBitmapPattern(<br />
+        &#160; &#160;&#160;int index,<br />
+        &#160;&#160;&#160; const pattern_t *pat)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                index
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Index of the bitmap pattern slot to download into
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pat
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                New bitmap pattern to download
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function downloads a new bitmap pattern into the hardware on the
+        graphics device. The MGL supports 8 patterns cached in the driver,
+        allowing you to select one of them to be active at a time using the <a href="MGL_usePenBitmapPattern.html">MGL_usePenBitmapPattern</a> function.
+        Bitmap patterns are used used when rendering patterned primitives in
+        the MGL_BITMAP_TRANSPARENT and MGL_BITMAP_OPQAUE pen styles. A bitmap
+        pattern is defined as an 8 x 8 array of monochrome pixels, stored as an
+        array of 8 bytes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When filling in the MGL_BITMAP_TRANSPARENT mode, the foreground color is
+        used to fill in all pixels in the bitmap pattern that are a 1. Where
+        the pixels in the bitmap pattern are a 0, the original background color
+        is retained. In the MGL_BITMAP_OPAQUE mode, the background color is
+        used to fill in the pixels in the bitmap that are set to a 0.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; After calling <a href="MGL_setPenBitmapPattern.html">MGL_setPenBitmapPattern</a>,
+          the pattern will not become active until after you also call <a href="MGL_usePenBitmapPattern.html">MGL_usePenBitmapPattern</a>.
+          This function only downloads the pattern into the pattern cache, and
+          does not actually select the pattern for use (even if the old
+          selected pattern was the same index).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_usePenBitmapPattern.html">MGL_usePenBitmapPattern</a>, <a href="MGL_getPenBitmapPattern.html">MGL_getPenBitmapPattern</a>,
+        <a href="MGL_setPenPixmapPattern.html">MGL_setPenPixmapPattern</a>, <a href="MGL_setPenStyle.html">MGL_setPenStyle</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Standard Makefile Options</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Standard Makefile Options
+      </h3>
+      <p class="MsoBodyText">
+        All of the makefile utilities startup scripts support a standard set of
+        options for controlling the way that the compilation is performed.
+        Makefile options are provided for turning on debug information, speed
+        or size optimizations and inline floating point instructions. By
+        default when you build files, no optimizations and no debugging
+        information is generated. The following table lists the most common and
+        useful of these options for building examples and re-compiling any
+        libraries.
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:117.0pt;border-top:1.5pt;border-left:1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;border-style:solid;padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              DBG
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:'solid windowtext 1.5pt';border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turns on debug information
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              OPT
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turns on speed optimizations
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              OPT_SIZE
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turns on size optimizations
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              FPU
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turns on inline floating point arithmetic
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              BUILD_DLL
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Build a dynamic link library of Unix shared library
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              STKCALL
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turns on stack calling conventions for Watcom C++
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              SHOW_ARGS
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Show full arguments passed to compiler under Unix
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              CHECKED
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Compile and link against checked debug libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              MAX_WARN
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Turn on maximum compiler warning setting
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              USE_PMODEW
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Use PMODE/W DOS extender for 32-bit DOS
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              USE_CAUSEWAY
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Use CauseWay DOS extender for 32-bit DOS
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        All of the above options can be passed to dmake in one of two ways: on
+        the command line or as global environment variables. For instance the
+        following are equivalent:
+      </p>
+      <p class="Preformatted">
+        dmake DBG=1 OPT=1 install
+      </p>
+      <p class="MsoBodyText">
+        or 
+      </p>
+      <p class="Preformatted">
+        set DBG=1<br />
+        set OPT=1<br />
+        dmake install
+      </p>
+      <p class="MsoBodyText">
+        The primary difference between the two is that by setting the environment
+        variables, you change the default behavior for dmake, so that every
+        time you build something those options will be in effect. The
+        environment variable mechanism is useful to set the most common options
+        that you will use so you don’t have to constantly pass them on the
+        command line.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

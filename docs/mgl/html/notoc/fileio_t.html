@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>fileio_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        fileio_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; FILE *&#160; (*fopen)(const char *filename,const
+        char *mode);<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160; (*fclose)(FILE *f);<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160; (*fseek)(FILE *f,long
+        offset,int whence);<br />
+        &#160;&#160;&#160; long&#160;&#160;&#160; (*ftell)(FILE *f);<br />
+        &#160;&#160;&#160; size_t&#160; (*fread)(void *ptr,size_t size,size_t
+        n,FILE *f);<br />
+        &#160;&#160;&#160; size_t&#160; (*fwrite)(const void *ptr,size_t
+        size,size_t n,FILE *f);<br />
+        &#160;&#160;&#160; } fileio_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing the set of file I/O functions that can be
+        overridden in the MGL. When you override the file I/O functions in the
+        MGL, you must provide a compatible function for each of the entries in
+        this structure that behave identically to the standard C library I/O
+        functions of similar names.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; Once you have overridden the file I/O
+          functions, you can access the overriden functions from other
+          libraries and DLL's by calling the <a href="MGL_fopen.html">MGL_fopen</a> family
+          of functions, which are simply stubs to call the currently overriden
+          function via the function pointers.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fopen
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C fopen function replacement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fclose
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C fclose function replacement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fseek
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C fseek function replacement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ftell
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C ftell function replacement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fread
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C fread function replacement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fwrite
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Standard C fwrite function replacement
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

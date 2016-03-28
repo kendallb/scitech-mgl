@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GMDC</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GMDC
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; MGLDC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *dc;<br />
+        &#160;&#160;&#160; MGLDC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *dispdc;<br />
+        &#160;&#160;&#160; MGLDC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *backdc;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; numModes;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numFullscreenModes;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; modeFlags;<br />
+        &#160;&#160;&#160; GM_modeInfo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; modeList[GM_MAXMODE+1];<br />
+        #if defined(__WINDOWS__) &amp;&amp; !defined(__CONSOLE__)<br />
+        &#160;&#160;&#160; MGL_HWND&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; mainWindow;<br />
+        #endif<br />
+        &#160;&#160;&#160; } GMDC
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm\gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Main structure for maintaining the state information for the Game
+        Framework. The application program always does all drawing and
+        rendering to the <a href="GMDC.html">GMDC</a> dc member, which will
+        draw directly to the framebuffer or to a system memory buffer depending
+        on the hardware and the initialization information. The modeFlags field
+        contains the original mode flags information passed to <a href="GM_init.html">GM_init</a>,
+        which defines which color depths your game will support. The modeList
+        contains a complete list of all the available graphics modes supported
+        by the Game Framework, including psuedo modes that are modes that
+        include auto-stretching.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The dispdc and backdc field are primarily for internal use by the Game
+        Framework, and you should not use those fields unless you are clear
+        what they are used for.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                DC for drawing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dispdc
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Main display DC
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                backdc
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Back buffer if necessary (could be system or video memory)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numModes
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of modes in the mode list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numFullscreenModes
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of fullscreen capable modes in the mode list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                modeFlags
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode flags for current graphics mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                modeList
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                List of all available modes supported by the Game Framework
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mainWindow
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Handle to main window (Windows only)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

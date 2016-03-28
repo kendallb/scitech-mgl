@@ -1,0 +1,83 @@
+Hi! 
+I wrote a set of SVGAlibish joystick routines while I played with porting
+DOSDoom to SVGAlib. 
+It is compatible with both the older joystick driver for Linux 1.x and 2.0 
+and the newer joystick driver that is in recent 2.1.x kernels.
+Some of the code is ripped from the userland tools joystick-0.6.7 and 
+joystick-2.0.6 none of wich has any special license attaced to them. 
+
+The files are:
+joydev.h:      my userland version of the kernel joystick.h
+vgajoystick.h: library include file analog to vgakeyboard.h and vgamouse.h
+joystick.c:    the library routines.
+joytest.c:     a simple test program/example
+
+I dunno how useful these will be, but I could at least use them in doom. (Not
+that joystick control in doom adds anything, I just implemented it for
+completeness.)
+
+BUGS:
+Only one joystick device at any time (but the new 2.1.x driver will let you
+map 4 axis and 4 buttons to one logical device).
+
+The routines: 
+
+int joystick_init(const char *joydev, int verbose, FILE *file);
+This one inits the joystick routines and opens the device. Returna the
+filedescriptor of the joystick device if successfull or -1 if not.
+Outputs some messages to stdout id verbose is != 0. If file != NULL it will 
+try to recalibrate the joystick and output the recalibration instructions to
+the struct file pointed to by file.
+E.g. 
+
+if (-1 == joystick_init("/dev/js0, 1, stdout))
+{
+    printf("Joystick init failed\n");
+    exit(1);
+}
+
+void joystick_close(void);
+Shuts down the joystick.
+
+int joystick_update(void);
+Reads the joystick and calls the joystick handler if anything events are
+availible. Should be called every now and then.
+
+ 
+void joystick_sethandler(__joystick_handler jh);
+Install a user supplied joystick handler.
+
+A user supplied joystick handler would look like this.
+void joystick_handler(int event, int number, char value); 
+int event - event type:
+  JOY_EVENTAXIS         an axis has moved
+  JOY_EVENTBUTTONDOWN   a button has been pushed 
+  JOY_EVENTBUTTONUP     a button has been released
+int number - the axis or button number for this event 0=x axis or button 1, etc.
+char value - value for axis events (-128 .. 0 .. 127)
+
+void joystick_setdefaulthandler(void);
+Restore the default joystick handler.
+
+char joystick_getnumaxes(void);
+char joystick_getnumbuttons(void);
+Retrun the number of axes/buttons on the joystick.
+
+char joystick_getaxis(int a);
+char joystick_getbutton(int b);
+Querys the jostick state from the default joystick handler if it is used. 
+
+The following macros calls joystick_getaxis() or joystick_getbutton().
+joystick_getb1() - Gets button 1
+joystick_getb2() - Gets button 2
+joystick_getb3() - Gets button 3
+joystick_getb4() - Gets button 4
+
+joystick_getx()  - Returns the X axis
+joystick_gety()  - Returns the Y axis
+joystick_getz()  - Returns the Z axis
+
+That all folks,
+
+Daniel Engström 
+daniel.engstrom@riksnett.no

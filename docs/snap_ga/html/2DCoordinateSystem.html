@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>2D Coordinate System</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Using Custom Display Modes" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('UsingCustomDisplayModes.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Using Custom Display Modes" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Multi Buffering" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MultiBuffering.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Multi Buffering" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Programming with SNAP Graphics" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ProgrammingWithSNAPGraphics.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Programming with SNAP Graphics" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2 style="margin-left:.25in;text-indent:-.25in;">
+        2D Coordinate System
+      </h2>
+      <p class="MsoBodyText">
+        All the device driver accelerator functions take coordinates in a local
+        framebuffer coordinate system, which is established with a call to the <a href="SetDrawBuffer.html">SetDrawBuffer</a> function.
+        The coordinate system starts with (0,0) at the start of the active
+        drawing buffer and increments the X coordinate for every pixel and Y
+        coordinate for every scanline. For instance in an 8-bit display mode,
+        if the logical scanline width is set to 1024 bytes and the drawing
+        buffer offset is set to 0, then the coordinate (0,1) will be rendering
+        into the byte at location 1024 from the start of framebuffer memory. It
+        is then up to the application to impose any other logical coordinate
+        system on top of the graphics device driver routines, such as handling
+        viewport mapping etc. Also note that clipping is generally not
+        implemented by most of the drawing functions, so all drawing must be
+        clipped by the application code in software before calling the low
+        level device driver code (some functions do however provide clipping
+        support where doing clipping in software prior to calling the function
+        can be expensive compared to doing it in the hardware drivers).
+      </p>
+      <p class="MsoBodyText">
+        The <a href="SetDrawBuffer.html">SetDrawBuffer</a> function must be
+        called to initialise the active drawing buffer for all subsequent
+        rendering functions, before any drawing takes place. It takes as a
+        parameter a structure which defines the offset, pitch, width and height
+        of the drawing buffer to be used in video memory. In general you will
+        simply set the draw buffer offset to 0, the pitch to the value returned
+        in the bytesPerLine parameter from the <a href="SetVideoMode.html">SetVideoMode</a> function
+        and the width and height to the dimensions of the display mode. For
+        example the following code can be used to initialise the drawing buffer
+        for single buffered environments:
+      </p>
+      <p class="Preformatted">
+        &#160;&#160;&#160; GA_modeInfo modeInfo;<br />
+        &#160;&#160;&#160; GA_buffer&#160;&#160; drawBuf;<br />
+        <br />
+        &#160;&#160;&#160; ... assume modeInfo has been filled in ...<br />
+        &#160;&#160;&#160; drawBuf.dwSize = sizeof(drawBuf);<br />
+        &#160;&#160;&#160; drawBuf.Offset = 0;<br />
+        &#160;&#160;&#160; drawBuf.Stride = modeInfo.BytesPerScanLine;<br />
+        &#160; &#160;&#160;drawBuf.Width&#160; = modeInfo.XResolution;<br />
+        &#160;&#160;&#160; drawBuf.Height = modeInfo.YResolution;<br />
+        &#160;&#160;&#160; if (state2d.SetDrawBuffer(&amp;drawBuf) != 0)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; PM_fatalError(“Unable to set
+        draw buffer!”);
+      </p>
+      <p class="MsoBodyText">
+        For a display mode of 1024x768 this would result in the logical
+        coordinate system similar to the following:
+      </p>
+      <p class="MsoBodyText">
+        <img border="0" width="372" height="132" src="./Images/image002.gif" />
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; You must be careful when calling the <a href="SetDrawBuffer.html">SetDrawBuffer</a> function
+          because some hardware has special restrictions on the starting offset
+          and scanline stride values for offscreen video memory buffers. To
+          simplify offscreen memory management, please use the buffer manager
+          functions provided by the <a href="GA_bufferFuncs.html">GA_bufferFuncs</a> function
+          group to create and manage all flip buffers and offscreen buffers,
+          which automatically account for these hardware requirements.
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

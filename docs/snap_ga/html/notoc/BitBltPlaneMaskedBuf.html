@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>BitBltPlaneMaskedBuf</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        BitBltPlaneMaskedBuf
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Copies pixels from one buffer into the currently active buffer while
+        stretching or shrinking to fit the destination
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void GA_bufferFuncs::BitBltPlaneMaskedBuf(<br />
+        &#160;&#160;&#160; GA_buf *buf,<br />
+        &#160;&#160;&#160; N_int32 srcLeft,<br />
+        &#160;&#160;&#160; N_int32 srcTop,<br />
+        &#160;&#160;&#160; N_int32 width,<br />
+        &#160;&#160;&#160; N_int32 height,<br />
+        &#160;&#160;&#160; N_int32 dstLeft,<br />
+        &#160;&#160;&#160; N_int32 dstTop,<br />
+        &#160; &#160;&#160;N_uint32 planeMask)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                buf
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SNAP buffer to blit to the active surface
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of the source rectangle to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of the source rectangle to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                planeMask
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                8-bit plane mask to use for the copy
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function copies a rectangular region from the source buffer to the
+        currently active buffer. This routine will copy a rectangular region
+        from (srcLeft, srcTop, srcLeft+width-1, srcTop+height-1) in the source
+        buffer to (dstLeft, dstTop) in the currently active buffer, using the
+        specified plane mask. The plane mask is used to determine which bits in
+        the destination pixels will be affected by the copy. Each bit in the
+        plane mask is used to mask out a bit in the destination pixel values,
+        and where a bit is a 1 the destination bit comes from the source pixel
+        while where a bit is 0 the destination bit is left unchanged.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="BitBltBuf.html">BitBltBuf</a>, <a href="BitBltPattBuf.html">BitBltPattBuf</a>,
+        <a href="BitBltColorPattBuf.html">BitBltColorPattBuf</a>, <a href="SrcTransBltBuf.html">SrcTransBltBuf</a>,
+        <a href="DstTransBltBuf.html">DstTransBltBuf</a>, <a href="BitBltFxBuf.html">BitBltFxBuf</a>,
+        <a href="DrawRectBuf.html">DrawRectBuf</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

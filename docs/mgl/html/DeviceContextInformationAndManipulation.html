@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Device context information and manipulation</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Device context creation and management" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DeviceContextCreationAndManagement.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Device context creation and management" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Color and palette manipulation" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ColorAndPaletteManipulation.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Color and palette manipulation" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL Library Overview" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGLLibraryOverview.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL Library Overview" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        Device context information and manipulation
+      </h2>
+      <p class="MsoBodyText">
+        The following functions provide the API routines that are used to change
+        the attributes of the currently active device context, such as the
+        current foreground and background colors, and the current pen pattern.
+        These routines also provide information about device contexts, such as
+        the resolution, pixel depth, aspect ratio etc. 
+      </p>
+      <p class="MsoBodyText">
+        Note that some of these functions are bound to a specific device context,
+        and if this device context is not the currently active context, the
+        active context will not be affected.
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_computePixelAddr.html">MGL_computePixelAddr</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_defaultAttributes.html">MGL_defaultAttributes</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getAlphaValue.html">MGL_getAlphaValue</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getAspectRatio.html">MGL_getAspectRatio</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getAttributes.html">MGL_getAttributes</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getBackMode.html">MGL_getBackMode</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getBitsPerPixel.html">MGL_getBitsPerPixel</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getBlendFunc.html">MGL_getBlendFunc</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getFontBlendMode.html">MGL_getFontBlendMode</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getLineStipple.html">MGL_getLineStipple</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getLineStippleCount.html">MGL_getLineStippleCount</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getLineStyle.html">MGL_getLineStyle</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPenBitmapPattern.html">MGL_getPenBitmapPattern</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPenPixmapPattern.html">MGL_getPenPixmapPattern</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPenPixmapTransparent.html">MGL_getPenPixmapTransparent</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPenSize.html">MGL_getPenSize</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPenStyle.html">MGL_getPenStyle</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPixelFormat.html">MGL_getPixelFormat</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPlaneMask.html">MGL_getPlaneMask</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPolygonType.html">MGL_getPolygonType</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_isCurrentDC.html">MGL_isCurrentDC</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_makeCurrentDC.html">MGL_makeCurrentDC</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxPage.html">MGL_maxPage</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_restoreAttributes.html">MGL_restoreAttributes</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setAlphaValue.html">MGL_setAlphaValue</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setAspectRatio.html">MGL_setAspectRatio</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setBackMode.html">MGL_setBackMode</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setBlendFunc.html">MGL_setBlendFunc</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setFontBlendMode.html">MGL_setFontBlendMode</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setLineStipple.html">MGL_setLineStipple</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setLineStippleCount.html">MGL_setLineStippleCount</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setLineStyle.html">MGL_setLineStyle</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPenBitmapPattern.html">MGL_setPenBitmapPattern</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPenPixmapPattern.html">MGL_setPenPixmapPattern</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPenPixmapTransparent.html">MGL_setPenPixmapTransparent</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPenSize.html">MGL_setPenSize</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPenStyle.html">MGL_setPenStyle</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPlaneMask.html">MGL_setPlaneMask</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPolygonType.html">MGL_setPolygonType</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setWriteMode.html">MGL_setWriteMode</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_sizex.html">MGL_sizex</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_sizey.html">MGL_sizey</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_usePenBitmapPattern.html">MGL_usePenBitmapPattern</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_usePenPixmapPattern.html">MGL_usePenPixmapPattern</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

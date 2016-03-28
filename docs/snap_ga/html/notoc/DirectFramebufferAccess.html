@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Direct Framebuffer Access</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Direct Framebuffer Access
+      </h2>
+      <p class="MsoBodyText">
+        In order to allow both direct framebuffer access and hardware accelerator
+        access, contention for video memory between the application program and
+        the hardware accelerator must be properly handled.&#160; This is
+        provided by the <a href="EnableDirectAccess.html">EnableDirectAccess</a> and
+        <a href="DisableDirectAccess.html">DisableDirectAccess</a> functions.
+        If the <a href="EnableDirectAccess.html">EnableDirectAccess</a> function
+        pointer is not NULL, then you must call these functions prior to
+        performing any direct access to the framebuffer via either the banked
+        framebuffer or the linear framebuffer, and then call <a href="DisableDirectAccess.html">DisableDirectAccess</a> before
+        calling any other hardware accelerator functions again.
+      </p>
+      <p class="MsoBodyText">
+        If the <a href="EnableDirectAccess.html">EnableDirectAccess</a> function
+        is NULL, you must instead call the <a href="WaitTillIdle.html">WaitTillIdle</a> function
+        to ensure the hardware has completed the last drawing operation before
+        accessing the framebuffer directly. You need not call any other
+        functions to return to accelerated rendering again.
+      </p>
+      <p class="MsoBodyText">
+        When the video mode is first initialized, the hardware is automatically
+        set up for hardware accelerated rendering, as though <a href="DisableDirectAccess.html">DisableDirectAccess</a> was
+        called immediately after setting the display mode.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

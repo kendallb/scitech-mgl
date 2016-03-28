@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_devCtx</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="ShowCursor" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ShowCursor.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="ShowCursor" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_driverFuncs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_driverFuncs.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_driverFuncs" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_devCtx
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        struct GA_devCtx {<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Signature[20];<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; Version;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; DriverRev;<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; OemVendorName[80];<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; OemCopyright[80];<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *AvailableModes;<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; DeviceIndex;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TotalMemory;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; Attributes;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; WorkArounds;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BankSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BankedBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LinearSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LinearBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; ZBufferSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; ZBufferBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TexBufferSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TexBufferBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LockedMemSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; IOBase;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MMIOBase[4];<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MMIOLen[4];<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *DriverStart;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; DriverSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BusType;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; AttributesExt;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; res1[18];<br />
+        <br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *IOMemMaps[4];<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *TextMem;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *BankedMem;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *LinearMem;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *ZBufferMem;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *TexBufferMem;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *LockedMem;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160; &#160;&#160;LockedMemPhys;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *TextFont8x8;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *TextFont8x14;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *TextFont8x16;<br />
+        &#160;&#160;&#160; GA_palette&#160;&#160;&#160;&#160;&#160; _FAR_
+        *VGAPal4;<br />
+        &#160;&#160;&#160; GA_palette&#160;&#160;&#160;&#160;&#160; _FAR_
+        *VGAPal8;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; res3[18];<br />
+        <br />
+        &#160;&#160;&#160; struct GA_devCtx _FAR_ *ring0DC;<br />
+        &#160;&#160;&#160; void&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *pMdl;<br />
+        <br />
+        &#160;&#160;&#160; GA_loaderFuncs&#160; loader;<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Main graphics device context structure. This structure consists of a
+        header block that contains configuration information about the graphic
+        device, as well as detection information and runtime state information.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Signature member is filled with the null terminated string
+        'GRAPHICS\0' by the driver implementation. This can be used to verify
+        that the file loaded really is an graphics device driver.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Version member is a BCD value which specifies what revision level of
+        the graphics specification is implemented in the driver. The high byte
+        specifies the major version number and the low byte specifies the minor
+        version number. For example, the BCD value for version 1.0 is 0x100 and
+        the BCD value for version 2.2 would be 0x202.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The DriverRev member specifies the driver revision level, and is used by
+        the driver configuration software to determine which version was used
+        to generate the driver file.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The OemVendorName member contains the name of the vendor that developed
+        the device driver implementation, and can be up to 80 characters in
+        length.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The OemCopyright member contains a copyright string for the vendor that
+        developed the device driver implementation and may be up to 80
+        characters in length.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The AvailableModes is an pointer within the loaded driver to a list of
+        mode numbers for all displaymodes supported by the graphics
+        driver.&#160; Each mode number occupies one word (16-bits), and is
+        terminated by a -1 (0FFFFh). Any modes found in this list are
+        guaranteed to be available for the current configuration.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TotalMemory member indicates the maximum amount of memory physically
+        installed and available to the frame buffer in 1Kb units. Note that not
+        all graphics modes will be able to address all of this memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Attributes member contains a number of flags that describes certain
+        important characteristics of the graphics controller. The members are
+        exactly the same as those provided in the <a href="GA_modeInfo.html">GA_modeInfo</a> block
+        for each video mode, but the meaning is slightly different. For each
+        flag defined in the <a href="GA_AttributeFlagsType.html">GA_AttributeFlagsType</a> enumeration,
+        it represents whether the controller can support these modes in any
+        available graphics modes. Please see the GetVideoModeInfo function for
+        a detailed description of each flags meaning.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TextSize member contains the size of the text mode framebuffer in
+        bytes. It will generally be 64Kb in length. The TextBasePtr member is a
+        32-bit physical memory address where the text mode framebuffer memory
+        window is located in the CPU address space. This will generally be
+        0xB0000 to cover the VGA text framebuffer window (both color and
+        monochrome modes).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BankSize member contains the size of the banked memory buffer in
+        bytes. It can be either 4Kb or 64Kb in length. The BankedBasePtr member
+        is a 32-bit physical memory address where the banked framebuffer memory
+        window is located in the CPU address space. If the banked framebuffer
+        mode is not available, then this member will be zero.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LinearSize member is the 32-bit length of the linear frame buffer
+        memory in bytes. In can be any length up to the size of the available
+        video memory. The LinearBasePtr member is the 32-bit physical address
+        of the start of frame buffer memory when the controller is in linear
+        frame buffer memory mode. If the linear framebuffer is not available,
+        then this member will be zero.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The ZBufferSize member is the 32-bit length of the local z-buffer (or
+        depth buffer) memory in bytes. In can be any length up to the size of
+        the available local z-buffer memory. The ZBufferBasePtr member is the
+        32-bit physical address of the start of local z-buffer memory. Note
+        that if the controller does not have local z-buffer memory, but shares
+        the z-buffer in the local framebuffer memory, these two fields will be
+        set to 0.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TexMemSize member is the 32-bit length of the local texture memory in
+        bytes. In can be any length up to the size of the available local
+        texture memory. The TexMemBasePtr member is the 32-bit physical address
+        of the start of local texture memory. Note that if the controller does
+        not have local texture memory, but loads textures in the local
+        framebuffer memory, this field will be set to 0.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LockedMemSize contains the amount of locked, contiguous memory in
+        bytes that the graphics driver requires for programming the hardware.
+        If the graphics accelerator requires DMA transfers for 2D and 3D
+        rendering operations, this member can be set to the length of the block
+        of memory that is required by the driver. The driver loader code will
+        attempt to allocate a block of locked, physically contiguous memory
+        from the operating system and place a pointer to this allocated memory
+        in the LockedMem member for the driver, and the physical address of the
+        start of this memory block in LockedMemPhys. Note that the memory must
+        be locked so it cannot be paged out do disk, and it must be physically
+        contiguous so that DMA operations will work correctly across 4Kb CPU
+        page boundaries. If the driver does not require DMA memory, this value
+        should be set to 0.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MMIOBase member contains the 32-bit physical base addresses pointing
+        to the start of up to 4 separate memory mapped register areas required
+        by the controller. The MMIOLen member contains the lengths of each of
+        these memory mapped IO areas in bytes. When the application maps the
+        memory mapped IO regions for the driver, the linear address of the
+        mapped memory areas will then be stored in the corresponding entries in
+        the IOMemMaps array, and will be used by the driver for accessing the
+        memory mapped registers on the controller. If any of these regions are
+        not required, the MMIOBase entries will be NULL and do not need to be
+        mapped by the application.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The memory regions pointed to by the MMIOBase
+          addresses have special meanings for the first two and second two
+          addresses that are mapped. If the OS loader is running the driver in
+          user space with a safety level of 2, then the only the first two base
+          addresses will be mapped into user space, and the second two will be
+          mapped only into kernel space (kernel space can also access the user
+          space mappings). Please see QueryFunctions for a more detailed
+          overview of the safety levels and how this relates to these regions.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The IOMemMaps member contains the mapped linear address of the memory
+        mapped register regions defined by the MMIOBase and MMIOLen members.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TextMem member contains the mapped linear address of the text mode
+        framebuffer, and will be filled in by the application when it has
+        loaded the device driver. This provides the device driver with direct
+        access to the video memory on the controller when in text modes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BankedMem member contains the mapped linear address of the banked
+        memory framebuffer, and will be filled in by the application when it
+        has loaded the device driver. This provides the device driver with
+        direct access to the video memory on the controller when in the banked
+        framebuffer modes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LinearMem member contains the mapped linear address of the linear
+        memory framebuffer, and will be filled in by the application when it
+        has loaded the device driver. This provides the device driver with
+        direct access to the video memory on the controller when in the linear
+        framebuffer modes.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; On some controllers the linear framebuffer
+          address may be different for different color depths, so the value in
+          this variable may change gater initializing a mode. Applications
+          should always reload the address of the linear framebuffer from this
+          variable gater initializing a mode set to ensure that the correct
+          value is always used.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The ZBufferMem member contains the mapped linear address of the local
+        z-buffer memory, and will be filled in by the application when it has
+        loaded the device driver. This provides the device driver with direct
+        access to the local z-buffer memory on the controller. If the
+        controller does not have local z-buffer memory, this member will be set
+        to NULL.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TexBufferMem member contains the mapped linear address of the local
+        texture memory, and will be filled in by the application when it has
+        loaded the device driver. This provides the device driver with direct
+        access to the local texture memory on the controller. If the controller
+        does not have local texture memory, this member will be set to NULL.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LockedMem member contains a pointer to the locked DMA memory buffer
+        allocated for the loaded driver. The graphics driver can use this
+        pointer to write data directly to the DMA buffer before transferring it
+        to the hardware. If the driver does not require DMA memory, this value
+        will be set to NULL by the loader.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LockedMemPhys member contains the 32-bit physical memory address of
+        the locked DMA buffer memory allocated for the driver. The graphics
+        driver can use this physical address to set up DMA transfer operations
+        for memory contained within the DMA transfer buffer. If the driver does
+        not require DMA memory, this value will be set to 0 by the loader.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The TextFont8x8, TextFont8x14 and TextFont8x16 members contain pointers
+        to the 8x8, 8x14 and 8x16 text font bitmaps allocated by the OS loader.
+        This data is used by the driver for VGA and extended text modes that
+        require the bitmap font tables.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Signature
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                'GRAPHICS\0' 20 byte signature
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Version
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver Interface Version
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DriverRev
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver revision number
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                OemVendorName
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vendor Name string
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                OemCopyright
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vendor Copyright string
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                AvailableModes
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Offset to supported mode table
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DeviceIndex
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device index for the driver when loaded from disk
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TotalMemory
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Amount of memory in Kb detected
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Attributes
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver attributes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                WorkArounds
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware WorkArounds flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of the text framebuffer in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextBasePtr
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address of the text framebuffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BankSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bank size in bytes (4Kb or 64Kb)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BankedBasePtr
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of banked buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear buffer size in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearBasePtr
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of linear buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ZBufferSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Z-buffer size in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ZBufferBasePtr
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of Z-buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TexBufferSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Texture buffer size in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TexBufferBasePtr
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of texture buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LockedMemSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Amount of locked memory for driver in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOBase
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address for I/O mapped registers (relocateable)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MMIOBase
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address of memory mapped I/O regions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MMIOLen
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of memory mapped I/O regions in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DriverStart
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to the start of the driver in memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DriverSize
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Size of the entire driver in memory in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BusType
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates the type of bus for the device (<a href="GA_busType.html">GA_busType</a>)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Attributes
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver extended attributes flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOMemMaps
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointers to mapped I/O memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BankedMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to mapped banked video mem
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to mapped linear video mem
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ZBufferMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to mapped zbuffer mem
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TexBufferMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to mapped texture buffer mem
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LockedMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to allocated locked memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LockedMemPhys
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of locked memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextFont8x8
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to 8x8 text font data
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextFont8x14
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to 8x14 text font data
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextFont8x16
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to 8x16 text font data
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VGAPal4
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to the default VGA 4bpp palette
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VGAPal8
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ptr to the default VGA 8bpp palette
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                loader
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Internal device driver loader functions
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

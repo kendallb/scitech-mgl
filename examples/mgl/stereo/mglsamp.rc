@@ -1,0 +1,71 @@
+/****************************************************************************
+*
+*					SciTech Multi-platform Graphics Library
+*
+*  ========================================================================
+*
+*   Copyright (C) 1991-2002 SciTech Software, Inc. All rights reserved.
+*
+*   This file may be distributed and/or modified under the terms of the
+*   GNU General Public License version 2 as published by the Free
+*   Software Foundation and appearing in the file LICENSE.GPL included
+*   in the packaging of this file.
+*
+*   Licensees holding a valid Commercial License for this product from
+*   SciTech Software, Inc. may use this file in accordance with the
+*   Commercial License Agreement provided with the Software.
+*
+*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*   PURPOSE.
+*
+*   See http://www.scitechsoft.com/license/ for information about
+*   the licensing options available and how to purchase a Commercial
+*   License Agreement.
+*
+*   Contact license@scitechsoft.com if any conditions of this licensing
+*   are not clear to you, or you have questions about licensing options.
+*
+*  ========================================================================
+*
+* Author:		Kendall Bennett
+*
+* Language:		Windows Resource Compiler
+* Environment:	Win32
+*
+****************************************************************************/
+
+#ifndef WORKSHOP_INVOKED
+  #include <windows.h>
+#endif
+#include "mglsamp.rh"
+
+IDD_MAINDLG DIALOG 27, 29, 237, 225
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 8, "MS Sans Serif"
+{
+ CONTROL " Color Depth ", IDC_COLORDEPTH, "BUTTON", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 149, 220, 47
+ CONTROL "", IDC_MODELIST, "LISTBOX", LBS_NOTIFY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 9, 47, 219, 99
+ CONTROL "8 bit", IDC_8BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 102, 161, 31, 12
+ CONTROL "16 bit", IDC_16BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 102, 177, 31, 12
+ CONTROL "24 bit", IDC_24BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 164, 161, 31, 12
+ CONTROL "32 bit", IDC_32BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 164, 177, 31, 12
+ CONTROL "Run Demo", IDC_OK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 45, 204, 50, 14
+ CONTROL "Quit", IDC_CANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 142, 204, 50, 14
+ CONTROL "Video mode to use:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 35, 178, 8
+ CONTROL "Win32 MGL Sample '%s'", IDC_VERSIONSTR, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE, 25, 8, 186, 8
+ CONTROL "Copyright (c) 1993-2001 SciTech Software, Inc.", IDC_COPYRIGHTSTR, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE, 16, 19, 204, 8
+ CONTROL "Windowed", IDC_WINDOWED, "button", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 42, 168, 46, 12
+}
+
+#if 0
+1 CURSOR "blank.cur"
+#endif
+
+1 ICON "mglsamp.ico"
+
+STRINGTABLE
+{
+ 1, "MGL Sample Program"
+}
+

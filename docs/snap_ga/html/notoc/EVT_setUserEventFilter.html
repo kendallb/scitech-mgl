@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>EVT_setUserEventFilter</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        EVT_setUserEventFilter
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Installs a user supplied event filter callback for event handling.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void EVTAPI EVT_setUserEventFilter(<br />
+        &#160;&#160;&#160; _EVT_userEventFilter filter)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        event.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function allows the application programmer to install an event
+        filter callback for event handling. Once you install your callback, the
+        MGL event handling routines will call your callback with a pointer to
+        the new event that will be placed into the event queue. Your callback
+        can the modify the contents of the event before it is placed into the
+        queue (for instance adding custom information or perhaps high precision
+        timing information).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If your callback returns FALSE, the event will be ignore and will not be
+        posted to the event queue. You should always return true from your
+        event callback unless you plan to use the events immediately that they
+        are recieved.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; Your event callback may be called in response
+          to a hardware interrupt and will be executing in the context of the
+          hardware interrupt handler under MSDOS (ie: keyboard interrupt or
+          mouse interrupt). For this reason the code pages for the callback
+          that you register must be locked in memory with the <a href="PM_lockCodePages.html">PM_lockCodePages</a> function.
+          You must also lock down any data pages that your function needs to
+          reference as well.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; You can also use this filter callback to
+          process events at the time they are activated by the user (ie: when
+          the user hits the key or moves the mouse), but make sure your code
+          runs as fast as possible as it will be executing inside the context
+          of an interrupt handler on some systems.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="EVT_getNext.html">EVT_getNext</a>, <a href="EVT_peekNext.html">EVT_peekNext</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

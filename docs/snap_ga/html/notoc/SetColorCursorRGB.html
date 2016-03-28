@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>SetColorCursorRGB</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        SetColorCursorRGB
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets a new 64x64 24-bit color RGB TrueColor hardware cursor image.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_cursorFuncs::SetColorCursorRGB(<br />
+        &#160;&#160;&#160; GA_colorCursorRGB *cursor)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                cursor
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to an <a href="GA_colorCursorRGB.html">GA_colorCursorRGB</a> structure
+                for the cursor image
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function downloads the specified 24-bit RGB TrueColor cursor
+        definition from the application into the hardware cursor. The cursor
+        data is passed by the application in the <a href="GA_colorCursorRGB.html">GA_colorCursorRGB</a> format; please
+        see the documentation for this structure for the format of the data
+        passed to this function.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; To pad the cursor definition to 64x64 for
+          cursors that are smaller than 64x64 in size, simply fill in the
+          remainder of the XORMask and ANDMask with zeroes.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetMonoCursor.html">SetMonoCursor</a>, <a href="SetMonoCursorColor.html">SetMonoCursorColor</a>,
+        <a href="SetColorCursor.html">SetColorCursor</a>, <a href="SetCursorPos.html">SetCursorPos</a>,
+        <a href="ShowCursor.html">ShowCursor</a>, <a href="BeginAccess.html">BeginAccess</a>,
+        <a href="EndAccess.html">EndAccess</a>, <a href="SetColorCursor256.html">SetColorCursor256</a>,
+        <a href="SetColorCursorRGBA.html">SetColorCursorRGBA</a>, <a href="IsHardwareCursor.html">IsHardwareCursor</a>,
+        <a href="SetColorCursorRGB.html">SetColorCursorRGB</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

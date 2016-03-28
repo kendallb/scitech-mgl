@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Using Perforce from the command line</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Syncing up for the first time" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SyncingUpForTheFirstTime.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Syncing up for the first time" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Programming with SNAP Graphics" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ProgrammingWithSNAPGraphics.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Programming with SNAP Graphics" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Connecting with Perforce" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ConnectingWithPerforce.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Connecting with Perforce" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h3>
+        Using Perforce from the command line
+      </h3>
+      <p class="MsoBodyText">
+        Using Perforce is very easy, and you can get help from the command line
+        with:
+      </p>
+      <p class="Preformatted">
+        p4 help
+      </p>
+      <p class="MsoBodyText">
+        The most common commands you might need to use are as follows.
+      </p>
+      <p class="Preformatted">
+        p4 sync&#160;&#160;&#160; - Sync up with the latest sources<br />
+        p4 edit&#160;&#160;&#160; - Open a file for editing<br />
+        p4 add&#160;&#160;&#160;&#160; - Add a new file to the repository<br />
+        p4 delete&#160; - Delete a file from the repository<br />
+        p4 resolve - Resolve conflicts if two people edit the same file<br />
+        p4 revert&#160; - Revert changes for a currently opened file<br />
+        p4 submit&#160; - Submit all changes to the repository<br />
+        p4 opened&#160; - List call files you currently have opened
+      </p>
+      <p class="MsoBodyText">
+        The big difference between Perforce and other SCM systems like RCS is
+        that Perforce is 'change' oriented. When you submit a change list,
+        included in the change list will be all of the files that you currently
+        have opened. If you don't want a file in that change list, simply
+        delete it from the change list in the editor and it won't be submitted
+        but will remain in your list of open files after the submit. You must
+        provide a description for the change, and then the entire set of files
+        associated with the change is submitted as a single atomic change to
+        the server, including file additions and deletions! Hence when you need
+        to revert back to older versions of the code, you can do it via the
+        revision number for a specific file, a change list number to go back to
+        the state when a particular change was submitted, or a label defined
+        earlier.
+      </p>
+      <p class="MsoBodyText">
+        Note that anonymous users only have read access to the software
+        repository, and will not be able to open any files or submit changes.
+        If you wish to be able to contribute changes to the SciTech Perforce
+        repository, please contact <a href="mailto:perforce@scitechsoft.com">perforce@scitechsoft.com</a> directly
+        to find out how you can get a developer account with read/write access.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_funcGroupsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="WaitVSync" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('WaitVSync.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="WaitVSync" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_globalOptions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_globalOptions.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_globalOptions" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_funcGroupsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; GA_GET_RESERVED,<br />
+        &#160;&#160;&#160; GA_GET_INITFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_DRIVERFUNCS,<br />
+        &#160; &#160;&#160;GA_GET_CURSORFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_VIDEOFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_DPMSFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_SCIFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_2DSTATEFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_2DRENDERFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_3DSETUPFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_3DSTATEFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_3DRENDERFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_D3DRENDERFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_VBEFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_REGIONFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_BUFFERFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_CLIPPERFUNCS,<br />
+        &#160;&#160;&#160; GA_GET_FIRST_OEM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00010000<br />
+        &#160;&#160;&#160; } GA_funcGroupsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This enumeration defines the identifiers used to obtain the device
+        context function group pointer structures. As new features and
+        capabilities are added to the future versions of the specification, new
+        identifiers will be added to extract new function pointers from the
+        drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The GA_GET_FIRST_OEM defines the first identifier for OEM extensions.
+        OEM's are free to added their own private functional extensions to the
+        drivers as desired. Note that OEM's must verify the presence of their
+        OEM drivers via the the OemVendorName string before attempting to use
+        OEM extension functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_RESERVED
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved value
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_INITFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_initFuncs.html">GA_initFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_DRIVERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_driverFuncs.html">GA_driverFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_CURSORFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_cursorFuncs.html">GA_cursorFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_VIDEOFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_videoFuncs.html">GA_videoFuncs</a> strucure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_DPMSFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_DPMSFuncs.html">GA_DPMSFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_SCIFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_SCIFuncs.html">GA_SCIFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_2DSTATEFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_2DStateFuncs.html">GA_2DStateFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_2DRENDERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_2DRenderFuncs.html">GA_2DRenderFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_3DSETUPFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get GA_3DSetupFuncs structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_3DSTATEFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get GA_3DStateFuncs structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_3DRENDERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get GA_3DRenderFuncs structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_D3DRENDERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get GA_D3DRenderFuncs structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_VBEFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_VBEFuncs.html">GA_VBEFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_REGIONFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_regionFuncs.html">GA_regionFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_BUFFERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_bufferFuncs.html">GA_bufferFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_CLIPPERFUNCS
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Get <a href="GA_clipperFuncs.html">GA_clipperFuncs</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:159.5pt;padding:'0in .5pt 0in .5pt';" width="266" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GA_GET_FIRST_OEM
+              </p>
+            </td>
+            <td style="width:240.0pt;padding:'0in .5pt 0in .5pt';" width="400" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                ID of first OEM extension function
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

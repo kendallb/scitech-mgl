@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_pixelFormat</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_pixelFormat
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint8 RedMask;<br />
+        &#160;&#160;&#160; N_uint8 RedPosition;<br />
+        &#160;&#160;&#160; N_uint8 RedAdjust;<br />
+        &#160;&#160;&#160; N_uint8 GreenMask;<br />
+        &#160;&#160;&#160; N_uint8 GreenPosition;<br />
+        &#160;&#160;&#160; N_uint8 GreenAdjust;<br />
+        &#160;&#160;&#160; N_uint8 BlueMask;<br />
+        &#160;&#160;&#160; N_uint8 BluePosition;<br />
+        &#160;&#160;&#160; N_uint8 BlueAdjust;<br />
+        &#160;&#160;&#160; N_uint8 AlphaMask;<br />
+        &#160;&#160;&#160; N_uint8 AlphaPosition;<br />
+        &#160;&#160;&#160; N_uint8 AlphaAdjust;<br />
+        &#160;&#160;&#160; } GA_pixelFormat
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing the format of an RGB pixel. This structure is used
+        to describe the RGB pixel format for SNAP graphics modes, as well as
+        the pixel format for system memory buffers converted on the fly by SNAP
+        Graphics to the destination pixel format. RGB pixel formats are
+        required for pixel depths greater than or equal to 15-bits per pixel.
+        The pixel formats for 15 and 16-bit modes are constant and never
+        change, however there are 2 possible pixel formats for 24 bit RGB modes
+        and 4 possible formats for 32 bit RGB modes that are supported by the
+        MGL. The possible modes for 24-bits per pixel are:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                24-bit
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Description
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RGB
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Red in byte 2, Green in byte 1 and Blue in
+                byte 0. This is the standard format used by all 24 bit Windows
+                BMP files, and the native display format for most graphics
+                hardware on the PC.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BGR
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Blue in byte 2, Green in byte 1 and Red in
+                byte 0. This format is the native display format for some
+                graphics hardware on the PC.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The possible modes for 32-bits per pixel are:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                32-bit
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Description
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ARGB
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Red in byte 2, Green in byte 1 and Blue in
+                byte 0 and alpha in byte 3.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ABGR
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Blue in byte 2, Green in byte 1 and Red in
+                byte 0 and alpha in byte 3.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RGBA
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Red in byte 3, Green in byte 2 and Blue in
+                byte 1 and alpha in byte 0.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BGRA
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Values are packed with Blue in byte 3, Green in byte 2 and Red in
+                byte 1 and alpha in byte 0.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you intend to write your own direct rendering code for RGB graphics
+        modes, you will need to write your code so that it will adapt to the
+        underlying pixel format used by the hardware to display the correct
+        colors on the screen. SNAP Graphics has the ability to perform pixel
+        format translation on the fly using the ConvertBlt family of functions,
+        but this can be time consuming so directly rendering in the native
+        pixel format can be more efficient. The formula for packing the pixel
+        data into the proper positions given three 8-bit RGB values is as
+        follows:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        color = ((GA_color)((R &gt;&gt; RedAdjust) &amp; RedMask)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;&lt; RedPosition)<br />
+        &#160;&#160;&#160;&#160;&#160; | ((GA_color)((G &gt;&gt; GreenAdjust)
+        &amp; GreenMask)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;&lt; GreenPosition)<br />
+        &#160;&#160;&#160;&#160;&#160; | ((GA_color)((B &gt;&gt; BlueAdjust)
+        &amp; BlueMask)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;&lt; BluePosition);
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Alternatively you can unpack the color values from the framebuffer with
+        the following code (note that you lose precision when unpacking values
+        from the framebuffer since the bottom bits always get set to 0):
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        R = (((color) &gt;&gt; RedPosition) &amp; RedMask)<br />
+        &#160;&#160;&#160; &lt;&lt; RedAdjust;<br />
+        G = (((color) &gt;&gt; GreenPosition) &amp; GreenMask)<br />
+        &#160;&#160;&#160; &lt;&lt; GreenAdjust;<br />
+        B = (((color) &gt;&gt; BluePosition) &amp; BlueMask)<br />
+        &#160;&#160;&#160; &lt;&lt; BlueAdjust;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to create your own pixel formats (such as to create memory
+        custom bitmaps), the following list defines all the pixel formats that
+        the SNAP Graphics knows how to deal with:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        {0x1F,0x0A,3, 0x1F,0x05,3, 0x1F,0x00,3, 0x01,0x0F,7}, // 555 15bpp<br />
+        {0x1F,0x0B,3, 0x3F,0x05,2, 0x1F,0x00,3, 0x00,0x00,0}, // 565 16bpp<br />
+        {0xFF,0x10,0, 0xFF,0x08,0, 0xFF,0x00,0, 0x00,0x00,0}, // RGB 24bpp<br />
+        {0xFF,0x00,0, 0xFF,0x08,0, 0xFF,0x10,0, 0x00,0x00,0}, // BGR 24bpp<br />
+        {0xFF,0x10,0, 0xFF,0x08,0, 0xFF,0x00,0, 0xFF,0x18,0}, // ARGB 32bpp<br />
+        {0xFF,0x00,0, 0xFF,0x08,0, 0xFF,0x10,0, 0xFF,0x18,0}, // ABGR 32bpp<br />
+        {0xFF,0x18,0, 0xFF,0x10,0, 0xFF,0x08,0, 0xFF,0x00,0}, // RGBA 32bpp<br />
+        {0xFF,0x08,0, 0xFF,0x10,0, 0xFF,0x18,0, 0xFF,0x00,0}, // BGRA 32bpp
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        One special cased pixel format is used to represent and 8bpp color index
+        bitmap with an alpha channel. This pixel format is a 16-bit wide pixel
+        format, but the red channel is considered to contain the 8-bit color
+        index values. The pixel format structure for this type of bitmap looks
+        like the following:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        {0xFF,0x00,0, 0x00,0x00,0, 0x00,0x00,0, 0xFF,0x08,0}, // A8CI 8bpp +
+        Alpha
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RedMask
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Unshifted 8-bit mask for the red color channel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RedPosition
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bit position for bit 0 of the red color channel information
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RedAdjust
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of bits to shift the 8-bit red value right
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GreenMask
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Unshifted 8-bit mask for the green color channel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GreenPosition
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bit position for bit 0 of the green color channel information
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GreenAdjust
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of bits to shift the 8-bit green value right
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BlueMask
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Unshifted 8-bit mask for the blue color channel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BluePosition
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bit position for bit 0 of the blue color channel information
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BlueAdjust
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of bits to shift the 8-bit blue value right
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                AlphaMask
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Unshifted 8-bit mask for the alpha channel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                AlphaPosition
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bit position for bit 0 of the alpha channel information
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                AlphaAdjust
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of bits to shift the 8-bit alpha value right
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

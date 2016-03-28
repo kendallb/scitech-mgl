@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_setDriverOptions</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_setDriverOptions
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets driver registration options for the Game Framework
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI GM_setDriverOptions(<br />
+        &#160;&#160;&#160; GM_driverOptions *opt)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                opt
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Parameter block containing driver registration options
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function tells the Game Framework which driver technologies you want
+        to support in your game. By default all of them are enabled, and you
+        can use this function to disable certain driver technologies at runtime
+        for compatibility in the field. You may call this function as many
+        times as you wish to change the driver options on the fly, and if the
+        values change the Game Framework will re-enumerate the list of
+        available graphics modes for you.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that the <a href="GM_driverOptions.html">GM_driverOptions</a> structure
+        also contains the modeFlags field which represents the color depths
+        that you will be supporting in your application, so that the Game
+        Framework will only enumerate modes that your game can support. For
+        instance if you only support 8bpp modes, than pass a value of
+        GM_MODE_8BPP. If you support 8bpp and 15/16bpp then pass in a value of
+        GM_MODE_8BPP | GM_MODE_16BPP. Note also that you can change the
+        supported mode flags at any time, which is useful if your software
+        renderer only supports 8bpp modes, while in 3D hardware accelerated
+        modes you want to support all available color depths.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The Game Framework enumerates both 15bpp
+          (5:5:5) and 16bpp (5:6:5) modes when you pass in a value of
+          GM_MODE_16BPP, since both of these modes will likely be available on
+          end user systems. Also note that it is equally likely that in some
+          cases only one of these formats and not the other is supported on the
+          end user system, so your code will have to be able to support both
+          formats for compatibility.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; If your game does not require hardware OpenGL
+          support (ie: you are not using OpenGL in your game), then you should
+          set the useOpenGLHW flag to false to make sure that the OpenGL
+          drivers are not registered with the MGL (which would require the
+          OpenGL runtime DLL's to be installed on your end users system).
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; We recommend that you provide support for
+          disabling both DirectDraw and WinDirect modes via a command line
+          switch in your game, in case either of these two technologies have
+          problems on your customer machines. Please see the Game Framework
+          sample code for ideas on how to do this.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GM_init.html">GM_init</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

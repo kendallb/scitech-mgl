@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>font_lib_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        font_lib_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        struct font_lib_t {<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; name[_MGL_FNAMESIZE];<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontLibType;<br />
+        &#160;&#160;&#160; FILE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *f;<br />
+        &#160;&#160;&#160; ibool&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ownHandle;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwOffset;<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing a loaded MGL font library. MGL font files come in
+        three flavors, either vector fonts, bitmap fonts or scaleable fonts.
+        Vector fonts represent the characters in the font as a set of lines
+        that are drawn, and vector fonts can be scaled and rotated to any
+        desired angle. Vector fonts however do not look very good when
+        rasterized at high resolutions. Bitmap fonts represent the characters
+        in the font as small monochrome bitmaps, and can be either fixed width
+        fonts or proportional fonts. Scaleable fonts (TrueType and Adobe Type
+        1) represent the characters as mathematical outlines that can be scaled
+        to any size. Scaleable fonts are scan converted into bitmap fonts at
+        runtime when a particular font point size is requested. Scalable fonts
+        can also be used for anti-aliased text rendering for better looking
+        fonts at lower resolutions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL can load both MGL 1.x style font files (vector and bitmap fonts)
+        or Windows 2.x style bitmap font files. For creating your own bitmap
+        font files, you should use any standard Windows font file editor and
+        save the fonts in Windows 2.x format (which is the standard format used
+        by Windows 3.x, Windows 95 and Windows NT for bitmap fonts).
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

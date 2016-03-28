@@ -1,0 +1,227 @@
+#***************************************************************************
+#
+#                  SciTech OS Portability Manager Library
+#
+#  ========================================================================
+#
+#   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+#
+#   This file may be distributed and/or modified under the terms of the
+#   GNU General Public License version 2.0 as published by the Free
+#   Software Foundation and appearing in the file LICENSE.GPL included
+#   in the packaging of this file.
+#
+#   Licensees holding a valid Commercial License for this product from
+#   SciTech Software, Inc. may use this file in accordance with the
+#   Commercial License Agreement provided with the Software.
+#
+#   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+#   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+#   PURPOSE.
+#
+#   See http://www.scitechsoft.com/license/ for information about
+#   the licensing options available and how to purchase a Commercial
+#   License Agreement.
+#
+#   Contact license@scitechsoft.com if any conditions of this licensing
+#   are not clear to you, or you have questions about licensing options.
+#
+#  ========================================================================
+#
+# Language:    GNU AS
+# Environment: PPC 32-bit big-endian.
+#
+# Description: Code for 64-bit arithmetic.
+#
+#****************************************************************************
+
+# __udivdi3 is supplied by GCC ; it is presumed that whatever code is linked
+# with this assembler module will have been compiled using it.
+.global __udivdi3
+
+#----------------------------------------------------------------------------
+# void _PM_add64(u32 a_low,u32 a_high,u32 b_low,u32 b_high,__u64 *result);
+#----------------------------------------------------------------------------
+# Adds two 64-bit numbers. Note that the __u64 structure stores the result
+# low word first, even though the words themselves are big-endian.
+#----------------------------------------------------------------------------
+# r3=a_low, r4=a_high, r5=b_low, r6=b_high, r7=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_add64
+.type   _PM_add64,@function
+
+_PM_add64:
+        addc    r11,r3,r5
+        adde    r12,r4,r6
+        stw     r11,0(r7)
+        stw     r12,4(r7)
+        blr
+
+.size   _PM_add64, .-_PM_add64
+
+#----------------------------------------------------------------------------
+# void _PM_sub64(u32 a_low,u32 a_high,u32 b_low,u32 b_high,__u64 *result);
+#----------------------------------------------------------------------------
+# Subtracts 64-bit number 'b' from 'a'.
+#----------------------------------------------------------------------------
+# r3=a_low, r4=a_high, r5=b_low, r6=b_high, r7=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_sub64
+.type   _PM_sub64,@function
+
+_PM_sub64:
+        subfc   r11,r5,r3
+        subfe   r12,r6,r4
+        stw     r11,0(r7)
+        stw     r12,4(r7)
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_mul64(u32 a_low,u32 a_high,u32 b_low,u32 b_high,__u64 *result);
+#----------------------------------------------------------------------------
+# Multiplies two 64-bit numbers.
+#----------------------------------------------------------------------------
+# r3=a_low, r4=a_high, r5=b_low, r6=b_high, r7=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_mul64
+.type   _PM_mul64,@function
+
+_PM_mul64:
+        mulhwu  r0,r3,r5
+        mullw   r8,r3,r6
+        mullw   r10,r3,r5
+        add     r6,r8,r0
+        mullw   r3,r5,r4
+        add     r9,r6,r3
+        stw     r9,4(r7)
+        stw     r10,0(r7)
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_div64(u32 a_low,u32 a_high,u32 b_low,u32 b_high,__u64 *result);
+#----------------------------------------------------------------------------
+# Divides 64-bit number 'a' by 'b'.
+#----------------------------------------------------------------------------
+# r3=a_low, r4=a_high, r5=b_low, r6=b_high, r7=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_div64
+.type   _PM_div64,@function
+
+_PM_div64:
+        stwu    r1,-32(r1)
+        mflr    r8
+        stw     r29,20(r1)
+        mr      r29,r7
+        stw     r8,36(r1)
+        mr      r0,r3
+        mr      r3,r4
+        mr      r4,r0
+        mr      r0,r6
+        mr      r6,r5
+        mr      r5,r0
+        crxor   r6,r6,r6
+        bl      __udivdi3       # this is supplied by gcc
+        stw     r3,4(r29)
+        stw     r4,0(r29)
+        lwz     r3,36(r1)
+        lwz     r29,20(r1)
+        addi    r1,r1,32
+        mtlr    r3
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_shr64(u32 low,s32 high,s32 shift,__u64 *result);
+#----------------------------------------------------------------------------
+# Shift a 64-bit number right by up to 63 bits.
+#----------------------------------------------------------------------------
+# r3=low, r4=high, r5=shift, r6=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_shr64
+.type   _PM_shr64,@function
+
+_PM_shr64:
+        subfic  r0,r5,32        # store (32 - shift) in r0
+        srw     r3,r3,r5        # shift low word right
+        slw     r11,r4,r0       # shift high word left by (32 - shift), store in r11
+        or      r3,r3,r11       # or shifted high word into low word
+        subi    r0,r5,32        # store (shift - 32) in r0
+        srw     r11,r4,r0       # shift high word right by (shift - 32), store in r11
+        or      r3,r3,r11       # combine the result of the above instruction with r3
+        srw     r4,r4,r5        # now shift the high word right by the full shift count
+        stw     r3,0(r6)        # store the low word of the result
+        stw     r4,4(r6)        # store the high word of the result
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_sar64(u32 low,s32 high,s32 shift,__u64 *result);
+#----------------------------------------------------------------------------
+# Shift a signed 64-bit number right by up to 63 bits.
+#----------------------------------------------------------------------------
+# r3=low, r4=high, r5=shift, r6=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_sar64
+.type   _PM_sar64,@function
+
+_PM_sar64:
+        subfic  r0,r5,32        # store (32 - shift) in r0
+        srw     r3,r3,r5        # shift low word right
+        slw     r11,r4,r0       # shift high word left by (32 - shift), store in r11
+        or      r3,r3,r11       # or shifted high word into low word
+        subic.  r0,r5,32        # store (shift - 32) in r0
+        sraw    r11,r4,r0       # shift high word right by (shift - 32), store in r11
+        ble     1f              # skip next instruction if carry set
+        or      r3,r3,r11       # combine the result of the previous shift with r3
+1:
+        sraw    r4,r4,r5        # now shift the high word right by the full shift count
+        stw     r3,0(r6)        # store the low word of the result
+        stw     r4,4(r6)        # store the high word of the result
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_shl64(u32 low,s32 high,s32 shift,__u64 *result);
+#----------------------------------------------------------------------------
+# Shift a 64-bit number left by up to 63 bits.
+#----------------------------------------------------------------------------
+# r3=low, r4=high, r5=shift, r6=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_shl64
+.type   _PM_shl64,@function
+
+_PM_shl64:
+        subfic  r0,r5,32        # store (32 - shift) in r0
+        slw     r4,r4,r5        # shift high word left
+        srw     r11,r3,r0       # shift low word right by (32 - shift), store in r11
+        or      r4,r4,r11       # or shifted low word into high word
+        subi    r0,r5,32        # store (shift - 32) in r0
+        slw     r11,r3,r0       # shift low word left by (shift - 32), store in r11
+        or      r4,r4,r11       # combine the result with the high word
+        slw     r3,r3,r5        # now shift the low word left by the full shift count
+        stw     r3,0(r6)        # store the low word of the result
+        stw     r4,4(r6)        # store the high word of the result
+        blr
+
+#----------------------------------------------------------------------------
+# void _PM_neg64(u32 a_low,s32 a_high,__u64 *result);
+#----------------------------------------------------------------------------
+# Negate a 64-bit number
+#----------------------------------------------------------------------------
+# r3=low, r4=high, r5=result.
+#----------------------------------------------------------------------------
+.align 2
+.global _PM_neg64
+.type   _PM_neg64,@function
+
+_PM_neg64:
+        subfic  r3,r3,0         # subtract high word from 0 (and update carry)
+        subfze  r4,r4           # negate low word while taking into account carry
+        stw     r3,0(r5)
+        stw     r4,4(r5)
+        blr
+

@@ -1,0 +1,35 @@
+v1.3
+
+    (2 June 1997) Reorganised triangle code. Triangle code
+    now works with any bpp.
+
+v1.2
+
+    (1 feb 1996) Added surface wrapping demo.
+    added swtriangle
+
+v1.1
+
+    (Jan 1996) Added wtriangle routine to draw from bitmap.
+    added striangle.
+
+v1.0
+
+    (Jan 1996) Plane demo fully working in all 256c modes.
+    3dkit.c extensively rewritten with many more features.
+    triangle.c optimised to write to frame buffer directly.
+
+v0.9
+
+    (Jan 1996) Ported plane demo from DOS compiler to Linux.
+    triangle.c written to replace 8088 assembly code.
+
+Prior to 0.9:
+
+    (1994) Created plane demo with page flipping.
+
+    (+-1993) 3dkit written in C for DOS. Triangle and line drawing
+    routines written in assembly language in 320x400x256.
+
+
+

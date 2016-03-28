@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>DrawPattScanList</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        DrawPattScanList
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws a list of monochrome patterned scanlines.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::DrawPattScanList(<br />
+        &#160;&#160;&#160; N_int32 y,<br />
+        &#160;&#160;&#160; N_int32 length,<br />
+        &#160;&#160;&#160; N_int16 *scans)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                y
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Y coordinate for scanline
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                length
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of scanlines in the list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                scans
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to an array of scanline data
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function renders a list of monochrome patterned scanlines starting
+        at the specified location in the currently active colors, mix and
+        monochrome pattern. The scanline coordinates are passed as an array of
+        16-bit integer coordinates, packed with the X1 coordinate followed by
+        the X2 coordinate and so on. For each scanline in the list, this
+        routine will render a scanline from X1 to X2 (exclusive) at increasing
+        Y coordinates. For scanlines where X2 &lt; X1, the X1 and X2
+        coordinates will be swapped, and for scanlines where X1 = X2, the
+        scanline will be skipped and nothing will be drawn.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        DrawScan, <a href="DrawScanList.html">DrawScanList</a>, <a href="DrawColorPattScanList.html">DrawColorPattScanList</a>,
+        <a href="Set8x8MonoPattern.html">Set8x8MonoPattern</a>, <a href="Use8x8MonoPattern.html">Use8x8MonoPattern</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

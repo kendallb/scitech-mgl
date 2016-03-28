@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MDBX_errCodes</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MDBX_errCodes
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MDBX_ok,<br />
+        &#160;&#160;&#160; MDBX_fileNotFound,<br />
+        &#160;&#160;&#160; MDBX_corrupt,<br />
+        &#160;&#160;&#160; MDBX_outOfMemory,<br />
+        &#160;&#160;&#160; MDBX_notFound,<br />
+        &#160;&#160;&#160; MDBX_IOError,<br />
+        &#160;&#160;&#160; MDBX_parseError,<br />
+        &#160;&#160;&#160; MDBX_invalidDB,<br />
+        &#160;&#160;&#160; MDBX_dbNotOpen,<br />
+        &#160;&#160;&#160; MDBX_noRecords<br />
+        &#160;&#160;&#160; } MDBX_errCodes
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/monitor.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Error codes returned by monitor database routines
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_ok
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No error
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_fileNotFound
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Database file not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_corrupt
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Database is corrupted
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_outOfMemory
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Not enough memory to load DB
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_notFound
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Entry was not found in DB
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_IOError
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Fatal I/O error
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_parseError
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Error parsing monitor database
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_invalidDB
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Database handle is invalid
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MDBX_dbNotOpen
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Attempted to access the database before opening it
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

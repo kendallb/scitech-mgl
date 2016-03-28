@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PM_mapPhysicalAddr</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PM_mapPhysicalAddr
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Map a physical address to a linear address in the callers process.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void * PMAPI PM_mapPhysicalAddr(<br />
+        &#160;&#160;&#160; ulong base,<br />
+        &#160;&#160;&#160; ulong limit,<br />
+        &#160;&#160;&#160; ibool isCached)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                base
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical base address of the memory to map
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                limit
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Limit for the mapped memory region (length-1)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                isCached
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if the memory should be cached, false if not
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the mapped memory, false on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to obtain a pointer to the any physical memory
+        location in the computer, mapped into the linear address space of the
+        calling process. If the isCached parameter is set to true, caching will
+        be enabled for this region. If this parameter is off, caching will be
+        disabled. Caching must always be disabled when accessing memory mapped
+        registers, as they cannot be cached. Note that this does not enable
+        write combing for the region; for that you need to call the <a href="PM_enableWriteCombine.html">PM_enableWriteCombine</a> function
+        (however caching must be enabled before the write combining will
+        work!).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="PM_freePhysicalAddr.html">PM_freePhysicalAddr</a>, <a href="PM_getPhysicalAddr.html">PM_getPhysicalAddr</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

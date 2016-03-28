@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_CRTCInfoFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_CRTCInfoFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaInterlaced&#160;&#160;&#160; = 0x01,<br />
+        &#160;&#160;&#160; gaDoubleScan&#160;&#160;&#160; = 0x02,<br />
+        &#160;&#160;&#160; gaTripleScan&#160;&#160;&#160; = 0x04,<br />
+        &#160;&#160;&#160; gaHSyncNeg&#160;&#160;&#160;&#160;&#160; = 0x08,<br />
+        &#160;&#160;&#160; gaVSyncNeg&#160;&#160;&#160;&#160;&#160; = 0x10<br />
+        &#160;&#160;&#160; } GA_CRTCInfoFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Definitions for flags member of the <a href="GA_CRTCInfo.html">GA_CRTCInfo</a> structure.
+        These flags define the different flags required to complete a mode set
+        with refresh rate control enabled.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaInterlaced flag is used to determine whether the mode programmed
+        into the hardware is interlaced or non-interlaced. The CRTC timings
+        passed in will be identical for both interlaced and non-interlaced
+        modes, and it is up to the graphics driver to perform any necessary
+        scaling between the hardware values and the normalized CRTC values in
+        interlaced modes. Note that you must check the gaHaveInterlaced bit in
+        the <a href="GA_modeInfo.html">GA_modeInfo</a> structure to determine
+        if interlaced mode is supported before attempting to initialise an
+        interlaced mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaDoubleScan flag is used to determine whether the mode programmed
+        into the hardware is double scanned or not. When double scanning is
+        specified, the vertical CRTC values passed in will be double what the
+        real vertical resolution will be. Double scanning is used to implement
+        the 200, 240 and 300 line graphics modes on modern controllers. Note
+        that you must check the gaHaveDoubleScan bit in the <a href="GA_modeInfo.html">GA_modeInfo</a> structure
+        to determine if double scan mode is supported by the hardware in that
+        display mode. Note also that all modes with vertical resolutions below
+        300 scanline modes require the double scanning to be enabled, and modes
+        between 300 and 400 scanlines can usually look better if it is enabled.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHSyncNeg flag is used to determine if the horizontal sync polority
+        should be set to a negative sync (gaHSyncNeg is set) or positive sync
+        (gaHSyncNeg is not set).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVSyncNeg flag is used to determine if the vertical sync polority
+        should be set to a negative sync (gaVSyncNeg is set) or positive sync
+        (gaVSyncNeg is not set).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaInterlaced
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable interlaced mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaDoubleScan
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable double scanned mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaTripleScan
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable triple scanned mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHSyncNeg
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Horizontal sync is negative
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVSyncNeg
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical sync is negative
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

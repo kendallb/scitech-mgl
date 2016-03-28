@@ -1,0 +1,254 @@
+Installation of Svgalib v1.2.12 or higher.
+
+Table of contents:
+    0. Introduction
+    1. Directories
+    2. Installation
+    3. SVGALib port to ALPHA AXP hardware
+
+0. Introduction
+   This is a low level graphics library for Linux, based on VGAlib 1.2 by
+   Tommy Frandsen. VGAlib supported a number of standard VGA graphics
+   modes, as well as Tseng ET4000 high resolution 256-color modes.
+   Nowadays support for even more hardware is given. For details on
+   supported chipsets, see the file 0-README which is equal to man 7
+   svgalib (when svgalib is installed). 
+
+   It supports transparent virtual console switching, that is, you can
+   switch consoles to and from text and graphics mode consoles using
+   alt-[function key]. Also, svgalib corrects most of VGAlib's textmode
+   corruption behaviour by catching SIGSEGV, SIGFPE and SIGILL, and
+   ensuring that a program is running in the currently visible virtual
+   console before setting a graphics mode. Svgalib uses SIGUSR1 and SIGUSR2
+   internally to do so.
+
+   When the library is first used by a program at run-time, the chipset is
+   detected and the appropriate driver is used. This means that a graphics
+   program will work on any card that is supported by svgalib, if the mode
+   it uses is supported by the chipset driver for that card. The library
+   is upwardly compatible with VGAlib. 
+
+   The set of drawing functions provided by svgalib itself is limited
+   (mostly unchanged from VGAlib) and unoptimized; you can however use
+   vga_setpage and graph_mem (which points to the 64K VGA framebuffer) in
+   a program or graphics library. A fast external framebuffer graphics
+   library for linear and banked 1, 2, 3 and 4 bytes per pixel modes is
+   included (it also indirectly supports planar VGA modes). See 'man 7
+   vgagl' for details.
+
+   One obvious application of the library is a picture viewer. Several are
+   available, along with animation viewers. See the references at the end
+   of 0-README. 
+
+   I have added a simple VGA textmode font restoration utility
+   (restorefont) which may help if you suffer from XFree86 textmode font
+   corruption. It can also be used to change the textmode font. It's in
+   the utils/ directory, along with a README and some other textmode
+   utilities: restoretextmode (which saves/restores textmode registers),
+   restorepalette, and the script textmode. If you run the savetextmode
+   script to save textmode information to /tmp, you'll be able to restore
+   textmode by running the textmode script. 
+
+   If you have an ET4000 card, you should read the 0-README in the et4000/
+   directory. You will probably want to replace the ET4000 registers. 
+
+1. Directories
+   doc/         README's and man pages. See the 0-README in this
+            directory for info on how to read these man pages
+            without installing svgalib and how to produce nice
+            printouts.
+   demos/       Demo and test programs.
+   utils/       Textmode/font utilities.
+   src/         Main library source.
+   src/mouse/       Source for mouse interface.
+   src/keyboard/    Source for keyboard interface.
+   gl/          External framebuffer graphics library sources.
+   support/     DOS-based utility for dumping VGA registers.
+   et4000/      Notes, utilities and sample registers for ET4000.
+   mach32/      Notes and a utility for the ATI mach32 driver.
+   jump/        Configuration files for building DLL shared library.
+   sharedlib/       Shared library image and stubs.
+   threeDKit/       Routines to draw 3-dimensional triangles and
+            3D demos using these.
+
+   I welcome any questions, comments, suggestions, bug-reports, etc.
+
+   The source code is rather a mess, but there's hope. The new XFree86-style
+   driver interface (used by the Cirrus and S3 drivers) and kernel module
+   graphics that some are experimenting with should provide some momentum.
+
+   Harm Hanemaayer
+   hhanemaa@cs.ruu.nl
+
+   Current maintainer is
+   Michael Weller
+   eowmob@exp-math.uni-essen.de
+
+2. Installation
+   If you are happy with the configuration in 'Makefile.cfg' which means
+   that you want to install an ELF shared library and probably an a.out
+   shared library for support of some old binaries (and if the svgalib tar
+   file you got already contains such an precompiled a.out shared library)
+   just running
+
+   make install
+
+   as root should take care of proper installation. After installation,
+   you MUST edit /etc/vga/libvga.config to set the monitor and mouse type.
+   Depending on your hardware, other setup might be required. Checkout
+   'man 7 svgalib' for details after you installed svgalib (or see
+   doc/0-README)
+
+   It is a good idea to read and check the configurable section of
+   Makefile.cfg nevertheless, even if you don't think you have to. Also,
+   if your are using GLIBC you have to uncomment the definition of
+   USEGLIBC in Makefile.cfg as glibc is not completely compatible to the
+   linux libc (at least at compile time).
+
+   Let me rephrase this: YOU MUST COMPILE AND INSTALL AS ROOT.
+   If you don't nothing bad will happen during compilation, but certain
+   tools won't be able to become SETUID ROOT which is required for
+   proper operation.
+
+   In case you change anything in 'Makefile.cfg' which does not just control
+   which parts to install and where, you *MUST* issue a 'make clean' prior to
+   'make install' to remove any already compiled objects and force complete
+   recompilation. 
+
+   Edit Makefile.cfg to change installation paths and to select the parts
+   that should be installed.
+
+   If you have an ET4000 card, read 'man 7 svgalib.et4000' and copy the
+   appropriate register file to et4000.regs. Remember to set the DAC type. 
+
+   The default behaviour is the following:
+
+   Shared libraries are installed in /lib and /usr/local/lib, header files
+   in /usr/local/include (any old header files in /usr/include are
+   removed). In the Slackware distribution the linkable libraries are in
+   /usr/lib, and the utilities in /usr/bin; these are now removed by 'make
+   install'. Until now just doing make install with Slackware might have
+   produced duplicate binaries, but fortunately the newer version in
+   /usr/local/* would have taken precedence in use. 
+
+   The et4000 registers (et4000.regs) are installed as
+   /etc/vga/libvga.et4000, but only if this file does not exit yet. The
+   same goes for the configuration file, libvga.config. 
+
+   Textmode utilities are installed in /usr/local/bin. These are
+   restorefont, runx, restorepalette, dumpreg, restoretextmode, textmode,
+   savetextmode, and fix132x43. 
+
+   If you change Makefile.cfg to install the static libraries, static
+   libraries are compiled, and installed in /usr/local/lib. Note that you
+   do not need to do this; the shared library is enough. 
+
+   If you now run 'make demoprogs', the demo programs are created in the
+   demos/ and threeDKit/ directory. If you 
+
+   You can remove previously installed files (not the et4000 registers and
+   config file and manual pages) with 'make uninstall'.
+
+   In 1.28 the makefiles were changed. With minimal effort you can compile
+   it from a separate (even read-only) source tree. Just make a copy of
+   Makefile and Makefile.cfg into a writable dir, and change srcdir (or
+   override from environment) to the directory where the source code is.
+
+   This feature, as well as the code for ELF compilation was kindly
+   contributed by Stephen Lee <sl14@crux1.cit.cornell.edu>.
+
+   `make static' compiles a static version of svgalib. It is not
+   automatically installed by default but you can enable that from
+   Makefile.cfg. Note though, that if you specify installation of the static
+   libraries in 'Makefile.cfg' a simple 'make install' will compile the 
+   static library first.
+
+   If you do not configure Makefile.cfg to install the shared libs, the
+   demoprogs and utilities are linked against the new static lib
+   (regardless of one already installed). However, the static libraries are 
+   not build automatically then. You must issue a 'make static' first.
+
+   Building elf or a.out shared libraries can easily be configured in the
+   Makefile.cfg. Be sure to issue a `make clean' after changing the
+   TARGET_FORMAT setting. 
+
+   If you specified elf, `make install' will compile the shared libs as
+   they don't come pre-built. This is nothing to worry about. Compilation
+   is easy and will not use any user action.
+
+   This is not true for a.out and there is a special hack in the makefiles
+   for this. As svgalib is distributed there is no attempt to recompile the
+   a.out sharedlibs. Prebuild images are already included.
+
+   If you have the required tools-* installed and if you made patches (or
+   just feel like recompiling) issue a `make clean' and `make shared' to
+   enforce recompiling of the a.out sharedlibs (from then on even a make
+   install will update the shared library if sources changed). Issue `make
+   distclean' after a `make shared' to fall back to the distribution
+   behaviour.
+
+   However, getting the right tools becomes more and more complicated as
+   it gets less important to give a.out support. Right now you even have to
+   hand patch the last tools-* release to make it usuable with current
+   compilers. In general I discourage trying to compile the a.out libs.
+   Just use the images that come with svgalib.
+
+3. SVGALib port to ALPHA AXP hardware
+   David Mosberger-Tang <davidm@azstarnet.com> contributed patches to make
+   SVGALib run on Linux/Alpha namely APECS-based and low-cost PCI boards.
+
+   It is known to run with #9 GXE (but all S3-based graphic cards should
+   work if they are supported). He wrote a patch to make SVGALib run on
+   Jensen boards. They own EISA slots instead of PCI slots and can not map
+   video memory as a continous frame buffer. Use this patch with extreme
+   care (do sync disks before starting compiled software for the first
+   time!). He also recommends using SVGATextMode in combination with
+   SVGALib-based software otherwise the library crunches the font
+   (although the system should not crash). Here is a list of what is not
+   supported yet: 
+
+   - vc-switching (due to lack of some signals supported by current ALPHA
+     kernels but this could be fixed now [He used a 1.3.28 to test])
+   - font restoring without SVGATextMode (He still works on it)
+   - clearing screen in mode 320x200x256
+   - vgagl (will never be ported by me because he thinks it is too much work
+     and useless in the end)
+
+   He tested his patch with an ELSA Winner 1000 but it should even work on
+   other cards (He recommends to always sync disks, it saves a lot of time
+   and sweat :-) ). 
+
+   If you compile it on a machine where __alpha__ is defined, you should
+   have configured your kernel correctly once. This is due to the fact
+   that he saw no other possibility to determine the type of ALPHA AXP
+   hardware you use. During kernel configuration your are asked which
+   architecture you want to compile it for. 
+
+   Also important: you must have the right libc compiled for your board
+   hardware. This is due to the I/O functions in libc. They need to be
+   compiled especially for your Alpha board. Have a look at
+   ftp.azstarnet.com for precompiled libc's (although this is not very
+   reliable, most of the libc-packages are sources). 
+
+   Note that he feels __not__ responsible for damage to your hardware when
+   using this software. If you encounter any problems that refer to
+   Jensen-type hardware you can send an email to me: 
+
+   If you encounter any problems that refer to Jensen-type hardware you
+   can send an email to:
+            Stephan Kanthak <kanthak@i6.informatik.rwth-aachen.de>
+
+   Here are some additional comments Michael Weller wrote on the first
+   ALPHA patches from David Mosberger-Tang: 
+
+   No reports of other hardware working or not exist yet. This is REAL
+   ALPHA software. I don't know any installation details. In theory you
+   just recompile it out of the box (When you are using Linux/Alpha you
+   are a hacker and should be able to create a shared lib w/o problems). I
+   don't know any details, in case of problems please contact David. 
+
+   From what I saw you might have to use static libs. That's no real
+   problem, a simple 'make static' will create a static lib.
+
+   The background mode is said not to work on Dec-ALPHA, so you better
+   disable it in Makefile.cfg

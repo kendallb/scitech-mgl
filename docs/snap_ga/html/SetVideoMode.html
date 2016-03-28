@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>SetVideoMode</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="SetSoftwareRenderFuncs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SetSoftwareRenderFuncs.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="SetSoftwareRenderFuncs" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="SwitchPhysicalResolution" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SwitchPhysicalResolution.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="SwitchPhysicalResolution" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_initFuncs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_initFuncs.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_initFuncs" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        SetVideoMode
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets a specified display mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        N_int32 NAPI GA_initFuncs::SetVideoMode(<br />
+        &#160;&#160;&#160; N_uint32 mode,<br />
+        &#160;&#160;&#160; N_int32 *virtualX,<br />
+        &#160;&#160;&#160; N_int32 *virtualY,<br />
+        &#160;&#160;&#160; N_int32 *bytesPerLine,<br />
+        &#160;&#160;&#160; N_int32 *maxMem,<br />
+        &#160;&#160;&#160; N_int32 refreshRate,<br />
+        &#160;&#160;&#160; GA_CRTCInfo *crtc)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mode
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode number to set, including flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                virtualX
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Requested virtual display X resolution (-1 to use default)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                virtualY
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Requested virtual display Y resolution (-1 to use default)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bytesPerLine
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Returns the scanline width for the mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                maxMem
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Returns the maximum addressable display memory limit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                refreshRate
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Refresh rate to set (0 for default)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:114.5pt;padding:'0in .5pt 0in .5pt';" width="191" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                crtc
+              </p>
+            </td>
+            <td style="width:285.0pt;padding:'0in .5pt 0in .5pt';" width="475" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                CRTC information block if afRefreshCtrl specified
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        0 on success, -1 on failure
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to initialize a specified display mode. The mode
+        number passed to this function should be one of the values stored in
+        the AvailableModes list of the <a href="GA_devCtx.html">GA_devCtx</a> structure
+        combined with any of the valid mode set flags defined in the <a href="GA_modeFlagsType.html">GA_modeFlagsType</a> enumeration.
+        Any value outside of this set of values will cause this function to
+        fail.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When the graphics mode is initialized, you can pass in a specific virtual
+        X resolution to enable a wide virtual display mode, or an interleaved
+        stereo display mode. If you pass in a value of -1, the physical X
+        resolution for the display mode will be used to initialise the virtual
+        X resolution. If you pass in a value other than -1, the driver will
+        attempt to satisfy your request with the next largest value that the
+        controller can actually support. The value programmed will be returned
+        in the virtualX parameter on exit. It is possible that the graphics
+        mode cannot have the scanline width changed, or that the scanline width
+        requested was too large for the graphics mode to handle, in which case
+        this function will fail.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The virtualY parameter should be filled in with the virtual desktop
+        height if you plan to do virtual panning, and is mostly used to compute
+        the number of available display pages for page flipping etc, as well as
+        where the start of offscreen memory is for the offscreen buffer
+        manager. If this value is set to -1, the physical Y resolution of the
+        display mode will be used to initialise the virtual Y resolution. The
+        actual value used will be returned in the virtualY parameter on exit.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        On exit this function returns the number of bytes in a logical scanline
+        in the bytesPerLine parameter. This can then be used to implement
+        software rendering directly to the hardware linear framebuffer. The
+        maximum addressable display memory limit is returned in the 'maxMem'
+        parameter and defines the byte offset of the highest linear framebuffer
+        address that can be used by the application. The amount of addressable
+        framebuffer display memory may not extend to the end of physical
+        display memory due to memory used by the driver for hardware cursors
+        and patterns etc.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        You can also elect to either use the default refresh rate for the display
+        mode or force a speific refresh rate with the refreshRate parameter. If
+        a value of 0 is passed for the refreshRate parameter, the user selected
+        default refresh rate will be use. A value other than zero will try to
+        set the requested refresh rate from the table of available refresh
+        rates that the mode supports. Make sure you first check the list of
+        available refresh rates reported by the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function
+        before calling this function, or this function will fail. For generic
+        GTF refresh rate control use the gaRefreshCtrl flag and the refreshRate
+        parameter will be ignored. Instead the CRTC timings passed in the crtc
+        parameter will be used for the display mode. This is most useful for
+        unusual refresh rates not listed in the refresh rate list, such as
+        120Hz and higher refresh rates of LC stereo shutter glasses, or to hit
+        exact CRTC timings for special flat panel or fixed frequency monitors.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; It is highly recommended that applications do
+          not change the user selected default refresh rate except for special
+          circumstances where a specific refresh rate is required (such as
+          120Hz stereo for instance).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function also accepts the flags defined in <a href="GA_modeFlagsType.html">GA_modeFlagsType</a> enumeration
+        logically OR'ed with the passed display mode number. These flags change
+        the way that the selected display mode mode is initialized as follows:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaDontClear flag is used to specify that the video memory should not
+        be cleared when the graphics mode is initialized. By default the video
+        memory will be cleared to all 0's by the driver.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaLinearBuffer flag is used to specify that the application wishes to
+        enable the linear framebuffer version of the graphics mode. On many
+        controllers, the acceleration features are only available in the linear
+        framebuffers modes. Also note that on many new PCI devices, PCI burst
+        mode is only enabled in the linear framebuffer modes, so these modes
+        should be used whenever possible for maximum performance. Make sure
+        that you check the gaHaveLinearBuffer flag in the Attributes member of
+        the <a href="GA_modeInfo.html">GA_modeInfo</a> structure to determine
+        if this is supported in the selected display mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The ga6BitDAC flag is used to force 8-bit display modes to set the RAMDAC
+        to a VGA compatible 6-bit per primary mode, rather than the default
+        8-bit per primary mode. This is generally used to make the display mode
+        compatible with the default VESA VBE and VGA display modes. Normally
+        applications will not want to set this but instead leave the mode in
+        the default 8-bits per primary setting. Note also that this has no
+        effect on 15-bpp and higher display modes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoAccel flag is used to initialise the display mode without
+        initialising the hardware acceleration portions of the graphics
+        chipset. This is generally used to implement VESA VBE compatible
+        display modes where the hardware accelerator functions are not used
+        (and the hardware accelerator state will not be touched or changed).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaRefreshCtrl flag can be set to enable generic GTF refresh rate
+        control for the display mode. If this bit is set, the mode will be
+        using the CRTC parameters and pixel clock values passed in the crtc
+        parameter, rather than using the value passed in the refreshRate
+        parameter. This allows the application program or operating system
+        drivers to calculate a new set of CRTC values (preferrably using the
+        VESA Generalized Timing Formula, or GTF specification) for the mode,
+        and allow the refresh rate to be set to any supported value for the
+        hardware.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaWindowedMode flag is specific to emulation display drivers such as
+        the DirectX display driver. These drivers are implemented on top of an
+        existing abstraction layer, and this flag is used to inform the driver
+        that the mode being set is actually a windowed mode (ie: switch back to
+        the regular desktop display mode).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaPartialModeSet flag can be set to tell the SNAP driver to only
+        perform a partial mode set instead of a complete mode set. When this
+        flag is used, the SNAP driver will only re-program the CRTC controller
+        and pixel clock, but will not re-program the graphics engine
+        components. This flag is primarily used to enable SNAP drivers to
+        change the CRTC timings and refresh rate for an existing display driver
+        without destroying the remaining state of the graphics card.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; When a linear framebuffer mode is enabled, it
+          is the responsibility of the driver to ensure that all VGA memory
+          resources such as the 0xA0000-0xBFFFF regions are disabled if
+          possible. Ensuring these regions are disabled provides for the
+          maximum performance when multiple display controllers are present in
+          the system.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetCustomVideoMode.html">SetCustomVideoMode</a>, <a href="GetVideoModeInfo.html">GetVideoModeInfo</a>,
+        <a href="GetCustomVideoModeInfo.html">GetCustomVideoModeInfo</a>, <a href="SetDisplayOutput.html">SetDisplayOutput</a>,
+        <a href="GetClosestPixelClock.html">GetClosestPixelClock</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

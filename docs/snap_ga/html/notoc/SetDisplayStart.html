@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>SetDisplayStart</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        SetDisplayStart
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the currently visible display start address.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_driverFuncs::SetDisplayStart(<br />
+        &#160;&#160;&#160; N_int32 offset,<br />
+        &#160;&#160;&#160; N_int32 waitVRT)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                offset
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Offset to start of display memory to make visible
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                waitVRT
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Wait for retrace flag (true or false)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function sets the currently visible hardware display start address
+        as a byte offset from the start of physical display memory. Hence to
+        display data beginnig at the start of video memory you would set the
+        offset parameter to 0. To display the second page for double buffered
+        animation you would set the offset parameter to 'YResolution *
+        BytesPerScanLine' for the current video mode. The waitVRT flag
+        determines if the function will wait for the vertical retrace when
+        programming the hardware display start address and the following are
+        valid values:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                value
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Description
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                0
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Schedule change for next retrace and return immediately not
+                0&#160;&#160; - Wait for vertical retrace during programming
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Generally you need to wait for a vertical retrace to enable flicker free
+        animation when doing double buffered animation. However if you have set
+        up three visible display buffers for hardware triple buffering (check
+        that the gaHaveTripleBuffer flag is set in the <a href="GA_modeInfo.html">GA_modeInfo</a> structure)
+        and you pass a value of 0 for waitVRT. In this case the function will
+        schedule the display start address and return immediately, and you can
+        then call the <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a> function
+        at a later date to determine if the previous display start address has
+        taken hold yet or not. In order for this to work properly, before you
+        need to access the next buffer for rendering, you should also loop
+        until <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a> indicates
+        that the last flip has taken place (by default this will always be the
+        case when a mode is first initialized).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The value passed into this function is always
+          in units of bytes for 8bpp and above display modes (and text modes).
+          For 4bpp display modes the value is defined in units of pixels so
+          that pixel perfect scrolling can be achieved.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; If you have enabled the buffer manager, please
+          use the buffer manager function <a href="FlipToBuffer.html">FlipToBuffer</a> to
+          change the display start address instead.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetDisplayStartXY.html">SetDisplayStartXY</a>, <a href="SetStereoDisplayStart.html">SetStereoDisplayStart</a>,
+        <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a>, <a href="SetActiveBuffer.html">SetActiveBuffer</a>,
+        <a href="FlipToBuffer.html">FlipToBuffer</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

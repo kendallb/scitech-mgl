@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_colorCursorRGBA</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_colorCursorRGBA
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160; ColorData[16384];<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160; HotX;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160; HotY;<br />
+        &#160;&#160;&#160; } GA_colorCursorRGBA
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Hardware 24-bit RGBA alpha blended cursor structure. This structure
+        defines a color hardware cursor that is downloaded to the hardware. The
+        cursor is defined as a 64x64 24-bit RGBA image with alpha channel. The
+        alpha channel data is used to define the transparency level for the
+        bitmap, with 0 being fully transparent and 255 being full opaque. Since
+        the color bitmap data is alpha blended, the is no AND mask for the
+        cursor image.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The HotX and HotY members define the hot spot for the cursor, which is
+        the location where the logical mouse pointer is located in the cursor
+        image. When you click the mouse, the pixel under the hot-spot is the
+        pixel selected.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ColorData
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor color data as a 64x64 array of packed 24-bit RGBA pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HotX
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor X coordinate hot spot
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HotY
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor Y coordinate hot spot
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

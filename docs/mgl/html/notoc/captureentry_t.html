@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>captureentry_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        captureentry_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        struct captureentry_t {<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;mask;<br />
+        &#160;&#160;&#160; struct window_t&#160;&#160;&#160;&#160;&#160;&#160; *wnd;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; id;<br />
+        &#160;&#160;&#160; struct captureentry_t *next;<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Internal structure describing how to route events within window manager.
+        By default, all events go to the window under mouse pointer. <a href="captureentry_t.html">captureentry_t</a> provides
+        means to override this and redirect certain (user-specified) events to
+        particular windows.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mask
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask specifying type of events
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                hndFunc
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Window that will receive these events
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                id
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                User-defined identifier of capture entry (used for entry removal)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                next
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to next capture entry in the chain
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

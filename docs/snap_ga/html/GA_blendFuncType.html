@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_blendFuncType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_WorkAroundsFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_WorkAroundsFlagsType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_WorkAroundsFlagsType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_bltFx" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_bltFx.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_bltFx" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_blendFuncType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaBlendNone,<br />
+        &#160;&#160;&#160; gaBlendZero,<br />
+        &#160;&#160;&#160; gaBlendOne,<br />
+        &#160;&#160;&#160; gaBlendSrcColor,<br />
+        &#160;&#160;&#160; gaBlendOneMinusSrcColor,<br />
+        &#160;&#160;&#160; gaBlendSrcAlpha,<br />
+        &#160;&#160;&#160; gaBlendOneMinusSrcAlpha,<br />
+        &#160;&#160;&#160; gaBlendDstAlpha,<br />
+        &#160;&#160;&#160; gaBlendOneMinusDstAlpha,<br />
+        &#160;&#160;&#160; gaBlendDstColor,<br />
+        &#160;&#160;&#160; gaBlendOneMinusDstColor,<br />
+        &#160;&#160;&#160; gaBlendSrcAlphaSaturate,<br />
+        &#160;&#160;&#160; gaBlendConstantColor,<br />
+        &#160;&#160;&#160; gaBlendOneMinusConstantColor,<br />
+        &#160;&#160;&#160; gaBlendConstantAlpha,<br />
+        &#160;&#160;&#160; gaBlendOneMinusConstantAlpha,<br />
+        &#160;&#160;&#160; gaBlendSrcAlphaFast,<br />
+        &#160;&#160;&#160; gaBlendConstantAlphaFast<br />
+        &#160;&#160;&#160; } GA_blendFuncType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for 2D alpha blending functions supported by the SNAP Graphics
+        drivers. The values in here define the the alpha blending functions
+        passed to the srcBlendFunc and dstBlendFunc parameters ofo the
+        SetBlendFunc function. Essentially the blend function defines how to
+        combine the source and destination pixel color together to get the
+        resulting destination color during rendering. The formula used for this
+        is defined as:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * SrcFunc + DstColor * DstFunc;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the source alpha blending function is set to gaBlendConstantAlpha, the
+        SrcFunc above becomes:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        SrcFunc = ConstAlpha
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the destination alpha blending function is set to
+        gaBlendOneMinusDstAlpha then DstFunc above becomes:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstFunc = (1-DstAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        and the final equation becomes (note that each color channel is
+        multiplied individually):
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * ConstAlpha + DstColor * (1-DstAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Although the above is a completely contrived example, it does illustrate
+        how the functions defined below combine to allow you to build complex
+        and interesting blending functions. For simple source alpha
+        transparency, the following formula would usually be used:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * SrcAlpha + DstColor * (1-SrcAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to use this type of blending and you do not care about the
+        resulting alpha channel information, you can set the optimised
+        gaBlendSrcAlphaFast blending mode. If you set both the source and
+        destination blending modes to this value, the above formula will be
+        used but an optimised fast path will be taken internally to make this
+        run as fast as possible. For normal blending operations this will be
+        much faster than setting the above formula manually. If however you
+        need the destination alpha to be preserved, you will need to use the
+        slower method instead.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        For simple constant alpha transparency, the following formula would
+        usually be used:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * ConstantAlpha + DstColor * (1-ConstantAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to use this type of blending and you do not care about the
+        resulting alpha channel information, you can set the optimised
+        gaBlendConstantAlphaFast blending mode. If you set both the source and
+        destination blending modes to this value, the above formula will be
+        used but an optimised fast path will be taken internally to make this
+        run as fast as possible. For normal blending operations this will be
+        much faster than setting the above formula manually. If however you
+        need the destination alpha to be preserved, you will need to use the
+        slower method instead.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; All the above equations assume the color values
+          and alpha values are in the range of 0 through 1 in floating point.
+          In reality all blending is done with integer color and alpha
+          components in the range of 0 to 255, when a value of 255 corresponds
+          to a value of 1.0 in the above equations.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The constant color value set by a call to
+          SetForeColor, and the constant alpha value set by a call to
+          SetAlphaValue.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Setting a blending function that uses the
+          destination alpha components is only supported if the framebuffer
+          currently supports destination alpha. Likewise setting a blending
+          function that uses source alpha components is only supported if the
+          framebuffer or incoming bitmap data contains an alpha channel. The
+          results are undefined if these conditiions are not met.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Enabling source or destination alpha blending
+          overrides the setting of the current mix mode. Logical mix modes and
+          blending cannot be used at the same time.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendNone
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No alpha blending
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendZero
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is always zero
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOne
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is always one
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendSrcColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is source color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusSrcColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-source color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendSrcAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is source alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusSrcAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-source alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendDstAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is destination alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusDstAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-destination alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendDstColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is destination color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusDstColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-destination color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendSrcAlphaSaturate
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is src alpha saturation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendConstantColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is a constant color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusConstantColor
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-constant color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendConstantAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is constant alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendOneMinusConstantAlpha
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-constant alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendSrcAlphaFast
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Common case of optimised src alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBlendConstantAlphaFast
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Common case of optimised constant alpha
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

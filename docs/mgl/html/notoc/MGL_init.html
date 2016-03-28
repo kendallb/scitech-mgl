@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_init</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_init
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Initializes MGL graphics library.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int MGLAPI MGL_init(<br />
+        &#160;&#160;&#160; const char *mglpath,<br />
+        &#160;&#160;&#160; const char *server)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mglpath
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Path to standard MGL resource files
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                server
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Name of server to connect to (NULL for local system)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Number of display devices attached, or 0 on error.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function initializes MGL for use, and should always be the first
+        function called in MGL applications. The mglpath parameter is used by
+        the MGL to locate all MGL resource files in their standard locations.
+        The value passed in here should point to the base directory where all
+        the resources are located. This may be the current directory if all
+        resources are relative to the current directory of the application
+        (i.e. a value of “.” passed in the mglpath parameter).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        After you have called <a href="MGL_init.html">MGL_init</a>, the MGL will
+        automatically detect the installed graphics hardware when any of <a href="MGL_availablePages.html">MGL_availablePages</a>,
+        <a href="MGL_modeResolution.html">MGL_modeResolution</a>, <a href="MGL_modeFlags.html">MGL_modeFlags</a> or
+        <a href="MGL_findMode.html">MGL_findMode</a> are called. The priority
+        ordering of which driver will be used depends on the capabilities of
+        the underlying display hardware, and the drivers will be chosen in the
+        following order (first one in table is selected in preference to ones
+        below it):
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Driver
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Highest performance driver selected
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Snap
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SciTech SNAP Graphics driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DirectDraw
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SciTech SNAP Graphics DirectDraw driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VBE2
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SciTech SNAP Graphics VBE/Core 2.0 driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VBE1
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SciTech SNAP Graphics VBE/Core 1.2 driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                StandardVGA
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SciTech SNAP Graphics VGA driver
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        For instance if you had DirectDraw installed on your system and MGL found
+        a SciTech SNAP Graphics driver, those modes supported by the SciTech
+        SNAP Graphics drivers will use the SciTech SNAP Graphics driver in
+        preference to the DirectDraw driver. If however the DirectDraw driver
+        has additional modes not supported by the SciTech SNAP Graphics driver,
+        the DirectDraw drivers would be used for those modes. If however the
+        user has DirectDraw installed and only has a VBE 2.0 driver available,
+        the DirectDraw drivers will be used for all modes whenever possible.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        To change this default behavior you can selectively disable those drivers
+        that you do not wish to be used immediately after calling <a href="MGL_init.html">MGL_init</a>.
+        A typical sequence of code to register drivers and allows the program
+        to disable SciTech SNAP Graphics might be as follows:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int&#160;&#160;&#160;&#160; mode;<br />
+        MGLDC&#160;&#160; *dc;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        if (MGL_init(&quot;.&quot;,NULL) == 0)<br />
+        &#160;&#160;&#160; MGL_fatalError(MGL_errorMsg(MGL_result()));<br />
+        MGL_disableDriver(MGL_SNAPNAME);<br />
+        if ((mode = MGL_findMode(640,480,8)) == -1)<br />
+        &#160;&#160;&#160; MGL_fatalError(MGL_errorMsg(MGL_result()));<br />
+        dc = MGL_createDisplayDC(mode,1,MGL_DEFAULT_REFRESH);<br />
+        ...
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When the MGL is searching for resource files (bitmaps, icons, fonts and
+        cursors), it will first attempt to find the files just by using the
+        filename itself. Hence if you wish to look for a specific bitmap or
+        font file, you should pass the full pathname to the file that you want.
+        If the filename is a simple relative filename (i.e. “myfont.fnt”), MGL
+        will then search in the standard directories relative to the path
+        specified in mglpath. The standard locations that MGL will look for the
+        resource files are as follows:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Resource
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base pathname
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Bitmaps
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                mglpath/bitmaps
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Fonts
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                mglpath/fonts
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Icons
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                mglpath/icons
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Cursors
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                mglpath/cursors
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        As a final resort the MGL will also look for the files relative to the
+        MGL_ROOT environment variable. The MGL_ROOT variable can be set to
+        point to a standard base directory where all MGL resources will be
+        stored on the end user's machine. For MGL developer machines, MGL_ROOT
+        is usually set to point to the directory where the SciTech MGL files
+        were installed (ie: c:\scitech by default for DOS, Windows and OS/2
+        installations, $HOME/scitech for Unix installations).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The server parameter is used to connect to a remote server to display the
+        output of the of the MGL program on a remote machine. For remote
+        connections, the server name should either be the DNS name or TCP/IP
+        address of the machine to connect to. For local operation on the client
+        machine, this parameter should simply be set to NULL.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Once you have initialised the MGL, you then need to find an appropriate
+        display mode to use with MGL_findDisplayMode, and then create a device
+        context for all output, using <a href="MGL_createDisplayDC.html">MGL_createDisplayDC</a> (for
+        fullscreen display device contexts). To support multiple display
+        controllers, please see the documenation for <a href="MGL_selectDisplayDevice.html">MGL_selectDisplayDevice</a> to
+        initialise all installed display devices.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If anything goes wrong during the initialization process, MGL will return
+        a result code via the <a href="MGL_result.html">MGL_result</a> routine.
+        You can then use this result code to determine the cause of the
+        problem, and use the <a href="MGL_errorMsg.html">MGL_errorMsg</a> routine
+        to display an appropriate error message for the user.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; To get up and running quickly with your first
+          MGL program, check out the <a href="MGL_quickInit.html">MGL_quickInit</a>()
+          function which allows you to start the MGL with a single line of
+          code! Or alternatively check our the Game Framework API if you are
+          developing game type applications.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Remote client/server operation is not supported
+          at this time. This is something scheduled for a future release of the
+          MGL.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_quickInit.html">MGL_quickInit</a>, <a href="MGL_selectDisplayDevice.html">MGL_selectDisplayDevice</a>,
+        <a href="MGL_enableAllDrivers.html">MGL_enableAllDrivers</a>, <a href="MGL_disableDriver.html">MGL_disableDriver</a>,
+        <a href="MGL_availablePages.html">MGL_availablePages</a>, <a href="MGL_modeResolution.html">MGL_modeResolution</a>,
+        <a href="MGL_findMode.html">MGL_findMode</a>, <a href="MGL_addCustomMode.html">MGL_addCustomMode</a>,
+        <a href="MGL_createDisplayDC.html">MGL_createDisplayDC</a>, <a href="MGL_exit.html">MGL_exit</a>,
+        <a href="MGL_result.html">MGL_result</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

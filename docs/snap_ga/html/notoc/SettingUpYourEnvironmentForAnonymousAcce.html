@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Setting up your environment for anonymous access</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Setting up your environment for anonymous access
+      </h3>
+      <p class="MsoBodyText">
+        Once you have downloaded the p4 binary and put it on your path, you want
+        to set the following environment variables:
+      </p>
+      <p class="Preformatted">
+        P4PORT&#160; &#160;= perforce.scitechsoft.com:3488<br />
+        P4USER&#160;&#160; = anonymous<br />
+        P4PASSWD = anonymous<br />
+        P4CLIENT = YOURNAME_YOURMACHINE_YOUROS<br />
+        P4EDITOR = (path to your favorite console editor, such as vi)
+      </p>
+      <p class="MsoBodyText">
+        where you would replace YOURNAME_YOURMACHINE_YOUROS with a unique name
+        (you can't use a client that someone else is already using
+        anonymously!). For instance a valid client name might be:
+        JOEBLOGGS_DEVEL_LINUX.
+      </p>
+      <p class="MsoBodyText">
+        The client names the view that maintains the information about what files
+        you have checked out on that system, and it must be unique for each
+        user, and each machine. If you are doing development under multiple
+        Operating Systems or multiple machines, you need a separate client view
+        for each machine and each Operating System that will contain a copy of
+        the source code from Perforce (hence the above naming convention for
+        clients).
+      </p>
+      <p class="MsoBodyText">
+        Once you have the above variables set up, you can see if Perforce can
+        access our server by typing the following:
+      </p>
+      <p class="Preformatted">
+        p4 info
+      </p>
+      <p class="MsoBodyText">
+        You should see something similar to the following if it can connect
+        successfully:
+      </p>
+      <p class="Preformatted">
+        User name: anonymous<br />
+        Client name: JOEBLOGGS_DEVEL_LINUX<br />
+        Client host: MYMACHINE<br />
+        Client root: c:\<br />
+        Current directory: c:\scitech\src<br />
+        Client address: 65.209.3.29:3643<br />
+        Server address: perforce.scitechsoft.com:3488<br />
+        Server root: /home/perforce<br />
+        Server date: 2000/12/17 16:21:08 PST<br />
+        Server version: P4D/LINUX52X86/2000.1/17250 (2000/09/11)<br />
+        Server license: Scitech Software 58 users (support ends 2001/06/21)
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

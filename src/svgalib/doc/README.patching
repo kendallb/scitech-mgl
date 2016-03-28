@@ -1,0 +1,140 @@
+Patching svgalib
+
+Contents
+
+0. Introduction
+1. Indenting
+2. Structure of the chipset drivers
+
+0. Introduction
+
+	Here is some info on writing patches and/or adding support for
+	further chipsets. The info on the chipset drivers is outdated, but
+	better than nothing and get you started. 
+
+	As a side note, other than a.out, ELF does not allow to have some
+	symbols global to svgalib which are not accessible to user
+	programs.
+
+	Because of that, if possible all the symbols and functions in your
+	program should be static. Those which can not be static should
+	have a name like: "__svgalib_*" to mark them as internals s.t.
+	people using them get what they deserve. Please do only add a new
+	function to the user interface if it is really unavoidable. Better
+	add some new parameters to an existing function. 
+
+	Adding a new function would definitly result in loosing a.out
+	compatibility thus removing the chance to use new cards and such
+	with old a.out binaries where the source is not available (doom
+	comes to mind). 
+
+	A new function should be really important to outweigh this draw
+	back. 
+
+1. Indenting
+
+	Due to some request (and I heard it b4) all the sources were now
+	automatically indentified. 
+
+	There were some requests for indent -gnu but it looks painful. I
+	opted for -kr (there were requests for it as well) as it is not
+	only nicer but also what is done in the linux-kernel and this is
+	certainly a program only usable for linux. 
+
+	I dunno if emacs is confused by -kr, but to be honest this is a
+	big all-in-one egg-giving-wool-milk-sow (as we say in german), and
+	you won't tell me that this several megs beast is unable to edit
+	this and I can't use -kr due to some restrictions of emacs. That
+	would be really ridiculous. If it is the case just make emacs
+	better. 
+
+	The OneModeEntry macro is eaten by indent (I would say it is an
+	indent bug, I might send a bug report to them), please ensure (if
+	at all possible) that your code can be passed through indent (use
+	the INDENT-OFF comments as shown in some sources for
+	OneModeEntry). 
+
+	You can use `make indent-gnu' (if you have a recent enough (I use
+	1.9.1) indent) to switch to your favorite style. But please ensure
+	your patches fit into this now declared as "official style"
+	sources. (Use `make indent' to reformat). 
+
+	Do not use it too often though as most indent's tend to add empty
+	lines at certain places in the source. 
+
+2. Structure of the chipset drivers
+
+	The chipset specific registers saving function (saveregs) is only
+	used directly to save the textmode registers at initialization. 
+
+	The chipset specific registers restoring function (setregs) is only
+	used directly to return to textmode, and when setting a VGA mode
+	after an SVGA mode.
+
+	The registers for each mode are stored like the ET4000 modes in
+	VGAlib 1.2, i.e. the extended registers at the end. The following
+	functions must be provided in a driver:
+
+	saveregs( unsigned char regs[] )
+		Saves the chipset-specific registers in regs, starting at
+		array index EXT (after the VGA registers).
+
+	setregs( unsigned char regs[] )
+		Sets the chipset-specific registers stored in regs from
+		index EXT.
+
+	modeavailable( int mode )
+		Returns nonzero if mode is available (should check video
+		memory).
+
+	getmodeinfo( vga_modeinfo *modeinfo )
+		Fills in chipset specific field of mode information
+		structure: maxlogicalwidth, startaddressrange (mask of
+		significant bits), and maxpixels (video memory divided by
+		the number of bytes per pixel). haveblit indicates whether
+		bitblt functions are available.
+		Note: providing extended info and an aperture with size
+		>= memory and setting bits 4 and 6 in flags will
+		automatically enable linear addressing support. 
+		
+
+	setmode( int mode, int previous_mode )
+		Sets all registers for a mode; returns nonzero if mode not
+		available. __vga_setregs can be called to set the VGA
+		registers.
+
+	unlock()
+		Unlocks chipset-specific registers.
+
+	lock()
+		Lock (protect) chipset-specific registers. Currently not
+		called.
+
+	test()
+		Identify chipset; initialize (check memory and type) and
+		return nonzero if detected.
+
+	setpage( int page )
+		Set 64K page number to be mapped at 0xa0000.
+
+	init( int force, int par1, ... )
+		Initialize memory and type; called by test. If force is 1,
+		the chiptype or the amount of memory can be forced (this
+		is pretty useless).
+
+	The following functions provide for things like page flipping
+	and hardware scrolling virtual desktops.
+
+	setdisplaystart( int address )
+		Sets the display start address in video memory in pixels.
+
+	setlogicalwidth( int width )
+		Sets the logical scanline length in bytes. Usually a
+		multiple of 8.
+
+	The function getchipset() in vga.c must call the test routine for
+	the chipset. The chipsetfunctionslist must be have a pointer
+	to the chipsetfunctions table for the chipset (which is the only
+	global symbol in a chipset driver). Also, vga.h contains a magic
+	number for each chipset. Also driver_names[] in vga.c has to
+	contain a name for each driver at the correct position.

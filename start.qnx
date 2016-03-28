@@ -1,0 +1,19 @@
+#! /bin/sh
+
+# QNX 4 VERSION
+
+# Batch file to create the initial setup for using the SciTech MGL
+# Graphics Library, using the selected default compiler.
+
+# Setup the location to the MGL data files and the primary SciTech
+# SDK location. The set-vars-linux.sh file uses this variable to
+# determine where all the files live.
+export MGL_ROOT=$HOME/scitech
+
+# Initialise the default compile time environment
+
+. $MGL_ROOT/bin-qnx/set-vars-qnx.sh
+. $MGL_ROOT/bin-qnx/qnx4.sh
+
+# Change to the directory containing all the MGL sample code
+cd $MGL_ROOT/examples/mgl

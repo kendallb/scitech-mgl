@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>IsHardwareCursor</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        IsHardwareCursor
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Determines if the current cursor is a hardware cursor or software cursor
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        N_int32 NAPI GA_cursorFuncs::IsHardwareCursor(void)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to determine if the currently active cursor is
+        implemented in software or hardware. This function should be called
+        immediately after downloading a new cursor images via the 2d reference
+        rasteriser library. If the device driver is able to implement the
+        cursor in hardware, this function will return true. If the 2d reference
+        rasteriser library has to fall back to software, this function will
+        return false. If this function does return false, the application
+        program must use the <a href="BeginAccess.html">BeginAccess</a> and <a href="EndAccess.html">EndAccess</a> functions
+        to ensure the software cursor images is correctly excluded from the
+        screen for all drawing operations.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function will not be provided by hardware drivers, only by the 2d
+        reference rasteriser library.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SetMonoCursor.html">SetMonoCursor</a>, <a href="SetMonoCursorColor.html">SetMonoCursorColor</a>,
+        <a href="SetColorCursor.html">SetColorCursor</a>, <a href="SetCursorPos.html">SetCursorPos</a>,
+        <a href="ShowCursor.html">ShowCursor</a>, <a href="BeginAccess.html">BeginAccess</a>,
+        <a href="EndAccess.html">EndAccess</a>, <a href="SetColorCursor256.html">SetColorCursor256</a>,
+        <a href="SetColorCursorRGBA.html">SetColorCursorRGBA</a>, <a href="IsHardwareCursor.html">IsHardwareCursor</a>,
+        <a href="SetColorCursorRGB.html">SetColorCursorRGB</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

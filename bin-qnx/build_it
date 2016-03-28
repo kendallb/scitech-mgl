@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# Save variables that might get changed by this script
+SAVED_SNAP_TARGET_ARCH=$SNAP_TARGET_ARCH
+SAVED_CROSS_COMPILER_PREFIX=$CROSS_COMPILER_PREFIX
+
+# Process command line arguments
+case "$1" in
+    gcc-linux)
+	;;
+    gcc-linux-host)
+	# Kill cross compiler variable when building for HOST platform
+	unset CROSS_COMPILER_PREFIX
+	;;
+    gcc-linux-axp-be)
+	;;
+    gcc-linux-ppc-be)
+	;;
+    gcc-linux-x86)
+	;;
+    gcc-linux-x86-64)
+	;;
+    gcc-drv)
+	;;
+    qnx4) 
+	;;
+    *)
+	echo Usage: [build \| build_db] compiler_name [DMAKE commands]
+	echo
+	echo Current compilers:
+	echo "  gcc-linux        - GNU C/C++ 2.7 or higher, 32 bit"
+	echo "  gcc-linux-host   - GNU C/C++ 2.7 or higher, 32 bit (Build for host)"
+	echo "  gcc-linux-axp-be - GNU C/C++ 2.7 or higher, 32 bit (Alpha)"
+	echo "  gcc-linux-ppc-be - GNU C/C++ 3.0 or higher, 32 bit (PowerPC)"
+	echo "  gcc-linux-x86-64 - GNU C/C++ 3.0 or higher, 64 bit (x86-64)"
+	echo "  gcc-linux-x86    - GNU C/C++ 2.7 or higher, 32 bit (x86)"
+	echo "  gcc-drv          - GNU C/C++ 3.0 or higher, 32 bit SNAP driver"
+	echo "  qnx4             - Watcom C/C++ 10.6 or higher, 32 bit"
+	exit 1
+esac
+
+# Call the script to set up the compiler environment and build it
+. ${1}.sh
+shift
+dmake $*
+RESULT=$?
+
+# Restore variables that might have changed that we saved above 
+export SNAP_TARGET_ARCH=$SAVED_SNAP_TARGET_ARCH
+export CROSS_COMPILER_PREFIX=$SAVED_CROSS_COMPILER_PREFIX
+
+# Display an error message if the build failed
+if [ $RESULT == 0 ] ; then 
+    exit 0 
+else
+    echo "*************************************************"
+    echo "* An error occurred while building the library. *"
+    echo "*************************************************"
+    exit 1
+fi  
+

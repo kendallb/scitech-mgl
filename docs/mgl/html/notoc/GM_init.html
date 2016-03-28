@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_init</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_init
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        initializes the Game Framework
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        GMDC * MGLAPI GM_init(<br />
+        &#160;&#160;&#160; const char *windowTitle)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                windowTitle
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Title for window in windowed modes and on task bar
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the game framework context object
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function initializes the Game Framework and must be called before
+        you attempt to set a graphics mode. Once this function has been called,
+        the Game Framework will have enumerated all the available graphics
+        modes and stored this information into the modeList field of the <a href="GMDC.html">GMDC</a> structure
+        returned from this function. It is then up to the application to find a
+        suitable mode and initialized it with a call to <a href="GM_setMode.html">GM_setMode</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Before you can do anything useable with the Game Framework, after you
+        have called the <a href="GM_init.html">GM_init</a> function, you must
+        then register a number of function callbacks with the Game Framework
+        that it will call to implement the 'body' of the game (similar to C++
+        virtual functions, but in C). Two of the most important are <a href="GM_setDrawFunc.html">GM_setDrawFunc</a> and
+        <a href="GM_setGameLogicFunc.html">GM_setGameLogicFunc</a>. If you want
+        to respond to keyboard commands you will probably also want to call <a href="GM_setKeyDownFunc.html">GM_setKeyDownFunc</a> as
+        well.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The Game Framework is responsible for creating
+          the main window used by the game. Hence the value you pass in for
+          windowTitle will be the main title for your games window in windows
+          modes, as well as the title that the user will see when your game is
+          minimised to the task bar in Windows 95 and Windows NT 4.0.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The Game Framework only creates and maintains a
+          single window for the life of the game, and on switches between
+          windowed and fullscreen modes will automatically change the
+          attributes of the main window for the appropriate mode. This way your
+          game only needs to register a single main window with DirectSound and
+          other DirectX components during initialization time, and avoids the
+          problems of re-starting DirectSound during mode switches (and hence
+          you sound can continue to play as you switch on the fly between
+          resolutions and fullscreen and windowed modes).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GM_setDriverOptions.html">GM_setDriverOptions</a>, <a href="GM_setMode.html">GM_setMode</a>,
+        <a href="GM_setDrawFunc.html">GM_setDrawFunc</a>, <a href="GM_setGameLogicFunc.html">GM_setGameLogicFunc</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

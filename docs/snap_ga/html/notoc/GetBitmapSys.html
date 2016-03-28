@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GetBitmapSys</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        GetBitmapSys
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Copy a block of video memory to a location in system memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::GetBitmapSys(<br />
+        &#160;&#160;&#160; void *dstAddr,<br />
+        &#160;&#160;&#160; N_int32 dstPitch,<br />
+        &#160;&#160;&#160; N_int32 srcLeft,<br />
+        &#160;&#160;&#160; N_int32 srcTop,<br />
+        &#160;&#160;&#160; N_int32 width,<br />
+        &#160;&#160;&#160; N_int32 height,<br />
+        &#160;&#160;&#160; N_int32 dstLeft,<br />
+        &#160;&#160;&#160; N_int32 dstTop,<br />
+        &#160;&#160;&#160; N_int32 mix)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstAddr
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Address of destination bitmap in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstPitch
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pitch of destination bitmap in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcLeft
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate within source bitmap to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcTop
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate within source bitmap to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mix
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mix code for the copy (<a href="GA_mixCodesType.html">GA_mixCodesType</a>)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This routine will copy a bitmap from video memory to system memory with a
+        starting address of dstAddr from the source rectangle (srcLeft, srcTop,
+        srcLeft+width-1, srcTop+height-1).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="BitBlt.html">BitBlt</a>, WaitTillIdle, <a href="GetBitmapBM.html">GetBitmapBM</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

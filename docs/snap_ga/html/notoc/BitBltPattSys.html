@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>BitBltPattSys</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        BitBltPattSys
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Copy a block of system memory to video memory, with a mono pattern
+        applied
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::BitBltPattSys(<br />
+        &#160;&#160;&#160; void *srcAddr,<br />
+        &#160;&#160;&#160; N_int32 srcPitch,<br />
+        &#160;&#160;&#160; N_int32 srcLeft,<br />
+        &#160;&#160;&#160; N_int32 srcTop,<br />
+        &#160;&#160;&#160; N_int32 width,<br />
+        &#160;&#160;&#160; N_int32 height,<br />
+        &#160;&#160;&#160; N_int32 dstLeft,<br />
+        &#160;&#160;&#160; N_int32 dstTop,<br />
+        &#160;&#160;&#160; N_int32 rop3,<br />
+        &#160;&#160;&#160; N_int32 flipY)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcAddr
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Address of source bitmap in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcPitch
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pitch of source bitmap in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcLeft
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate within source bitmap to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcTop
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate within source bitmap to copy
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the rectangle in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the rectangle in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rop3
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Microsoft ROP3 code for the copy (<a href="GA_rop3CodesType.html">GA_rop3CodesType</a>)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:94.5pt;padding:'0in .5pt 0in .5pt';" width="158" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                flipY
+              </p>
+            </td>
+            <td style="width:305.0pt;padding:'0in .5pt 0in .5pt';" width="508" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if the image should be flipped vertically
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is identical to the regular <a href="BitBltSys.html">BitBltSys</a> function,
+        except that it also applies the currently active 8x8 monochrome pattern
+        to the destination. The source data, pattern data and destination data
+        are combined together according to the value passed in the rop3
+        parameter.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="BitBltPatt.html">BitBltPatt</a>, <a href="BitBltPattSys.html">BitBltPattSys</a>,
+        <a href="BitBltPattBM.html">BitBltPattBM</a>, <a href="SrcTransBlt.html">SrcTransBlt</a>,
+        <a href="DstTransBlt.html">DstTransBlt</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

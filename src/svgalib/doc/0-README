@@ -1,0 +1,31 @@
+Apart from a few readme's, this directory contains all man pages for svgalib.
+
+I case you want to see one prior to installing svgalib, you can use
+
+man -M. manpage
+
+to see the page if you man binary supports it. If not, and if you have
+nroff or groff the tman script in this directy can be used as:
+
+tman manpage
+
+tman will have problems with the compressed files. However, the error
+message will indicate at which manual page you should look instead.
+
+Finally,
+
+make ascii
+make lpr
+make dvi
+make ps
+
+will produce documentation files in these format for nice printouts in
+this directory. 'ascii' is an Ascii file to be viewed on a terminal.
+'lpr' is an ascii file too, but will contain <Backspace> characters
+to emulate bold and underlined on a line printer.
+
+make clean
+
+will remove these files again.
+
+The file ../0-README is actually an ascii printout of svgalib.7

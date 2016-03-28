@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_ellipseArcCoord</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_ellipseArc" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_ellipseArc.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_ellipseArc" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_ellipseArcEngine" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_ellipseArcEngine.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_ellipseArcEngine" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_ellipseArcCoord
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws an elliptical arc outline.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_ellipseArcCoord(<br />
+        &#160;&#160;&#160; int x,<br />
+        &#160;&#160;&#160; int y,<br />
+        &#160;&#160;&#160; int xradius,<br />
+        &#160;&#160;&#160; int yradius,<br />
+        &#160;&#160;&#160; int startAngle,<br />
+        &#160;&#160;&#160; int endAngle)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                x
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                x coordinate for the center of elliptical arc (syntax 1)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                y
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                y coordinate for the center of elliptical arc (syntax 1)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                xradius
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                x radius for the elliptical arc (syntax 1)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                yradius
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                y radius for the elliptical arc (syntax 1)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                startAngle
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Starting angle for arc (in degrees)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                endAngle
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ending angle for arc (in degrees)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws the outline of an elliptical given the center and radii for the
+        ellipse. StartAngle specifies where the arc begins and is treated MOD
+        360. EndAngle specifies where the arc ends and is also treated MOD 360.
+        The angles are given in positive or negative degrees. Zero degrees is
+        at 3 o'clock, 90 is at 12 o'clock high, 180 is at 9 o'clock and 270 is
+        at 6 o'clock. Other angles are measured relative to the enclosing
+        rectangle. Thus an angle of 45 degrees always defines a line from the
+        center of the rectangle through it's top right corner, even if the
+        rectangle isn't square. The ellipse outline is drawn in the current pen
+        color, style and size.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that this routine can only work with integer semi-major and
+        semi-minor axes, but can sometimes be easier to work with (and is
+        provided for compatibility with other graphics packages). The <a href="MGL_ellipseArc.html">MGL_ellipseArc</a> routine
+        is more versatile than this, as you can have an ellipse with odd
+        diameter values, which you cannot get with the this routine.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_ellipseArc.html">MGL_ellipseArc</a>, <a href="MGL_fillEllipseArc.html">MGL_fillEllipseArc</a>,
+        <a href="MGL_ellipse.html">MGL_ellipse</a>, <a href="MGL_fillEllipse.html">MGL_fillEllipse</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

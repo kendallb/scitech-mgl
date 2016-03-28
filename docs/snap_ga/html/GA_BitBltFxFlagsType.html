@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_BitBltFxFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_AttributeFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_AttributeFlagsType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_AttributeFlagsType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_BresenhamLineFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_BresenhamLineFlagsType.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_BresenhamLineFlagsType" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_BitBltFxFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaBltMixEnable
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        0x00000001,<br />
+        &#160;&#160;&#160; gaBltStretchNearest&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; gaBltStretchXInterp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; gaBltStretchYInterp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; gaBltColorKeySrcSingle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; gaBltColorKeySrcRange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020,<br />
+        &#160;&#160;&#160; gaBltColorKeyDstSingle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; gaBltColorKeyDstRange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000080,<br />
+        &#160;&#160;&#160; gaBltFlipX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000100,<br />
+        &#160;&#160;&#160; gaBltFlipY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000200,<br />
+        &#160;&#160;&#160; gaBltBlend&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;=
+        0x00000400,<br />
+        &#160;&#160;&#160; gaBltConvert&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000800,<br />
+        &#160;&#160;&#160; gaBltClip&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00001000,<br />
+        &#160;&#160;&#160; gaBltDither&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00002000,<br />
+        &#160;&#160;&#160; gaBltTranslateVec&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00004000<br />
+        &#160;&#160;&#160; } GA_BitBltFxFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for hardware blitting with special effects, passed to the BltBltFx
+        family of functions. This family of functions exposes a wide variety of
+        special effects blitting if the hardware is capable of these functions.
+        You can determine what special effects are supported by the hardware by
+        examining the BitBltCaps member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure.
+        However to check whether a set of combined effects are supported, set
+        the desired effects flags in the <a href="GA_bltFx.html">GA_bltFx</a> structure
+        and call the BitBltFxTest function. The driver will examine the passed
+        in flags and return true if the combination is supported, and false if
+        not. Calling a BltBltFx function with a combination of flags not
+        supported by the hardware will produce undefined results.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltMixEnable flag determines if the graphics mode supports
+        arbitrary mix modes for extended BitBlt functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltStretchNearest flag determines if the graphics mode supports
+        hardware stretch blitting, with nearest pixel filtering.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltStretchXInterp flag determines if the graphics mode supports
+        hardware stretch blitting, with linear interpolated filtering in the X
+        direction.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltStretchYInterp flag determines if the graphics mode supports
+        hardware stretch blitting, with linear interpolated filtering in the Y
+        direction.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltColorKeySrcSingle flag determines whether the graphics mode
+        supports hardware source transparent blitting with single source color
+        key. When hardware source color keying is enabled, any pixel data in
+        the incoming bitmap that matches the currently set color key will be
+        ignored and not displayed on the screen, essentially making those
+        source pixels transparent.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltColorKeySrcRange flag determines whether the graphics mode
+        supports hardware source transparent blitting with a range of color
+        keys. This is the same as single source color keying, but the color key
+        values may be allows to fall within a range of available colors (useful
+        if data has been filtered causing the colors to shift slightly).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltColorKeyDstSingle flag determines whether the graphics mode
+        supports hardware destination transparent blitting with single
+        destination color key. When hardware detination color keying is enabled
+        (sometimes called blue-screening), any destination pixels in the
+        framebuffer that match the currently set color key, will cause the
+        source input pixels to be ignored.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltColorKeyDstRange flag determines whether the graphics mode
+        supports hardware destination transparent blitting with a range of
+        color keys. This is the same as single destination color keying, but
+        the color key values may be allows to fall within a range of available
+        colors (useful if data has been filtered causing the colors to shift
+        slightly).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltFlipX flag determines whether the graphics mode supports
+        hardware blitting with data flipped in the X axis. This is useful for
+        2D sprite based games and animation where the same sprite data can be
+        reused for characters going left or right on the screen by flipping the
+        data during the blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltFlipY flag determines whether the graphics mode supports
+        hardware blitting with data flipped in the Y axis. This is useful for
+        2D sprite based games and animation where the same sprite data can be
+        reused for characters going up or down on the screen by flipping the
+        data during the blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltBlend flag determines whether the hardware can support alpha
+        blended blit operations.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltConvert flag determines whether the hardware can support pixel
+        format conversion.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltClip flag determines whether the hardware can support clipping
+        while blitting is in effect. This is usually only used to implement
+        proper clipping for stretching operations, where software clipping can
+        get complicated.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltDither flag determines whether the closest color is selected, or
+        if dithering is used when blitting an RGB bitmap where the destination
+        is an 8bpp, 15bpp or 16bpp device context. Dithering slows things down
+        somewhat for 15/16bpp modes, but produces better quality. Dithering in
+        8bpp looks best if a halftone palette is used, and in fact is a lot
+        faster than using the closest color method. Dithering in 8bpp will
+        however map to any palette, but the quality is best if a halftone
+        palette is used.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBltTranslateVec is used to indicate that the color translation
+        vector supplied in the TranslateVec member. This is used in situations
+        where the calling code has already computed a color translation vector
+        for the source and destination bitmaps, and will then avoid the
+        overhead of computing the translation vector dynamically for each blit
+        operation. This is only useful when color conversting between 4bpp and
+        8bpp bitmaps where the destination is also 4bpp or 8bpp (potentially
+        with a different palette).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; These flags are also passed to the BitBltFx
+          family of functions to define the type of extended Blt that should be
+          performed, as well as reporting the available capabilities via the <a href="GA_bltFx.html">GA_bltFx</a> structure
+          stored in the <a href="GA_modeInfo.html">GA_modeInfo</a> structure.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Availabiliy of some features may be mututally
+          exclusive on other features. Hence you must call BitBltFxTest first
+          to find out if the set of features that you require are all supported
+          at the same time before attempting to perform an extended BitBlt
+          operation.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; In many cases stretching with X filtering is
+          relatively cheap, while Y filtering is more expensive. Hence it may
+          be faster on some hardware to enable only X filtering and not Y
+          filteringto get improved performance.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltMixEnable
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mix code enabled, defined in <a href="GA_bltFx.html">GA_bltFx</a> structure
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltStretchNearest
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable stretching, nearest pixel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltStretchXInterp
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable X axis filtering for stretch blit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltStretchYInterp
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable Y axis filtering for stretch blit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltColorKeySrcSingle
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Source color keying enabled, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltColorKeySrcRange
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Source color keying enabled, range of colors
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltColorKeyDstSingle
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Destination color keying enabled, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltColorKeyDstRange
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Destination color keying enabled, range of colors
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltFlipX
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flip in X axis
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltFlipY
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flip in Y axis
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltBlend
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable alpha blending
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltConvert
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable pixel format/palette conversion
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltClip
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Clip to destination clip rectangle for stretching
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltDither
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Dither if an 8/15/16bpp destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:164.5pt;padding:'0in .5pt 0in .5pt';" width="274" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBltTranslateVec
+              </p>
+            </td>
+            <td style="width:235.0pt;padding:'0in .5pt 0in .5pt';" width="392" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Color translation vector supplied in TranslateVec
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

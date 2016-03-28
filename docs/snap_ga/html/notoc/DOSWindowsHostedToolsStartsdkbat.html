@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>DOS/Windows hosted tools (start-sdk.bat)</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        DOS/Windows hosted tools (start-sdk.bat)
+      </h3>
+      <p class="MsoBodyText">
+        The first thing you need to do is edit the bin\set-vars.bat batch file to
+        reference the location where you have installed the files, and the
+        locations where all your compilers are installed. See the comments in
+        set-vars.bat for more information.
+      </p>
+      <p class="MsoBodyText">
+        Once you have the startup file configured, you then need to run the
+        following each time you start a command shell to enable the SciTech
+        makefile utilities (a good idea to put into your startup batch files):
+      </p>
+      <p class="Preformatted">
+        call c:\scitech\bin\set-vars.bat<br />
+        call c:\scitech\bin\wc11-w32.bat
+      </p>
+      <p class="MsoBodyText">
+        The second batch file sets up the compiler configuration for your default
+        compiler. The line above sets up for Watcom C++ 11.0 32-bit Windows
+        compilation. Substitute this for any of the batch files in the bin
+        directory for the compiler you are using. You can choose from the
+        following batch files to configure the build environment for different
+        supported compilers:
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:423.0pt;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="705" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit DOS protected mode support:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc45-d32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 4.52 (DPMI32)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc50-d32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 (DPMI32)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bcb50-d32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 (DPMI32)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              gcc2-dos.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              GNU C++ 2.9.5 (DJGPP 2.02)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              w10ad32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.0a (DOS4GW)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc10-d32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 (DOS4GW)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc11-d32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 (DOS4GW)
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:423.0pt;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="705" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit Windows GUI support:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc45-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 4.52 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc50-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bcb50-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              gcc2-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              GNU C++ for Win32 (Cygwin) GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc40-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 4.2 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc50-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 5.0 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              Vc60-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 6.0 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc10aw32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.0a GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc10-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 GUI programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc11-w32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 GUI programs
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:423.0pt;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="705" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit Windows console support:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc45-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 4.52 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc50-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bcb50-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              gcc2-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              GNU C++ for Win32 (Cygwin) console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc40-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 4.2 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc50-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 5.0 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              Vc60-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 6.0 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc10aw32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.0a console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc10-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 console programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              wc11-c32.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 console programs
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        Note also that once you have properly set up the makefile utilities, you
+        can switch between different compilers from the command line simply by
+        calling one of the above batch files. This makes it easy to test and
+        compile your own code with multiple compilers on a single machine.
+      </p>
+      <p class="MsoBodyText">
+        For Windows development, you may also wish to note that the difference
+        between console and GUI compilation is controlled by the WIN32_GUI
+        environment variable. If you find that compiling SDK examples cannot be
+        completed due to missing references to WinMain or DEF definition file,
+        it is probably because that example is simply a console-only
+        application. So try re-compiling with the “c32” version batch file
+        instead of “w32”. 
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

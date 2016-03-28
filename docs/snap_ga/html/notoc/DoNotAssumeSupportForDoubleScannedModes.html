@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Do Not Assume Support for Double Scanned Modes</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Do Not Assume Support for Double Scanned Modes
+      </h3>
+      <p class="MsoBodyText">
+        If you are developing a game or application that wishes to support
+        320x200, 320x240 or 400x300 modes (in any color depth), be prepared for
+        situtations where these modes do not exist. To be able to initialize
+        these modes on today’s hardware requires support for double scanning,
+        and there are some controllers in the field that do not support this.
+        On these controllers these modes can never be supported, so your
+        application or game must be able to deal with the situation if these
+        modes do not exist.
+      </p>
+      <p class="MsoBodyText">
+        In lieu of these modes not being available, the controller may provide
+        support for 320x400, 320x480 and 400x600 modes which do not require
+        double scanning. One neat solution is to support these modes by
+        rendering your frames to a system memory buffer with a resolution
+        320x200, 320x240 or 400x300, and then do a copy to display memory with
+        a 2x vertical stretch (just duplicate every scanline twice in
+        software). The end result will look identical to a real 320x200,
+        320x240 or 400x300 mode, and you will only lose a small amount in
+        overall performance.
+      </p>
+    </div>
+    <span style="font-size:10.0pt;font-family:'Times New Roman';"> </span>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>attributes_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        attributes_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; color;<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; backColor;<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; aaColor[5];<br />
+        &#160;&#160;&#160; int&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;backMode;<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bdrBright;<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bdrDark;<br />
+        &#160;&#160;&#160; point_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; CP;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; writeMode;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; penStyle;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; penHeight;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; penWidth;<br />
+        &#160;&#160;&#160; pattern_t&#160;&#160;&#160;&#160;&#160;&#160; penPat[8];<br />
+        &#160;&#160;&#160; pixpattern_t&#160;&#160;&#160; penPixPat[8];<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; cntPenPat;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; cntPenPixPat;<br />
+        &#160;&#160;&#160; color_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; penPixPatTrans;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; lineStyle;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; lineStipple;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stippleCount;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; polyType;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontBlendMode;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; srcBlendFunc;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; dstBlendFunc;<br />
+        &#160;&#160;&#160; uchar&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; alphaValue;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; planeMask;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ditherMode;<br />
+        &#160;&#160;&#160; text_settings_t ts;<br />
+        &#160;&#160;&#160; } attributes_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing the current MGL rendering attributes. This
+        structure groups all of the MGL rendering state variables, and can be
+        used to save and restore the entire MGL rendering state for any device
+        context as a single unit.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; You should only save and restore the state to
+          the same device context!
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                color
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current foreground color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                backColor
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current background color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                aaColor
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Palette for font anti-aliasing. Values corrospond to 25/75,
+                50/50, and 75/25 percent blend of background and foreground
+                colors respectively.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                backMode
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Background color mode for monochrome bitmap expansion. Will be
+                either MGL_TRANSPARENT_BACKGROUND or MGL_OPAQUE_BACKGROUND, and
+                determins how background pixels are drawn for monochrome bitmap
+                rendering functions (including text).
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                CP
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current Position coordinate
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                writeMode
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current write mode. Will be one of the values defined by the <a href="MGL_writeModeType.html">MGL_writeModeType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penStyle
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current pen fill style. Will be one of values defined by the <a href="MGL_penStyleType.html">MGL_penStyleType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penHeight
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current pen height
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penWidth
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current pen width
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penPat
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Array of 8 pen 8x8 monochrome bitmap pattern
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penPixPat
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Array of 8 pen 8x8 color pixmap pattern
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                cntPenPat
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current pen 8x8 monochrome bitmap pattern index (0-7)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                cntPenPixPat
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current pen 8x8 color pixmap pattern index (0-7)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                penPixPatTrans
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current transparent color for pixmap patterns
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                lineStyle
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current line style. Will be one of the values defined by the <a href="MGL_lineStyleType.html">MGL_lineStyleType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                lineStipple
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current 16-bit line stipple mask.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stippleCount
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current line stipple counter.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                polyType
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current polygon rasterizing type. Will be one of the values
+                defined by the <a href="MGL_polygonType.html">MGL_polygonType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fontBlendMode
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Type of blending used for anti-aliased fonts. Will be a value
+                from the enumeration <a href="MGL_fontBlendType.html">MGL_fontBlendType</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                srcBlendFunc
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current src alpha blend function. Will be a value from the
+                enumeration <a href="MGL_blendFuncType.html">MGL_blendFuncType</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstBlendFunc
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current dest alpha blend function. Will be a value from the
+                enumeration <a href="MGL_blendFuncType.html">MGL_blendFuncType</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                alphaValue
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current constant alpha value between 0 and 255.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                planeMask
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current plane mask to determine which bits get updated.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ditherMode
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current dither mode for blitting RGB bitmaps
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ts
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current text drawing attributes
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

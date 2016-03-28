@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_CRTCInfo</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_CRTCInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; HorizontalTotal;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; HorizontalSyncStart;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; HorizontalSyncEnd;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; VerticalTotal;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; VerticalSyncStart;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; VerticalSyncEnd;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160; PixelClock;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160; RefreshRate;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160; Flags;<br />
+        &#160;&#160;&#160; } GA_CRTCInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        CRTC information block for refresh rate control, passed in to the
+        SetVideoMode function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The HorizontalTotal, HorizontalSyncStart, HorizontalSyncEnd,
+        VerticalTotal, VerticalSyncStart and VerticalSyncEnd members define the
+        default normalized CRTC values that will be programmed if the
+        gaRefreshCtl flag is passed to SetVideoMode. The CRTC values for a
+        particular resolution will always be the same regardless of color
+        depth. Note also that the CRTC table does not contain any information
+        about the horizontal and vertical blank timing positions. It is up the
+        the driver implementation to determine the correct blank timings to use
+        for the mode when it is initialized depending on the constraints of the
+        underlying hardware (some hardware does not require this information,
+        and most VGA compatible hardware can be very picky about the values
+        programmed for the blank timings).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Flags member defines the flags that modify the operation of the mode,
+        and the values for this member are defined in the <a href="GA_CRTCInfoFlagsType.html">GA_CRTCInfoFlagsType</a> enumeration.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The PixelClock member defines the normalized pixel clock that will be
+        programmed into the hardware. This value is represented in a 32 bit
+        unsigned integer in units of Hz. For example to represent a pixel clock
+        of 25.18Mhz one would code a value of 25,180,000. From the pixel clock
+        and the horizontal and vertical totals, you can calculate the refresh
+        rate for the specific graphics mode using the following formula:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        refresh rate = (PixelClock * 10,000) /<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; (HorizontalTotal
+        * VerticalTotal)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        For example a 1024x768 mode with a HTotal of 1360, VTotal of 802, a pixel
+        clock of 130Mhz might be computed as follows:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        refresh rate = (130 * 10,000) / (1360 * 802)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        59.59 Hz
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The RefreshRate field defines the refresh rate that the CRTC information
+        values define. This value may not actually be used by the driver but
+        must be calculated by the application program using the above formulas
+        before initializing the mode. This entry may be used by the driver to
+        identify any special cases that may need to be handled when setting the
+        mode for specific refresh rates.&#160; The value in this field should
+        be represented in units if 0.01 Hz (ie: a value 7200 represents a
+        refresh rate of 72.00Hz).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The dwSize member is intended for future
+          compatibility, and should be set to the size of the structure as
+          defined in this header file. Future drivers will be compatible with
+          older software by examiming this value.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HorizontalTotal
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Horizontal total (pixels)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HorizontalSyncStart
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Horizontal sync start position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HorizontalSyncEnd
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Horizontal sync end position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VerticalTotal
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical Total (lines)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VerticalSyncStart
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical sync start position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VerticalSyncEnd
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical sync end position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PixelClock
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pixel clock in units of Hz
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RefreshRate
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Expected refresh rate in .01Hz
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Flags
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Initialisation flags for mode
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

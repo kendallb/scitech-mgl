@@ -1,0 +1,7 @@
+Things to do:
+-------------
+
+ . Add support for SciTech MGL bitmap and stroke fonts to GLUT so that these
+   fonts can be used in GLUT programs fullscreen. This will be pretty cool
+   for 3D text and bitmap text for OpenGL programs using the SciTech MGL.
+

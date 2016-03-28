@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>font_info_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="fix32_t" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('fix32_t.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="fix32_t" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="font_lib_t" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('font_lib_t.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="font_lib_t" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        font_info_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        struct font_info_t {<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; familyName[_MGL_FNAMESIZE];<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontLibType;<br />
+        &#160;&#160;&#160; ibool&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; isFixed;<br />
+        &#160;&#160;&#160; char
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;regularFace[256];<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; boldFace[256];<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; italicFace[256];<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; boldItalicFace[256];<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing information about one font family. Family usually
+        contains several faces
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                familyName
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                name of family, e.g. 'Arial'
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fontLibType
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Integer representing the type of font library file. Will be one
+                of the values defined by the <a href="MGL_fontLibType.html">MGL_fontLibType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                isFixed
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if the font is fixed width, false if proportional font.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                regularFace
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Filename of font file with regular face. Pass this to <a href="MGL_openFontLib.html">MGL_openFontLib</a> to
+                load the font. Will be empty string if the family does not
+                contain this face.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                boldFace
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Filename of font file with bold face. Pass this to <a href="MGL_openFontLib.html">MGL_openFontLib</a> to
+                load the font. Will be empty string if the family does not
+                contain this face.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                italicFace
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Filename of font file with italic face. Pass this to <a href="MGL_openFontLib.html">MGL_openFontLib</a> to
+                load the font. Will be empty string if the family does not
+                contain this face.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                boldItalicFace
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Filename of font file with regular face. Pass this to <a href="MGL_openFontLib.html">MGL_openFontLib</a> to
+                load the font. Will be empty string if the family does not
+                contain this face.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

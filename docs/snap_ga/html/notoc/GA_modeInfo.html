@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_modeInfo</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_modeInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; Attributes;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; XResolution;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; YResolution;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; XCharSize;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; YCharSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BytesPerScanLine;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxBytesPerScanLine;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxScanLineWidth;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxScanLines;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LinearHeapStart;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxLinearOffset;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; BitsPerPixel;<br />
+        &#160;&#160;&#160; GA_pixelFormat&#160; PixelFormat;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxBuffers;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxPixelClock;<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; DefaultRefreshRate;<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *RefreshRateList;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BitmapStartAlign;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; BitmapStridePad;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MonoBitmapStartAlign;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; MonoBitmapStridePad;<br />
+        &#160;&#160;&#160; GA_bltFx&#160;&#160;&#160;&#160;&#160;&#160;&#160; _FAR_
+        *BitBltCaps;<br />
+        &#160;&#160;&#160; GA_videoInf&#160;&#160;&#160;&#160; _FAR_ * _FAR_
+        *VideoWindows;<br />
+        &#160;&#160;&#160; struct _GA_3DState&#160; _FAR_ *HW3DCaps;<br />
+        &#160;&#160;&#160; N_flt32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxOOZ;<br />
+        &#160;&#160;&#160; N_flt32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxOOW;<br />
+        &#160;&#160;&#160; N_flt32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxOOS;<br />
+        &#160;&#160;&#160; N_flt32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; MaxOOT;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; DepthFormats;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; DepthStartAlign;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; DepthStridePad;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureFormats;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureStartAlign;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureStridePad;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureMaxX;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureMaxY;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; TextureMaxAspect;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; StencilFormats;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; StencilStartAlign;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; StencilStridePad;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LinearSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; LinearBasePtr;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; AttributesExt;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; PhysicalXResolution;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; PhysicalYResolution;<br />
+        &#160;&#160;&#160; } GA_modeInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Graphics mode information block. This structure contains detailed
+        information about the capabilities and layout of a specific graphic
+        mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Attributes member contains a number of flags that describes certain
+        important characteristics of the graphics mode, and the values this
+        member contains are defined in the <a href="GA_AttributeFlagsType.html">GA_AttributeFlagsType</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The XResolution and YResolution specify the logical width and height in
+        pixel elements for this display mode. The logical resolution is the
+        resolution of all available pixels in the display which may be larger
+        than the physical resolution if the mode has hardware panning enabled.
+        Hardware panning is enabled if the maximum physical resolution of the
+        display device does not support the specific mode, such as when hot
+        switching between a CRT monitor and an LCD panel or TV output device.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BytesPerScanLine member specifies how many full bytes are in each
+        logical scanline. The logical scanline could be equal to or larger than
+        the displayed scanline, and can be changed when the display mode is
+        first initialized.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MaxBytesPerScanLine and MaxScanLineWidth members define the maximum
+        virtual framebuffer coordinates that can be initialised for the mode,
+        in both bytes and pixels respectively. If an attempt is made to
+        initialize a graphics mode with values larger than these values, the
+        mode set will fail.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MaxScanLines member holds the total number of scanlines available in
+        that graphics mode when initialised with the default scanline width.
+        This field combined with BytesPerScanLine can be used to determine the
+        maximum addressable display memory for drawing operations. This can
+        also be used to determine how large a virtual screen image can be
+        before initialising a graphics mode. This field also determines the
+        addressable limit for X/Y based drawing functions in offscreen video
+        memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LinearHeapStart member determines the start of the linear only heap,
+        if one is available. Some hardware has restrictions on the addressable
+        memory for the (x,y) coordinates passed to the 2D drawing functions. If
+        the hardware supports DrawRectLin and the BitBltLin family of
+        functions, the memory past the (x,y) coordinate restriction can be
+        accessed using those functions. Hence this member determines the start
+        of this linear only heap as a byte offset from the beginning of display
+        memory. Memory in the linear only heap can only be accessed directly
+        via the linear framebuffer, or using DrawRectLin or the BitBitLin
+        family of blitting functions. None of the X/Y based drawing functions
+        can be used to draw to the linear only heap.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MaxLinearOffset member hold the maximum addressable display memory
+        offset for linear drawing functions (DrawRectLin, BitBltLin etc). If
+        the hardware has restrictions on the addressable memory for the X/Y
+        drawing functions, the linear only heap resides between LinearHeapStart
+        and MaxLinearOffset. If the maximum addressable scanline value for a
+        display mode is past the end of display memory (common for high
+        resolution modes), then LinearHeapStart = MaxLinearOffset which
+        indicates that there is no linear only heap for that display mode.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; There may well be some memory used by the
+          graphics hardware for caching the hardware cursor, patterns and other
+          data between the end of (MaxScanLines * BytesPerScanLine) and
+          LinearHeapStart. Hence the application software must never write to
+          the memory between (MaxScanLines * BytesPerScanLine) and
+          LinearHeapStart.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BitsPerPixel member specifies the number of bits per pixel for this
+        display mode. For 5:5:5 format RGB modes this should contain a value of
+        15, and for 5:6:5 format RGB modes this should contain a value of 16.
+        For 8:8:8 bit RGB modes this should contain a value of 24 and for
+        8:8:8:8 RGBA modes this should contain a value of 32. For 24 and 32bpp
+        modes, the application should look at the pixel format mask values (see
+        below) to determine the actual format of the pixels within the display
+        buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MaxBuffers member specified the maximum number of display buffers
+        that can be allocated in video memory for page flipping. This value is
+        a convenience function only, and can be computed manually from the
+        value of MaxScanLines / YResolution.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MaxPixelClock member specifies the maximum possible pixel dot clock
+        that can be selected in this display mode when a refresh controlled
+        mode is selected. Any attempt to select a higher pixel clock will cause
+        the mode set to fail. This member can be used to determine what the
+        maximum available refresh rate for the display mode will be.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The RedMaskSize, GreenMaskSize, BlueMaskSize and RsvdMaskSize members
+        define the size, in bits, of the red, green, and blue components of an
+        RGB pixel respectively. A bit mask can be constructed from the MaskSize
+        members using simple shift arithmetic. For example, the MaskSize values
+        for an RGB 5:6:5 mode would be 5, 6, 5, and 0, for the red, green,
+        blue, and reserved members respectively.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The RedFieldPosition, GreenFieldPosition, BlueFieldPosition and
+        RsvdFieldPosition members define the bit position within the RGB pixel
+        of the least significant bit of the respective color component. A color
+        value can be aligned with its pixel member by shifting the value left
+        by the FieldPosition. For example, the FieldPosition values for an RGB
+        5:6:5 mode would be 11, 5, 0, and 0, for the red, green, blue, and
+        reserved members respectively.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BitmapStartAlign member defines the alignment requirements in bytes
+        for offscreen memory bitmaps for this graphics mode. If the value in
+        here is set to 8 for instance, then the start for all offscreen bitmaps
+        must be aligned to an 8 byte boundary in order to be used for offscreen
+        bitmap blitting. Note that the BitmapStartAlign member also defines the
+        alignment requirements for all buffers passed to the SetDrawBuffer
+        function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BitmapStridePad member defines the alignment requirements in bytes
+        for the stride of offscreen memory bitmaps (the number of bytes to move
+        from one line of the bitmap to the next). If the value in here is set
+        to 8 for instance, then the number of bytes for each scanline in the
+        offscreen bitmap must be padded out to a multiple of 8 (inserting zeros
+        if necessary when downloading a source bitmap to offscreen memory).
+        Note that the BitmapStridePad member also defines the padding
+        requirements for all buffers passed to the SetDrawBuffer function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MonoBitmapStartAlign member defines the alignment requirements in
+        bytes for monochrome offscreen memory bitmaps for this graphics mode,
+        which are used by the PutMonoImageMSBLin and PutMonoImageLSBLin
+        functions. If the value in here is set to 8 for instance, then the
+        start for all monochrome offscreen bitmaps must be aligned to an 8 byte
+        boundary in order to be used by the PutMonoImageMSBLin and
+        PutMonoImageLSBLin functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MonoBitmapStridePad member defines the alignment requirements in
+        bytes for the stride of monochrome offscreen memory bitmaps (the number
+        of bytes to move from one line of the bitmap to the next). If the value
+        in here is set to 8 for instance, then the number of bytes for each
+        scanline in the monochrome offscreen bitmap must be padded out to a
+        multiple of 8 (inserting zeros if necessary when downloading a source
+        bitmap to offscreen memory).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The RefreshRateList member contains a list of all valid refresh rates
+        supported by the display mode which can be passed to the SetVideoMode
+        function. Interlaced modes are indicated by a negative refresh rate
+        (ie: 48Hz Interlaced is -48). The current default refresh rate is
+        stored in the DefaultRefreshRate member, and except for special
+        circumstances the default refresh rate set by the user should be used
+        rather than overriding the refresh rate.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The BitBltCaps member defines the extended hardware BitBlt capabilities
+        for the graphics mode, and points to a static <a href="GA_bltFx.html">GA_bltFx</a> structure.
+        Refer to the documentation of <a href="GA_bltFx.html">GA_bltFx</a> to
+        determine what this structure contains.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The VideoWindows member defines the hardware video capabilities for each
+        of up to a maximum number of hardware video overlay windows. The list
+        of hardware video overlay window capabilities is terminated with a NULL
+        pointer. For instance if only 2 hardware video windwos are supported,
+        the first two entries in this array would point to valid <a href="GA_videoInf.html">GA_videoInf</a> structures,
+        while the third would contain a NULL terminating the list. Refer to the
+        documentation of <a href="GA_videoInf.html">GA_videoInf</a> to
+        determine what these structures contains.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The HW3DCaps member defined the hardware 3D capabilities for the graphics
+        mode, and points to a static GA_3DState structure. Refer to the
+        documentation of GA_3DState to determine what this structure contains.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The LinearSize member is the 32-bit length of the linear frame buffer
+        memory in bytes. In can be any length up to the size of the available
+        video memory. The LinearBasePtr member is the 32-bit physical address
+        of the start of frame buffer memory when the controller is in linear
+        frame buffer memory mode for this particular graphics mode. If the
+        linear framebuffer is not available, then this member will be zero.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The AttributesExt member contains a number of extended flags that
+        describes certain important characteristics of the graphics mode, and
+        the values this member contains are defined in the <a href="GA_AttributeExtFlagsType.html">GA_AttributeExtFlagsType</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The PhysicalXResolution and PhysicalYResolution specify the physical
+        width and height in pixel elements for this display mode. The physical
+        resolution is the resolution of all visible pixels on the display, and
+        may be smaller than the logical resolution if the mode has hardware
+        panning enabled.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The LinearSize and LinearBasePtr members are
+          duplicated in the mode information block because they may possibly
+          change locations in memory depending on the display mode. Normally
+          applications will always use the value stored in the the <a href="GA_devCtx.html">GA_devCtx</a> LinearMem
+          pointer to directly access the framebuffer (which is automatically
+          adjusted for you), however if the information about the framebuffer
+          starting address needed to be reported to other applications
+          directly, the values stored in this mode information block should be
+          used.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The memory pointed to by the RefreshRateList,
+          BitBltCaps, VideoWindows and HW3DCaps fields will be reused the next
+          time GetVideoModeInfo is called, so do not rely on the information in
+          these fields to remain the same across calls to this function.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The dwSize member is intended for future
+          compatibility, and should be set to the size of the structure as
+          defined in this header file. Future drivers will be compatible with
+          older software by examiming this value.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwSize
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set to size of structure in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                Attributes
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode attributes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                XResolution
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Logical horizontal resolution in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                YResolution
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Logical vertical resolution in lines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                XCharSize
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character cell X dimension for text modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                YCharSize
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character cell Y dimension for text modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BytesPerScanLine
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bytes per horizontal scan line
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxBytesPerScanLine
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum bytes per scan line
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxScanLineWidth
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum pixels per scan line
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxScanLines
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum number of scanlines for default scanline width
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearHeapStart
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Start of linear only heap (if any)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxLinearOffset
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum display memory offset for linear drawing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BitsPerPixel
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bits per pixel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PixelFormat
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pixel format for the display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxBuffers
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum number of display buffers
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxPixelClock
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum pixel clock for mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DefaultRefreshRate
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Currently active default refresh rate
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RefreshRateList
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                List of all valid refresh rates terminated with -1.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BitmapStartAlign
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear bitmap start alignment in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BitmapStridePad
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear bitmap stride pad in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MonoBitmapStartAlign
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear bitmap start alignment in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MonoBitmapStridePad
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear bitmap stride pad in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BitBltCaps
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware 2D BitBltFx capabilities
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                VideoWindows
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Up to 8 hardware video overlays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                HW3DCaps
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware 3D capabilities
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxOOZ
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum ooz coordinate value in floating point
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxOOW
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum oow coordinate value in floating point
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxOOS
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum one over s coordinate value in floating point
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaxOOT
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum one over t coordinate value in floating point
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DepthFormats
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Depth buffer formats flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DepthStartAlign
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Depth buffer start alignment in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                DepthStridePad
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Depth buffer stride pad in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureFormats
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Texture formats flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureStartAlign
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Texture start alignment in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureStridePad
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Texture stride pad in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureMaxX
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum texture X dimension
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureMaxY
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum texture Y dimension
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TextureMaxAspect
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum texture aspect ratio (1:x)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                StencilFormats
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stencil buffer formats flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                StencilStartAlign
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stencil buffer start alignment in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                StencilStridePad
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stencil buffer stride pad in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearSize
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Linear buffer size in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LinearBasePtr
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical addr of linear buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                AttributesExt
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Extended mode attributes flags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PhysicalXResolution
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical horizontal resolution in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PhysicalYResolution
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical vertical resolution in lines
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

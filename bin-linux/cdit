@@ -1,0 +1,15 @@
+#! /bin/sh
+
+if ! test -e $1 ; then
+    echo "Directory '$1' not found!"
+    exit 1
+fi
+cd $1
+PROG=$2
+shift 2
+rm -f *.lib *.a
+$PROG $*
+RET=$?
+cd ..
+exit $RET
+

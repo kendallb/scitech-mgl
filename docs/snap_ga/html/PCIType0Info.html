@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PCIType0Info</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PCIStatusFlags" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PCIStatusFlags.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PCIStatusFlags" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PCIType1Info" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PCIType1Info.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PCIType1Info" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions_2.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PCIType0Info
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress10;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress14;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress18;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress1C;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress20;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress24;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; CardbusCISPointer;<br />
+        &#160;&#160;&#160; ushort&#160; SubSystemVendorID;<br />
+        &#160;&#160;&#160; ushort&#160; SubSystemID;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; ROMBaseAddress;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; CapabilitiesPointer;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved1;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved2;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved3;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; reserved4;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; InterruptLine;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; InterruptPin;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; MinimumGrant;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; MaximumLatency;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress10Len;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress14Len;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress18Len;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress1CLen;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress20Len;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress24Len;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; ROMBaseAddressLen;<br />
+        &#160;&#160;&#160; } PCIType0Info
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pcilib.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure defining the regular (type 0) PCI configuration register
+        layout. We use this in the <a href="PCIDeviceInfo.html">PCIDeviceInfo</a> union
+        so we can describe all types of PCI configuration spaces with a single
+        structure.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The PCI base address length values are not
+          actually in the PCI configuration space, but are calculated when the
+          configuration space is enumerated as they are useful values to know.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress10
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 10h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress14
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 14h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress18
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 18h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress1C
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 1Ch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress20
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 20h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress24
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 24h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                CardbusCISPointer
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to CardBus Information Structure in config space
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SubSystemVendorID
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Sub System Vendor ID for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SubSystemID
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Sub System ID for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ROMBaseAddress
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address for ROM on device (if any)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                CapabilitiesPointer
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to PCI capabilities list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved1
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved2
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved3
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved4
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                InterruptLine
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Interrupt line assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                InterruptPin
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Interrupt pin assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MinimumGrant
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Minimum interrupt grant assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MaximumLatency
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum interrupt latency assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress10Len
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 10 (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress14Len
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 14 (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress18Len
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 18 (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress1CLen
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 1C (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress20Len
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 20 (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress24Len
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of BAR 24 (calculated value)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ROMBaseAddressLen
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of ROM (calculated value)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

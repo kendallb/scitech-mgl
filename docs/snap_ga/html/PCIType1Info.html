@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PCIType1Info</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PCIType0Info" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PCIType0Info.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PCIType0Info" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="PCIType2Info" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('PCIType2Info.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="PCIType2Info" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions_2.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PCIType1Info
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress10;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; BaseAddress14;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; PrimaryBusNumber;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; SecondayBusNumber;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; SubordinateBusNumber;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; SecondaryLatencyTimer;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; IOBase;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; IOLimit;<br />
+        &#160;&#160;&#160; ushort&#160; SecondaryStatus;<br />
+        &#160;&#160;&#160; ushort&#160; MemoryBase;<br />
+        &#160;&#160;&#160; ushort&#160; MemoryLimit;<br />
+        &#160;&#160;&#160; ushort&#160; PrefetchableMemoryBase;<br />
+        &#160;&#160;&#160; ushort&#160; PrefetchableMemoryLimit;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; PrefetchableBaseHi;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; PrefetchableLimitHi;<br />
+        &#160;&#160;&#160; ushort&#160; IOBaseHi;<br />
+        &#160;&#160;&#160; ushort&#160; IOLimitHi;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; CapabilitiesPointer;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved1;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved2;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; reserved3;<br />
+        &#160;&#160;&#160; ulong&#160;&#160; ROMBaseAddress;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; InterruptLine;<br />
+        &#160;&#160;&#160; uchar&#160;&#160; InterruptPin;<br />
+        &#160;&#160;&#160; ushort&#160; BridgeControl;<br />
+        &#160;&#160;&#160; } PCIType1Info
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pcilib.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure defining PCI to PCI bridge (type 1) PCI configuration register
+        layout. We use this in the <a href="PCIDeviceInfo.html">PCIDeviceInfo</a> union
+        so we can describe all types of PCI configuration spaces with a single
+        structure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress10
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 10h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BaseAddress14
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base address register (BAR) 14h
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PrimaryBusNumber
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Primary bus number this bridge lives on
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SecondayBusNumber
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Secondary bus number this bridge controls
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SubordinateBusNumber
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Subordinate bus number for this bridge
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SecondaryLatencyTimer
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Secondary latency timer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOBase
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O base address for bridge control registers
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOLimit
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O limit for bridge control registers
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                SecondaryStatus
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Secondary status
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MemoryBase
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Memory mapped base address for bridge control registers
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MemoryLimit
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Memory mapped limit for bridge control registers
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PrefetchableMemoryBase
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Base of pre-fetchable memory on bus
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PrefetchableMemoryLimit
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Length of pre-fetchable memory on bus
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PrefetchableBaseHi
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                High portion of prefetchable base value
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PrefetchableLimitHi
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                High portion of prefetchable limit value
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOBaseHi
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                High value of I/O base address
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                IOLimitHi
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                High value of I/O limit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                CapabilitiesPointer
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to PCI bridge capabilities list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved1
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved2
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                reserved3
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved: not used for this device type
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ROMBaseAddress
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Address if ROM for bridge (if any)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                InterruptLine
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Interrupt line assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                InterruptPin
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Interrupt pin assigned to this device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                BridgeControl
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bridge control register
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

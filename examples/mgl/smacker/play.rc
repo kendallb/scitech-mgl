@@ -1,0 +1,69 @@
+/****************************************************************************
+*
+*					SciTech Multi-platform Graphics Library
+*
+*  ========================================================================
+*
+*   Copyright (C) 1991-2002 SciTech Software, Inc. All rights reserved.
+*
+*   This file may be distributed and/or modified under the terms of the
+*   GNU General Public License version 2 as published by the Free
+*   Software Foundation and appearing in the file LICENSE.GPL included
+*   in the packaging of this file.
+*
+*   Licensees holding a valid Commercial License for this product from
+*   SciTech Software, Inc. may use this file in accordance with the
+*   Commercial License Agreement provided with the Software.
+*
+*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*   PURPOSE.
+*
+*   See http://www.scitechsoft.com/license/ for information about
+*   the licensing options available and how to purchase a Commercial
+*   License Agreement.
+*
+*   Contact license@scitechsoft.com if any conditions of this licensing
+*   are not clear to you, or you have questions about licensing options.
+*
+*  ========================================================================
+*
+* Author:		Kendall Bennett
+*
+* Language:		Windows Resource Compiler
+* Environment:	Windows 3.1
+*
+*
+****************************************************************************/
+
+#ifndef WORKSHOP_INVOKED
+  #include <windows.h>
+#endif
+#include "play.rh"
+
+IDD_MAINDLG DIALOG 27, 29, 233, 252
+STYLE DS_MODALFRAME | 0x4L | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 8, "MS Sans Serif"
+{
+ DEFPUSHBUTTON "Play Video", IDC_OK, 23, 231, 50, 14
+ LISTBOX IDC_MODELIST, 9, 47, 214, 91, LBS_NOTIFY | WS_BORDER | WS_BORDER | WS_VSCROLL | WS_TABSTOP
+ PUSHBUTTON "Auto Detect", IDC_AUTODETECT, 44, 151, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "System memory blit", IDC_SYSMEM, 44, 162, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "Direct to linear framebuffer", IDC_LINMEM, 44, 173, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "System memory blit with double buffering", IDC_SYSMEMDBUF, 44, 184, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "Hardware blit", IDC_HWMEM, 44, 195, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "Hardware blit with double buffering", IDC_HWMEMDBUF, 44, 206, 149, 12, BS_AUTORADIOBUTTON | WS_TABSTOP
+ PUSHBUTTON "Select Video", IDC_SELECT_VIDEO, 89, 231, 54, 14
+ PUSHBUTTON "Quit", IDC_CANCEL, 160, 231, 50, 14
+ LTEXT "Video mode to use:", -1, 10, 35, 178, 8, NOT WS_GROUP
+ CTEXT "%s Full Screen Smacker Video Player", IDC_VERSIONSTR, 23, 8, 186, 8, SS_CENTER | NOT WS_GROUP
+ CTEXT "Copyright (c) 1996 SciTech Software", IDC_COPYRIGHTSTR, 14, 19, 204, 8, SS_CENTER | NOT WS_GROUP
+ GROUPBOX "Playback Method", -1, 32, 139, 169, 85, BS_GROUPBOX | WS_GROUP
+}
+
+1 ICON "play.ico"
+
+STRINGTABLE
+{
+ 1, "MGL Smacker Video Player"
+}

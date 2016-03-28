@@ -1,0 +1,12 @@
+#***************************************************************************
+#
+# Language:    GAS
+# Environment: AMD64 in a SYSV ABI environment.
+#
+# Description: Module to implement the export stubs for the FreeType
+#              library.
+#
+#***************************************************************************
+
+.include "amd64macros.i"           # Memory model macros
+.include "_tt_exp.def"

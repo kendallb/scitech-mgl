@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>External Functions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading2">
+        External Functions
+      </p>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DDC_init.html">DDC_init</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DDC_initExt.html">DDC_initExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DDC_readEDID.html">DDC_readEDID</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DDC_writeEDID.html">DDC_writeEDID</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EDID_parse.html">EDID_parse</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_addMode.html">GA_addMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_addRefresh.html">GA_addRefresh</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_computeCRTCTimings.html">GA_computeCRTCTimings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_delMode.html">GA_delMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_detectPnPMonitor.html">GA_detectPnPMonitor</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_disableVBEMode.html">GA_disableVBEMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_disjointRect.html">GA_disjointRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_emptyRect.html">GA_emptyRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_enableVBEMode.html">GA_enableVBEMode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_enumerateDevices.html">GA_enumerateDevices</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_equalRect.html">GA_equalRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_errorMsg.html">GA_errorMsg</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getCRTCTimings.html">GA_getCRTCTimings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getCurrentRef2d.html">GA_getCurrentRef2d</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getDaysLeft.html">GA_getDaysLeft</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getDisplaySerialNo.html">GA_getDisplaySerialNo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getDisplayUserName.html">GA_getDisplayUserName</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getFakePCIID.html">GA_getFakePCIID</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getGlobalOptions.html">GA_getGlobalOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getInternalName.html">GA_getInternalName</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getLicensedDevices.html">GA_getLicensedDevices</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getMaxRefreshRate.html">GA_getMaxRefreshRate</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getParsedEDID.html">GA_getParsedEDID</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_getSNAPConfigPath.html">GA_getSNAPConfigPath</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_insetRect.html">GA_insetRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_isLiteVersion.html">GA_isLiteVersion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_isOEMVersion.html">GA_isOEMVersion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_isSharedDriverLoaded.html">GA_isSharedDriverLoaded</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_isSimpleRegion.html">GA_isSimpleRegion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_loadDriver.html">GA_loadDriver</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_loadInGUI.html">GA_loadInGUI</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_loadModeProfile.html">GA_loadModeProfile</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_loadRef2d.html">GA_loadRef2d</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_loadRegionMgr.html">GA_loadRegionMgr</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_offsetRect.html">GA_offsetRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_programMTRRegisters.html">GA_programMTRRegisters</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_ptInRect.html">GA_ptInRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_queryFunctions.html">GA_queryFunctions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_readGlobalOptions.html">GA_readGlobalOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_registerLicense.html">GA_registerLicense</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_restoreCRTCTimings.html">GA_restoreCRTCTimings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_saveCRTCTimings.html">GA_saveCRTCTimings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_saveGlobalOptions.html">GA_saveGlobalOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_saveModeProfile.html">GA_saveModeProfile</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_saveMonitorInfo.html">GA_saveMonitorInfo</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_saveOptions.html">GA_saveOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_sectRect.html">GA_sectRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_sectRectCoord.html">GA_sectRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_sectRectFast.html">GA_sectRectFast</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_sectRectFastCoord.html">GA_sectRectFastCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_setActiveDevice.html">GA_setActiveDevice</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_setCRTCTimings.html">GA_setCRTCTimings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_setDefaultRefresh.html">GA_setDefaultRefresh</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_setGlobalOptions.html">GA_setGlobalOptions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_setMinimumDriverVersion.html">GA_setMinimumDriverVersion</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoExit.html">GA_softStereoExit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoGetFlipStatus.html">GA_softStereoGetFlipStatus</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoInit.html">GA_softStereoInit</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoOff.html">GA_softStereoOff</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoOn.html">GA_softStereoOn</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoScheduleFlip.html">GA_softStereoScheduleFlip</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_softStereoWaitTillFlipped.html">GA_softStereoWaitTillFlipped</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_status.html">GA_status</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_unionRect.html">GA_unionRect</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_unionRectCoord.html">GA_unionRectCoord</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_unloadDriver.html">GA_unloadDriver</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_unloadRef2d.html">GA_unloadRef2d</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_unloadRegionMgr.html">GA_unloadRegionMgr</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GA_useDoubleScan.html">GA_useDoubleScan</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_begin.html">MCS_begin</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_beginExt.html">MCS_beginExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_enableControl.html">MCS_enableControl</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_end.html">MCS_end</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getCapabilitiesString.html">MCS_getCapabilitiesString</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getControlMax.html">MCS_getControlMax</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getControlValue.html">MCS_getControlValue</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getControlValues.html">MCS_getControlValues</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getSelfTestReport.html">MCS_getSelfTestReport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_getTimingReport.html">MCS_getTimingReport</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_isControlSupported.html">MCS_isControlSupported</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_resetControl.html">MCS_resetControl</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_saveCurrentSettings.html">MCS_saveCurrentSettings</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_setControlValue.html">MCS_setControlValue</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MCS_setControlValues.html">MCS_setControlValues</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_close.html">MDBX_close</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_first.html">MDBX_first</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_flush.html">MDBX_flush</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_getErrCode.html">MDBX_getErrCode</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_getErrorMsg.html">MDBX_getErrorMsg</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_importINF.html">MDBX_importINF</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_insert.html">MDBX_insert</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_last.html">MDBX_last</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_next.html">MDBX_next</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_open.html">MDBX_open</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_prev.html">MDBX_prev</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MDBX_update.html">MDBX_update</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_freeLibrary.html">PE_freeLibrary</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_getError.html">PE_getError</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_getFileSize.html">PE_getFileSize</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_getProcAddress.html">PE_getProcAddress</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_loadLibrary.html">PE_loadLibrary</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_loadLibraryExt.html">PE_loadLibraryExt</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PE_loadLibraryMGL.html">PE_loadLibraryMGL</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="REF2D_loadDriver.html">REF2D_loadDriver</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="REF2D_queryFunctions.html">REF2D_queryFunctions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="REF2D_unloadDriver.html">REF2D_unloadDriver</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

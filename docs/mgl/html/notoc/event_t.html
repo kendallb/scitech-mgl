@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>event_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        event_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160; which;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160; what;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160; when;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; where_x;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; where_y;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; relative_x;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; relative_y;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160; message;<br />
+        &#160;&#160;&#160; ulong&#160;&#160;&#160;&#160;&#160;&#160; modifiers;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; next;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; prev;<br />
+        &#160;&#160;&#160; } event_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        event.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure describing the information contained in an event extracted from
+        the event queue.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                which
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Window identifier for message for use by high level window
+                manager code (i.e. MegaVision GUI or Windows API).
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                what
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Type of event that occurred. Will be one of the values defined by
+                the <a href="EVT_eventType.html">EVT_eventType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                when
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Time that the event occurred in milliseconds since startup
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                where_x
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                X coordinate of the mouse cursor location at the time of the
+                event (in screen coordinates). For joystick events this
+                represents the position of the first joystick X axis.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                where_y
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Y coordinate of the mouse cursor location at the time of the
+                event (in screen coordinates). For joystick events this
+                represents the position of the first joystick Y axis.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                relative_x
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Relative movement of the mouse cursor in the X direction (in
+                units of mickeys, or 1/200th of an inch). For joystick events
+                this represents the position of the second joystick X axis.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                relative_y
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Relative movement of the mouse cursor in the Y direction (in
+                units of mickeys, or 1/200th of an inch). For joystick events
+                this represents the position of the second joystick Y axis.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                message
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Event specific message for the event. For use events this can be
+                any user specific information. For keyboard events this
+                contains the ASCII code in bits 0-7, the keyboard scan code in
+                bits 8-15 and the character repeat count in bits 16-30. You can
+                use the <a href="EVT_asciiCode.html">EVT_asciiCode</a>, <a href="EVT_scanCode.html">EVT_scanCode</a> and
+                <a href="EVT_repeatCount.html">EVT_repeatCount</a> macros to
+                extract this information from the message field. For mouse
+                events this contains information about which button was
+                pressed, and will be a combination of the flags defined by the <a href="EVT_eventMouseMaskType.html">EVT_eventMouseMaskType</a> enumeration.
+                For joystick events, this conatins information about which
+                buttons were pressed, and will be a combination of the flags
+                defined by the <a href="EVT_eventJoyMaskType.html">EVT_eventJoyMaskType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                modifiers
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Contains additional information about the state of the keyboard
+                shift modifiers (Ctrl, Alt and Shift keys) when the event
+                occurred. For mouse events it will also contain the state of
+                the mouse buttons. Will be a combination of the values defined
+                by the <a href="EVT_eventModMaskType.html">EVT_eventModMaskType</a> enumeration.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                next
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Internal use; do not use.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                prev
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Internal use; do not use.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

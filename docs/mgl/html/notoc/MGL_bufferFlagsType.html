@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_bufferFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_bufferFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MGL_BUF_SYSMEM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; MGL_BUF_CACHED&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; MGL_BUF_MOVEABLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; MGL_BUF_PAGEABLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; MGL_BUF_PRIORITY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; MGL_BUF_NOSYSMEM&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020<br />
+        &#160;&#160;&#160; } MGL_bufferFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the flags passed to <a href="MGL_createBuffer.html">MGL_createBuffer</a>.
+        The flags define how the buffer is allocated by the MGL, and the type
+        of buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_SYSMEM flag indicates that the buffer is currently located in
+        system memory only. It is possible for a buffer that was allocated with
+        the MGL_BUF_PAGEABLE and MGL_BUF_CACHED flags to initially be in video
+        memory but then get paged out to system memory to make space for higher
+        priority buffers. You can also set this flag when you allocate a buffer
+        to cause the buffer to be allocated in system memory instead of video
+        memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_CACHED flag indicates that the buffer should have a system
+        memory cache allocated for it, so that it can be swapped in and out of
+        video memory as necessary. Sometimes it may be useful to have buffers
+        cached in system memory, but not have them pageable. Thus the system
+        memory cache can be used to refresh the video memory as necessary if
+        the video memory contents were lost (ie: on a focus switch etc). Note
+        that the system memory cache is not maintained automaticaly by MGL, but
+        rather it is up to the application code to maintain the contents of the
+        system memory cache if they need to be kept in sync. You can use the <a href="MGL_updateBufferCache.html">MGL_updateBufferCache</a> and
+        <a href="MGL_updateFromBufferCache.html">MGL_updateFromBufferCache</a> functions
+        to keep the system memory cache in sync as necessary. Note also that
+        some of the buffer manager drawing functions will draw from the buffer
+        cache if it is present and the hardware cannot accelerate the operation
+        within video memory. Hence it is important that the application keep
+        the buffer cache coherent with the contents of the video memory buffer
+        or some drawing operations may come out incorrect.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_MOVEABLE flag indicates that the buffer should be allocated
+        on the moveable buffer heap, so that the buffer can be moved around as
+        necessary to compact the heap if it becomes fragmented. For buffers
+        that should never move in video memory, this flag should not be set and
+        the buffers will be allocated in the non-moveable or fixed heap.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_PAGEABLE flag indicates that the buffer is a low priority
+        buffer and can be paged to system memory in order to make room for
+        higher priority buffers. Setting MGL_BUF_PAGEABLE flag will
+        automatically set the MGL_BUF_CACHED flag so that there is a system
+        memory cache for the buffer. Pageable buffers will be paged back into
+        video memory when the heap becomes free of all non-pageable buffers.
+        Hence shell drivers using the buffer manager to cache bitmaps etc
+        should make those bitmaps all pageable, so that they will get pages to
+        system memory if applications need more offscreen memory (ie: 2D or 3D
+        graphics intensive apps). When the graphics intensive app exits, the
+        pageable buffers will get pages back into video memory as all
+        non-pageable buffers will have been freed.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_PRIORITY flag indicates that the buffer is a high priority
+        buffer. As long as there are any high priority buffers still allocated,
+        the buffer manager will not attempt to page back in pageable buffers
+        from system memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BUF_NOSYSMEM flag is used to indicate that the surface being
+        created should only ever be allocated in video memory. If there is no
+        video memory available, the buffer allocation function will fail
+        (normally it will attempt to allocate the buffer in system memory if
+        the MGL_BUF_CACHED or MGL_BUF_PAGEABLE flags are set).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_SYSMEM
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is currently located in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_CACHED
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is cached in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_MOVEABLE
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer can be moved around to compact buffer heap
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_PAGEABLE
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer can be paged to system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_PRIORITY
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a high priority bitmap
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BUF_NOSYSMEM
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer should never be allocated in system memory
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

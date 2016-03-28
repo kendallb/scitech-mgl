@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_OutputFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_OutputFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaOUTPUT_CRT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0001,<br />
+        &#160;&#160;&#160; gaOUTPUT_LCD&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0002,<br />
+        &#160;&#160;&#160; gaOUTPUT_DFP&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0400,<br />
+        &#160;&#160;&#160; gaOUTPUT_TV&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0004,<br />
+        &#160;&#160;&#160; gaOUTPUT_SELECTMASK&#160;&#160;&#160;&#160; =
+        0x0407,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVNTSC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0008,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVNTSC_J&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0010,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVPAL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0020,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVPAL_M&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0040,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVPAL_60&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0080,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVPAL_CN&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0100,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVSCART_PAL&#160;&#160;&#160; = 0x0200,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVUNDERSCAN&#160;&#160;&#160; = 0x0000,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVOVERSCAN&#160;&#160;&#160;&#160; =
+        0x8000,<br />
+        &#160;&#160;&#160; gaOUTPUT_TVCOLORMASK&#160;&#160;&#160; = 0x03F8<br />
+        &#160;&#160;&#160; } GA_OutputFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for the different output displays supported by the driver. These
+        flags are passed to the SetDisplayOutput function to change the
+        currently active display device and the GetDisplayDevice function to
+        determine what devices are currenlty being used to display output.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The color format for TV modes may be specified,
+          or it may not. In the case where the color format is not specified,
+          the currently active color format will be used. In some cases the
+          color format is set in hardware and cannot be changed.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_CRT
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates output is sent to CRT display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_LCD
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates output is sent to LCD panel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_DFP
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates output is sent to external DFP connector
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TV
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates output is sent to TV connector
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_SELECTMASK
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask to mask out just the output selection
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVNTSC
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to NTSC
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVNTSC_J
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to NTSC-J
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVPAL
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to PAL
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVPAL_M
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to PAL-M
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVPAL_60
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to PAL-60
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVPAL_CN
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to PAL-CN
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVSCART_PAL
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set TVOut connector color format to SCART-PAL
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVUNDERSCAN
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates TV output should be underscanned
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVOVERSCAN
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Indicates TV output should be overscanned
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaOUTPUT_TVCOLORMASK
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask to mask out TV color format
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

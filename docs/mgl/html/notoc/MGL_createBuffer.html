@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_createBuffer</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_createBuffer
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Creates a new MGL memory buffer for storing bitmaps
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        MGLBUF * MGLAPI MGL_createBuffer(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; int width,<br />
+        &#160;&#160;&#160; int height,<br />
+        &#160;&#160;&#160; M_uint32 flags)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                MGL display or windowed device context to allocate buffer from
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of the buffer in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the buffer in scanlines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                flags
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flags to use when creating the buffer
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the allocated buffer, NULL on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function allocates a new lightweight bitmap buffer in offscreen
+        display memory. Lighweight bitmap buffers are used to store bitmap and
+        sprite information in the offscreen display memory in the hardware, but
+        are not full device contexts. Hence buffers have much less memory
+        overhead than a full offscreen device context. Buffers can only be used
+        for storing bitmaps and blitting them around on the screen. You can
+        copy the contents to a MGL device context using the <a href="MGL_putBuffer.html">MGL_putBuffer</a>,
+        <a href="MGL_stretchBuffer.html">MGL_stretchBuffer</a> and <a href="MGL_putBufferSrcTrans.html">MGL_putBufferSrcTrans</a> functions.
+        You can also copy the contents of an MGL device context to a buffer
+        using the <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you need to draw on a buffer in offscreen memory, create a full
+        offscreen device context instead. Then you can call any of the standard
+        MGL drawing functions and BitBlt operations for the offscreen memory
+        buffer. The primary disadvantage of doing this is that a full offscreen
+        device context has a lot more memory overhead involved in maintaining
+        the device context state information than a simple offscreen buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you flag the MGL_BUF_CACHED flag, MGL will always keep a cached copy
+        of the surface memory for the buffer in system memory. If your
+        offscreen buffers get lost (ie: on a fullscreen mode switch), they can
+        be automatically be restored when the application regains the active
+        focus. This also allows the MGL to compact the offscreen memory heap
+        when necessary. If you don't set the cacheIt parameter to true, then it
+        is your applications responsibility to reload the bitmaps when the
+        focus is lost and regained. Note however that the MGL is not
+        responsible for maintaining the contents of the buffer cache memory, so
+        if you draw directly on the buffer surface you should ensure that the
+        cache is kept up to date if you wish for your buffers to be cached.
+        Note that the <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a> and <a href="MGL_copyBitmapToBuffer.html">MGL_copyBitmapToBuffer</a> functions
+        will ensure that both the buffer cache and video memory buffer contents
+        are updated if the buffer is cached. Hence if you are only using the
+        buffers to store static sprite information, you can use <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a>()
+        or <a href="MGL_copyBitmapToBuffer.html">MGL_copyBitmapToBuffer</a>()
+        and never have to worry about keeping the buffer cache in sync.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The MGL automatically manages offscreen display
+          memory, and if you run out of offscreen display memory it will place
+          the buffer surfaces in system memory (unless you pass the
+          MGL_BUF_NOSYSMEM flag). Hence you should allocate your important
+          buffers first, to ensure they end up in offscreen memory for speedy
+          drawing.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; This function is only valid for display device
+          contexts, and will fail if you call it for a different device context
+          type with an error code of grInvalidDC.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_createBuffer.html">MGL_createBuffer</a>, <a href="MGL_lockBuffer.html">MGL_lockBuffer</a>,
+        <a href="MGL_unlockBuffer.html">MGL_unlockBuffer</a>, <a href="MGL_destroyBuffer.html">MGL_destroyBuffer</a>,
+        <a href="MGL_createOffscreenDC.html">MGL_createOffscreenDC</a>, <a href="MGL_putBuffer.html">MGL_putBuffer</a>,
+        <a href="MGL_stretchBuffer.html">MGL_stretchBuffer</a>, <a href="MGL_putBufferSrcTrans.html">MGL_putBufferSrcTrans</a>,
+        <a href="MGL_putBufferDstTrans.html">MGL_putBufferDstTrans</a>, <a href="MGL_copyToBuffer.html">MGL_copyToBuffer</a>,
+        <a href="MGL_copyBitmapToBuffer.html">MGL_copyBitmapToBuffer</a>, <a href="MGL_updateBufferCache.html">MGL_updateBufferCache</a>,
+        <a href="MGL_updateFromBufferCache.html">MGL_updateFromBufferCache</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+This is version 1.3 of 3DKIT, a super fast on-the-fly rendering library for
+living 3D animation, written in C by Paul Sheer.
+
+The 3DKIT library is free software.  See the file 0-COPYING for copying
+permission.
+
+The library consists of the following files:
+
+  3dinit.h
+  3dinit.c
+  3dkit.h
+  3dkit.c
+  wrapsurf.c
+  triangle.h
+  striangle.c
+  swtriangle.c
+  triangle.c
+  wtriangle.c
+  trisetpixel.c
+  tri.c
+  triangl.c
+  quickmath.c
+  quickmath.h
+
+For demonstration, two additional programs are included:
+
+  planukit.c:
+    A greyscale-shaded rendered-on-the-fly turbo-prop that you can rotate
+    and scale however you like.
+
+  wrapdemo.c:
+    Demonstrates surface wrapping of bitmaps in a similar fashion.
+
+For details, please read the manual pages:
+  man 6 planukit
+  man 6 wrapdemo
+  man 3 triangle
+  man 3 striangle
+  man 3 wtriangle
+  man 3 swtriangle
+  man 3 trisetcolorlookup
+  man 3 trigetcolorlookup
+  man 3 trisetdrawpoint
+  man 7 threedkit
+
+CONTACTING THE AUTHOR
+---------------------
+
+email:		psheer@icon.co.za
+
+paper mail:	P O BOX 890507
+		Lyndhurst
+		Johannesburg 2106
+		South Africa
+
+Donations (by check or postal order) will be appreciated and will encourage
+further development of this software. However this is strictly on a voluntary
+basis where this software falls under the GNU LIBRARY GENERAL PUBLIC LICENSE.

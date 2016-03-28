@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_ellipseArcEngine</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_ellipseArcEngine
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Generates the set of points on an elliptical arc.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_ellipseArcEngine(<br />
+        &#160;&#160;&#160; rect_t extentRect,<br />
+        &#160;&#160;&#160; int startAngle,<br />
+        &#160;&#160;&#160; int endAngle,<br />
+        &#160;&#160;&#160; arc_coords_t *ac,<br />
+        &#160;&#160;&#160; void (MGLAPIP plotPoint)(<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; long x,<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; long y))
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                extentRect
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bounding rectangle defining the arc
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                startAngle
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Starting angle for arc (in degrees)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                endAngle
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Ending angle for arc (in degrees)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ac
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to store computed arc coordinates
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:104.5pt;padding:'0in .5pt 0in .5pt';" width="174" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                plotPoint
+              </p>
+            </td>
+            <td style="width:295.0pt;padding:'0in .5pt 0in .5pt';" width="492" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Function to call for every point on the elliptical arc
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This routine generates the set of points on a elliptical arc, and is the
+        same code used to generate elliptical arcs internally in MGL. You can
+        call it to generate the set of points on an elliptical arc, calling
+        your own plotPoint routine for every point on the arc. The points on
+        the arc are rasterized in order from the starting angle to the ending
+        angle. After the arc has been drawn, the arc coordinates are returned,
+        which contains the actual center, starting and ending points for the
+        arc.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_ellipseEngine.html">MGL_ellipseEngine</a>, <a href="MGL_lineEngine.html">MGL_lineEngine</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

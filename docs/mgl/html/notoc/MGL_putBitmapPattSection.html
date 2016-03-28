@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_putBitmapPattSection</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_putBitmapPattSection
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draw a section of a lightweight bitmap at the specified location while
+        applying a mono or color pattern.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_putBitmapPattSection(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; int left,<br />
+        &#160;&#160;&#160; int top,<br />
+        &#160;&#160;&#160; int right,<br />
+        &#160;&#160;&#160; int bottom,<br />
+        &#160;&#160;&#160; int dstLeft,<br />
+        &#160;&#160;&#160; int dstTop,<br />
+        &#160;&#160;&#160; const bitmap_t *bitmap,<br />
+        &#160;&#160;&#160; int usePixMap,<br />
+        &#160;&#160;&#160; int rop3)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to display bitmap on
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                right
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of section to draw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of destination of bitmap section
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate for destination of bitmap section
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitmap
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bitmap to display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                usePixMap
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True to use color pixmap pattern, false for mono bitmap pattern
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rop3
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                ROP3 raster operation code to use during Blt (<a href="MGL_rop3CodesType.html">MGL_rop3CodesType</a>)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws a section of lightweight bitmap at the specified location, while
+        applying either a mono bitmap pattern or a color pixmap pattern to the
+        data with a ternary raster operation code (ROP3). If the usePixMap
+        parameter is set to true, the current pixmap pattern set by <a href="MGL_setPenPixmapPattern.html">MGL_setPenPixmapPattern</a> will
+        be applied as pattern data, otherwise the current monochrome bitmap
+        pattern set by <a href="MGL_setPenBitmapPattern.html">MGL_setPenBitmapPattern</a> will
+        be applied.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_loadBitmap.html">MGL_loadBitmap</a>, <a href="MGL_putBitmap.html">MGL_putBitmap</a>,
+        <a href="MGL_putBitmapSection.html">MGL_putBitmapSection</a>, <a href="MGL_putBitmapSrcTrans.html">MGL_putBitmapSrcTrans</a>,
+        <a href="MGL_putBitmapSrcTransSection.html">MGL_putBitmapSrcTransSection</a>,
+        <a href="MGL_putBitmapDstTrans.html">MGL_putBitmapDstTrans</a>, <a href="MGL_putBitmapDstTransSection.html">MGL_putBitmapDstTransSection</a>,
+        <a href="MGL_putBitmapMask.html">MGL_putBitmapMask</a>, <a href="MGL_putBitmapPatt.html">MGL_putBitmapPatt</a>,
+        <a href="MGL_putBitmapPattSection.html">MGL_putBitmapPattSection</a>, <a href="MGL_putBitmapFx.html">MGL_putBitmapFx</a>,
+        <a href="MGL_putBitmapFxSection.html">MGL_putBitmapFxSection</a>, <a href="MGL_stretchBitmap.html">MGL_stretchBitmap</a>,
+        <a href="MGL_stretchBitmapSection.html">MGL_stretchBitmapSection</a>, <a href="MGL_stretchBitmapFx.html">MGL_stretchBitmapFx</a>,
+        <a href="MGL_stretchBitmapFxSection.html">MGL_stretchBitmapFxSection</a>,
+        <a href="MGL_putIcon.html">MGL_putIcon</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

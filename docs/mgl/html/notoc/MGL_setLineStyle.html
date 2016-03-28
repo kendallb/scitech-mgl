@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_setLineStyle</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_setLineStyle
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the current line style.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_setLineStyle(<br />
+        &#160;&#160;&#160; int style)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                style
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                New line style to use
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Sets the current line style.&#160; MGL supports two different line
+        styles, either pen style patterned lines (MGL_LINE_PENSTYLE) or
+        stippled lines (MGL_LINE_STIPPLE). Pen style patterned lines are
+        similar to those provided by QuickDraw for the Macintosh where lines
+        are drawing using a rectangular pen that can have an arbitrary size and
+        can be filled with an arbitrary pattern. Pen style patterned lines are
+        the default. Stippled lines are similar to those used by CAD programs
+        on the PC, and are 1-pixel wide lines that can be drawn using a 16-bit
+        stipple mask. Stippled lines can be drawn very fast in hardware using
+        the VBE/AF accelerator drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        In stippled line mode the line stipple pattern is used to determine which
+        pixels in the line get drawn depending on which bits in the pattern are
+        set. The stipple pattern is a 16-bit value, and everywhere that a bit
+        is set to a 1 in the pattern, a pixel will be drawn in the line.
+        Everywhere that a bit is a 0, the pixel will be skipped in the line.
+        Note that bit 0 in the stipple pattern corresponds to pixel 0,16,32,...
+        in the line, bit 1 is pixel 1,17,33 etc. To create a line that is drawn
+        as a 'dot dot dash dash' you would use the following value:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        0011100111001001b or 0x39C9
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        In stippled line mode the line stipple counter is used to count the
+        number of pixels that have been drawn in the line, and is updated after
+        the line has been drawn. The purpose of this counter is to allow you to
+        draw connected lines using a stipple pattern and the stippling will be
+        continuous across the break in the lines. You can use this function to
+        reset the stipple counter to a known value before drawing lines to
+        force the stipple pattern to start at a specific bit position (usually
+        resetting it to 0 before drawing a group of lines is sufficient).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that VBE/AF 1.0 accelerated devices do not support the line stipple
+        counter, so this counter is essentially reset to 0 every time that a
+        line is drawn using the hardware. VBE/AF 2.0 will rectify this problem
+        in the future.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_setLineStipple.html">MGL_setLineStipple</a>, <a href="MGL_setLineStippleCount.html">MGL_setLineStippleCount</a>,
+        <a href="MGL_getLineStyle.html">MGL_getLineStyle</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

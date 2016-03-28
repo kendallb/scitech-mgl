@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_loadFontInstance</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_loadFontInstance
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Load a font file for use.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        font_t * MGLAPI MGL_loadFontInstance(<br />
+        &#160;&#160;&#160; font_lib_t *fontlib,<br />
+        &#160;&#160;&#160; float pointSize,<br />
+        &#160;&#160;&#160; float slant,<br />
+        &#160;&#160;&#160; float angle,<br />
+        &#160;&#160;&#160; ibool antialiased)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the loaded font file, NULL on error.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Locates the specified font file and loads it into memory. MGL can load
+        any Windows 2.x style font files (Windows 3.x font files are not
+        supported, but Windows 2.x font files are the standard files even for
+        Windows 3.1. Most resource editors can only output 2.x style font
+        files). Consult the Windows SDK documentation for the format of Windows
+        font files.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When MGL is searching for font files it will first attempt to find the
+        files just by using the filename itself. Hence if you wish to look for
+        a specific font file, you should pass the full pathname to the file
+        that you are interested in. If the filename is a simple relative
+        filename (i.e. “MYFONT.FNT”), MGL will then search in the FONTS
+        directory relative to the path specified in mglpath variable that was
+        passed to <a href="MGL_init.html">MGL_init</a>. As a final resort MGL
+        will also look for the files in the FONTS directory relative to the
+        MGL_ROOT environment variable.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the font file was not found, or an error occurred while reading the
+        font file, this function will return NULL. You can check the <a href="MGL_result.html">MGL_result</a> error
+        code to determine the cause.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_openFontLib.html">MGL_openFontLib</a>, <a href="MGL_unloadFontInstance.html">MGL_unloadFontInstance</a>,
+        <a href="MGL_closeFontLib.html">MGL_closeFontLib</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

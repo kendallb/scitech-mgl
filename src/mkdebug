@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# Shell script to build all MGL libraries in debug mode for the
+# currently active compiler. Optimisations are *NOT* enabled, so
+# that debugging is easier. We also turn down the warning level. You
+# may want to set MAX_WARN=1 if you want maximum warnings.
+
+export DBG=1
+export OPT=
+export OPT_SIZE=
+export CHECKED=1
+export MAX_WARN=
+dmake build

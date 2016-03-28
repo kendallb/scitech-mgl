@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>DrawFatEllipseList</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="DrawEllipseList" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DrawEllipseList.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="DrawEllipseList" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="DrawLineInt" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DrawLineInt.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="DrawLineInt" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_2DRenderFuncs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_2DRenderFuncs.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_2DRenderFuncs" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        DrawFatEllipseList
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Draws a list of solid scanlines for a fat ellipse engine back end.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DRenderFuncs::DrawFatEllipseList(<br />
+        &#160;&#160;&#160; N_int32 y,<br />
+        &#160;&#160;&#160; N_int32 length,<br />
+        &#160;&#160;&#160; N_int32 height,<br />
+        &#160;&#160;&#160; N_int16 *scans)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                y
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Y coordinate for scanline
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                length
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of scanlines in the list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of the ellipse minor axis + pen height adjustment
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                scans
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to an array of scanline data
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function renders a list of solid scanlines starting at the specified
+        location in the currently active color and mix. This function forms the
+        back end of a fast fat pen ellipse rendering engine, but does not
+        actually compute the scanlines in the list itself since the the
+        pixelisation rules are usually different for different device driver
+        environments.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The scanline coordinates are passed as an array of 16-bit integer
+        coordinates, packed in mutiples of 4 coordinates for a single scanline
+        list. The first coordinate is the LEFTL coordinate, the second is the
+        LEFTR, the third is the RIGHTL and the fourth is the RIGHTR coordinate.
+        For each scanline in the list (each list defines two scanlines at the
+        same Y coordinate), this routine will render a scanline from LEFT to
+        RIGHT (exclusive) at increasing Y coordinates. The calling code must
+        always guarantee that the LEFT coordinates will be less than the RIGHT
+        coordinates, and that they will never be equal for each scanline.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function will always be provided by accelerated drivers, and will be
+        implemented with whatever hardware rendering function provides the
+        fastest possible method of rendering scanlines with the installed
+        hardware.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The algorithm used internally in the drivers to render the list of
+        scanlines is similar to the following:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        for (i = 0,j = height; i &lt; length; i++,j--,scans += 4) {<br />
+        &#160;&#160;&#160; if (scans[LEFTR] &lt; scans[RIGHTL]) {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[LEFTL],scans[LEFTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[RIGHTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(j,scans[LEFTL],scans[LEFTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(j,scans[RIGHTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; else {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[LEFTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(j,scans[LEFTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; }<br />
+        if ((height+1) &amp; 1) {<br />
+        &#160;&#160;&#160; if (scans[LEFTR] &lt; scans[RIGHTL]) {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[LEFTL],scans[LEFTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[RIGHTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; else {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; SolidScan(i,scans[LEFTL],scans[RIGHTR]);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="DrawEllipseList.html">DrawEllipseList</a>, <a href="DrawPattEllipseList.html">DrawPattEllipseList</a>,
+        <a href="#GA_2DRenderFuncs_DrawColorPattEllipseList">GA_2DRenderFuncs_DrawColorPattEllipseList</a>,
+        <a href="DrawPattFatEllipseList.html">DrawPattFatEllipseList</a>, <a href="#GA_2DRenderFuncs_DrawColorPattFatEllipseList">GA_2DRenderFuncs_DrawColorPattFatEllipseList</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

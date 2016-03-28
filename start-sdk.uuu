@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# UNUNUNIUM VERSION
+
+# Script file to create the initial setup for using the SciTech SNAP
+# Graphics SDK, using the selected default compiler.
+
+# Setup the location to the SciTech SNAP SDK
+if [ -z $SCITECH ] ; then
+  export SCITECH=$HOME/scitech
+fi
+
+export CHECKED=1
+
+# Initialise the default compile time environment
+
+. $SCITECH/bin-linux/set-vars-linux.sh
+. $SCITECH/bin-linux/gcc-uuu.sh
+
+# Change to the directory containing all the SNAP sample code
+#cd $SCITECH/examples/snap/graphics
+

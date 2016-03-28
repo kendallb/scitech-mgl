@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_AttributeFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_AttributeExtFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_AttributeExtFlagsType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_AttributeExtFlagsType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_BitBltFxFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_BitBltFxFlagsType.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_BitBltFxFlagsType" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_AttributeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaHaveDisplayStart&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; gaHaveBankedBuffer&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; gaHaveLinearBuffer&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; gaHaveAccel2D&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; gaHaveHWCursor&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; gaHave8BitDAC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020,<br />
+        &#160;&#160;&#160; gaHaveNonVGAMode&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; gaHaveDoubleScan&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000080,<br />
+        &#160;&#160;&#160; gaHaveTripleScan&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000100,<br />
+        &#160;&#160;&#160; gaHaveInterlaced&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000200,<br />
+        &#160;&#160;&#160; gaHaveTripleBuffer&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000400,<br />
+        &#160;&#160;&#160; gaHaveStereo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000800,<br />
+        &#160;&#160;&#160; gaHaveHWStereoSync&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00001000,<br />
+        &#160;&#160;&#160; gaHaveEVCStereoSync&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00002000,<br />
+        &#160;&#160;&#160; gaHaveAccelVideo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00004000,<br />
+        &#160;&#160;&#160; gaHaveAccel3D&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00008000,<br />
+        &#160;&#160;&#160; gaHave8bppRGBCursor&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00010000,<br />
+        &#160;&#160;&#160; gaHaveAccelIOPL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00040000,<br />
+        &#160;&#160;&#160; gaHaveEngineClock&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00200000,<br />
+        &#160;&#160;&#160; gaIsGUIDesktop&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x01000000,<br />
+        &#160;&#160;&#160; gaIsVirtualMode&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x08000000,<br />
+        &#160;&#160;&#160; gaHaveMultiHead&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        0x02000000,<br />
+        &#160;&#160;&#160; gaHaveDFPOutput&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x04000000,<br />
+        &#160;&#160;&#160; gaHaveLCDOutput&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x10000000,<br />
+        &#160;&#160;&#160; gaHaveTVOutput&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x20000000,<br />
+        &#160;&#160;&#160; gaIsTextMode&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x40000000<br />
+        &#160;&#160;&#160; } GA_AttributeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for the Attributes member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure
+        and in the Attributes member of the main <a href="GA_devCtx.html">GA_devCtx</a> device
+        context block structure. These flags define the hardware capabilities
+        of the particular device or graphics mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveDisplayStart flag is used to determine whether the graphics
+        mode supports changing the CRTC display start address. This is used to
+        implement hardware virtual scrolliong and multi-buffering for flicker
+        free animation. If this bit is 0, then the application cannot change
+        the display start address after initialising a display mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveBankedBuffer flag is used to determine if the graphics mode
+        supports the banked framebuffer access modes. If this bit is 0, then
+        the application cannot use the banked framebuffer style access. Some
+        controllers may not support a banked framebuffer mode in some modes. In
+        this case a linear framebuffer mode will be provided (either a banked
+        buffer or linear buffer must be available for the mode to be valid).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveLinearBuffer flag is used to determine if the graphics mode
+        supports the linear framebuffer access modes. If this bit is 0, then
+        the application cannot start the linear framebuffer graphics mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveAccel2D flag is used to determine if the graphics mode supports
+        2D accelerator functions. If this bit is 0, then the application can
+        only use direct framebuffer access in this video mode, and the 2D
+        acceleration functions are not available. The cases where this might
+        crop up are more common than you might think. This bit may be 0 for
+        very low resolution graphics modes on some controllers, and on older
+        controllers for the 24 bit and above graphics modes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveHWCursor flag is used to determine if the controller supports a
+        hardware cursor for the specified graphics mode. You must check this
+        flag for each graphics mode before attempting to use the hardware
+        cursor functions as some graphics modes will not be able to support the
+        hardware cursor (but may still support 2D acceleration).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHave8BitDAC flag is used to determine if the controller will be
+        using the 8 bit wide palette DAC modes when runing in 256 color index
+        modes. The 8 bit DAC modes allow the palette to be selected from a
+        range of 16.7 million colors rather than the usual 256k colors
+        available in 6 bit DAC mode. The 8 bit DAC mode allows the 256 color
+        modes to display a full range of 256 grayscales, while the 6 bit mode
+        only allows a selection of 64 grayscales. Note that the 8 bit DAC mode
+        is not selectable. If the hardware supports an 8 bit DAC, it will
+        always be used by default.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveNonVGAMode flag is used to determine if the mode is a VGA
+        compatible mode or a NonVGA mode. If this flag is set, the application
+        software must ensure that no attempts are made to directly program any
+        of the standard VGA compatible registers such as the RAMDAC control
+        registers and inpus status registers while the NonVGA graphics mode is
+        used. Attempting to use these registers in NonVGA modes generally
+        results in the application program hanging the system.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveDoubleScan flag is used to determine if the mode requires
+        double scanning. If this bit is set, the double scan bit must be set
+        for the graphics mode if it is initialised with generic refresh control
+        turned on.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveTripleScan flag is used to determine if the mode requires
+        triple scanning. If this bit is set, the triple scan bit must be set
+        for the graphics mode if it is initialised with generic refresh control
+        turned on.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveInterlaced flag is used to determine if the mode supports
+        interlaced operation or not. If this bit is set, the mode may be
+        initialized for interlaced operation when using the refresh rate
+        control to initialise the mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveTripleBuffer flag is used to determine if the mode supports
+        hardware triple buffering.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveStereo flag is used to determine if the mode supports hardware
+        support for stereo LC shutter glasses.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveHWStereoSync flag is used to determine if the controller
+        supports the hardware stereo LC shutter glasses sync signal via the
+        VESA EVC Enhanced Video Connector. The gaHaveEVCStereoSync flag is used
+        to determine if the controller supports the hardware stereo LC shutter
+        glasses sync signal via the VESA mini-DIN3 stereo connector. If either
+        of these values are set, the application can disable all software stero
+        sync mechanisms and rely on the the hardware stereo sync for maximum
+        performance.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveAccelVideo flag is used to determine if the mode supports
+        hardware video acceleration. If this bit is not 0, then the application
+        can use the hardware video functions for video overlay windows.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveAccel3D flag is used to determine if the mode supports hardware
+        3D acceleration. If this bit is not 0, then the application can use the
+        hardware 3D accleration functions for high performance 3D graphics.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHave8bppRGBCursor flag is used to determine if the color values for
+        the hardware cursor in 8bpp modes are defined as a color index or as a
+        TrueColor RGB tuple. Most cards require a color index in 8bpp modes,
+        but some new hardware uses a TrueColor cursor in 8bpp display modes and
+        this flag will be set if this is the case.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveAccelIOPL flag indicates that the accelerated drawing functions
+        require IOPL access to be enabled. If this flag is not set, then the 2D
+        and 3D drawing functions use only memory mapped registers and hence can
+        be executed entirely in ring-3 without needing IOPL to be enabled. Note
+        that this does not include hardware cursor functions or hardware video
+        overlay functions, only 2D and 3D drawing functions. It is assumed that
+        all initialisation and driver functions require IOPL to be enabled.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaIsVirtualMode flag indicates that the mode is a special
+        multi-controller virtual display mode that spans multiple display
+        devices. This is an informational flag so that any high level OS
+        drivers can know when one of these modes is in use.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveMultiHead flag is used to determine if the controller is
+        capable of supporting dual head operation via two separate CRTC
+        connector output. This flag is generally only included the <a href="GA_devCtx.html">GA_devCtx</a> Attribute
+        member and not in the Attributes member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveDFPOutput flag is used to determine if a mode can be displayed
+        on an LCD flat panel monitor using the DFP or DVI connectors. This flag
+        is generally only available for graphics cards that have DVI or DFP
+        connector and indicates display modes can support output to the LCD
+        flat panel monitor monitor as well as simulatenous output to both
+        displays at the same time.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveLCDOutput flag is used to determine if a mode can be displayed
+        on an LCD flat panel. This flag is generally only available for laptop
+        chipsets, and indicates display modes can support output to the LCD
+        panel as well as simulatenous output to both displays at the same time.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHaveTVOutput flag is used to determine if a mode can be displayed
+        via the TVOut connector for the graphics card. If the graphics card
+        does not support TVOut capabilities this flag will never be set.
+        Otherwise it will be set for those display modes that can be displayed
+        on the TV. Note that both PAL and NTSC output may be supported, or only
+        one or the other depending on the underlying hardware.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaIsTextMode flag is used to determine if the mode is a graphics mode
+        or a text mode. If this flag is set to 1, then the mode is a hardware
+        text mode and not a graphics mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveDisplayStart
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports changing the display start address
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveBankedBuffer
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports banked framebuffer access
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveLinearBuffer
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports linear framebuffer access
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveAccel2D
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports 2D acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveHWCursor
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports a hardware cursor
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHave8BitDAC
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode uses an 8 bit palette DAC
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveNonVGAMode
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is a NonVGA mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveDoubleScan
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is double scanned
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveTripleScan
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is triple scanned
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveInterlaced
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports interlacing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveTripleBuffer
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports triple buffering
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveStereo
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports stereo LCD glasses
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveHWStereoSync
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports stereo signalling
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveEVCStereoSync
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports stereo sync via EVC connector
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveAccelVideo
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports video playback acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveAccel3D
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports 3D acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHave8bppRGBCursor
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode requires RGB colors for 8bpp hardware cursor
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveAccelIOPL
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode needs IOPL for drawing functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveEngineClock
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Display adapter supports programmable engine clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaIsGUIDesktop
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The mode is the original GUI desktop mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaIsVirtualMode
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is a multi-head or multi-controller virtual mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveMultiHead
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Display adapter supports multi head operation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveDFPOutput
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports output to DFP digital flat panel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveLCDOutput
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports output to LCD laptop display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHaveTVOutput
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode supports output to TV connector
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaIsTextMode
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is a text mode rather than a graphics mode
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

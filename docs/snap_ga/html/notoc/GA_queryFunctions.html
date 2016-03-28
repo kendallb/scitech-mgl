@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_queryFunctions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_queryFunctions
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Returns the function pointers for the specified function group.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool NAPI GA_queryFunctions(<br />
+        &#160;&#160;&#160; GA_devCtx *dc,<br />
+        &#160;&#160;&#160; N_uint32 id,<br />
+        &#160;&#160;&#160; void _FAR_ *funcs)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device driver to return the functions for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                id
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Identifier for the function group to get pointers for
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:79.5pt;padding:'0in .5pt 0in .5pt';" width="133" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                funcs
+              </p>
+            </td>
+            <td style="width:320.0pt;padding:'0in .5pt 0in .5pt';" width="533" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to function block to fill in
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True if the requested function group is available, false if not.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is the main function that is used by the graphics
+        application code to get a block of function pointers for a specified
+        function group. The function groups are defined <a href="GA_funcGroupsType.html">GA_funcGroupsType</a> enumeration,
+        and breaks up the functions in the device driver API into groups of
+        logically similar functions. For instance to get the block of functions
+        for the hardware cursor, you would call this function with the
+        GA_GET_CURSORFUNCS identifier.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        All application and device driver code must call this function and never
+        call the <a href="GA_devCtx.html">GA_devCtx</a>-&gt;loader.QueryFunctions
+        member directly. This is important because in many cases special
+        procedures must be followed to allow ring 3 application code to
+        directly call the function pointers returned by the internal function.
+        The <a href="GA_devCtx.html">GA_devCtx</a> version always returns the
+        actual device driver functions which may require that they be called at
+        ring 0 on some platforms. This function insulates the developer from
+        worrying about this as the functions returned by this function are
+        always safe to be called from the context that the code is compiled
+        (ie: this function should be used for all ring 0 device driver and ring
+        3 application level code).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; To allow for future compatibility, all function
+          blocks begin with a dwSize member. The caller is expected to fill in
+          the dwSize member with the size of the function block being retrieved
+          before calling <a href="GA_queryFunctions.html">GA_queryFunctions</a>.
+          If the driver exports more functions than the application knows
+          about, only a subset of the functions are copied to the application.
+          If the application expects more functions than the driver provides,
+          the non-existant functions are set to NULL pointers by <a href="GA_queryFunctions.html">GA_queryFunctions</a>,
+          and the remainder copies from the driver.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; This mechanism also provides for a clean and
+          simple upgrade path for future drivers, while ensuring maximum
+          compatibility with existing specifications. New functions for a
+          particular group can simply be added to the end of the function group
+          to extend that group. Totally new function groups can be added by
+          defining new identifiers for that function group, and older drivers
+          will return a NULL if that function group is requested. Finally if a
+          function group requires a complete redesign to achieve maximum
+          peformance for next generation hardware, a new extended function
+          group can be defined (and drivers can continue to export the older
+          and slower function group for backwards compatibility).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="REF2D_queryFunctions.html">REF2D_queryFunctions</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

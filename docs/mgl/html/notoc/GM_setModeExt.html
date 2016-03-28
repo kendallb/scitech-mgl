@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_setModeExt</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_setModeExt
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Switches to a fullscreen or windowed graphics mode
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        ibool MGLAPI GM_setModeExt(<br />
+        &#160;&#160;&#160; GM_modeInfo *info,<br />
+        &#160;&#160;&#160; ibool windowed,<br />
+        &#160;&#160;&#160; int pages,<br />
+        &#160;&#160;&#160; int refreshRate,<br />
+        &#160;&#160;&#160; ibool forceSysMem,<br />
+        &#160;&#160;&#160; ibool stereo)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                info
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Structure describing the mode to initialize
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                windowed
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True if the mode should be in a window
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pages
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of pages for hardware buffering
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                refreshRate
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Desired refresh rate for fullscreen display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                forceSysMem
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flag to force a system memory buffer for all drawing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereo
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True to enable stereo rendering
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        True on success, false on error
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function sets a graphics mode for the game given the passed in mode
+        information. If the windowed parameter is set to true, a windowed mode
+        will be set otherwise a fullscreen graphics mode will be set. You must
+        pass in one of the modes listed in the <a href="GMDC.html">GMDC</a> modeList
+        returned from <a href="GM_init.html">GM_init</a> to this function. When
+        the Game Framework switches to the windowed equivalent to a fullscreen
+        graphics mode, we search for the closest 1:1 aspect ratio window size
+        for the mode that corresponds to the fullscreen mode chosen. Hence for
+        a 320x200 fullscreen mode we choose a 320x240 window size, for 320x400
+        and 320x480 we choose a 320x240 window size and for 640x350 and 640x400
+        we choose a 640x480 window size. This way we won't end up with a window
+        on the desktop that is not a 1:1 aspect ratio and desktop modes are
+        generally 1:1 aspect ratio.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The number of pages passed in is used to allocate the specified number of
+        hardware video memory pages for multi-buffering and may be any value.
+        The Game Framework will however lower this value to the maximum that
+        the hardware supports, and if only 1 hardware page is available a
+        system memory back buffer will be created automatically. Hence if you
+        want to always try and use triple buffering if available, pass a value
+        of 3 when you call this function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The refresh rate parameter is used to select a desired refresh rate for
+        the fullscreen display mode. If that refresh rate cannot be achieved
+        due to hardware constraints, the next lowest available refresh rate
+        will be used. If you wish to use the user default setting for the
+        refresh rate (always a good idea unless you need refresh control, such
+        as for stereo), simply pass in a value of MGL_DEFAULT_REFRESH.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The stereo flag is used to enable support for either software or hardware
+        stereo modes in the MGL. This will fail if the underlying hardware
+        device does not support stereo capabilities. Stereo can be used with
+        OpenGL using Mesa, SGI OpenGL, SciTech DirectGL or Microsoft OpenGL
+        (Microsoft OpenGL requires a stereo ready OpenGL driver to be
+        installed).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note also that the Game Framework automatically handles switching between
+        windowed and fullscreen modes on the fly. By default the Game Framework
+        contains code to provide two methods of switching to fullscreen modes
+        when running in windowed modes:
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:59.5pt;padding:'0in .5pt 0in .5pt';" width="99" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                1
+              </p>
+            </td>
+            <td style="width:340.0pt;padding:'0in .5pt 0in .5pt';" width="567" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                When the user hits the Alt-Enter key combination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:59.5pt;padding:'0in .5pt 0in .5pt';" width="99" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                2
+              </p>
+            </td>
+            <td style="width:340.0pt;padding:'0in .5pt 0in .5pt';" width="567" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                When the user clicks the Maximise button on the games title bar
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Likewise when the game is running in a fullscreen mode and the user hits
+        the Alt-Enter key, the video mode will automatically be switched to
+        windowed mode. Unless you have registered a mode switch callback with <a href="GM_setModeSwitchFunc.html">GM_setModeSwitchFunc</a>,
+        on the fly switching between fullscreen and windowed modes is disabled.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; You may call this function while already in a
+          windowed or fullscreen graphics mode, which will cause the current
+          graphics mode to be changed on the fly.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; If you wish to force the Game Framework to
+          always create a system memory buffer for rendering, regardless of how
+          many display pages are available, set the forceSysMem field to true
+          when calling this function. Note also that if you have requested
+          multiple buffers, all those buffers will still be used so you will
+          see no tearing, however all rendering will be performed to a system
+          buffer which will be copied to the screen when you swap the buffers
+          with <a href="GM_swapBuffers.html">GM_swapBuffers</a>.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Drawing directly to a hardware linear framebuffer is usually extremely
+        fast and will provide the most efficient method of rendering. However
+        if your rendering requires reads from the framebuffer (for effects such
+        as blending), this will be very slow over the PCI bus and your code
+        will be faster if you force a system member back buffer.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If the user dynamically switches the resolution
+          or color depth of the windows desktop while your application is
+          running, if you have registered a mode switch callback with the Game
+          Framework (via <a href="GM_setModeSwitchFunc.html">GM_setModeSwitchFunc</a>)
+          then the Game Framework will switch to a new windowed mode to cause
+          the memory back buffers to be re-allocated for the most optimal
+          format for the Windows display mode.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="GM_init.html">GM_init</a>, <a href="GM_setModeSwitchFunc.html">GM_setModeSwitchFunc</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Makefile Utilities Configuration</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Makefile Utilities Configuration
+      </h2>
+      <p class="MsoBodyText">
+        Once you have installed the files, you need to configure the makefile
+        utilities and tools to allow you to compile the libraries. If you are
+        compiling under DOS or a Windows DOS box, you will need to set the
+        environment for your DOS box to at least 4096 bytes as we use a lot of
+        environment variables.
+      </p>
+      <p class="MsoBodyText">
+        The first step to set up the compile environment is always to edit the
+        set-vars script files specific to your platform (copy it to a different
+        named file if you are working with source code checked out of Perforce
+        as this file will be read only). This file contains two very important
+        variables that you need to ensure are set correctly. These are:
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:1.25in;border-top:1.5pt;border-left:1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;border-style:solid;padding:'0in 5.4pt 0in 5.4pt';" width="150" valign="top">
+            <p class="TableText">
+              SCITECH&#160;&#160;&#160;&#160; 
+            </p>
+          </td>
+          <td style="width:333.0pt;border-top:'solid windowtext 1.5pt';border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="555" valign="top">
+            <p class="TableText">
+              &#160;Points to the location where you installed the files
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.25in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="150" valign="top">
+            <p class="TableText">
+              SCITECH_LIB 
+            </p>
+          </td>
+          <td style="width:333.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="555" valign="top">
+            <p class="TableText">
+              &#160;Should be the same as the above
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        The SCITECH_LIB variable is where files get copied to when you do a dmake
+        install, and is usually the same as the SCITECH variable. However it
+        can be different if you wish the libraries to be installed to a
+        different path such as on a shared file server for release builds.
+      </p>
+      <p class="MsoBodyText">
+        To help you get started configuring your system we have created a number
+        of startup script files for each of the different operating systems.
+        These files are called in the %SCITECH%\start-sdk.* files with an
+        extension specific to each OS. These files contain the necessary
+        sequence of steps to call the appropriate batch files to set up the
+        compile environment. To use this copy this file to a new filename and
+        edit to call your version of the set-vars script file as necessary.
+      </p>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DOSWindowsHostedToolsStartsdkbat.html">DOS/Windows hosted
+          tools (start-sdk.bat)</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="Win32HostedToolsStartsdkbat.html">Win32 hosted tools
+          (start-sdk.bat)</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="WindowsHostedToolsForRTTarget32Startsdkb.html">Windows hosted
+          tools for RTTarget-32 (start-sdk.bat)</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="OS2HostedToolsStartsdkcmd.html">OS/2 hosted tools
+          (start-sdk.cmd)</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LinuxHostedToolsStartsdklinux.html">Linux hosted tools
+          (start-sdk.linux)</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="QNXHostedToolsStartsdkqnx.html">QNX hosted tools
+          (start-sdk.qnx)</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+#****************************************************************************
+#
+#                  SciTech SNAP Device Driver Architecture
+#
+#  ========================================================================
+#
+#   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+#
+#   This file may be distributed and/or modified under the terms of the
+#   GNU General Public License version 2.0 as published by the Free
+#   Software Foundation and appearing in the file LICENSE.GPL included
+#   in the packaging of this file.
+#
+#   Licensees holding a valid Commercial License for this product from
+#   SciTech Software, Inc. may use this file in accordance with the
+#   Commercial License Agreement provided with the Software.
+#
+#   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+#   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+#   PURPOSE.
+#
+#   See http://www.scitechsoft.com/license/ for information about
+#   the licensing options available and how to purchase a Commercial
+#   License Agreement.
+#
+#   Contact license@scitechsoft.com if any conditions of this licensing
+#   are not clear to you, or you have questions about licensing options.
+#
+#  ========================================================================
+#
+# Language:    GNU AS
+# Environment: PPC 32-bit big-endian.
+#
+# Description: Assembly support functions for the SNAP library for
+#              the high resolution timing support functions provided by
+#              the Intel Pentium and compatible processors.
+#
+#****************************************************************************
+
+#----------------------------------------------------------------------------
+# N_uint32 GA_TimerDifference(GA_largeInteger *a,GA_largeInteger *b)
+#----------------------------------------------------------------------------
+# Computes the 32-bit difference between two 64-bit numbers (a-b)
+#----------------------------------------------------------------------------
+# r3=a_high, r4=a_low, r5=b_high, r6=b_low
+#----------------------------------------------------------------------------
+.align 2
+.global GA_TimerDifference
+.type   GA_TimerDifference,@function
+
+GA_TimerDifference:
+        lwz     r5,4(r3)
+        lwz     r6,4(r4)
+        subf    r3,r6,r5
+        blr
+
+#----------------------------------------------------------------------------
+# void _OS_delay8253(N_uint32 microSeconds);
+#----------------------------------------------------------------------------
+# Delays for the given number of microseconds via the BUS timer (assumes 133MHz).
+# Swiped and modified from linux kernel's arch/ppc/boot/common/util.S
+#
+# CJC TODO: bus speed assumption is not valid on some machines.
+#
+# NOTE: the delay should not be greater than 2 seconds.
+#----------------------------------------------------------------------------
+# r3=delay
+#----------------------------------------------------------------------------
+.align 2
+.global _OS_delay8253
+.type   _OS_delay8253,@function
+
+_OS_delay8253:
+        or.     r3,r3,r3
+        bflr    0
+
+        mulli   r4,r3,1000      # nanoseconds
+        li      r5,30
+        divw    r4,r4,r5        # BUS ticks / 4
+
+4:
+        mftbu   r5
+        mftb    r6
+        mftbu   r7
+        cmp     0,r5,r7
+        bne     4b              # Get [synced] base time
+        addc    r9,r6,r4        # Compute end time
+        addze   r8,r5
+
+5:
+        mftbu   r5
+        cmp     0,r5,r8
+        blt     5b
+        bgt     6f
+        mftb    r6
+        cmp     0,r6,r9
+        blt     5b
+
+6:
+        blr

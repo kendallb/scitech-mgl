@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Palette Programming During Double Buffering</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Palette Programming During Double Buffering
+      </h3>
+      <p class="MsoBodyText">
+        If you wish to re-program the palette at the same time as performing
+        double buffering (if the palette changes between frames during double
+        buffering) then you should call the <a href="SetDisplayStart.html">SetDisplayStart</a> function
+        first with the wait for retrace flag set, then immediately following
+        you should program as many palette values as you can before the end of
+        the retrace period. Note that on some older graphics devices and slower
+        computers, you cannot program an entire set of 256 color lookup table
+        entries during the retrace period before the onset of snow, so you will
+        need to stagger the palette change over 2 or more retrace periods.
+        Generally most devices can handle about 100-120 palette entries to be
+        programmed per retrace (most newer hardware does not produce snow at
+        all, so you can program all 256 at once).
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

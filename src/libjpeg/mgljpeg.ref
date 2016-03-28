@@ -1,0 +1,53 @@
+LIBRARY         MGLJPEG
+DESCRIPTION     'MGL JPEG Delphi DLL'
+CODE            LOADONCALL EXECUTEONLY
+DATA            PRELOAD MOVEABLE MULTIPLE
+
+EXPORTS
+    _jpeg_std_error
+    _jpeg_CreateCompress
+    _jpeg_CreateDecompress
+    _jpeg_destroy_compress
+    _jpeg_destroy_decompress
+    _jpeg_stdio_dest
+    _jpeg_stdio_src
+    _jpeg_set_defaults
+    _jpeg_set_colorspace
+    _jpeg_default_colorspace
+    _jpeg_set_quality
+    _jpeg_set_linear_quality
+    _jpeg_add_quant_table
+    _jpeg_quality_scaling
+    _jpeg_simple_progression
+    _jpeg_suppress_tables
+    _jpeg_alloc_quant_table
+    _jpeg_alloc_huff_table
+    _jpeg_start_compress
+    _jpeg_write_scanlines
+    _jpeg_finish_compress
+    _jpeg_write_raw_data
+    _jpeg_write_marker
+    _jpeg_write_tables
+    _jpeg_read_header
+    _jpeg_start_decompress
+    _jpeg_read_scanlines
+    _jpeg_finish_decompress
+    _jpeg_read_raw_data
+    _jpeg_has_multiple_scans
+    _jpeg_start_output
+    _jpeg_finish_output
+    _jpeg_input_complete
+    _jpeg_new_colormap
+    _jpeg_consume_input
+    _jpeg_calc_output_dimensions
+    _jpeg_set_marker_processor
+    _jpeg_read_coefficients
+    _jpeg_write_coefficients
+    _jpeg_copy_critical_parameters
+    _jpeg_abort_compress
+    _jpeg_abort_decompress
+    _jpeg_abort
+    _jpeg_destroy
+    _jpeg_resync_to_restart
+    _jpeg_initDLL
+

@@ -1,0 +1,116 @@
+/****************************************************************************
+*
+*                   SciTech Multi-platform Graphics Library
+*
+*  ========================================================================
+*
+*   Copyright (C) 1991-2002 SciTech Software, Inc. All rights reserved.
+*
+*   This file may be distributed and/or modified under the terms of the
+*   GNU General Public License version 2 as published by the Free
+*   Software Foundation and appearing in the file LICENSE.GPL included
+*   in the packaging of this file.
+*
+*   Licensees holding a valid Commercial License for this product from
+*   SciTech Software, Inc. may use this file in accordance with the
+*   Commercial License Agreement provided with the Software.
+*
+*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*   PURPOSE.
+*
+*   See http://www.scitechsoft.com/license/ for information about
+*   the licensing options available and how to purchase a Commercial
+*   License Agreement.
+*
+*   Contact license@scitechsoft.com if any conditions of this licensing
+*   are not clear to you, or you have questions about licensing options.
+*
+*  ========================================================================
+*
+* Language:     Windows Resource Compiler
+* Environment:  Win32
+*
+****************************************************************************/
+
+#ifndef WORKSHOP_INVOKED
+  #include <windows.h>
+#endif
+#include "gmdlg.rh"
+
+IDD_MAINDLG DIALOG 31, 19, 223, 204
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_DLGFRAME
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Windowed options", -1, "BUTTON", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 144, 206, 25
+ CONTROL "Color depth (bits per pixel)", -1, "BUTTON", BS_GROUPBOX | WS_CHILD | WS_VISIBLE | WS_GROUP, 7, 117, 206, 26
+ CONTROL "", IDC_MODELIST, "LISTBOX", LBS_NOTIFY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 9, 47, 203, 68
+ CONTROL "Start windowed", IDC_WINDOWED, "BUTTON", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 33, 153, 63, 12
+ CONTROL "8", IDC_8BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 127, 25, 12
+ CONTROL "16", IDC_16BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 71, 127, 25, 12
+ CONTROL "24", IDC_24BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 121, 127, 25, 12
+ CONTROL "32", IDC_32BIT, "BUTTON", BS_RADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 172, 126, 25, 12
+ CONTROL "Run Demo", IDC_OK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 35, 178, 57, 14
+ CONTROL "Quit", IDC_CANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 131, 178, 57, 14
+ CONTROL "Video mode to use:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE, 10, 35, 178, 8
+ CONTROL "Win32 Game Framework Application", IDC_VERSIONSTR, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE, 18, 8, 186, 8
+ CONTROL "Copyright (c) 1992-2002 SciTech Software, Inc.", IDC_COPYRIGHTSTR, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE, 9, 19, 204, 8
+ CONTROL "2x2 stretch", IDC_STRETCH2x2, "BUTTON", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 138, 153, 51, 12
+}
+
+#ifndef NO_ICON
+
+1 ICON
+{
+ '00 00 01 00 01 00 20 20 10 00 00 00 00 00 E8 02'
+ '00 00 16 00 00 00 28 00 00 00 20 00 00 00 40 00'
+ '00 00 01 00 04 00 00 00 00 00 80 02 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00'
+ '00 00 80 00 80 00 80 80 00 00 C0 C0 C0 00 80 80'
+ '80 00 00 00 FF 00 00 FF 00 00 00 FF FF 00 FF 00'
+ '00 00 FF 00 FF 00 FF FF 00 00 FF FF FF 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '88 88 88 88 88 88 88 88 88 88 88 88 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 07 77'
+ '77 77 77 77 77 77 77 77 77 77 77 77 77 70 07 88'
+ '88 88 88 88 88 88 88 88 88 88 88 88 88 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 09 00 90 09 00 99 90 09 99 00 00 08 70 07 80'
+ '00 09 00 90 09 09 00 09 09 00 00 00 08 70 07 80'
+ '00 09 09 09 09 09 00 99 09 00 00 00 08 70 07 80'
+ '00 09 09 09 09 09 00 00 09 00 00 00 08 70 07 80'
+ '00 09 90 00 99 09 00 09 09 00 00 00 08 70 07 80'
+ '00 09 90 00 99 00 99 90 09 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 89'
+ '99 00 09 90 90 09 00 09 90 09 90 90 98 70 07 89'
+ '00 90 90 00 90 09 00 90 00 90 00 90 98 70 07 80'
+ '00 90 90 00 90 09 00 90 90 90 00 90 98 70 07 80'
+ '99 00 09 90 90 09 00 09 00 09 90 99 08 70 07 89'
+ '00 90 00 00 00 09 00 00 00 00 00 90 08 70 07 80'
+ '99 90 00 00 90 99 90 00 00 00 09 90 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 80'
+ '00 00 00 00 00 00 00 00 00 00 00 00 08 70 07 88'
+ '88 88 88 88 88 88 88 88 88 88 88 88 88 70 07 77'
+ '77 77 77 77 77 77 77 77 77 77 77 77 77 70 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF'
+ 'FF FF E0 00 00 07 E0 00 00 07 E0 00 00 07 FC 00'
+ '00 3F 80 00 00 01 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 80 00 00 01'
+}
+
+#endif
+

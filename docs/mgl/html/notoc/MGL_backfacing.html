@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_backfacing</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_backfacing
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Determines if a polygon is backfacing.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        int MGLAPI MGL_backfacing(<br />
+        &#160;&#160;&#160; fix32_t dx1,<br />
+        &#160;&#160;&#160; fix32_t dy1,<br />
+        &#160;&#160;&#160; fix32_t dx2,<br />
+        &#160;&#160;&#160; fix32_t dy2)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dx1
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                change in x along first edge
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dy1
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                change in y along first edge
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dx2
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                change in x along second edge
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dy2
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                change in y along second edge
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        1 if the polygon if backfacing, 0 if it is frontfacing
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Determine whether a polygon is backfacing given two fixed point
+        vectors.&#160; The vectors need to be derived from two consecutive
+        counterclockwise edges of the polygon in order for this function to
+        return accurate results.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that this function is written to correctly calculate the results for
+        screen space coordinates, which can cause overflow with a normal 16.16
+        fixed point multiply if this is calculated directly using calls to <a href="MGL_FixMul.html">MGL_FixMul</a>.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

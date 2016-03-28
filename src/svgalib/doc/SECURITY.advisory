@@ -1,0 +1,45 @@
+                                                          KSR[T] Advisory #001
+                                                          Date:  June 09, 1997
+                                                          ID #:  lin-svga-001
+
+Operating System(s): Redhat Linux 3.0.3 - 4.1 / Any Linux with zgv setuid root.
+
+Affected Program:    svgalib/zgv-2.7 ( an svgalib GIF/JPG viewer )
+
+Problem Description: svgalib 1.2.10 and below do not properly revoke 
+                     privileges, and through the use of saved user ids,
+                     any svgalib application may still be vulnerable to
+                     buffer overruns(stack overwrites).
+                     
+                     zgv will take data from an environment variable (HOME),
+                     and copies the entire length of the envirnment variable
+                     into an automatic character buffer.  The result is that 
+                     arbitrary code may be executed as root.  There are also
+                     overflows on the command line and through stdin.
+
+Compromise:          With zgv, the consequences are minimal, as only a user
+                     who has access to the console can exploit this hole.  
+                     However, most svgalib applications are poorly written 
+                     from a security standpoint and the potential compromise
+                     may be greater with other applications.
+                    
+Patch/Fix:           svgalib-1.2.11 will address this security issue.  Look
+                     for our upcoming paper on vulnerabilities in svgalib
+                     that will explain proper programming methods and other
+                     potential problems with svgalib applications.
+                     
+
+---
+
+Please note that this was not a full audit of zgv, and there may be other
+security problems related to zgv.
+
+-----
+KSR[T] Website : http://www.dec.net/ksrt
+E-mail: ksrt@dec.net
+
+---                                                                ---
+David Goldsmith                                            dhg@dec.net
+DEC Consulting                                      http://www.dec.net
+Software Development/Internet Security         http://www.dec.net/~dhg
+

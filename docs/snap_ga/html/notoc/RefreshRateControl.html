@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Refresh Rate Control</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Refresh Rate Control
+      </h3>
+      <p class="MsoBodyText">
+        Once you have found the identifier for the display mode you wish to use,
+        you can then call the <a href="SetVideoMode.html">SetVideoMode</a> function
+        to set the display mode. One of the parameters to the <a href="SetVideoMode.html">SetVideoMode</a> function
+        is the refresh rate to be used for the mode. In most normal situations
+        you would pass a value of 0 for this parameter, which will set the
+        currently selected default refresh rate for the mode. However it is
+        possible for the application to directly specify the refresh rate to be
+        used via two different methods.
+      </p>
+      <p class="MsoBodyText">
+        The first method is to pass the desired refresh rate to the <a href="SetVideoMode.html">SetVideoMode</a> function
+        as a specific value in Hz (ie: the integer value 60 for 60Hz etc).
+        However this will only work if the refresh rate requested is actually
+        supported by the display mode, so you need to first determine what
+        refresh rates are supported. One of the bits of information returned by
+        the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function, is a
+        complete list of all refresh rates for that display mode. This list of
+        refresh rates will be properly filtered based on the capabilities of
+        the underlying graphics hardware and the attached monitor (assuming a
+        monitor has been selected by the user or detected automatically by Plug
+        and Play). If you pass a value that is not listed in the information
+        block returned by the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function,
+        the <a href="SetVideoMode.html">SetVideoMode</a> function will return
+        –1, indicating failure.
+      </p>
+      <p class="MsoBodyText">
+        The second method allows for refresh rates that are not listed as part of
+        the drivers standard timings, such that an application can provide an
+        exact set of CRTC timings to be used for the display mode (useful for
+        flat panels and fixed frequency displays). Alternatively if the
+        application just needs a non-standard, custom refresh rate, the
+        application can use the VESA Generalised Timing Formula (GTF) functions
+        provided to compute a set of generic CRTC timings for any arbitrary
+        display mode and refresh rate (see <a href="GA_computeCRTCTimings.html">GA_computeCRTCTimings</a>).
+        Once the application has used the GTF functions to compute a set of
+        CRTC timings for the display mode, those CRTC timings can then be
+        passed directly to the <a href="SetVideoMode.html">SetVideoMode</a> function
+        along with use of the gaRefreshControl mode flag. This second method
+        provides for the maximum versatility and support for specialised
+        applications (such as fixed frequency monitors, LC stereo shutter
+        glasses and head mounted displays).
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Set8x8ColorPattern</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        Set8x8ColorPattern
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Download an 8x8 color pattern to the driver.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void NAPI GA_2DStateFuncs::Set8x8ColorPattern(<br />
+        &#160;&#160;&#160; N_int32 index,<br />
+        &#160;&#160;&#160; GA_colorPattern *pattern)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                index
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Index of the pattern to download
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:89.5pt;padding:'0in .5pt 0in .5pt';" width="149" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pattern
+              </p>
+            </td>
+            <td style="width:310.0pt;padding:'0in .5pt 0in .5pt';" width="517" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to pattern data to download
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This downloads one of 8, 8x8 color patterns for all subsequent color
+        pattern filled functions. The 8x8 color fill pattern is used for
+        rectangle and scanline filling, where the pattern is X and Y coordinate
+        aligned with the left edge and top edge of the display. Thus the colors
+        in the pattern that applies to a specific pixel in the scanline is
+        determine by the pixel's X starting at the left. Hence pixel 0
+        corresponds to color 0, pixel 1 = color 1 etc. It is the responsibility
+        of the calling application to rotate the pattern before calling this
+        routine if it is desired that the pattern be aligned to a different
+        starting coordinate (such as with Windows Bitmaps and setting the
+        bitmap origin). The color pattern is represented as an 8x8 array of
+        packed pixel data. In 8bpp modes there is 8 bytes per line, for 16bpp
+        modes there are 16bytes per line, for 24bpp modes there are 24bytes per
+        line and for 32bpp modes there are 32 bytes per line. Hence the size of
+        the pattern data is different depending on the color depth currently
+        active. Each pixel color value is packed for the appropriate display
+        mode.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; 8 cached patterns are supported because some
+          hardware supports caching multiple patterns in offscreen video memory
+          for maximum performance. In cases where the hardware only supports a
+          single hardware pattern, the driver is responsible for caching the
+          pattern data internally and downloading it as efficiently as possible
+          to the display hardware.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="Set8x8MonoPattern.html">Set8x8MonoPattern</a>, <a href="Use8x8MonoPattern.html">Use8x8MonoPattern</a>,
+        <a href="Use8x8ColorPattern.html">Use8x8ColorPattern</a>, <a href="GA_2DRenderFuncs.html">GA_2DRenderFuncs</a>::DrawColorPattScan,
+        <a href="DrawColorPattScanList.html">DrawColorPattScanList</a>, <a href="DrawColorPattRect.html">DrawColorPattRect</a>,
+        <a href="DrawColorPattTrap.html">DrawColorPattTrap</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

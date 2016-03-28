@@ -1,0 +1,516 @@
+/****************************************************************************
+*
+*                    MegaVision Application Framework
+*
+*      A C++ GUI Toolkit for the SciTech Multi-platform Graphics Library
+*
+*  ========================================================================
+*
+*   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+*
+*   This file may be distributed and/or modified under the terms of the
+*   GNU General Public License version 2.0 as published by the Free
+*   Software Foundation and appearing in the file LICENSE.GPL included
+*   in the packaging of this file.
+*
+*   Licensees holding a valid Commercial License for this product from
+*   SciTech Software, Inc. may use this file in accordance with the
+*   Commercial License Agreement provided with the Software.
+*
+*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*   PURPOSE.
+*
+*   See http://www.scitechsoft.com/license/ for information about
+*   the licensing options available and how to purchase a Commercial
+*   License Agreement.
+*
+*   Contact license@scitechsoft.com if any conditions of this licensing
+*   are not clear to you, or you have questions about licensing options.
+*
+*  ========================================================================
+*
+* Language:     C++ 3.0
+* Environment:  Any
+*
+* Description:  Member functions for the MVButtonBase and MVButton classes.
+*
+****************************************************************************/
+
+#include "mvis/mvision.hpp"
+#include "mvis/mbutton.hpp"
+#include "mvis/mgroup.hpp"
+#include "mvis/mfontmgr.hpp"
+
+/*----------------------------- Implementation ----------------------------*/
+
+MVButtonBase::MVButtonBase(MGLDevCtx& dc,const MVRect& bounds,ulong command,
+    uint flags,ibool selected)
+    : MVView(dc,bounds), command(command), flags(flags), selected(selected)
+/****************************************************************************
+*
+* Function:     MVButtonBase::MVButtonBase
+* Parameters:   bounds      - Bounding rectangle for the button
+*               command     - Command code to send when activated
+*               flags       - Flags for the button
+*
+* Description:  Constructor for the MVButtonBase class.
+*
+****************************************************************************/
+{
+    options |= ofSelectable | ofFirstClick | ofPreProcess | ofPostProcess;
+    amDefault = ((flags & bfDefault) != 0);
+    pressed = false;
+    tracking = false;
+}
+
+void MVButtonBase::activate()
+/****************************************************************************
+*
+* Function:     MVButtonBase::activate
+*
+* Description:  This routine gets called when the button press was accepted,
+*               so we broadcast the command for the button.
+*
+****************************************************************************/
+{
+    // Signal all views in the current owner's view to record their
+    // history configurations.
+    MV_message(owner,evBroadcast,cmRecordHistory);
+
+    if (flags & bfBroadcast) {
+        // Broadcast the message to the owner view to be handled immediately
+        MV_message(owner,evBroadcast,command,this);
+        }
+    else {
+        // Post the event to the event queue to be handled by the
+        // focused view.
+        MV_postMessage(owner,evCommand,command,this);
+        }
+}
+
+void MVButtonBase::buttonClicked()
+/****************************************************************************
+*
+* Function:     MVButtonBase::buttonClicked
+*
+* Description:  This routine gets called when the button is clicked and
+*               sends a message to the owner window. It can be overriden
+*               by the base class to do extra processing (ie: for radio
+*               buttons).
+*
+****************************************************************************/
+{
+    MV_message(owner,evBroadcast,cmButtonClicked,this);
+}
+
+void MVButtonBase::handleEvent(MVEvent& event,phaseType)
+/****************************************************************************
+*
+* Function:     MVButtonBase::handleEvent
+* Parameters:   event   - Event to handle
+*               phase   - Current phase for the event (pre,focus,post)
+*
+* Description:  Event handling routine for buttons. Buttons can only be
+*               pressed by the logical left mouse button.
+*
+****************************************************************************/
+{
+    switch (event.what) {
+        case evMouseDown:
+            if (event.mouse.buttons & mbLeftButton) {
+                // If we are an auto-select button, automatically grab the
+                // focus when we are clicked. Note that we are just about to
+                // draw the button, so we notify that we will handle the
+                // repaint by removing it from the repaint region (however
+                // any other repaints generated by select() will still be
+                // handled normally).
+                if (flags & bfAutoSelect) {
+                    select();
+                    unrepaint();
+                    }
+
+                // Send message to owner that this button has been clicked
+                buttonClicked();
+
+                // We have a left mouse down within the button, so set up
+                // for tracking the button pressed and draw in the new state
+                tracking = true;
+                pressed = true;
+                draw(bounds);
+                captureMouse();
+                clearEvent(event);
+                }
+            break;
+        case evMouseMove:
+            // Track mouse movement events if button has been clicked
+            if (tracking) {
+                if (pressed != includes(event.where)) {
+                    pressed = !pressed;
+                    draw(bounds);
+                    }
+                clearEvent(event);
+                }
+            break;
+        case evMouseUp:
+            // End tracking of mouse movement when we get the mouse up
+            if (tracking && (event.mouse.buttons & mbLeftButton)) {
+                tracking = false;
+                if ((flags & bfTwoState)) {
+                    if (pressed) {
+                        selected = !selected;
+                        pressed = false;
+                        draw(bounds);
+                        }
+                    }
+                else if (flags & bfSelectable) {
+                    if (pressed) {
+                        selected = true;
+                        pressed = false;
+                        draw(bounds);
+                        }
+                    }
+                else {
+                    if (pressed) {
+                        pressed = false;
+                        draw(bounds);
+                        activate();
+                        }
+                    }
+                releaseMouse();
+                clearEvent(event);
+                }
+            break;
+        case evBroadcast:
+            // We have a broadcast event,
+            switch (event.message.command) {
+                case cmDefault:
+                    // The default message is broadcast. If this button
+                    // is the default, then activate it.
+                    if (amDefault) {
+                        activate();
+                        clearEvent(event);
+                        }
+                    break;
+                case cmGrabDefault:
+                case cmReleaseDefault:
+                    // The default view for the group has changed. If it
+                    // was released and we are the normal default button,
+                    // reset ourselves as the default. If we are normally
+                    // the default and the default is being grabbed,
+                    // relinquish the default for the moment.
+                    if (flags & bfDefault || amDefault) {
+                        ibool d = (event.message.command == cmReleaseDefault);
+                        if (amDefault != d) {
+                            amDefault = d;
+                            repaint();
+                            }
+                        }
+                    break;
+                }
+            break;
+        }
+}
+
+void MVButtonBase::drawBody(const MVRect& clip,uint bodyState)
+/****************************************************************************
+*
+* Function:     MVButtonBase::drawBody
+* Parameters:   clip        - Clipping rectangle to draw the button with
+*               depressed   - True if button is depressed
+*
+* Description:  Internal routine for the button class to draw the button
+*               body in the current state. This can be called by all
+*               subclasses of button to draw a default button body.
+*
+*               Note that this routine draws the button in the context
+*               of the owner's viewport.
+*
+****************************************************************************/
+{
+    ibool isDefault = (bodyState & bsDefault);
+    ibool depressed = (bodyState & bsPressed);
+
+    MS_obscure();
+
+    // Clip to bounds of button
+    setClipRect(clip);
+
+    // Draw the default border around the button
+    MVRect bnds(bounds);
+    if (isDefault) {
+        dc.setColor(getColor(scDefaultButtonBorder));
+        drawRect(bnds);
+        bnds.inset(1,1);
+        }
+
+    // Clear the button background
+    if (!(flags & bfDontDrawFace)) {
+        dc.setColor(getColor(depressed ? scButtonFace : scPressedButtonFace));
+        dc.fillRect(bnds);
+        }
+
+    // Draw the normal borders around the button
+    if (depressed) {
+        dc.setColor(getColor(scDefaultButtonBorder));
+        drawLine(bnds.right()-1,bnds.top(),
+                 bnds.right()-1,bnds.bottom()-1);
+        drawLine(bnds.left(),bnds.bottom()-1,
+                 bnds.right()-1,bnds.bottom()-1);
+        dc.setColor(getColor(scShadow));
+        drawRect(bnds);
+        }
+    else {
+        dc.setColor(getColor(scDefaultButtonBorder));
+        drawLine(bnds.right()-1,bnds.top(),
+                 bnds.right()-1,bnds.bottom()-1);
+        drawLine(bnds.left(),bnds.bottom()-1,
+                 bnds.right()-1,bnds.bottom()-1);
+        MV_setBorderColors(getColor(scHighlight),getColor(scShadow));
+        MV_drawBorderCoord(bnds.left(),bnds.top(),bnds.right()-1,
+            bnds.bottom()-1,
+            (depressed ? MV_BDR_INSET : MV_BDR_OUTSET),1);
+        }
+
+    MS_show();
+}
+
+void MVButtonBase::draw(const MVRect& clip)
+/****************************************************************************
+*
+* Function:     MVButtonBase::draw
+*
+* Description:  Default routine to draw the button in the current state.
+*
+****************************************************************************/
+{
+    uint bodyState = bsNormal;
+
+    if (selected)           bodyState |= bsSelected;
+    if (pressed)            bodyState |= bsPressed;
+    if (state & sfDisabled) bodyState |= bsDisabled;
+    if (state & sfFocused)  bodyState |= bsFocused;
+    if (amDefault)          bodyState |= bsDefault;
+    drawBody(clip,bodyState);
+}
+
+void MVButtonBase::setDefault(ibool enable)
+/****************************************************************************
+*
+* Function:     MVButtonBase::setDefault
+* Parameters:   enable  - True if button should be enabled as default
+*
+* Description:  Makes the button the current default button for the
+*               view. Allows buttons that are not normally the default
+*               to grab the default behaviour or release it.
+*
+****************************************************************************/
+{
+    if ((flags & bfGrabDefault) && !(flags & bfDefault)) {
+        // We are not already the standard default, so change states
+        // and notify all other buttons of the change
+        MV_message(owner,evBroadcast,
+            (enable ? cmGrabDefault : cmReleaseDefault),this);
+        amDefault = enable;
+        }
+}
+
+void MVButtonBase::setState(uint aState,ibool set)
+/****************************************************************************
+*
+* Function:     MVButtonBase::setState
+* Parameters:   aState  - State flag to set
+*               set     - True if flag should be set, false if cleared
+*
+****************************************************************************/
+{
+    MVView::setState(aState,set);
+
+    if (aState & sfFocused) {
+        // The button was just focused or unfocused, so change the
+        // default status for the button (focused button's automatically
+        // become the temporary default).
+        setDefault(set);
+        }
+}
+
+MVButton::MVButton(MGLDevCtx& dc,const MVRect& bounds,const char *title,
+    ulong command,uint flags,ibool selected)
+    : MVButtonBase(dc,bounds,command,flags | bfGrabDefault | bfAutoSelect,
+      selected), title(MV_newHotStr(title,hotChar,hotIndex))
+/****************************************************************************
+*
+* Function:     MVButton::MVButton
+* Parameters:   bounds      - Bounding rectangle for the button
+*               command     - Command code to send when activated
+*               flags       - Flags for the button
+*
+* Description:  Constructor for the standard MVButton class, which is a
+*               button with a text caption.
+*
+****************************************************************************/
+{
+    setBounds(bounds);              // Calculate the bounds again
+}
+
+MVButton::~MVButton()
+/****************************************************************************
+*
+* Function:     MVButton::~MVButton
+*
+* Description:  Destructor for the MVButton class. Deletes the button's
+*               title.
+*
+****************************************************************************/
+{
+    delete [] title;
+}
+
+void MVButton::setBounds(const MVRect& bounds)
+/****************************************************************************
+*
+* Function:     MVButton::setBounds
+* Parameters:   bound   - New bounding box for the button
+*
+* Description:  Sets the bounding box for the button. We pre-calculate
+*               the position of the text within the button here.
+*
+****************************************************************************/
+{
+    MVButtonBase::setBounds(bounds);
+
+    // Set the current font and size, and obtain the fonts metrics
+    metrics_t   m;
+    useFont(fmSystemFont);
+    dc.getFontMetrics(m);
+
+    MVTextJust  old;
+    old.save(dc);
+    tjust.use(dc);
+
+    // Compute the location to draw the text at
+    int hjust = (flags & bfLeftJust ? MGL_LEFT_TEXT :
+                (flags & bfRightJust ? MGL_RIGHT_TEXT : MGL_CENTER_TEXT));
+    int vjust = (flags & bfTopJust ? MGL_TOP_TEXT :
+                (flags & bfBottomJust ? MGL_BOTTOM_TEXT : MGL_CENTER_TEXT));
+    tjust.setJustification(hjust,vjust);
+    tjust.use(dc);
+
+    MVRect r(bounds);
+    r.moveTo(0,0);
+    r.inset(2,2);
+
+    start.x =   (hjust == MGL_LEFT_TEXT ?    r.left() :
+                (hjust == MGL_CENTER_TEXT ? (r.left() + r.right())/2 :
+                                             r.right()-1));
+    start.y =   (vjust == MGL_TOP_TEXT ?     r.top() :
+                (vjust == MGL_CENTER_TEXT ? (r.top() + r.bottom())/2 :
+                                             r.bottom()-1 + m.descent));
+
+    // Compute the location of the hot character underscore, if present
+    if (hotChar) {
+        hot1 = start;
+        dc.underScoreLocation(hot1.x,hot1.y,title);
+        char oldChar = title[hotIndex];
+        ((char*)title)[hotIndex] = '\0';
+        hot1.x += dc.textWidth(title);
+        hot2 = hot1;
+        dc.getCharMetrics(oldChar,m);
+        hot2.x += m.fontWidth-1;
+        ((char*)title)[hotIndex] = oldChar;
+        }
+
+    // Compute the location of the focus rectangle
+    focusRect = r;
+    focusRect.inset(2,2);
+
+    old.use(dc);
+}
+
+void MVButton::drawBody(const MVRect& clip,uint bodyState)
+/****************************************************************************
+*
+* Function:     MVButton::drawBody
+* Parameters:   clip        - Clipping rectangle for drawing the view
+*               depressed   - True if button is depressed
+*
+* Description:  Draws the body of the button with the textual caption in
+*               the correct place.
+*
+****************************************************************************/
+{
+    ibool depressed = (bodyState & bsPressed) != 0;
+    ibool focused = (bodyState & bsFocused);
+    ibool disabled = (bodyState & bsDisabled);
+
+    MS_obscure();
+    MVButtonBase::drawBody(clip,bodyState); // Draw the blank body
+
+    // Clip text to internal portion of button
+    setClipRect(bounds.insetBy(1,1));
+
+    // Draw the button title
+    MVTextJust old;
+    old.save(dc);
+    tjust.use(dc);
+    useFont(fmSystemFont);
+    drawHotStr(start,hot1,hot2,hotChar,bounds.topLeft,depressed,title,disabled,
+        getColor((uchar)(disabled ? scDisabledButtonText :
+        (focused ? scFocusedButtonText : scButtonText))));
+
+    // Draw the focus rectangle around text if focused
+    if (focused) {
+        drawFocusRect(focusRect.left() + bounds.left(),
+                      focusRect.top() + bounds.top(),
+                      focusRect.right() + bounds.left(),
+                      focusRect.bottom() + bounds.top(),
+                      scFocusRect);
+        }
+
+    old.use(dc);
+    MS_show();
+}
+
+void MVButton::handleEvent(MVEvent& event,phaseType phase)
+/****************************************************************************
+*
+* Function:     MVButton::handleEvent
+* Parameters:   event   - Event to handle
+*               phase   - Current phase for the event (pre,focus,post)
+*
+* Description:  Event handling routine for buttons. Buttons have associated
+*               hot key characters.
+*
+****************************************************************************/
+{
+    MVButtonBase::handleEvent(event,phase);
+
+    if (phase != phFocused && event.what == evKeyDown) {
+        // Check for hot key's here.
+        if (phase == phPreProcess && !(event.key.modifiers & mdAlt))
+            return;
+
+        if (hotChar && event.key.charScan.charCode == hotChar) {
+            activate();
+            clearEvent(event);
+            }
+        }
+}
+
+void MVButton::setTitle(const char *newTitle)
+/****************************************************************************
+*
+* Function:     MVButton::setTitle
+* Parameters:   newTitle    - New title for the button
+*
+* Description:  Changes the title text for the button. We also repaint the
+*               entire button to show the changed button text if the
+*               button is currently visible.
+*
+****************************************************************************/
+{
+    delete [] title;
+    title = MV_newStr(newTitle);
+    setBounds(bounds);
+    repaint();
+}

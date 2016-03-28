@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Compiling SciTech SNAP Graphics</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Compiling SciTech SNAP Graphics
+      </h2>
+      <p class="MsoBodyText">
+        Once you have all the startup scripts configured and executed, you are
+        ready to begin compiling. Building all the SNAP libraries in one fell
+        swoop is very easy. Simply change into the src directory below where
+        you have installed all the files and issue a dmake build. Ie:
+      </p>
+      <p class="Preformatted">
+        cd scitech/src<br />
+        dmake build
+      </p>
+      <p class="MsoBodyText">
+        Using dmake build will force build all the libraries, and will build all
+        the libraries with your selected compiler and using the currently
+        configured options. If any errors are encountered during the build, it
+        will stop and you can fix the errors and then restart the build from
+        the offending library with a simple dmake command (ie: the default
+        target builds for the selected compiler). You can also build each
+        library from each directory if you wish as well.
+      </p>
+      <p class="MsoBodyText">
+        By default the makefile utilities hide the actual command lines used to
+        call the compiler on Unix systems to clean up the compile process
+        output. This makes it much easier to see errors and warnings in the
+        code as it compilers. If you need to see the actual command lines
+        passed to the compiler, you can build using the SHOW_ARGS=1 variable
+        (ie: dmake build SHOW_ARGS=1).
+      </p>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CompilingReleaseAndDebugBuilds.html">Compiling release and
+          debug builds</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="CompilingTheSamplePrograms.html">Compiling the sample programs</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SettingUpYourCompilerConfiguration.html">Setting up Your
+          Compiler Configuration</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL Library Overview</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <h1 style="margin-top:0in;">
+      MGL Library Overview
+    </h1>
+    <p class="MsoBodyText">
+      This document contains the reference manual for the SciTech MGL Graphics
+      Library and associated supplemental libraries. Please consult the MGL
+      Getting Started and Programmer’s Guide for more information on
+      programming with the SciTech MGL.
+    </p>
+    <p class="MsoBodyText">
+      All functions in the SciTech MGL work with an MGL device context (MGLDC),
+      which can either be a specific device context passed to the function, or
+      the currently active device context. All routines that take a specific
+      MGLDC pointer, don’t work with the values in the currently active device
+      context, which means that these routines can be used to update a
+      different device context than the currently active one. However if the
+      device context passed is actually the currently active context, all the
+      changes made to the specific device context will also be made to the
+      currently active context as well.
+    </p>
+    <p class="MsoBodyText">
+      Most of the routines in SciTech MGL are bound to the currently active
+      device context, which can be changed with the <a href="MGL_makeCurrentDC.html">MGL_makeCurrentDC</a> function.
+      When a context is made the currently active context, the values in the
+      device context are cached in a special global data area for speed. Hence
+      you should not change the values in a device context directly if that
+      context is currently active, but should use the proper MGL functions to
+      do so. When the active device context is changed to a new device context,
+      the values in the currently cached device context are then flushed back
+      to the original device context.
+    </p>
+    <p class="MsoBodyText">
+      Because there is a lot of copying going on when changing active device
+      context, this is something that you would not normally do between drawing
+      individual primitives. Normally you will have one main device context for
+      all your drawing output (either a memory device context or a display
+      device context) that you will be drawing into, and this context will
+      generally not change. The SciTech MGL will however not perform any
+      copying if you attempt to set the active device context to the same
+      device context. You can also set the active device context to nothing, by
+      passing a NULL to <a href="MGL_makeCurrentDC.html">MGL_makeCurrentDC</a>.
+    </p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EnvironmentDetectionAndInitialization.html">Environment
+          detection and initialization</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DeviceContextCreationAndManagement.html">Device context
+          creation and management</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DeviceContextInformationAndManipulation.html">Device context
+          information and manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ColorAndPaletteManipulation.html">Color and palette
+          manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ViewportAndClipRectangleManipulation.html">Viewport and clip
+          rectangle manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DoubleBufferingSupport.html">Double buffering support</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DeviceClearing.html">Device clearing </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="DirectFrameBufferAccessFunctions.html">Direct frame buffer
+          access functions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PixelPlotting.html">Pixel plotting</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LineDrawingAndClipping.html">Line drawing and clipping</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PolylineAndPixelDrawing.html">Polyline and pixel drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PolygonDrawing.html">Polygon drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RectangleDrawing.html">Rectangle drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EllipseDrawing.html">Ellipse drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="TextAttributeManipulation.html">Text attribute manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="TextDrawing.html">Text drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="WideCharacterTextDrawing.html">Wide character text drawing</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="BitBltSupport.html">BitBlt support</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="BitmapDrawingSupport.html">Bitmap drawing support&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MonochromeBitmapManipulation.html">Monochrome bitmap
+          manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="LightweightOffscreenBufferSupport.html">Lightweight offscreen
+          buffer support&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RegionManagement.html">Region management</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RegionAlgebra.html">Region algebra</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RGBTo81516BitHalftoneDitheringRoutines.html">RGB to 8/15/16
+          bit halftone dithering routines</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="FontLoadingAndUnloadingFunctions.html">Font loading and
+          unloading functions&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="ObsoleteBitmapFontLoadingFunctions.html">Obsolete bitmap font
+          loading functions&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MouseCursorResourceLoadingAndUnloading.html">Mouse cursor
+          resource loading and unloading&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="IconResourceLoadingAndUnloading.html">Icon resource loading
+          and unloading&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="WindowsBMPBitmapLoadingUnloadingAndSavin.html">Windows BMP
+          bitmap loading, unloading and saving&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PCXBitmapLoadingUnloadingAndSaving.html">PCX bitmap loading,
+          unloading and saving&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="JPEGBitmapLoadingUnloadingAndSaving.html">JPEG bitmap loading,
+          unloading and saving&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PNGBitmapLoadingUnloadingAndSaving.html">PNG bitmap loading,
+          unloading and saving&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RandomNumberGenerationRoutines.html">Random number generation
+          routines</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RectangleAndPointManipulation.html">Rectangle and Point
+          manipulation</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="WindowManagerFunctions.html">Window manager functions&#160; </a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="OpenGLBindingFunctions.html">OpenGL binding functions</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="EventHandling.html">Event handling</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="MouseHandling.html">Mouse handling</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="GameFramework.html">Game Framework</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SpriteManager.html">Sprite Manager</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="PlatformSpecificWindows.html">Platform Specific: Windows</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

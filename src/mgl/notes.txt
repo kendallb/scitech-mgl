@@ -1,0 +1,1149 @@
+
+Update all line drawing code!!!
+
+Things to do:
+-------------
+
+ . Add support for 1bpp and 4bpp ref2d drivers to Nucleus, and use them for
+   packed pixel modes!
+
+ . Create NoBIOS VGA only Nucleus driver to be used if there is no VBE BIOS
+   in the system, which will provide fallback support for all OSes.
+
+ . Add support for SVGA banked and VGA 4bpp modes to Nucleus via an 8bpp
+   shadow buffer in system memory.
+
+ . Kill all emulation code when it is no longer needed.
+
+ . Get all external assembler modules building properly with NASM, since
+   we wont need those anymore.
+
+ . Update internal functions to use new Nucleus device driver API
+
+ . Update core MGL init API to support Nucleus style mode enumeration
+
+ . Update core MGL API to support BitBltFx style blitting, with all the
+   trimmings!
+
+ . Need to think about the new MGL surface management API and how it will
+   fit into the picture!
+
+ . Add support for transparent blitting with pixel format conversion using
+   the new BitBltFx functions in Nucleus.
+
+ . Add support for software cursors using Nucleus, and enable support for
+   pure software and hardware assisted mono and color cursors in Nucleus!
+
+ . Remove all internal linked in driver mechanisms from the MGL, so that it
+   all now becomes external and automatic! Specifically packed pixel drivers
+   can go early, because Ref2d now handles all that.
+
+ . Remove all global variables from all functions and put them into the
+   device context. This will allow us to make the MGL thread safe (actually
+   if we do this, then we will also need a thread safe global MGL buffer,
+   with one per thread!).
+
+Updates to MGL 5.0:
+-------------------
+
+ . New nucleus style internal device driver API
+ . Nucleus reference rasteriser used throughout for compaibility and
+   performance
+ . Support for all standard 16 ROP codes
+ . Support for TrueType fonts, including anti-aliased fonts
+ . Support for bitmap font libraries
+ . Support for arbitrary clip region clipping
+ . Support for alpha blending with 16 selectable source and destination
+   blending functions.
+
+
+Old MGL 5.0 development notes:
+------------------------------
+
+ 1. Re-write PACKED8 driver to load the Nucleus reference rasteriser and
+	use all the functions in it. Implement the new MGL driver API in this
+	driver as a starting point.
+
+ 2. Make sure that the PACKED8 driver can be compiled in debug mode (for
+	DOS at least) such that we can compile the entire thing in source
+	debug mode and all that is missing is the driver loading and init
+	code (ala the Nucleus driver stuff).
+
+ 3. We could even make a library from the code ready for debugging such
+	that we can compile and link the full Nucleus conformance test program
+	as an MGL app with source code debugging for our engineers to use.
+
+	This will also get them familiar with using the MGL and its internals.
+
+New Nucleus Reference Rasteriser support:
+-----------------------------------------
+
+ . Need the ability for a driver to request that a packed pixel memory
+   driver be loaded and a reference to it passed in. All full drivers
+   can request a packed pixel drivers for the software rendering
+   functions as necessary, and only a single copy of the driver will
+   be loaded by the MGL for all drivers.
+
+ . The packed pixel drivers themselves will internally load and utilise
+   the necessary Nucleus reference rasteriser DLL, but because only a
+   single copy of the packed pixel driver is loaded, only a single Nucleus
+   driver is loaded.
+
+ . Figure out how the high level MGL driver code is built, and the entry
+   points that are necessary.
+
+ . Figure out how the high level MGL code loads and calls the BPD
+   drivers from disk.
+
+ . Figure out how to resturcture the MGL internal device driver mechanism
+   so that Nuclues functions can be called directly in many cases for
+   increased performance and smaller code size.
+
+Steps to convert a driver:
+--------------------------
+
+ . Change the drivertype structure at start, including copyright.
+ . Change AllocateSurface to PACKEDxx_allocateSurface, and call
+   import functions to allocate bitmaps.
+ . Remove all MGLWIN dependencies.
+ . Remove all MGL_LITE dependencies.
+ . Change PACKEXxx_line to PACKEDxx_solidLine
+ . Replace all __EMU__ functions with PACKEDxx variants.
+ . Implement all PACKEDxx_ functions using emulation internals.
+ . Change all MGLAPI's to _CEXPORT for C functions.
+ . Change all procstarts to procstartdll's for asm functions.
+
+New driver loading mechanism
+----------------------------
+
+ . Need to change the MGL_makeCurrentDC stuff such that it calls the driver
+   to do the make current change, and there will no longer be an MGL_dc
+   global structure in the MGL proper, but only in the MGL device drivers
+   themselves (the MGL proper will use the MGL_dcPtr for all the code).
+
+ . Change the internal rendering functions to use template include files
+   and macros. This will allow us to re-implement the NO_ASSEMBLER functions
+   for *all* packed pixel and other drivers to be more efficient and to
+   support more options (ie: solid, patterned etc) using macro expansion.
+
+   Bear in mind that we can go to town with Watcom C++ optimised assembler
+   for the inner loops of these functions as well, which will speed things
+   up quite a bit (we can do MMX versions of the functions as well!).
+
+ . Change the code such that there are internal EMULATE functions that
+   can be called from the assembler code as a fallback for certain
+   operations.
+
+   Or alternatively implement the main function in C and then call the
+   assembler helper functions only if necessary.
+
+ . Change the way we use the EMULATE functions, such that they are no
+   longer compiled in source modules but instead live in the
+   drivers\emulate directory and are header files that are used to implement
+   the necessary emulation functions for each driver.
+
+ . Need to change the MGL_registerDriver function to not require the
+   packed pixel drivers to be registered anymore.
+
+ . Need to handle the packed pixel drivers as necessary in here so that
+   they will be demand loaded when a packed pixel memory DC is created
+   and if they are no longer needed the DLL should then be freed from
+   memory. This will make the code very memory efficient.
+
+. Memory drivers
+
+ PACKED8.DRV
+ PACKED16.DRV
+ PACKED24.DRV
+ PACKED32.DRV
+
+. Display drivers
+
+ VGA4.DRV
+ VGA8.DRV
+ VGAX.DRV
+ LINEAR8.DRV
+ LINEAR16.DRV
+ LINEAR24.DRV
+ LINEAR32.DRV
+ VBEAF8.DRV
+ VBEAF16.DRV
+ VBEAF24.DRV
+ VBEAF32.DRV
+ ACCEL8.DRV
+ ACCEL16.DRV
+ ACCEL24.DRV
+ ACCEL32.DRV
+ DDRAW8.DRV
+ DDRAW16.DRV
+ DDRAW24.DRV
+ DDRAW32.DRV
+ FDIB8.DRV
+ FDIB16.DRV
+ FDIB24.DRV
+ FDIB32.DRV
+
+. Windows drivers
+
+ WINDC.DRV
+ WDIB
+
+New features to add:
+--------------------
+
+ . 8 mono bitmap pattern cache ala Nucleus (ie: using Nucleus!)
+ . 8 color bitmap pattern cache
+ . Offscreen font cache for bitmap glyphs
+ . 64x64 software and hardware cursors
+ . 64x64 software and hardware color cursors
+ . TrueType font support
+ . Color bitmap font support
+ . Color bitmap TrueType fonts with Anti-Aliasing
+ . MGL_bitBlt with alpha blending
+ . MGL_bitBlt with RGBA alpha blending (ie: blending per pixel)
+
+----
+
+ . Implement a new set of bitmap loading functions that will color convert
+   the bitmap data on the fly as the bitmaps are loaded. We will essentially
+   need to figure out how we can either recode the EMU_translate functions
+   or re-use the code so it can be called by the bitmap loading code.
+
+ . Update the Sprite Manager such that it will load bitmaps in the correct
+   format for the display DC using these new bitmap loading functions. Also
+   add support to the Sprite Manager to load PCX and JPEGs (and eventually
+   PNG and TIFF) as well.
+
+ . We should re-code the low level ellipse functions in C rather than in
+   assembler, so that we can use the floating point setup code along with
+   the optimised pixel plotting functions rather than the generic
+   ellipse engine code. This will make ellipse drawing a lot faster in
+   software (and probably almost as fast as the assembler code).
+
+   We may also be able to optimise the ellipse and line scanning workhorse
+   functions such that we do not use the ellipse and line engine generic
+   routines, but have hard coded routines that are designed to be inlined
+   for maximum efficiency. We can then use macros to generate the inlined
+   versions of the code and re-use these macros in subsequent ellipse
+   generation and rendering code (even the packed pixel drivers!!!).
+
+   In fact we can take this to the logical extreme and define macros to
+   implement *all* versions of the standard rendering functions, that can
+   be used in the packed pixel modules to implement these functions
+   efficiently in C by including the macros and defining the necessary
+   macros for the plotting functions internally!! I like this idea, and it
+   will make the drivers faster and easier to implement!!
+
+ . We need to break the MGL core init/exit code up into generic code and
+   code that is OS dependant. The generic code will live in the main
+   core library, and the OS dependant code in the loader library (perhaps
+   as callbacks initialised when the core library is loaded).
+
+   We need to isolate internal driver stuff such as accessing the BIOS
+   data area via the BIOS selector, and to move that into callbacks to the
+   OS dependant module code.
+
+ . Modify the MGL for Windows libraries, such that loading access to the
+   real mode memory blocks is delayed until absolutely necessary. If a
+   DirectDraw or Nucleus driver is found, we wont need this and the step
+   can be skipped eliminating compatibility problems.
+
+ . Add support for a new function to set a regular display mode with
+   refresh rate control, just like setting a DD mode. This will be
+   useful for multi-controller support as well!
+
+DOS changes for 4.1:
+--------------------
+
+ . Remove all references to IDE files in the programmers guide.
+
+ . Update the stuff on re-distribution since the MGL is now free.
+
+ . Update the manuals to include info on the TNT DOS extender, and how
+   to select the DosStyle and NtStyle formats (and what the difference
+   is).
+
+ . Re-run DocJet to update the stuff in the new source code to bring in
+   the updated documentation, including the Multi-Controller library
+   reference functions.
+
+ . Potentially add the UVBELib reference documentation to the MGL
+   reference manual as well.
+
+API Changes for 4.1:
+--------------------
+
+ . Need to change the MGL_bitBlt API to always work with the current
+   device context, which will speed things up and make it better for
+   hardware device context environments. We would also need to change
+   the internal device driver code as well, although that change can
+   be put off till later.
+
+/* New API functions */
+
+void 	MGLAPI MGL_copyPixelsCoord(int left,int top,int right,int bottom,int dstLeft,int dstTop,int op);
+void 	MGLAPI MGL_readPixelsCoord(MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,int op);
+void 	MGLAPI MGL_writePixelsCoord(MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,int op);
+void 	MGLAPI MGL_stretchPixelsCoord(MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,int dstRight,int dstBottom);
+void 	MGLAPI MGL_writeTransparentPixelsCoord(MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,color_t transparent,ibool sourceTrans);
+void 	MGLAPI MGL_getDivotCoord(int left,int top,int right,int bottom,void *divot);
+void 	MGLAPI MGL_putDivot(void *divot);
+long 	MGLAPI MGL_divotSizeCoord(int left,int top,int right,int bottom);
+void 	MGLAPI MGL_putMonoImage(int x,int y,int byteWidth,int height,void *image);
+void	MGLAPI MGL_putBitmap(int x,int y,const bitmap_t *bitmap,int op);
+void	MGLAPI MGL_putBitmapSection(int left,int top,int right,int bottom,int dstLeft,int dstTop,const bitmap_t *bitmap,int op);
+void	MGLAPI MGL_putBitmapTransparent(int x,int y,const bitmap_t *bitmap,color_t transparent,ibool sourceTrans);
+void	MGLAPI MGL_putBitmapTransparentSection(int left,int top,int right,int bottom,int dstLeft,int dstTop,const bitmap_t *bitmap,color_t transparent,ibool sourceTrans);
+void	MGLAPI MGL_putBitmapMask(int x,int y,const bitmap_t *mask,color_t color);
+void	MGLAPI MGL_stretchBitmap(int left,int top,int right,int bottom,const bitmap_t *bitmap);
+void	MGLAPI MGL_putIcon(int x,int y,const icon_t *icon);
+
+/* Obsoleted functions */
+
+void 	MGLAPI MGL_bitBltCoord(MGLDC *dst,MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,int op);
+void 	MGLAPI MGL_stretchBltCoord(MGLDC *dst,MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,int dstRight,int dstBottom);
+void 	MGLAPI MGL_getDivotCoord(MGLDC *dc,int left,int top,int right,int bottom,void *divot);
+void 	MGLAPI MGL_putDivot(MGLDC *dc,void *divot);
+long 	MGLAPI MGL_divotSizeCoord(MGLDC *dc,int left,int top,int right,int bottom);
+void 	MGLAPI MGL_putMonoImage(MGLDC *dc,int x,int y,int byteWidth,int height,void *image);
+void	MGLAPI MGL_putBitmap(MGLDC *dc,int x,int y,const bitmap_t *bitmap,int op);
+void	MGLAPI MGL_putBitmapSection(MGLDC *dc,int left,int top,int right,int bottom,int dstLeft,int dstTop,const bitmap_t *bitmap,int op);
+void	MGLAPI MGL_putBitmapTransparent(MGLDC *dc,int x,int y,const bitmap_t *bitmap,color_t transparent,ibool sourceTrans);
+void	MGLAPI MGL_putBitmapTransparentSection(MGLDC *dc,int left,int top,int right,int bottom,int dstLeft,int dstTop,const bitmap_t *bitmap,color_t transparent,ibool sourceTrans);
+void	MGLAPI MGL_putBitmapMask(MGLDC *dc,int x,int y,const bitmap_t *mask,color_t color);
+void	MGLAPI MGL_stretchBitmap(MGLDC *dc,int left,int top,int right,int bottom,const bitmap_t *bitmap);
+void	MGLAPI MGL_putIcon(MGLDC *dc,int x,int y,const icon_t *icon);
+void 	MGLAPI MGL_transBltCoord(MGLDC *dst,MGLDC *src,int left,int top,int right,int bottom,int dstLeft,int dstTop,color_t transparent,ibool sourceTrans);
+
+void 	MGLAPI MGL_bitBltLinCoord(MGLDC *dst,MGLDC *src,ulong srcOfs,int dstLeft,int dstTop,int dstRight,int dstBottom,int op);
+void 	MGLAPI MGL_transBltLinCoord(MGLDC *dst,MGLDC *src,ulong srcOfs,int dstLeft,int dstTop,int dstRight,int dstBottom,color_t transparent,ibool sourceTrans);
+
+	. Need to add support for allocating offscreen bitmaps of arbitrary sizes
+	  from the offscreen memory pool, such that it will be compatible with
+	  DirectDraw for memory management. Internally we will manage offscreen
+	  memory using Nucleus.
+
+MGLDC *		MGL_createOffscreenDC(int width,int height);
+bitmap_t * 	MGL_createOffscreenBitmap(int width,int height);
+void		MGL_freeOffscreenBitmap(bitmap_t *bmp);
+
+New loadable device driver mechanism:
+-------------------------------------
+
+ . Need to remove all OS dependencies from the drivers, and for stuff that
+   still needs to remain in the code, we need to wrap it up with checks
+   against the OS at runtime and import the necessary API functions
+   into the loaded driver so the driver can call the functions as
+   necessary for OS dependencies.
+
+   Otherwise we could export those functions out as functions to be
+   handled on the OS neutral side of the fence, to keep the loadable
+   driver code completely OS neutral (and make it easier to port to
+   other OSes).
+
+ . Need to change all reference to DOS specific code that will be compiled
+   into the loadable drivers, such as stuff that accesses the BIOS data
+   area such that this code is never executed unless the target OS is
+   MSDOS.
+
+Multi-Monitor support in the MGL:
+---------------------------------
+
+ . In order to be able to run the detection code a second time, we will
+   need instance data that is normally global to be stored for each of the
+   graphics controllers. Hence we will need to store a structure internally
+   that will manage the instance data, and pass that around to the driver
+   detect and init functions.
+
+ . Upon MGL_init, the MGL will enumerate the information for all available
+   controllers in the system.
+
+ numDevices = MGL_initMultiMonitor(&MM);
+ MGL_selectDisplayDevice(0);
+ MGL_changeDisplayMode(gr640x480x256);
+ dc = MGL_createDisplayDC();
+ MGL_selectDisplayDevice(1);
+ MGL_changeDisplayMode(gr640x480x256);
+ dc2 = MGL_createDisplayDC(1);
+
+ MGL_makeCurrent(dc1);
+ MGL_makeCurrent(dc2);
+
+MGL 4.1 functions to document and add to DEF files:
+---------------------------------------------------
+
+int		MGLAPI MGL_initMultiMonitor(MGL_multiMonitor *mm,void *reserved);
+ibool	MGLAPI MGL_selectDisplayDevice(int device);
+
+Mesa 3.0 changes:
+-----------------
+
+ . Defines to make Mesa compile faster code for the MGL:
+
+ 	__i386__ - use the faster float/int conversion functions (no FPU)
+
+    FAST_MATH - Enable FAST_MATH for putting the FPU into lower precision mode
+
+    faster floating point sqrt (in assembler!)
+    faster other math functions from FIXED library
+
+    external assembler optimised math functions ported from the Linux versions.
+
+ . 16bpp dithering in Mesa does not work. Disabling dithering fixes the
+   problem. Appears that scaling is not correct in non-dithered case, since
+   in dithered mode the scale in 255.0 rather than 32.0.
+
+   Still get the orange background color in 16bpp modes for the backgroun if
+   fogging is not enabled.
+
+ . Add support to switch to OpenGL rendering functions for windowed DC's
+   when we start OpenGL for the DC, and then switch back to WINDC verisons
+   when we close the OpenGL rendering context for the window.
+
+MGL 4.06 stuff to do:
+---------------------
+
+ . OPT=1 for JPEG lib under DOS does not work with Watcom C++ 10.6. Need to
+   find out what is going on, and change to re-build using OPT_SIZE if
+   that will solve the problem.
+
+ . Take a look at what is needed to get Win32s working with the MGL again.
+   We *should* be able to get it working in windowed modes at least, but
+   fullscreen support might be problematic due to driver problems etc.
+
+ . Integrate support for DJGPP 2.8.1 to the MGL sources.
+
+ . Integrate Andrew's makefile updates for DJGPP to support long filenames
+   and support for libxxx Unix style library naming.
+
+ . Update the master makefile to allow re-building all libraries with a
+   single compiler. This will allow us to do proper testing for each
+   compiler with all libs built with debug info etc for compiler specific
+   testing.
+
+ . Fix the fucking isKeyDown function for DOS and Windows (it is broken
+   for DOS now!).
+
+ . Add support for PhapLap TNT DOS extender!!!!
+
+ . Add support for the KeyDown/Up/Repeat events for DOS and Windows, so that
+   gamers can use these keys for firing etc. This should be possible, and
+   would make the MGL a better product.
+
+ . Convert all the keyboard scan codes in the MVis headers to the MGL so that
+   they can be used in non-MVIS apps such as GM games.
+
+ . Need to add a new MGL_inVSync() function and associated driver functions.
+   We can implement this using VGA register code for VGA compatible drivers,
+   and stub this out for NonVGA hardware for the time being. When we get
+   Inertia implemented we can implement it on NonVGA hardware as well.
+
+ . FDIB modes do not properly trap Alt-Tab event's anymore and hence do
+   not do the proper save/restore that they should be doing.
+
+   This only happens when SDD is loaded, since SDD tries to enable a
+   DirectDraw exclusive mode which fucks up our FDIB SPI info!!!
+
+   Need to change SDD so that we check for fullscreen, topmost windows rather
+   than linking to and using DirectDraw in the Control Center to fix this
+   problem...
+
+ . FDIB modes do not appear to properly restore themselves when switching
+   back to the mode after an Alt-Tab. Not sure what is going on here, but we
+   need to look into this... 
+
+ . Rebuild the SGIGL.DLL from the latest official SGI source code, and
+   include this in the redistributeable components.
+
+   DONE.
+
+ . On the S3 Virge with our drivers the palette was not properly reset on
+   Alt-Tab when using the LINEAR8 drivers. It also crashed the same as with
+   the Matrox drivers using ACCEL8 and Alt-Tabbing.
+
+ . Fix bugs related to running OEM OpenGL drivers like the Riva128. Recode
+   the display switching code to use CDS instead of DirectDraw so that
+   they can use DD in their drivers themselves.
+
+   We can do this initially by re-coding the FDIB drivers to allow on the
+   fly color depth switching on Windows 95, as well as enumerating and
+   supporting low resolution modes. Then we can use this exact same code
+   base for the OpenGL drivers without using DirectDraw.
+
+ . OpenGL demos for DOS all run fine. OpenGL demos for Windows crash
+   miserably and do not work when running with the SGI OpenGL for Windows
+   and using our display drivers.
+
+ . Add the SuperVGA Kit sample programs to the installs.
+
+ . Add the new .ch and .ash files in the include directories to the installs
+   so they will be installed properly on end user systems.
+
+ . Make the Game Framework 'OK to Exit' dialog box consistent, and add
+   an 'exitCallback' so that we can have the user app decide how to handle
+   the exit requests (both windowed and fullscreen). The default behaviour
+   will be to simply exit at all times, and the user can add their own dialog
+   box handling (modify bounce to include a sample dialog box handler).
+
+MGL 4.1 stuff to do:
+--------------------
+
+ . Add the 'waitForRetrace' register hack for our display drivers so that
+   we can enable and disable this when our DirectDraw drivers are active!
+
+ . Maybe we really should DLL'ise the actual drivers in the MGL for Windows
+   environments and those that support shared libraries. If we do this, then
+   we can have the 32-bit drivers distributed as part of the new SciTech MGL
+   Runtime, which we can use to field upgrade games and apps in the field
+   and developers and ship with their products. If we do this ASAP, then when
+   we make the final conversion to SciTech Inertia at a later date we can
+   field upgrade applications to use the new Inertia functions without needing
+   the have the applications re-linked.
+
+ . Compile up Mesa 3.0 for the MGL, and build 3Dfx accelerated libraries
+   for both DOS and Windows that work with the MGL. This will be *very*
+   cool...
+
+ . Looks like we have a problem with structure packing with Watcom C++ 11.0
+   and Visual C++ 5.0. It could be to do with the #ifdef's or something,
+   but look into this and see if we can figure out the problem (Game
+   Framework is the culprit; the MGL has been re-designed to avoid this
+   problem entirely).
+
+ . Change the makefiles for Borland C++ 4.5 and Borland C++ 5.0 so that
+   we use TLINK to do the final link stage. TLINK now allows us to pass
+   in the .res file for the link step, and it appears that Borland C++
+   5.0 BRC32 is broken and wont work the old way.
+
+   This will also allow us to add the following options to control the
+   compile process:
+
+		USE_WIN40 - Compile as Windows 95 app (ie: -V4.0)
+		CONSOLE   - Compile as a Console APP rather than GUI app
+
+   Tlink options I have found:
+
+	-aa   - Link as Win32 GUI app
+	-ap   - Link as Win32 console app
+	-Twe  - Link as Win16 .EXE file
+	-Twd  - Link as Win16 .DLL file
+	-Tpe  - Link Win32 .EXE file
+	-Tpd  - Link Win32 .DLL file
+	-V4.0 - Set the version number to 4.0 (or 3.1)
+	-tWM  - Link as muti-threaded
+	-WX   - Link as DPMI32 DOS app
+
+   The one complication is that we are going to have to figure out which
+   of the runtime startup files need to be linked with, so we will have
+   to generate sample IDE files and generate the necessary makefiles to
+   figure this one out.
+
+ . Change the SuperVGA Kit and MGL such that if a HiRes mode is initialised
+   using the VBE/AF drivers, we check that the BIOS mode number is set to
+   a value above 13h, and if not force it (14h or 7Fh), so that Windows
+   knows we are not in a standard VGA mode
+
+   Perhaps what we can do is make the SuperVGA Kit and MGL talk to our
+   SDDHELP helper library to grab a copy of the VBE/AF driver if present,
+   rather than loading the VBE/AF driver directly from disk. This way we
+   can be using the same VBE/AF driver in DOS boxes as the Windows driver
+   will be using, and then the mini-VDD can simply ask the loaded VBE/AF
+   driver what mode it is currently running in and we will be able to
+   then determine if we are running in a HiRes mode or not (and we will
+   know how to save and restore the state of the hardware correctly!).
+
+ . Change all the low level rendering functions such that they know about
+   and use framebuffer arbitration functions internally, so that we no
+   longer need the complicated stub routines (which are slow in C) to
+   arbitrate the access for us.
+
+   We should do this with a macro at the start and end of the functions
+   (for both the C and assembler functions), and this will then mean that
+   the same technique can be used to implement a linear framebuffer device
+   driver in the same format as the Intertia display drivers (it can be
+   used to fill in the blanks for the drivers). This will be incredibly
+   useful for both the MGL and our internal display driver development
+   (we then have optimised software rendering routines for all supported
+   platforms!).
+
+   In order to make this as seamless as possible, we should have a place
+   in the public Inertia spec for a pointer to a software rendering device
+   context that may be registered with the driver.
+
+ . Fix the region functions in the MGL.
+
+ . Change the code to support both VBE/AF 1.0 and the new VBE/AF 2.0
+   via the updated VBELIB.LIB library. We should be able to make this
+   work with new VBE/AF 1.0 compatible drivers as well as the existing
+   VBE/AF 2.0 drivers. Or perhaps we can do it within the same driver,
+   I am not sure (like like the idea of keeping the code separate tho).
+
+ . Go through and re-code as much of the assembler functions as possible
+   in C, so that the entire library can be compiled in 'C-only' mode for
+   both DOS and Windows versions.
+
+ . Convert some of the assembler code over to use NASM instead of TASM
+   so that the assembler code is portable.
+
+ . Figure out why we do not have any DirectDraw modes listed when we
+   compile and link the sample programs for Borland C++ 4.52 when using
+   TASM 5.0. I assume the other demos work properly.
+
+ . Try the latest TASM 5.0 with patches on the assembler code, and figure
+   out why it does not work. If we still cannot get it working, contact
+   Borland and let them know about the problem and get them to fix it.
+
+ . Go through the MGLFX.LIB library and check which functions we export
+   that might possibly conflict with the LIBC.LIB library for Visual C++.
+   Need to find a library dumping program for Visual C++.
+
+ . Update some of the IDE files for a couple of the compilers that we
+   want to support and distribute with the MGL.
+
+ . Replace the MGL_lineCoord functions with macros that call the fixed
+   point versions for maximum speed.
+
+ . Fix the color pattern fills for the following:
+	. 8bpp 			- nothing displays
+	. 16bpp,32bpp	- Optimise for faster drawing
+	. 24bpp			- Displays incorrect images
+
+ . Fix the problem with XOR modes coming up incorrectly for the putImage
+   functions (or something) such that in the Demo program, after a test
+   the image is XOR'ed onto the screen. Does this with the S3 VBE/AF
+   drivers.
+
+   Looks like it only happens after the system has been in dithered RGB
+   mode and put back to normal again!
+
+ . Fix the stuff with problem with Demo not saving the data under the
+   window for the initial dialog box (unless that is an XOR problem as
+   well?).
+
+MGL 5.0 stuff to do:
+--------------------
+
+ . Figure out what people find in Allegro that is not in the MGL.
+
+ . Add support for TrueType fonts to the MGL, using the FreeType projects
+   source code.
+
+ . Add support for TIFF and PNG bitmap file loading/saving to the MGL.
+
+ . Add support for FLI/FLC playback to the MGL.
+
+ . Add support for Video for Windows playback to the MGL.
+
+ . Add support for MPEG playback to the MGL using the free AMP MPEG decoder.
+
+ . Add support for screen transitions and effects from the Allegro code.
+
+ . Add support for flipped and rotated sprites ala the Allegro code.
+
+ . Add support for 15/16/24/32 bpp bitmap blending routines ala the Allegro
+   code.
+
+ . Add support for timer based triple buffering to complement the hardware
+   triple buffering based on the Allegro code. Should help to get the stereo
+   stuff working also.
+
+ . Add joystick support code based on the Allegro code, which appears to
+   include support for digital joysticks under DOS. Support all of this
+   also in Windows using the DirectInput API's.
+
+ . Get Qt ported across to run on the MGL for a totally excellent window
+   manager to replace the MegaVision.
+
+DEC Alpha port:
+---------------
+
+ . Create an MGLLT.LIB library in the project.
+
+ . Remove 1 byte packing for bitmap file and font file loading routines
+   to load from disk in packed format and convert to unpacked headers
+   internally once the files are loaded for better performance.
+
+ . Optimize the fixed point routines to execute using the __int64 type
+   and the __64BIT__ identifier.
+
+Packed pixel drivers routines to implement:
+-------------------------------------------
+
+ . Remove all __INTEL__ references in the main source modules and make it
+   all just NO_ASSEMBLER
+
+ . All existing C functions
+ . PutMonoImage
+ . StretchScan
+ . Optimize switch(op) code
+
+ . Optimize all internal functions and create C versions of color pattern
+   fill functions that will be fast. We can then use those functions in the
+   MGL demo programs to show off the new functionality and to test the
+   VBE/AF driver functions.
+
+ . Change DRV_setColor to PACKEDxx_setColor LINEARxx, ACCELxx, DDRAWxx
+
+ . Change fillRect to solidFill rect and emulate the rest.
+
+ . Add new getImage functions optimized in C to main code? Place it after
+   the colorPattScanLine function.
+
+ . Fix stretch scanline routine to get bursting support!
+
+ . Finally check out old PACKED??.C file and replace old init section for
+   __16BIT__
+
+Functions to be properly tested:
+
+	zLine16
+	zLine32
+	czLine16
+	czLine32
+	transalteImage for 24bpp RGB images
+	srcTransBlt
+	dstTransBlt
+	scanRightFor
+	scanLeftFor
+	scanRightWhile
+	scanLeftWhile
+	solidDrawScanList
+	solidTrap
+	ditherTrap
+	cTrap
+	zTrap16
+	zTrap32
+	czTrap16
+	czTrap32
+
+	createCustomDC
+
+Optimizing C only versions of library:
+--------------------------------------
+
+ . Unrolled inner loops
+
+	while (count >= 4) {
+		if (count >= 16) {
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			count -= 4;
+			}
+		if (count >= 12) {
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			count -= 4;
+			}
+		if (count >= 8) {
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			count -= 4;
+			}
+		if (count >= 4) {
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			*((ulong*)d) = DC.intColor;	d += 4;
+			count -= 4;
+			}
+		}
+
+ . Unrolled inner loops for transparent blitting like in the assembler
+   versions where we flip flop between transparent and non-transparent
+   pixels.
+
+Things to do:
+-------------
+
+ . Find out why the hardware cursor is not working on the ATI Mach64
+   boards.
+
+ . Add support for transparent blitting with color conversions and
+   palette conversions in the MGL. If speed is not a significant issue,
+   this can make the memory requirements a lot less for HiColor and
+   TrueColor apps and if we eventually code it in assembler it will
+   be fast. Not sure what format the transparent color will have to be
+   in however; probably in the 8bpp format.
+
+ . Get the OpenGL stuff up and running so we can build a beta release.
+   After Kevin gets done with the sample programs for the MGL, we can
+   get him stuck into porting some of the simple OpenGL demos (or perhaps
+   GLUT) to run on top of the MGL so that we can get our fullscreen stuff
+   up and running properly.
+
+ . Trio64 is not working with page flipping in DirectDraw using the
+   standard DirectDraw drivers. May be some problem with the type of
+   flipping that we are using.
+
+ . Fox & Bear does not run in acceleration anymore with the S3 drivers!
+
+ . Test virtual scrolling mouse cursors and surfaces
+
+ . To support double buffered mouse cursors without having to re-draw
+   the entire page, we can create some new functions to allocate
+   'mouse buffers', one for each page. Then we can keep track of the
+   memory below the mouse for each individual page, and then we can
+   figure out the series of calls (and a call from the app) necessary
+   to make the mouse cursor work with the double buffering properly.
+
+   This should be perfectly doable, and would be totally cool for RPG
+   type games. Also if we combine this with the new mouse cursor code,
+   then we will have a really cool mouse cursor look and feel for the
+   MGL.
+
+ . In order to fix the palette problems when WinQuake is in the background,
+   we need to look at both the code in the WINDC realize palette and
+   in the memory DC realize palette. We also need to change WinQuake so
+   that it calls realize palette on the memory DC as well to update
+   the colors properly for background mode.
+
+ . Palette programming is wigging out in the DEMO program when running
+   under DirectDraw, especially in the palette fade tests and in the
+   RGB dithered polygon tests.
+
+ . Check that mouse cursors in virtual scrolling device contexts work
+   properly. Currently in 3.0 they dont, but I think I have fixed this.
+
+ . MGL_flipBlt(), MGL_flipTransBlt(), MGL_flipBltLin(), MGL_flipTransBltLin()
+   functions should be added to allow bitmaps to be flipped during a blit
+   to the screen. We will need to add a new device driver function to
+   blt a single scanline with flipping that can be used to code up the
+   main function for this for banked devices, and code the entire thing
+   in assembler for linear devices.
+
+   These could actually be very fast in software, and would allow us to
+   cut down on the amount of memory use to store the sprites etc since we
+   can flip on the fly (and flip when downloading to the hardware).
+
+   Also if the hardware has flip blits, then we can utilise that as well
+   in accelerated graphics apps.
+
+ . Add support for flipping the entire display on it's side either to the
+   left or to the right for Portait Display Labs type rendering. In order
+   to properly do this, we will need to translate the mouse coordinates to
+   the new virtual screen dimensions since the vertical height is going to
+   be higher than the horizontal height. The mouse cursor would also have
+   to support being drawn in a 'flipped' mode. We could do this at the
+   rendering level, or we could do this at a higher level before the
+   coordinates are passed to the underlying primitives.
+
+ . Transparent blits with conversion between different color depths. This
+   wont be all that fast, but it would be useful. Stretch blitting from
+   8bpp to 16bpp DC's does not appear to be working properly.
+
+ . Stretch blitting from 4 bit DC's to 15/16 bit DC's. Currently we handle
+   stretching from 8 to higher but not 4 bit (which some new games
+   require).
+
+ . We should also test and add code to fully support 4-bit bitmaps being
+   blitted with transparency, stretching and flipping etc to a destination
+   DC since eventually we will be able to support texture maps of different
+   formats in hardware.
+
+ . In order to provide better support for downloading of sprite data to
+   hardware we should provide new functions to create special bitmaps
+   allocated in offscreen memory on the graphics card. We can then include
+   the offscreen memory manager from the Fox & Bear demo directly in the
+   MGL libraries, and use either than or DirectDraw to manage the surfaces
+   when we create them. The can probably be created and have headers just
+   like normal lightweight bitmaps, but they might have internal data
+   require to store information about the DirectX structures under
+   DirectDraw.
+
+   This would greatly simplify the use of hardware accelerated bitmaps
+   for users under both DOS and DirectDraw, but it would also allow us to
+   support bitmaps that are of a different color format to the main display
+   DC on devices that can support color format translations (ie: Direct3D
+   devices under DirectDraw).
+
+ . Add new mouse cursor code, rendering to a system buffer with a copy of
+   the background for smooth mouse motion. Also add support for color
+   mouse cursors to the new release.
+
+   Add a new configuration option to disable the hardware cursor support
+   for the accelerated drivers. This will be necessary especially if
+   we have color cursor support in the MGL.
+
+ . Put together a source release of the MGL that does not include any
+   assembler code for the printer driver folks and also to help port the
+   MGL to run on the Alpha. We really need to have two versions here;
+   one will be a simple 'C' only version with most functions emulated,
+   and the other will be a 'C' only version with fully optimised C versions
+   of the packed pixel rendering functions that can be used for ports
+   to other operating systems (like Windows NT for other processors, Linux
+   etc).
+
+ . Update installation archives
+
+   . Update the DirectX installation from within the MGL CD-ROM installer.
+
+   . Include the programmer's guide help files in the MGL evaluation
+	 archives!
+
+ . Fox & Bear for Windows is incorrectly determining the DirectDraw
+   driver type when it is really a VBE/AF driver that is being used.
+
+   Only does this when Use Both is selected, so it appears that the
+   correct driver number is not being reported.
+
+ . Recode the 1x2 stretch functions in assembler for all packed pixel
+   drivers.
+
+ . Borland C++ 5.0 compiled Windows demos do not properly switch between
+   DirectDraw and WinDirect device support code.
+
+ . Add support for stippled lines with the stipple count supported by
+   VBE/AF 2.0 drivers.
+
+ . Check the DOS keyboard handling code to properly handle Alt-F with the
+   F key hit before the Alt key.
+
+ . Update documentation
+
+ . Fix bugs with polygon clipping and also zbuffered polygon clipping!!
+
+ . Add DirectSound support to the Fox & Bear demo application.
+
+New MGL functions to document:
+------------------------------
+
+New for DOCs and DEF files:
+
+New for docs only:
+
+MGL/Lite functionality:
+-----------------------
+
+In:
+
+ . Set color
+ . Pixels
+ . Clears
+ . Lines
+ . BitBlt's from system memory to screen and back (no ROP's)
+ . Mouse cursor support
+ . Viewport and clip rectangle support
+
+Definately out:
+
+ . No scanlines
+ . No rectangles
+ . No text output
+ . No markers
+ . No wide pens
+ . No bitmap patterns
+ . No polylines
+ . No polygon
+ . No scanline color scanning
+ . No borders
+ . No ellipses
+ . No stretch blitting.
+ . No divots
+ . No onscreen bitBlt's
+ . No transparent blitting.
+ . No offscreen blitting.
+ . No monochrome bitmap support
+ . No regions
+ . No icon loading/drawing
+ . No bitmap loading/drawing
+ . No PCX loading/drawing
+ . No dithering support.
+ . No bitmap translation support (or palette translation).
+
+Updates for MGL/Lite:
+---------------------
+
+ . Remove the scanline functions from the lite libraries since this will
+   not be necessary unless we have an emulated rectangle fill function.
+
+ . Once we add color mouse cursor support to the library, we will be able
+   to do all mouse cursor rendering using the getImage/putImage functions
+   and can remove the putMonoImage/divotSize/getDivot/putDivot functionsx
+   from the lite libraries to save space.
+
+	getImage(buf);
+	putMouseCursor(buf);	8/16/24/32 bpp versions!
+	putImage(buf);
+
+ . Make the 32 bit DOS support use a proper interrupt driven mouse
+   cursor rather than the current poll based one. It would be nice to be
+   able to do the same thing under Windows, which may be possible if
+   DirectInput is present (not sure if you can install callbacks for
+   mouse movement events).
+
+Future additions for MGL:
+-------------------------
+
+ . Add a new MGL_bitBltRegion() function that will perform a normal BitBlt,
+   but the blt will be clipped to the passed in region to the source
+   device context. This can then be used for doing very fast blt's of
+   arbitrary areas for overlays etc. It could also be done in hardware
+   using the blitter to move each scanline, which would work well for
+   non-transparent blitter hardware.
+
+   If we added a new MGL_bitBltBatch() function to allow blitting of a
+   batch of rectangles, then we could layer the above function directly
+   on top of that (for hardware accelerators). Then we could add a new
+   bltBatch function to the VBE/AF device drivers to full handle multiple
+   small blts very quickly (might make it very fast for transparent cockpit
+   overlays etc).
+
+ . Add a new fastfile set of functions similar to the DirectX stuff that
+   will allow all bitmap files, font files, cursor files and icon files
+   to be loaded into single files.
+
+   Allow the user to register the location of a single fast file for
+   all the bitmaps, fonts, icons and cursors that the application program
+   uses, allowing the app to quickly access all these files.
+
+ . Add support for 32x32 or larger patterns rather than the default 8x8
+   bitmap pattern support (for OpenGL compatibility).
+
+ . Add support for tri and quad lists passed in to render a number of
+   polygons at a time.
+
+ . Add support for native floating point values for the rendering routines,
+   and to do fast float/int conversion in the MGL library.
+
+ . Addition of 1/4/24 bit PCX file support.
+
+ . Add new code to support direct rendering into the windows display buffer
+   using either DCI or our WinDirect libraries for directly rendering
+   into a window. This will allow the Windows code to not require all
+   rendering to occur into a memory DC.
+
+ . Provide the ability to build all the drivers as real 32 bit DLL's
+   for the Windows version. This will allow us to make the MGL much
+   more configurable for the Windows versions, and will cut down on the
+   size of the linkable library demos programs. This would be nice to be
+   able to support under DOS, but probably not likely unless we can write
+   some code to manually load a 32 bit NT style DLL (and then the exact
+   same DLL's can be used for DOS and Windows code, all compiled with
+   Watcom C++).
+
+   This would also mean that adding acceleration support would simply be
+   a matter of adding a new set of MGL 2.0 DLL's to the DRIVERS directory
+   and away you would go!!!
+
+ . Modify the offscreen sprite management code in the MGL to automatically
+   handle allocation of lightweight bitmaps directly from the offscreen
+   memory pool object. This will then allow us to be more compatible with
+   DirectDraw hardware sprites, and will also abstract away from the details
+   of using linear offscreen memory functions in VBE/AF drivers that can
+   handle this. If we do this, we will need to port the C++ offscreen
+   memory management functions from the Fox & Bear demo to to the base
+   MGL libraries.
+
+   Note that we can probably simplify this by making the offscreen memory
+   pool object maintain the details about the allocated objects, and instead
+   of having complicated 'freeing' code, we can simply make all the sprites
+   be freed and require re-downloading when they need to be changed. Ie:
+
+	MGL_spriteBucket.freeAll();
+	MGL_spriteBucket.allocate(width,height);
+
+ . Add fat elliptical arc rendering code. We can do this quickly by
+   computing an elliptical region and chopping out the wedge. This may
+   be slow, but at least it will work for the time being. We can also
+   build the round cornered rectangle code by building a complex region
+   directly with round corners. Possibly MGL 2.1
+
+ . Add support for scaling monochrome bitmaps to any size and rendering.
+   Perhaps what we really need to do is add support for a mono stretchBlt
+   routine that will actually stretch a mono bitmap to the display. Hence
+   the bitmap will not need to be changed, just the code that does the
+   blt operation. We can probably code this up quickly in C to get things
+   going, and do full high speed versions for the MGL 2.1 release.
+
+ . Add code to align the bitmap pattern origin to a new location so
+   that pattern fills can be done properly allowing the pattern to be
+   aligned to any starting pixel coordinate, rather than being locked
+   to global screen coordinates.
+
+ . Add code to make sure write mode ops/patterns etc can be used with
+   zbuffered rendering code. The low level driver code will not
+   draw zbuffered/shaded lines with XOR mode correctly. Also dithered
+   lines will never be XOR'ed properly. Probably need to do this by
+   coding up emulated C code versions of the functions that call putPixel.
+
+ . Proper high speed pixmap rendering code. This should actually be
+   pretty simple to code up, and in fact prototype code for this
+   could actually be written easily in C for each specific driver.
+
+ . Add support for rounded rectangles to the MGL.
+
+ . Change 8 bit dithered rendering code to render using a pre-computed
+   8x8 pixmap rather than doing on the fly dithering
+
+ . Add support for 15/16 bit dithering using pre-computed pixmaps and
+   also for smooth shaded primitives
+
+ . Texture mapped polygon support. We need to add support for 2D and
+   3D texture mapped polygons. For 3D polygons we need to support
+   either non-perspective correct and perspective correct. Note sure
+   what we will need to to about mip-mapping, but this can probably
+   be handlered at a higher level and all you do is simply select
+   the bitmap to be used as the texture before you call this routine.
+
+ . Floating point primitive support routines in addition to all
+   fixed point primitive routines. We can add routines for drawing
+   lines, polygons, tris and quads (flat, smooth, zbuffered, textured
+   etc) that take all coordinates in floating point format. We will
+   then have special routines internally that will do all polygon
+   setup code directly in floating point, and converting at the last
+   minute to integer fixed point format before being used by the
+   rasteriser engine (the trap functions will only ever work in fixed
+   point).
+
+   In order to support *efficient* conversions from floating point to
+   integer at the last stage before rasterisation (ie: after computing
+   the slopes etc) we can either change the control word before and
+   after the polygon is rendered, or we could actually have a function
+   MGL_beginFloatRendering() and MGL_endFloatRendering() that will
+   do this and can be used by the high level code to bracket mutiple
+   polygon rendering requests. As long as we note in the docs that
+   between these two calls the default rounding mode will have been
+   changed. This wont actually affect normal C code as the code to
+   convert to integer format always saves/restores the current
+   control word anyway!
+
+   This will also allow us to directly support new 3D hardware that
+   can take coordinates in floating point directly for maximum speed
+   without any overheads.
+
+   We may need to ensure that we have a special version of the MGL
+   available without any floating point code, so this stuff should
+   be able to be compiled out.
+
+ . Modify the segment definition to include both X1 and X2 coordinates in
+   the same segment and re-write the underlying algebra routines. This
+   will make the memory requirements significantly smaller for complex
+   regions and will make it faster (but the algebra routines will
+   be more complicated).
+
+New Zbuffer tricks:
+-------------------
+
+ . Add support for rendering to the Z-buffer but to skip the normal
+   zbuffer test and to only write directly to the buffer. This way we
+   can actually use BSP trees for high level scene management stuff
+   and use zbuffering for rendering the BSP trees (without checking Z)
+   and then user normal Z-buffering to render the objects in the
+   scene.
+
+ . Add support for faster zbuffer clearing code to the Quick3D libraries.
+   Perhaps we should not make this stuff available in source form after
+   all?? But then again this is an application issue that can also be
+   used under OpenGL or whatever.
+
+ . Optionally you can use a 16 bit count in the upper word of the zbuffer
+   value which you can use to ensure that new values are always larger,
+   and still use a normal 16 bit value for the lower 16 bits of the
+   zbuffer value. Then you would never need to clear the Z-buffer for a
+   whole 36 hours at 30 fps!!

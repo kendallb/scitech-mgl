@@ -1,0 +1,1 @@
+#define EMPTY_LICENSE

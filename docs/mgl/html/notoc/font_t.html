@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>font_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        font_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        struct font_t {<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; name[_MGL_FNAMESIZE];<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontType;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; maxWidth;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; maxKern;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontWidth;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; fontHeight;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ascent;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; descent;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; leading;<br />
+        &#160;&#160;&#160; short&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; pointSize;<br />
+        &#160;&#160;&#160; }
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure representing an MGL font ready for drawing. MGL fonts are
+        loaded from disk in two flavors, either vector fonts or bitmap fonts.
+        Vector fonts represent the characters in the font as a set of lines
+        that are drawn, and vector fonts can be scaled and rotated to any
+        desired angle. Vector fonts however do not look very good when
+        rasterized at high resolutions. Bitmap fonts represent the characters
+        in the font as small monochrome bitmaps, and can be either fixed width
+        fonts or proportional fonts. Bitmap fonts are also what are generated
+        when you load a TrueType or Adobe Type 1 scalable font library from
+        disk.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

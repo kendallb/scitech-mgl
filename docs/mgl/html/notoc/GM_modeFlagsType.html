@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_modeFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_modeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; GM_MODE_8BPP&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x01,<br />
+        &#160;&#160;&#160; GM_MODE_16BPP&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x02,<br />
+        &#160;&#160;&#160; GM_MODE_24BPP&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x04,<br />
+        &#160;&#160;&#160; GM_MODE_32BPP&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x08,<br />
+        &#160;&#160;&#160; GM_ONLY_2D_ACCEL&#160;&#160;&#160; = 0x10,<br />
+        &#160;&#160;&#160; GM_ONLY_3D_ACCEL&#160;&#160;&#160; = 0x20,<br />
+        &#160;&#160;&#160; GM_ALLOW_WINDOWED&#160;&#160; = 0x40,<br />
+        &#160;&#160;&#160; GM_MODE_ALLBPP&#160;&#160;&#160;&#160;&#160; = 0x0F<br />
+        &#160;&#160;&#160; } GM_modeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm\gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Mode flags to pass to <a href="GM_init.html">GM_init</a>. These flags
+        inform the Game Framework which color depths you want to support in
+        your game, and can be a logical OR combination of all the available
+        flags. Hence if you game only supports 8bpp modes then you would pass
+        in GM_MODE_8BPP. If you game only supports 8bpp and 16bpp, then you
+        would pass in GM_MODE_8BPP | GM_MODE_16BPP.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; GM_MODE_16BPP includes support for both 15bpp
+          (5:5:5) and 16bpp (5:6:5) MGL modes and if you support GM_MODE_16BPP
+          then you will have to be able to support either format on the end
+          users system.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_MODE_8BPP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Include support for 8bpp modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_MODE_16BPP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Include support for 15bpp and 16bpp modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_MODE_24BPP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Include support for 24bpp modes (3 bytes per pixel)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_MODE_32BPP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Include support for 32bpp modes (4 bytes per pixel)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_ONLY_2D_ACCEL
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Only include modes with 2D hardware support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_ONLY_3D_ACCEL
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Only include modes with 3D hardware support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_ALLOW_WINDOWED
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Allow for windowed only modes in mode list
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                GM_MODE_ALLBPP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Include support for all color depths
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

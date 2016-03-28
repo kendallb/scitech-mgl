@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_blendFuncType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_bitBltFxFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_bitBltFxFlagsType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_bitBltFxFlagsType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_bufferFlagsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_bufferFlagsType.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_bufferFlagsType" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_blendFuncType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MGL_BLEND_NONE,<br />
+        &#160;&#160;&#160; MGL_BLEND_ZERO,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONE,<br />
+        &#160;&#160;&#160; MGL_BLEND_SRCCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSSRCCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_SRCALPHA,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSSRCALPHA,<br />
+        &#160;&#160;&#160; MGL_BLEND_DSTALPHA,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSDSTALPHA,<br />
+        &#160; &#160;&#160;MGL_BLEND_DSTCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSDSTCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_SRCALPHASATURATE,<br />
+        &#160;&#160;&#160; MGL_BLEND_CONSTANTCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSCONSTANTCOLOR,<br />
+        &#160;&#160;&#160; MGL_BLEND_CONSTANTALPHA,<br />
+        &#160;&#160;&#160; MGL_BLEND_ONEMINUSCONSTANTALPHA,<br />
+        &#160;&#160;&#160; MGL_BLEND_SRCALPHAFAST,<br />
+        &#160;&#160;&#160; MGL_BLEND_CONSTANTALPHAFAST<br />
+        &#160;&#160;&#160; } MGL_blendFuncType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for 2D alpha blending functions supported by the SciTech MGL. The
+        values in here define the the alpha blending functions passed to the <a href="MGL_setBlendFunc.html">MGL_setBlendFunc</a> function.
+        Essentially the blend function defines how to combine the source and
+        destination pixel colors together to get the resulting destination
+        color during rendering. The formula used for this is defined as:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * SrcFunc + DstColor * DstFunc;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the source alpha blending function is set to MGL_BLEND_CONSTANTALPHA,
+        the SrcFunc above becomes:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        SrcFunc = ConstAlpha
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the destination alpha blending function is set to
+        MGL_BLEND_ONEMINUSDSTALPHA then DstFunc above becomes:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstFunc = (1-DstAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        and the final equation becomes (note that each color channel is
+        multiplied individually):
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * ConstAlpha + DstColor * (1-DstAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Although the above is a completely contrived example, it does illustrate
+        how the functions defined below combine to allow you to build complex
+        and interesting blending functions. For simple source alpha
+        transparency, the following formula is usually used:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * SrcAlpha + DstColor * (1-SrcAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to use this type of blending and you do not care about the
+        resulting alpha channel information, you can set the optimised
+        MGL_BLEND_SRCALPHAFAST blending mode. If you set both the source and
+        destination blending modes to this value, the above formula will be
+        used but an optimised fast path will be taken internally to make this
+        run as fast as possible. For normal blending operations this will be
+        much faster than setting the above formula manually. If however you
+        need the destination alpha to be preserved, you will need to use the
+        slower method instead.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        For simple constant alpha transparency, the following formula is usually
+        used:
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        DstColor = SrcColor * ConstantAlpha + DstColor * (1-ConstantAlpha)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to use this type of blending and you do not care about the
+        resulting alpha channel information, you can set the optimised
+        MGL_BLEND_CONSTANTALPHAFAST blending mode. If you set both the source
+        and destination blending modes to this value, the above formula will be
+        used but an optimised fast path will be taken internally to make this
+        run as fast as possible. For normal blending operations this will be
+        much faster than setting the above formula manually. If however you
+        need the destination alpha to be preserved, you will need to use the
+        slower method instead.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; All the above equations assume the color values
+          and alpha values are in the range of 0 through 1 in floating point.
+          In reality all blending is done with integer color and alpha
+          components in the range of 0 to 255, when a value of 255 corresponds
+          to a value of 1.0 in the above equations.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The constant color value set by a call to <a href="MGL_setColor.html">MGL_setColor</a>,
+          and the constant alpha value set by a call to <a href="MGL_setAlphaValue.html">MGL_setAlphaValue</a>.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Setting a blending function that uses the
+          destination alpha components is only supported if the framebuffer
+          currently supports destination alpha. Likewise setting a blending
+          function that uses source alpha components is only supported if the
+          framebuffer or incoming bitmap data contains an alpha channel. The
+          results are undefined if these conditiions are not met.
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; Enabling source or destination alpha blending
+          overrides the setting of the current write mode. Logical write modes
+          and blending cannot be used at the same time.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_NONE
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No alpha blending
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ZERO
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is always zero
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONE
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is always one
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_SRCCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is source color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSSRCCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-source color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_SRCALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is source alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSSRCALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-source alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_DSTALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is destination alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSDSTALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-destination alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_DSTCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is destination color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSDSTCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-destination color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_SRCALPHASATURATE
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is src alpha saturation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_CONSTANTCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is a constant color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSCONSTANTCOLOR
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-constant color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_CONSTANTALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is constant alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_ONEMINUSCONSTANTALPHA
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Blend factor is 1-constant alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_SRCALPHAFAST
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Common case of optimised src alpha
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:209.5pt;padding:'0in .5pt 0in .5pt';" width="349" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLEND_CONSTANTALPHAFAST
+              </p>
+            </td>
+            <td style="width:190.0pt;padding:'0in .5pt 0in .5pt';" width="317" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Common case of optimised constant alpha
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

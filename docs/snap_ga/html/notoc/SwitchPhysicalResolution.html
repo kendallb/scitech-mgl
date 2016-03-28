@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>SwitchPhysicalResolution</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading4">
+        SwitchPhysicalResolution
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Switches the physical resolution and refresh rate for a display mode
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        N_int32 NAPI GA_initFuncs::SwitchPhysicalResolution(<br />
+        &#160;&#160;&#160; N_int32 physicalXResolution,<br />
+        &#160;&#160;&#160; N_int32 physicalYResolution,<br />
+        &#160;&#160;&#160; N_int32 refreshRate)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                physicalXResolution
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                New physical X resolution to program
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                physicalYResolution
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                New physical Y resolution to program
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                refreshRate
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                New refresh rate to program
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        0 on success, -1 on failure
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function is used to switch the physical resolution or refresh rate
+        for the current display mode. This will be done in a non-destructive
+        manner such that the screen and current hardware acceleration state are
+        preserved. This function is used primarily to enable and disable
+        different levels of hardware panning or 'zooming' in the display driver
+        (ie: 640x480 physical display resolution, 1024x768 virtual). It can
+        also be used to change the refresh rate without changing the physical
+        resolution.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the physicalXResolution or physicalYResolution parameters are set to
+        -1, the physical resolution of the screen is obtained from the physical
+        resolution of the currently active display mode, otherwise the passed
+        in values are used. The refresh rate is always used, but if you pass in
+        a value of 0, the default refresh rate for the current display mode
+        will be used to program the hardware.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="PollForDisplaySwitch.html">PollForDisplaySwitch</a>, <a href="PerformDisplaySwitch.html">PerformDisplaySwitch</a>,
+        <a href="SwitchPhysicalResolution.html">SwitchPhysicalResolution</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

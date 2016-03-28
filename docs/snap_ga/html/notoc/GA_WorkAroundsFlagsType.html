@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_WorkAroundsFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_WorkAroundsFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaSlowBltSys&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; gaHWCursor32x32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; gaHWCursorBlackBackground&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; gaSlow24bpp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; gaSlow32bpp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; gaBrokenLines&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020,<br />
+        &#160;&#160;&#160; gaNoDDCBIOS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; gaNoWriteCombine&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000080,<br />
+        &#160;&#160;&#160; gaNoInterlacedCursor&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000100,<br />
+        &#160;&#160;&#160; gaHWCursorBlackAndWhite8bpp&#160;&#160;&#160;&#160; =
+        0x00000200,<br />
+        &#160;&#160;&#160; gaNoLCDSwitching&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000400,<br />
+        &#160;&#160;&#160; gaNoLCDExpandCursor&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000800,<br />
+        &#160;&#160;&#160; gaUsesBIOS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00001000,<br />
+        &#160;&#160;&#160; gaNeedFullBIOS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00002000,<br />
+        &#160;&#160;&#160; gaNeedContiguousFlipBuffers&#160;&#160;&#160;&#160; =
+        0x00004000,<br />
+        &#160;&#160;&#160; gaNeed3DTiledAddressing&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00008000,<br />
+        &#160;&#160;&#160; gaNoWHQLTransparentBlit&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00010000<br />
+        &#160;&#160;&#160; } GA_WorkAroundsFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for the WorkArounds member of the <a href="GA_devCtx.html">GA_devCtx</a> structure.
+        These flags define conditions for uncommon hardware bugs that can't
+        easily be handled via the generic SNAP Graphics information reporting
+        mechanism. Any code that calls the SNAP Graphics hardware drivers
+        directly must be aware of these workarounds and how to deal with them.
+        However the SNAP Graphics Software Reference Rasteriser knows how to
+        deal with all currently known bugs, so application developers should
+        use the reference rasteriser at all times for maximum compatibility
+        with new hardware drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaSlowBltSys flag indicates that the hardware BitBltSys function is
+        faster than a direct linear framebuffer software blit. Most modern
+        hardware can do a software blit as fast or faster than using the
+        hardware, but some hardware can be faster than a pure software blit.
+        This is only true when the mix mode is GA_REPLACE_MIX, since software
+        reads from the framebuffer over the PCI bus are terribly slow.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaHWCursor32x32 flag indicates that the hardware only supports a
+        32x32 hardware cursor, while the SNAP Graphics specification implements
+        an interface for 64x64 hardware cursors. SNAP Graphics drivers will
+        still implement hardware cursor support for hardware that only supports
+        a 32x32 cursor, however this flag will be set. If the high level
+        operating system drivers require a cursor larger than 32x32, then this
+        flag should be checked and a software cursor used in it's place when
+        this is the case.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaSlow24bpp flag indicates that although the 24bpp display modes are
+        accelerated, they are only partically accelerated. Hence if there is an
+        equiavlent 32bpp display mode, that most should be used in preference
+        to the 24bpp display mode if possible.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaSlow32bpp flag indicates that although the 32bpp display modes are
+        accelerated, they are only partically accelerated. Hence if there is an
+        equiavlent 24bpp display mode, that most should be used in preference
+        to the 32bpp display mode if possible.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBrokenLines flag indicates that the hardware line drawing produces
+        slightly different pixels than the software reference rasterizer and
+        cannot be made to produce correct pixels. For this reason, conformance
+        testing for line drawing will be skipped on this hardware.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoDDCBIOS flag is an internal flag to indicate that the card does
+        not have DDC BIOS support, and hence we should not attempt to use the
+        DDC BIOS functions to read the EDID for legacy devices.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoWriteCombine flag is an internal flag to indicate that the
+        graphics chipset does not work properly when write combining is enabled
+        for later processors. If write combining is used, it may cause the
+        system to lock or hang.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoInterlacedCursor flag is an internal flag to indicate that the
+        graphics chipset does not properly handle hardware cursors in
+        interlaced display modes. Hence a software cursor should be used
+        instead for these modes.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoLCDSwitching flag is set if the SetOptions function does not
+        properly implement LCD/CRT switching. This is usually set for
+        situations where the BIOS is not working properly, and it will be up to
+        the user to use the function keys on the laptop to do the switching.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoLCDExpandCursor flag is set if the hardware does not support the
+        hardware cursor correctly in LCD panel expansion modes. Hence a
+        software mouse cursor should be used instead.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaUsesBIOS flag is set if the driver internally uses the BIOS for
+        mode sets. This is mostly a flag to let the OS/2 driver know that it
+        does not need to implement BIOS specific hacks that can slow down mode
+        switching as the BIOS is already being used internally in the drivers.
+        The BIOS is generally only used for laptop support and for legacy
+        drivers where there is not enough information available to work without
+        the BIOS.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaSlowBltSys
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Software is slower than hardware for GA_REPLACE_MODE
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHWCursor32x32
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The hardware cursor is only 32x32 in size
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHWCursorBlackBackground
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The hardware cursor requires that the background color always be
+                black (0's)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaSlow24bpp
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The 24bpp modes are only partially accelerated
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaSlow32bpp
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The 32bpp modes are only partially accelerated
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBrokenLines
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The hardware line drawing is not conformant
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoDDCBIOS
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Card does not have DDC BIOS support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoWriteCombine
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Card does not support write combining
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoInterlacedCursor
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                HW cursor in interlaced modes is broken
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaHWCursorBlackAndWhite8bpp
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The hardware cursor in 8bpp is always black and white and cannot
+                be changed.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoLCDSwitching
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                This flag is set if LCD switching does not work
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoLCDExpandCursor
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                This flag is set to disable cursor in LCD expand modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaUsesBIOS
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Internally this driver uses the BIOS
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNeedFullBIOS
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                This driver needs a full BIOS implementation on OS/2 in order to
+                function
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNeedContiguousFlipBuffers
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Contiguous flip buffers needed for Win32 DirectDraw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNeed3DTiledAddressing
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                3D tiled addressing needed for Win32 DirectDraw
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:189.5pt;padding:'0in .5pt 0in .5pt';" width="316" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoWHQLTransparentBlit
+              </p>
+            </td>
+            <td style="width:210.0pt;padding:'0in .5pt 0in .5pt';" width="350" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Chipset does not support WHQL style transparent blits.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

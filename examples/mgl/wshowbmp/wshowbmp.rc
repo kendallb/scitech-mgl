@@ -1,0 +1,69 @@
+/****************************************************************************
+*
+*					SciTech Multi-platform Graphics Library
+*
+*  ========================================================================
+*
+*   Copyright (C) 1991-2002 SciTech Software, Inc. All rights reserved.
+*
+*   This file may be distributed and/or modified under the terms of the
+*   GNU General Public License version 2 as published by the Free
+*   Software Foundation and appearing in the file LICENSE.GPL included
+*   in the packaging of this file.
+*
+*   Licensees holding a valid Commercial License for this product from
+*   SciTech Software, Inc. may use this file in accordance with the
+*   Commercial License Agreement provided with the Software.
+*
+*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+*   PURPOSE.
+*
+*   See http://www.scitechsoft.com/license/ for information about
+*   the licensing options available and how to purchase a Commercial
+*   License Agreement.
+*
+*   Contact license@scitechsoft.com if any conditions of this licensing
+*   are not clear to you, or you have questions about licensing options.
+*
+*  ========================================================================
+*
+* Description:	Resource file for MGLDOG sample app.
+*
+****************************************************************************/
+
+#ifndef WORKSHOP_INVOKED
+  #include <windows.h>
+#endif
+#include "wshowbmp.rh"
+
+AppIcon ICON "wshowbmp.ico"
+
+AppAbout DIALOG 22, 17, 144, 75
+STYLE WS_POPUP | WS_DLGFRAME | 0x4
+{
+ CTEXT "MGL %s for Windows", IDC_VERSION_STR, 0, 10, 144, 8
+ CTEXT "Bitmap Loading Demo", -1, 4, 25, 135, 8
+ CTEXT "Copyright (c) 1996 SciTech Software.", -1, 6, 39, 132, 9
+ DEFPUSHBUTTON "OK", IDOK, 56, 55, 32, 14, WS_GROUP
+}
+
+AppMenu MENU
+{
+ POPUP "&File"
+ {
+  MENUITEM "&Open...", MENU_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "&About...", MENU_ABOUT
+  MENUITEM "E&xit", MENU_EXIT
+ }
+
+ POPUP "&Options"
+ {
+  MENUITEM "Stretch to Window", MENU_STRETCH_TOWINDOW
+  MENUITEM "Include Static Colors", MENU_STATIC_COLORS
+  MENUITEM "Animate Palette", MENU_ANIMATE_PALETTE
+ }
+
+}
+

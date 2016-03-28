@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_globalOptions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_funcGroupsType" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_funcGroupsType.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_funcGroupsType" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="GA_initFuncs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('GA_initFuncs.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="GA_initFuncs" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Type Definitions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('TypeDefinitions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Type Definitions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_globalOptions
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwSize;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVirtualDisplay;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bPortrait;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bFlipped;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bInvertColors;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEOnly;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVGAOnly;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bReserved1;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wCertifiedVersion;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bNoWriteCombine;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bAllowNonCertified;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bLCDUseBIOS;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;bUseMemoryDriver;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wSysMemSize;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwReserved2;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUseLinear;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUsePal;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUsePM32;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bReserved2;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUseVBE20;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUseVBE30;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUsePM;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUseSCI;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVBEUseDDC;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGDIUseAccel;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGDIUseBrushCache;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGDIUseBitmapCache;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;bDXUseAccel2D;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDXUseAccel3D;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDXUseAccelVideo;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDXWaitRetrace;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwCPLFlags;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwSharedAGPMemSize;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bUseVBECore;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bUseVGACore;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwCheckForUpdates;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bNoDDCDetect;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDisableLogFile;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bCheckWebSelection;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wMonitorHSize;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wMonitorVSize;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wOptimizedModeXRes;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wOptimizedModeYRes;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; wOptimizedModeBits;<br />
+        &#160;&#160;&#160; GA_recMode&#160;&#160;&#160;&#160;&#160; recommendedMode;<br />
+        &#160;&#160;&#160; GA_recMode&#160;&#160;&#160;&#160;&#160; recommendedMode8;<br />
+        &#160;&#160;&#160; GA_recMode&#160;&#160;&#160;&#160;&#160; recommendedMode16;<br />
+        &#160;&#160;&#160; GA_recMode&#160;&#160;&#160;&#160;&#160; recommendedMode24;<br />
+        &#160;&#160;&#160; GA_recMode&#160;&#160;&#160;&#160;&#160; recommendedMode32;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bAGPFastWrite;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res1[67];<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; virtualSize;<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; resolutions[GA_MAX_VIRTUAL_DISPLAYS];<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; bounds[GA_MAX_VIRTUAL_DISPLAYS];<br />
+        &#160;&#160;&#160; } GA_globalOptions
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure returned by <a href="GA_getGlobalOptions.html">GA_getGlobalOptions</a>,
+        which contains configuration information about the options effective
+        for all installed display devices. This structure also contains the
+        layout information used for multi-controller options in SNAP Graphics
+        (such as what screen is located where).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The dwSize member is intended for future
+          compatibility, and should be set to the size of the structure as
+          defined in this header file. Future drivers will be compatible with
+          older software by examiming this value.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwSize
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set to size of structure in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bVirtualDisplay
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable virtual display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bPortrait
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable portrait display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bFlipped
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flipped display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bInvertColors
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable invert color mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bVBEOnly
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable VBE/Core fallback driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bVGAOnly
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable VGA fallback driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bReserved1
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reverved option; must always be zero!
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bAllowNonCertified
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Allow uncertified drivers to load
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                wCertifiedVersion
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Version of certify program to allow
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bNoWriteCombine
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Disable write combining
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bLCDUseBIOS
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable use of BIOS when on the LCD panel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bUseMemoryDriver
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable system memory driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                wSysMemSize
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Amount of memory to allocate for sysmem driver (Kb)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwCPLFlags
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Place to store control panel UI settings
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwSharedAGPMemSize
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Amount of shared AGP memory to use for framebuffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bUseVBECore
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Use the VBE/Core emulation driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bUseVGACore
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Use the VGA/Core emulation driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwCheckForUpdates
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Time stamp to check for updates next
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bNoDDCDetect
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Disable automatic DDC monitor detection
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDisableLogFile
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Disable logging of information to log file
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bCheckWebSelection
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                SDD GUI specific value for web check updates
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                virtualSize
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Virtual size for multi-controller displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                resolutions
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical resolutions for multi-controller displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bounds
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Virtual layout for multi-controller displays
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>winmng_t</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        winmng_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; globalevententry_t&#160;&#160;&#160; *globalEventHandlers;<br />
+        &#160;&#160;&#160; captureentry_t&#160;&#160;&#160;&#160;&#160;&#160; &#160;*capturedEvents;<br />
+        &#160;&#160;&#160; cursor_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *globalCursor;<br />
+        &#160;&#160;&#160; struct window_t&#160;&#160;&#160;&#160;&#160;&#160; *rootWnd;<br />
+        &#160;&#160;&#160; struct window_t&#160;&#160;&#160;&#160;&#160;&#160; *activeWnd;<br />
+        &#160;&#160;&#160; MGLDC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *dc;<br />
+        &#160;&#160;&#160; region_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; *invalidatedRegion;<br />
+        &#160;&#160;&#160; attributes_t&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; dcAttrs;<br />
+        &#160;&#160;&#160; ibool&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;updatingDC;<br />
+        &#160;&#160;&#160; } winmng_t
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This structure represents MGL window manager. MGL WM provides
+        functionality similar to that of Xlib, i.e. bare minimum needed to
+        implement windowing environment on top of SciTech MGL. That is, it
+        manages hierarchy of rectangular windows, takes care of proper
+        repainting (but you must provide painter functions for all windows) and
+        clipping and distributes input events among the windows.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        You must create an instance of this object with <a href="MGL_wmCreate.html">MGL_wmCreate</a> prior
+        to using WM functionality and destroy it before shutting MGL down with <a href="MGL_wmDestroy.html">MGL_wmDestroy</a>.
+        <a href="winmng_t.html">winmng_t</a> object is attached to a device
+        context and this device context must not be manipulated by user code
+        other then via painter callbacks (see <a href="MGL_wmSetWindowPainter.html">MGL_wmSetWindowPainter</a>)
+        or via DC obtained from <a href="MGL_wmBeginPaint.html">MGL_wmBeginPaint</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                globalEventHandlers
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Table of event handlers that are used prior to window specific
+                ones
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                capturedEvents
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Captured events redirection table
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                globalCursor
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Currently selected global cursor or NULL
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rootWnd
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The root window that is parent of all other windows
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                activeWnd
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                The window under mouse pointer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context associated with the manager
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                invalidatedRegion
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Area of device context that needs repainting
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dcAttrs
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Pointer to next capture entry in the chain
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:149.5pt;padding:'0in .5pt 0in .5pt';" width="249" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                updatingDC
+              </p>
+            </td>
+            <td style="width:250.0pt;padding:'0in .5pt 0in .5pt';" width="417" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                true if inside <a href="MGL_wmUpdateDC.html">MGL_wmUpdateDC</a>,
+                false otherwise
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

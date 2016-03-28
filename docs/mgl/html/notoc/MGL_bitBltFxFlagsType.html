@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_bitBltFxFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_bitBltFxFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MGL_BLT_WRITE_MODE_ENABLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; MGL_BLT_STRETCH_NEAREST&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; MGL_BLT_STRETCH_XINTERP&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; MGL_BLT_STRETCH_YINTERP&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; MGL_BLT_COLOR_KEY_SRC_SINGLE&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; MGL_BLT_COLOR_KEY_SRC_RANGE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020,<br />
+        &#160;&#160;&#160; MGL_BLT_COLOR_KEY_DST_SINGLE&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; MGL_BLT_COLOR_KEY_DST_RANGE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000080,<br />
+        &#160;&#160;&#160; MGL_BLT_FLIPX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000100,<br />
+        &#160;&#160;&#160; MGL_BLT_FLIPY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000200,<br />
+        &#160;&#160;&#160; MGL_BLT_BLEND&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000400,<br />
+        &#160;&#160;&#160; MGL_BLT_DITHER&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00002000,<br />
+        &#160;&#160;&#160; MGL_BLT_ANY_STRETCH&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        MGL_BLT_STRETCH_NEAREST | MGL_BLT_STRETCH_XINTERP |
+        MGL_BLT_STRETCH_YINTERP,<br />
+        &#160;&#160;&#160; MGL_BLT_ANY_SINGLE_COLOR_KEY&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        MGL_BLT_COLOR_KEY_SRC_SINGLE | MGL_BLT_COLOR_KEY_DST_SINGLE,<br />
+        &#160;&#160;&#160; MGL_BLT_ANY_RANGE_COLOR_KEY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        MGL_BLT_COLOR_KEY_SRC_RANGE | MGL_BLT_COLOR_KEY_DST_RANGE,<br />
+        &#160;&#160;&#160; MGL_BLT_ANY_COLOR_KEY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        MGL_BLT_ANY_SINGLE_COLOR_KEY | MGL_BLT_ANY_RANGE_COLOR_KEY<br />
+        &#160;&#160;&#160; } MGL_bitBltFxFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for hardware blitting with special effects, passed to the BltBltFx
+        family of functions. This family of functions exposes a wide variety of
+        special effects blitting if the hardware is capable of these functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_WRITE_MODE_ENABLE flag enables logical write modes for
+        extended BitBlt functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_STRETCH_NEAREST flag enables stretching with nearest pixel
+        filtering.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_STRETCH_XINTERP flag enables stretching with linearly
+        interpolated filtering in the X direction.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_STRETCH_XINTERP flag enables stretching with linearly
+        interpolated filtering in the Y direction.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_COLOR_KEY_SRC_SINGLE flag enables source transparent color
+        keying with single color key. When source color keying is enabled, any
+        pixel data in the incoming bitmap that matches the color key value in
+        colorKeyLo value will be ignored and not drawn to the destination
+        surface. This essentially makes those source pixels transparent.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_COLOR_KEY_SRC_RANGE flag enables source transparent color
+        keying with a range of color keys values. This is the same as single
+        source color keying, but the color key values may be allows to fall
+        within a range of available colors defined in colorKeyLo and
+        colorKeyHi. This is useful if the data has been filtered causing the
+        colors to shift slightly.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_COLOR_KEY_DST_SINGLE flag enables destination transparent
+        color keying with single color key. When destination color keying is
+        enabled (sometimes called blue-screening), any destination pixels in
+        the framebuffer that match the color key value in colorKeyLo, will
+        cause the source input pixels to be ignored.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_COLOR_KEY_DST_RANGE flag enables destination transparent
+        color keying with a range of color keys values. This is the same as
+        single destination color keying, but the color key values may be allows
+        to fall within a range of available colors defined in colorKeyLo and
+        colorKeyHi.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_FLIPX flag enables bitmap flipping in the X axis. This is
+        useful for 2D sprite based games and animation where the same sprite
+        data can be reused for characters going left or right on the screen by
+        flipping the data during the blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_FLIPY flag enables bitmap flipping in the Y axis. This is
+        useful for 2D sprite based games and animation where the same sprite
+        data can be reused for characters going up or down on the screen by
+        flipping the data during the blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_BLEND flag enables alpha blending. When you enable alpha
+        blending the values in srcBlendfunc and dstBlendFunc members of <a href="bltfx_t.html">bltfx_t</a> are
+        used to determine the blending operation to apply to the pixels.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The MGL_BLT_DITHER flag enables dithering when color converting an RGB
+        bitmap to a color depth of a lower pixel depth. This will occur when
+        converting any RGB bitmap (ie: 15, 16, 24 or 32-bit) to a color index
+        pixel format, or when converting 24 or 32-bit bitmaps to 15 or 16-bit
+        bitmaps. If dithering is not enabled, the clostes color to the source
+        pixel will be found and drawn into the framebuffer. Dithering slows
+        things down somewhat when dithering to 15/16-bit destination bitmaps,
+        but produces better quality. Dithering down to 8-bit bitmaps looks best
+        if a halftone palette is used, and in fact is a lot faster than using
+        the closest color method (which has to search the color palette for
+        every pixel drawn). Dithering to 8-bit bitmaps will however map to any
+        palette, but the quality is best if a halftone palette is used.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; For the most part any feature can be combined
+          with any other feature with the <a href="MGL_bitBltFx.html">MGL_bitBltFx</a> family
+          of functions. However some features are mutually exclusive, such as
+          blending a logical write modes. Also blending is only available if
+          the destination pixel format is not a color index pixel format.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_WRITE_MODE_ENABLE
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Write mode enabled
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_STRETCH_NEAREST
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable stretching, nearest pixel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_STRETCH_XINTERP
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable X axis filtering for stretch blit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_STRETCH_YINTERP
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable Y axis filtering for stretch blit
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_COLOR_KEY_SRC_SINGLE
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Source color keying enabled, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_COLOR_KEY_SRC_RANGE
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Source color keying enabled, range of colors
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_COLOR_KEY_DST_SINGLE
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Destination color keying enabled, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_COLOR_KEY_DST_RANGE
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Destination color keying enabled, range of colors
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_FLIPX
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flip in X axis
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_FLIPY
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flip in Y axis
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_BLEND
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable alpha blending
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_DITHER
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Dither if an 8/15/16bpp destination
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_ANY_STRETCH
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flags that any stretching is enabled
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_ANY_SINGLE_COLOR_KEY
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flags that any single color key is enabled
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_ANY_RANGE_COLOR_KEY
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flags that any range color key is enabled
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:194.5pt;padding:'0in .5pt 0in .5pt';" width="324" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_BLT_ANY_COLOR_KEY
+              </p>
+            </td>
+            <td style="width:205.0pt;padding:'0in .5pt 0in .5pt';" width="342" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Flags that any color key is enabled
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

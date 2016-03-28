@@ -1,0 +1,42 @@
+Be sure to read the svgalib.FAQ man 7 svgalib.faq
+
+Have to decide what exactly is G320x200x256 (VGA Mode 13h or SVGA
+packed-pixel).  A separate Mode X would be nice too.
+
+A set of functions to handle page-flipping would be nice. (e.g. a
+vga_setvideopage() that returns the new video start address)
+
+Support for more chipsets?
+
+Clean up keyword parsing code.
+
+Kernel support for page-flipping.
+
+automatic console restore on device close.
+
+really reliable vc switching.
+
+irq-driven accelerator management.
+
+There are races in the mouse code when the mouse device is closed in the
+signal handler on a vc switch. Again, probably kernel support is due.
+
+start marking functions that will become obsolete.
+
+Move away from hard-coded mode numbers:
+
+	Think what would happen if a program is compiled to call
+	vga_setmode(G1280x1024x256) and we change the mode number to
+	something else...  This has happened before.  The solution is either
+	to provide a getmodenum(xres, yres, colordepth, layout) function, or
+	a setmode(xres, yres, colordepth, layout) function or vow not to
+	change the definitions of the mode numbers (i.e. new modes can only
+	be added to the end of the list).
+
+More RamDAC support.  The S3 code should have no problem with 868, Trio and
+9xx chips except that boards that uses those chips usually uses
+newer/unsupported RamDACs as well.
+
+Multiple-adaptor support.
+
+IBM RGB52x >8bpp support.

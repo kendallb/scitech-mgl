@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>EVT_eventMaskType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        EVT_eventMaskType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; EVT_KEYEVT&#160;&#160;&#160;&#160;&#160; =
+        (EVT_KEYDOWN | EVT_KEYREPEAT | EVT_KEYUP),<br />
+        &#160;&#160;&#160; EVT_MOUSEEVT&#160;&#160;&#160; = (EVT_MOUSEDOWN |
+        EVT_MOUSEAUTO | EVT_MOUSEUP | EVT_MOUSEMOVE),<br />
+        &#160;&#160;&#160; EVT_MOUSECLICK&#160; = (EVT_MOUSEDOWN |
+        EVT_MOUSEUP),<br />
+        &#160;&#160;&#160; EVT_JOYEVT&#160;&#160;&#160;&#160;&#160; =
+        (EVT_JOYCLICK | EVT_JOYMOVE),<br />
+        &#160;&#160;&#160; EVT_EVERYEVT&#160;&#160;&#160; = 0x7FFFFFFF<br />
+        &#160;&#160;&#160; } EVT_eventMaskType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        event.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the event code masks you can use to test for multiple types of
+        events, since the event codes are mutually exlusive bit fields.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_KEYEVT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any key event
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_MOUSEEVT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any mouse event
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_MOUSECLICK
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any mouse click event
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_JOYEVT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any joystick event
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:124.5pt;padding:'0in .5pt 0in .5pt';" width="208" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                EVT_EVERYEVT
+              </p>
+            </td>
+            <td style="width:275.0pt;padding:'0in .5pt 0in .5pt';" width="458" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask for any event
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

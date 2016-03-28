@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>SPR_mgrAddOpaqueBitmap</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        SPR_mgrAddOpaqueBitmap
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Adds an opaque or non-transparent bitmap to the Sprite Manager
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        SPR_bitmap * MGLAPI SPR_mgrAddOpaqueBitmap(<br />
+        &#160;&#160;&#160; SPR_bitmapManager *mgr,<br />
+        &#160;&#160;&#160; bitmap_t *bmp)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm/sprite.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mgr
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bitmap manager to add sprite to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:69.5pt;padding:'0in .5pt 0in .5pt';" width="116" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bmp
+              </p>
+            </td>
+            <td style="width:330.0pt;padding:'0in .5pt 0in .5pt';" width="550" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                MGL bitmap to add to the Sprite Manager
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the loaded sprite object
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function adds a new opaque or non-transparent bitmap to the Sprite
+        Manager. When you add the bitmap, the Sprite Manager takes over
+        ownership of the memory allocated to the bitmap and you must not call <a href="MGL_unloadBitmap.html">MGL_unloadBitmap</a> on
+        the bitmap to free the memory. Once the bitmap has been added, you can
+        then draw the bitmap by calling <a href="SPR_draw.html">SPR_draw</a> and
+        pass in the pointer to the bitmap returned by this function.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The bitmap added to the Sprite Manager must be
+          in the same format at the device context that the bitmaps will be
+          copied to. Hence you should add code to your program to do any
+          necessary conversions to the destination pixel format for the bitmaps
+          (see the Fox &amp; Bear sample program which contains code to do
+          this).
+        </p>
+        <p class="Note">
+          Note:&#160;&#160;&#160; The Sprite Manager also maintains ownership of
+          the SPR_bitmap object that is returned by this function, and this
+          object will be destroyed automatically when you empty or exit the
+          Sprite Manager. You can call <a href="SPR_destroyBitmap.html">SPR_destroyBitmap</a> if
+          you wish to destroy the bitmap.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="SPR_mgrAddTransparentBitmap.html">SPR_mgrAddTransparentBitmap</a>,
+        <a href="SPR_draw.html">SPR_draw</a>, <a href="SPR_mgrEmpty.html">SPR_mgrEmpty</a>,
+        <a href="SPR_destroyBitmap.html">SPR_destroyBitmap</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

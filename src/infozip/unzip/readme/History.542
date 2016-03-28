@@ -1,0 +1,145 @@
+UnZip, version 5.42 beta, 14 January 2001
+
+Features added (or removed):
+
+5.42a (08 May 00):
+ - Acorn RISCOS: disabled MORE functionality [Darren Salt]
+ - MS-DOS, DJGPP 2.x: added compile time options USE_DJGPP_ENV and
+    USE_DJGPP_GLOB to allow disableing the 'null' replacements for DJGPP
+    CRT's extended env variables handling and command line globbing support
+    [Frank Donahoe]
+
+5.42b (15 May 00):
+ - VMS: added "real" single-char-nonecho input function tt_getch() for
+    MORE and CTRL-S functionality [SPC]
+
+5.42c (17 Jul 00):
+ - general: replaced the copyrighted source file 'unreduce.c' by a dummy module
+    under Info-ZIP license; the original code is available separately [SPC]
+ - general: support -LL option to force conversion to lowercase for every
+    filename, regardless of the case handling properties of the originating
+    file system [Chris Herborth]
+
+5.42d (30 Jul 00):
+ - general: zipinfo recognizes extra-fields created by SmartZIP for Macintosh
+    [Dirk Haase]
+
+5.42e (31 Dec 00):
+ - general (extract.c, inflate.c): added preliminary (Alpha status!) support
+    for PKWARE's extended Deflate64(tm) algorithm (conditional code controlled
+    by USE_DEFLATE64) [SPC]
+
+Bugs fixed:
+
+5.42a (08 May 00):
+ - Amiga: updated/extended screensize detection to report screenwidth
+    for the enhanced paging functionality of UnZip 5.41 [Paul Kienitz]
+ - generic (match.c): fixed and extended WILD_STOP_AT_DIR variant - matching
+    "*" at end of pattern should also stop at dir separators - two consecutive
+    star characters "**" match across directory separators [Darren Salt]
+ - inflate.c, Uzinflate(): fixed calculation of windowBits for initialization
+    of zlib's inflate service (USE_ZLIB was broken since UnZip 5.40) [SPC]
+ - changed extension of most plaintext documentation files from .doc into
+    .txt (for better support of Windows environments) [SPC]
+ - changed default configuration of crypt support to disable decryption
+    for SFX executable stubs, to minimize their size [Greg Roelofs, SPC]
+ - MORE paging code: fixed and cleaned up macros and code for retrieving
+    text window dimensions (was broken for DOS/OS2/WIN32 in 5.41) [SPC]
+ - win32: added static library targets to MSC and gcc makefile [SPC]
+
+5.42b (15 May 00):
+ - process.c, free_G_buffers(): fix memory leak, G.extra_field might still
+    point to an allocated buffer [M. Toeller, Mike White]
+ - macos/source/macos.c: changed a ioFlXFndrInfo struct member name to follow
+    an (idiotic) Apple system header modification [Dirk Haase]
+ - win32/win32.c, win32/w32cfg.h: fixed typo-like bugs in the modified
+    screensize retrival code introduced by 5.42a [K.U. Rommel, S. Salisbury]
+ - os2/os2data.h: the new screensize retrival code added with 5.41(release)
+    requires enabling the VIO section in the OS/2 system headers [K.U. Rommel]
+ - msdos, 16-bit: completely separated UnZipSFX and UnZip compilations; use
+    small memory model for SFX stub; use large model for TC++/BC++, medium
+    model needs too much memory when compiling zipinfo.c [SPC]
+ - msdos/msdos.c, version(): report correct version info for the now freely
+    available ancient Turbo C++ 1.01 compiler [SPC]
+
+5.42c (17 Jul 00):
+ - man/unzip.1: removed two superfluous ".TP" directives in front of "-P ..."
+    and "-/ ..." option entries (caused additional line feed and broke man page
+    formatting on DECompaq True64 OSF/1 v4.0 [Stefan A. Deutscher]
+ - AMIGA: removed time_lib.c module due to its copyright restrictions; replaced
+    minimal tzset() and localtime() functions in filedate.c by fully functional
+    versions derived from the public domain timezone library [Paul Kienitz]
+ - updated COPYING: removed references to unreduce.c and amiga/time_lib.c
+    copyright terms [SPC]
+ - win32/makefile.bc: extended to build DLL, static library, GuiSFX stub
+    (not yet complete) [SPC]
+
+5.42d (30 Jul 00):
+ - MacOS: miscellanous small updates for MacZip 1.06 [Dirk Haase]
+ - win32: added workaround for MSC RTL "feature" of lacking TZ evaluation
+    for European rules (switch off TZ recognition completely; rely on Win32
+    system setting in registry, only) [SPC]
+ - renamed doc file "COPYING" into "COPYING.OLD" for clarity [SPC]
+
+5.42e (31 Dec 00):
+ - AMIGA: moved all (generic) time related functions replacing faulty RTL
+    support from filedate.c into timezone.c, added mktime() [Paul Kienitz]
+ - proginfo/extra.fld: corrected typo, updated NTFS extra field description
+    from PKWARE's newest appnote.txt, some more cosmetic changes [SPC]
+ - ttyio.c: corrected typo in VMS-specific getch() function (IO$READVBLK should
+    be written as IO$_READVBLK) [Mike Freeman, Hunter, SPC]
+ - vms/vms.c - screensize(): corrected typo (missing ;) [Mike Freeman]
+ - msdos, win32: modified FAT mapping for "leading dot" file names, added
+    special handling for DOS reserved device names [Juan Manuel Guerrero, SPC]
+ - msdos/msdos.c: fixed malicious truncation of volume labels to 8 chars for
+    the no-LFN case [SPC]
+ - win32/w32cfg.h: ensure that UNIX is not defined (newest versions of CygWin
+    introduced this problem...) [SPC]
+ - win32, windll: removed ttyio.c from the list of unzip32.{dll|lib} source
+    files, updated dll and lib targets in win32 makefiles [SPC]
+ - tandem/tanunz.c: fixed typo (superfluous comma) in ef_scan_for_tandem()
+    declaration [Doug Schuessler]
+ - explode.c, unreduce.c: modified check for extracted uncompressed size to
+    allow use of unsigned variables, removes special 2GB limit on uncompressed
+    archive member size for these compression modes [SPC]
+ - generic: modified amiga/timezone.c into a generic RTL time&tz handling
+    replacement, moved into top-level directory, added timezone.h header,
+    moved amiga specific tz interface code into amiga/filedate.h, modified
+    amiga/amiga.h and Amiga makefiles accordingly [SPC]
+ - generic timezone.c: added optional function _isindst() (for use with
+    win32 port) [SPC]
+ - win32/win32.c, win32/w32cfg.h: added GetPlatformLocaleInfo() callback
+    for timezone.c, reading tzinfo from Win32 API; Info-ZIP's timezone.c
+    can be used by defining W32_USE_IZ_TIMEZONE (for use with statically
+    linked C rtl ONLY!) [SPC]
+
+5.42f (08 Jan 01):
+ - amiga/filedate.c: added missing "timezone.h" include [Paul Kienitz, SPC]
+ - msdos/msdos.c, win32/win32.c: maskDOSdevice() - enclosed debugging message
+    code in DEBUG conditionals [Kai-Uwe Rommel, SPC]
+ - disabled alpha state option USE_DEFLATE64 for fUnZip [SPC]
+ - updated generic README [SPC]
+
+5.42 (14 Jan 01):
+ - VMS: added prototype for screenlinewrap() to unzpriv.h [Hunter Goatley, SPC]
+ - WHERE: some updates (unreduce.c archive, new PKWARE versions)
+ - TANDEM: updates to allow for WIDE memory model, sync with Zip [Dave Smith]
+ - WinCE: corrected "UNICODE & ASCII" string mismatches in DlgProcAbout()
+    (winmain.cpp), changed all copyright notes to Info-ZIP, some updates in
+    help source and WinCE README [SPC]
+ - MSDOS: corrected object list for unzipsfx in makefile.msc, added hint for
+    upx exe file packer to makefile.msc and makefile.bc
+ - msdos/msdos.c - mapname(): handle compile time options that do not define
+    the local variable last_dot [SPC]
+ - WIN32: minor Makefile corrections for gcc and lcc; win32/w32cfg.h defines
+    WIN32_LEAN_AND_MEAN to reduce potential mismatching doubled declarations
+    and increase compiling speed [SPC]
+ - removed BETA notes for release ... [SPC]
+
+==================
+
+These changes occurred in beta versions 5.42a to 5.42f.  This list may have
+left out some bugfixes and even some features...void where prohibited, your
+mileage may vary, etc., etc.
+
+Christian Spieler

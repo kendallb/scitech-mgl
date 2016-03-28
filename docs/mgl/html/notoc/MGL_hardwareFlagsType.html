@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_hardwareFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_hardwareFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160; &#160;MGL_HW_NONE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000000,<br />
+        &#160;&#160;&#160; MGL_HW_LINE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; MGL_HW_STIPPLE_LINE&#160;&#160;&#160;&#160; =
+        0x00000020,<br />
+        &#160;&#160;&#160; MGL_HW_POLY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; MGL_HW_RECT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000080,<br />
+        &#160;&#160;&#160; MGL_HW_PATT_RECT&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000100,<br />
+        &#160;&#160;&#160; MGL_HW_CLRPATT_RECT&#160;&#160;&#160;&#160; =
+        0x00000200,<br />
+        &#160;&#160;&#160; MGL_HW_SYS_BLT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000400,<br />
+        &#160;&#160;&#160; MGL_HW_SCR_BLT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000800,<br />
+        &#160;&#160;&#160; MGL_HW_SRCTRANS_BLT&#160;&#160;&#160;&#160; =
+        0x00001000,<br />
+        &#160;&#160;&#160; MGL_HW_DSTTRANS_BLT&#160;&#160;&#160;&#160; =
+        0x00002000,<br />
+        &#160;&#160;&#160; MGL_HW_SRCTRANS_SYS_BLT = 0x00004000,<br />
+        &#160;&#160;&#160; MGL_HW_DSTTRANS_SYS_BLT = 0x00008000,<br />
+        &#160;&#160;&#160; MGL_HW_STRETCH_BLT&#160;&#160;&#160;&#160;&#160; =
+        0x00010000,<br />
+        &#160;&#160;&#160; MGL_HW_STRETCH_SYS_BLT&#160; = 0x00020000,<br />
+        &#160;&#160;&#160; MGL_HW_MONO_BLT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00040000,<br />
+        &#160;&#160;&#160; MGL_HW_FLAGS&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0007FFF0<br />
+        &#160;&#160;&#160; } MGL_hardwareFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the flags for the types of hardware acceleration supported by the
+        device context. This will allow the application to tailor the use of
+        MGL functions depending upon whether specific hardware support is
+        available. Hence applications can use specialised software rendering
+        support if the desired hardware support is not available on the end
+        user system.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If the hardware flags are not MGL_HW_NONE, you
+          must call the <a href="MGL_beginDirectAccess.html">MGL_beginDirectAccess</a> and
+          <a href="MGL_endDirectAccess.html">MGL_endDirectAccess</a> functions
+          before and after any custom code that does direct framebuffer
+          rendering!! This is not necessary for non-accelerated device
+          contexts, so you might want to optimise these calls out if there is
+          no hardware acceleration support.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_NONE
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No hardware acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_LINE
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware line drawing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_STIPPLE_LINE
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware stippled line drawing
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_POLY
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware polygon filling
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_RECT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware rectangle fill
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_PATT_RECT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware pattern rectangle fill
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_CLRPATT_RECT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware color pattern fill
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_SYS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware system-&gt;screen bitBlt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_SCR_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware screen-&gt;screen bitBlt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_SRCTRANS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware source transparent blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_DSTTRANS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware dest. transparent blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_SRCTRANS_SYS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware system-&gt;screen source transparent blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_DSTTRANS_SYS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware system-&gt;screen destination transparent blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_STRETCH_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware stretch blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_STRETCH_SYS_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware system-&gt;screen stretch blt
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_HW_MONO_BLT
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Hardware monochrome blt
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

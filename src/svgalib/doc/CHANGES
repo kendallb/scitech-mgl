@@ -1,0 +1,880 @@
+Changes in v1.3.1: (16 Aug 98):
+
+Wichert Akkermann <wakkerma@debian.org> & Kevin Vajk <kvajk@ricochet.net>:
+ Ensure stdin/out/err don't point to sensitive files (/dev/mem) by accident.
+
+David Bateman <dbateman@ee.uts.edu.au>:
+ C&T: Added support for 65555, 68554, 69000 and 64300 chips
+      Some smaller fixes (65554 memory probing, max. pixel clock)
+
+David Grant <dave@reach.net>:
+ Remove some egcs warnings.
+
+Christian Groessler <cpg@aladdin.de>:
+ C&T: Further 65550 enhancements, fix text-mode stretching.
+ C&T: does not need iopl(3) anymore.
+ map_framebuffer() also works for non root now.
+ vga_setmode() typo fixed
+ Increase buffers for vgapci
+ 
+Bernd Schmidt <crux@Pool.Informatik.RWTH-Aachen.DE>:
+ Lrmi.c support under egcs, nested int calls.
+
+Don Secrest <secrest@aries.scs.uiuc.edu>:
+ Support for linear frame buffer.
+
+Scott Stone <sstone@ume.pht.co.jp>:
+ Glibc adaptions for lrmi.c.
+
+Brion Vibber <brion@pobox.com>:
+ Variation of lrmi glibc adaptions.
+
+Matan Ziv-Av <zivav@cs.bgu.ac.il>:
+ Minor apm/nv3/vesa patches.
+ Vgapci enhanced (some buffer sizes changed).
+ MX driver added.
+ TextProg option added.
+
+Changes in v1.3.0: (11 June 98):
+
+Daniel Engström <daniel.engstrom@riksnett.no>:
+ Provided an svgalib-style joystick driver.
+
+Harald Hoyer <HarryH@Royal.Net>:
+ Readjust speed for certain Logitech Mousemen.
+
+Jan Hubicka <hubicka@atrey.karlin.mff.cuni.cz>:
+ Some internal additions for cards with no VGA functionality. 
+
+Elliot Lee <sopwith@circ.us.eu.org>:
+ Yet another ViRGE/VX id for autodetection.
+
+Attila Lendvai (101) <101@kempelen.inf.bme.hu>:
+ Logarithmic mouse acceleration.
+ Mouse acceleration config by config file.
+ Rename GSVGAMODE to SVGALIB_DEFAULT_MODE
+ Parse ~/.svgalibrc and SVGALIB_CONFIG_FILE.
+ Mouse emulation in raw keyboard mode
+ Changed his email
+
+Lalo Martins <lalo@webcom.com>:
+ Fix misinterpretation of monitor freq limits in Mach32 interlaced (fix
+  generalized and applied to a related code segment as well: eowmob, below)
+
+Marek Mintal <mintal@chelin.chtf.stuba.sk>:
+ Fixed gl_copyfrom/tocontext in more than 8bpp.
+
+Don Secrest <secrest@aries.scs.uiuc.edu>:
+ ET6000 Support.
+ A tiny ET4000 fix.
+
+Trek <trek00@freenet.hut.fi>, <trek@mediaservice.net>:
+ Added gl_printf.
+
+Brion Vibber <brion@pobox.com>:  
+ Added Intellimouse support PS/2 (and - untested - serial).
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ demos/Makefile misused $* in chown accel and others.
+ Makefile now robust for comments in /etc/ld.so.conf (Problem cause/fix found
+  by <martinp@gmx.de>)
+ Makefile failed to remove certain library stubs not removed by ldconfig on
+  Slack 3.3 reported by Jacek Tokarski <tokarsk@us.edu.pl>
+ Various rewritings of gl_printf().
+ Documentation fixes.
+ Mach32 lowered iopl() accidently on occasion.
+ Allow disabling sigint in graphicsmode.
+ Made apm test more grateful to VGA cards.
+ Mach32 proper accel bitmap (RD_MASK) in 32K colors.
+ Allow joystick sharing and multiple joystick support, bind joystick
+ interface into svgalib.
+
+Matan Ziv-Av <zivav@cs.bgu.ac.il>:
+ Added apm driver for AT3D.
+ Added nv3 driver for Riva128.
+ Added a driver for 'nicely behaved' Vesa bioses.
+
+Changes in v1.2.13: (4 Dec 97):
+
+Pekka T. Alaruikka <alaruik@cc.hut.fi> & Michael Friman <no email>:
+ Modified the VC switch queue & other clean up.
+
+Mike Chapman <mike@paranoia.com>:
+ Added mouse acceleration.
+
+Ryan Rubley <rubleyr@river.it.gvsu.edu>:
+ Added TVGA9440 support.
+ Provided trap-out tool.
+
+Frodo Looijaard <frodol@dds.nl>:
+ Email changed.
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Fix the 512 chars console font fix.
+
+Changes in v1.2.12: (4 Sep 97):
+Pekka T. Alaruikka <alaruik@cc.hut.fi> & Michael Friman <no email>:
+ Fix a bug in the background mode support, introduced by Michael.
+ Optimizing speed of the background mode support.
+
+Greg Alexander:
+ Autodetect S3Trio64V2/DX.
+ New 640x480 example timing.
+
+Ricardas Cepas <rch@pub.osf.lt>
+ Save 512 chars of console font (needed for newer kernels).
+
+Michael Talbot-Wilson <talmg@wren.forensic.sa.gov.au>:
+ Some more glibc modification & success reports.
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Transformed all README's in a bunch of man pages and even documented
+  previously unknown stuff.
+ Makefile modifications to allow installation of man pages.
+ Makefile modifications to ensure default configuration is for ELF.
+ Fixed accelerated gl_fillbox for more than 8bpp problem reported by
+  Anthony Chu <anthony@av4800.tatung.com.tw>
+
+Changes in v1.2.11: (29 Jun 97):
+
+Pekka T. Alaruikka <alaruik@cc.hut.fi> & Michael Friman <no email>:
+ Background mode support.
+
+David Bateman <dbateman@ee.uts.edu.au>:
+ Support for Chips & Technologies 655xx chipsets
+
+Gary Clark <GaryC@mail.jeld-wen.com>:
+ Allow S3 virge to be autodetected as S3 Trio 64
+
+Jeff Epler <jepler@inetnebr.com>:
+ Allow for coexistance of GPM and svgalib
+
+David Goldsmith <dhg@dec.net>:
+ Pointed out buffer overrun security flaws using saved uids and provided a fix.
+
+H. Hanemaayer <H.Hanemaayer@inter.nl.net>:
+ Some Cirrus 5436 fixes and changes to mode timings for Cirrus
+ Remove lock from a few Ark registers.
+
+Dr Stephen Henson <shenson@bigfoot.com> (former Stephen Henson
+                                                            <shenson@nyx.net>):
+ Fix an ELF/gcc flaw in inlstring.h (former BugsNotFound)
+
+Ron Koerner <koerne00@marvin.informatik.uni-dortmund.de>:
+ Enhanced ALI driver.
+
+Jae-Hyuck Lee <jalee@grail.cba.csuohio.edu>:
+ Makefile problems (probably due to new gmake, used to work b4).
+
+Stephen Lee <sl14@cornell.edu>:
+ Detects the Trio64V+.
+ A few patch to Trio64 RAMDAC code to make it work better on the V+.
+
+Robert Lupton <rhl@astro.Princeton.EDU>:
+ Typo in vga_waitevent().
+ Possible race condition releasevt_signal() when restoring signal.
+
+Szeredi Miklos <mszeredi@eik.bme.hu>:
+ Reset keystates on a VC switch in keyboard.c
+
+David Mosberger-Tang <davidm@AZStarNet.com>:
+ Some (more) changes for clean Linux/Alpha support.
+
+Tomi Sarvela <tsarvela@nether.tky.hut.fi>:
+ Added support for Cirrus 5436.
+
+Paul Sheer <psheer@icon.co.za>:
+ Gl line drawing routine with inlined set_pixel.
+
+Lodewijk Voge <lodewijk@reddwarf.xs4all.nl>:
+ Autodetect Hercules Stingray 64/Video as ark2000pv.
+
+Vernon C. Hoxie <vern@zebra.alphacdc.com>:
+ Solved (hopefully) the Mach32-AST problem.
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Search free console on startup as zgv did. Should also fix a problem with
+   /dev/tty & zgv on newer kernels (reported by Mike Castle <mcastle@cris.com>).
+ Various Makefile fixes and changes. (Most useful reports by:
+   Kieron Brown <kieron@acfd.bris.ac.uk> &
+   Don Secrest <secrest@aries.scs.uiuc.edu>)
+
+Oliver White <owhite@nla.gov.au>:
+ Fix typo that broke G1024x768x32K and G640x480x16M32 and higher in ark.c
+
+Eric Sharkey <sharkey@superk.physics.sunysb.edu>:
+  Added 6-D mouse support
+  Added Spacetec Spaceball/Spaceorb mouse protocol (special thanks to
+    Brett Viren <bviren@superk.physics.sunysb.edu> for reverse engineering
+    this protocol and providing many lines of code which I've included
+    in svgalib)
+  Added spin demo, adapted and expanded from the original spin program
+    by Jason Lyons <jason_l@hotmail.com>
+  Added mdev config file option to set mouse device
+  Fixed scale bug in mouse_setposition()
+
+Changes in v1.2.10: (20 Mar 96)
+
+Andreas Arens <ari@av.rwth-aachen.de>:
+ Support for new S3 clockchip ICD 2061A in a new clockchip module.
+ Sierra SC1148X ramdac support
+ Sierra SC15025 ramdac support
+ New `DacSpeed' config option
+ Fix for 928 modes.
+ 
+Stefan Kanthak <kanthak@Gazelle.Informatik.RWTH-Aachen.DE>:
+ Several changes for support of Alpha _JENSEN_ system as well.
+
+Stephen Lee <sl14@cornell.edu>:
+ Makefile patches:
+   - LFLAGS is for lex, use LDFLAGS instead.
+   - Changed default target.
+   - Create symlinks for new binutils.
+   - Moved ramdac and clockchip into their own directory.
+   - 3dkit can now compile in a separate directory.
+   - use $(CC) $(INCLUDE) instead of just gcc for making dependency files.
+ Cleanup ATI driver (also fix for a buglet).
+ Partial S3 868 support.
+ SDAC 24bpp support (probably wouldn't work with 864, though).
+ Allow 1152x864 & 1600x1200 modes for drivers that can use modeline
+   in libvga.conf (e.g. S3).
+ S3 4bpp doesn't like Linear Bank Switching.
+ SDAC doesn't seem to do pixel multiplexing at 4/8bpp.
+ ramdac.c bugfix and cleanup.
+ okay, so some people still have pixel swapping problem on the 805. (sigh)
+   I've put in an experimental fix for it.
+ split ramdac.c into individual files.
+ 968/IBMRGB support.  Only 256 colors for now.
+ Merged Trio64 patch from Moto Kawamura <kawamura@mmp.cl.nec.co.jp>.
+ Changed handling of S3 CR34 for VGA modes at Andreas' suggestion.
+ Updated libvga.config and README.config.
+ Small fix for libvga.h macros.
+ Rewrote __vga_dumpregs().
+
+Bill Randle <billr@master.CNA.TEK.COM>:
+ Patches to allow compiling only some of the ramdac drivers.
+ Enhanced vga_drawscansegment() to remove it's limitations.
+ New function: vga_getscansegment();
+ Allow intermixing of vga_setpalette()/vga_getpalette calls.
+
+Tomi Sarvela <tsarvela@nether.tky.hut.fi>:
+ Some more scancodes for vgakeyboard.h
+
+Paul Sheer <psheer@icon.co.za>:
+ Routine to draw quick triangles and some 3d demos in 3dkit/
+ 
+Erik Troan <ewt@redhat.com>
+ Renamed a read[bwl] and write[bwl] for ALPHA support under latest kernels.
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Fixed security leak from linux-security@vger in restorefont -r.
+ Fixed Fix for vgapal.c so it started working again. Added index register sets
+  back to vgadrawscansegment for ATI SVGA cards.
+ Cleaned support to compile only few RAMDACS in (still not happy with it though)
+ Even more scancodes to vgakeyboard.h
+ New function vga_waitevent() plus eventtest demo due to request for libgrx by
+  Daniel Lee Jackson <djackson@ichips.intel.com> (although there was no such
+  flexible solution required)
+ Docs for vga_(draw/get)scansegment(), vga_waitevent();
+
+Changes in v1.29: (11 Nov 95)
+
+Stephen Lee <sl14@crux1.cit.cornell.edu>:
+ Minor Makefile patches.
+ 16 color modes work on the S3 805.
+
+Scott Snyder <SNYDER@D0SB10.FNAL.GOV>
+ Fix to have Mach32 not remap the location of some ELF libs (modified by Michael).
+
+Heiko Schroeder <heiko@pc73121.dialup.rwth-aachen.de>
+ Implemented a modeline config command for libvga.conf to userdefine
+  modes for all drivers using timing.c
+
+Andreas Arens <ari@av.rwth-aachen.de>:
+ ET4000 patches to avoid problems with 132 column consoles and with IOPERM
+  in ET4000/W32.
+ RAMDAC (SC15025) for S3
+
+Ron Koerner <koerne00@marvin.informatik.uni-dortmund.de>:
+ New driver for ALI2301 (keyword: ALI) cards in all SVGA 256 colormodes.
+
+Peter Ekberg <peda@pulkan.rydnet.lysator.liu.se>
+ Waiting for console activation could be interrupted by signals.
+
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Fixed fix of Oak, modifies mode timings depending on detected chipset
+ Minor typo in egadrv.c
+ Documented unavailability of SIGUSR1/2 as Peter suggested.
+ Fixed a problem in raw keyboard mode noticed by Stephen (matter of
+  seconds coz of good description)
+
+Changes in v1.28: (7 Oct 95)
+
+Koen Gadeyne <kmg@barco.be>:
+ Typo for S3 genDac (S3 SDAC, S3 Trio) made all clocks unusable.
+ Support for 24bpp (true-color) on S3 805 cards with GenDAC.
+
+Honza alias Jan Hubicka <hubicka@limax.paru.cas.cz>:
+ Possible segfault in gl/cbitmap, fixed gl_regioncode for clipping
+ on Dec Alpha.
+
+Sven Grothklags <sven@uni-paderborn.de>:
+ Bugfixes for compressed fonts in vgagl.
+
+Stephen Lee <sl14@crux1.cit.cornell.edu>: 
+ Several pixel swapping fixes on S3-805, New Dacspeed keyword for ATT20C490
+ Changed monitor setup to accept seperate h/vsync values (see README.config),
+ Reintroduced lost (?) et3000 support in distribution shared lib.
+ Rejoined ELF/a.out Makefiles, in fact rewrote all Makefiles.
+ Again many code cleanups to pass -Wstrict-prototypes
+ 
+Michael Weller <eowmob@exp-math.uni-essen.de>:
+ Fixed confusion about termios setting between keyboard.c and vga.c (console
+  lockup at <VC-switch>-Enter)
+ Catched ALL fatal signals for gentle touch down.
+ Patched mach32 to accept new h/vsync monitor setup.
+ Some tiny a.out patches to Stephen's Makefile's
+ Even more code cleanups. Now EVERY sourcefile passes -Wstrict-prototypes
+  and even the esp. pedantic warnings of my vanilla a.out gcc 2.6.3
+  (who seems to be more pecular than other compilers)
+ Reformatted ALL sources due to requests.
+ Minimal fix to allow using chipset ATI on Mach32 (doesn't give you much,
+  though)
+ vga_safety_fork() enhanced, uses iopl now. (which has its own security issues,
+  see README)
+
+Frodo Looijaard <frodol@dds.nl>:
+ Fixed Oak driver to support Oak-67 again. Note: The fix might have broken
+ Oak-87 support by accident.
+
+Christopher Wiles <wileyc@moscow.com>:
+ Slight modifications of above Oak fix.
+
+Peter Ekberg <peda@pulkan.rydnet.lysator.liu.se>:
+ Some more scancodes in vgakeyboard.h and doc fix for vga_getkey();
+
+Changes in v1.27: (21 August 95)
+
+Mach32 related changes(M. Weller <eowmob@exp-math.uni-essen.de>):
+ cosmetic fixes, new config commands svgaclocks, ramdac, vendor to
+ help support alien (not conforming to original ATI specs) cards
+ (should work for dell now). Fixed several NULL ptr dereferences
+ that delurked under ELF.
+
+David Mosberger-Tang <davidm@AZStarNet.com>:
+ Patches to make svgalib work on Linux/Alpha. (Only known to work with #9 GXE
+ PCI, other cards may or may not work)
+
+Harm Haanemayer <hhanemaa@cs.ruu.nl>:
+ Change duplicate include check vgamouse.h.
+ Fix bug in gl_getpixel in 3-bytes-per-pixel modes.
+ Allow ctrl-c detection to be disabled in raw keyboard interface.
+
+Gregory Margo <gmargo@newton.vip.best.com>:
+ Support for the Logitech Mouseman mouse series. 
+ Override mouse mode from environment (SVGA_MOUSE_OVERRIDE) (useful for doom)
+
+Stephen Lee <sl14@crux1.cit.cornell.edu>:
+ ELF support, countless patches for code clean up, bugfixes in S3 15/16/24 bpp,
+ autodection for more chips (but alas, no support for them)
+
+Moved config files to /etc/vga due to requests, patched makefiles for automatic
+ reconfiguration. (M. Weller <eowmob@exp-math.uni-essen.de>)
+
+Changes in v1.26: (27 April 95)
+
+Really fix console-switching in raw-keyboard mode.
+Fix SDAC support.
+Fix Trio64 detect. Modes don't work though (use Ramdac "normal").
+Move ET4000 chiptype detection so that it works when chipset is
+forced in config file.
+Fix Cirrus 5420/22/24 support.
+Mach32 related changes:
+Minor typos in mach32info fixed. 68800-6 should now be reported correctly.
+Fixed compiler warnings in mach32.c due to changed interface (no new accel
+interface yet).
+Newflag for red first in 24bpp returned for Mach32 with DAC 4
+Support for 24bpp red first in whole svgalib + vgagl.
+Added support for 32bpp in vgadraw.c
+Added detection for 24bpp red first in vgatest.
+TODO: Fix raw-keyboard console switching when alt is kept pressed (e.g.
+Doom).
+
+Changes in v1.25: (7 March 95)
+
+Problem with programs that don't call vga_init finally fixed.
+Fix console-switching in svgalib raw-keyboard mode (vgakeyboard.h).
+Working ARK driver (includes acceleration).
+Linear addressing detection changed (supports partial framebuffers).
+Add more RAMDAC support -- AT&T490-compatible truecolor DACs supported
+for S3.
+Tweak mouse/keyboard header files to fix conflict with libgrx compile.
+
+Changes in v1.24:
+
+Fix bug causing "not running in ..." messages if vga_init wasn't called.
+Better structure for driver interface ("DriverSpecs"). Fields other
+than the basic driver functions can be included. Type checking is also
+better. Most drivers haven't been updated for the new return types;
+feel free to send patches. Something might be broken, watch out.
+Better acceleration inferface.
+Fix ARK chiptype detection.
+Untested ARK chip support.
+Largely fixed S3-864 + SDAC support.
+Untested clock/DAC support for the Trio64 in the S3 driver.
+Unlock extended registers when forcing Cirrus in config file.
+Try to avoid Cirrus hardware lock-up when switching certain modes.
+Add "accel" program to test new acceleration interface.
+
+Changes in v1.23: (8 Feb 95)
+
+ET4000/W32 tweaks.
+Added gl_allocatecontext. Use this instead of declaring GraphicsContext
+variables statically. Demo programs changed accordingly.
+Safer VC switching with blits.
+Allow Cirrus SVGA modes with 512K memory.
+Possible Cirrus 5422 MCLK detection fix.
+Incorporate ATI 'driver' from Scott Heavner (allows VGA with 132-column
+textmode).
+Untested ARK driver and untested generic S3 support (640x480x256 @ 60 Hz).
+Unused acceleration interface sketch (accel.h/cirrus.c).
+
+Changes in v1.22:
+
+ET4000 additions for STG170x DAC (tseng3.c and driver), linear addressing
+support for W32p, better general linear addressing handling with new driver
+function, 8-bit color components CLUT support for AT&T DAC (David
+Etherton).
+Cirrus driver tweaks.
+S3 driver rewritten for S3-864 + SDAC (doesn't work yet) using new
+interface.
+Linear addressing probing with vga_setlinearaddressing. Console switching
+is not a good idea with linear addressing enabled.
+Treat Oak 077 as standard VGA (incompatible with OTI-087 mode dumps).
+Fix planar getpixel (untested).
+VC switching in RAW keyboard mode (e.g. Doom) (doesn't always work)
+[was typo, fixed in 1.25].
+
+'VGAGL' status:
+	Should be usable seperate from svgalib with minor changes.
+	GraphicsContext should be allocated dynamically (malloc)
+	by library for compatibility/extensibility.
+	Non-expanded font text write functions added (untested...).
+	Missing is proper direct page flipping support (double-buffering
+	in video memory). This would require all operations to be
+	performanced at a certain offset into the framebuffer.
+
+Changes in v1.21: (23 Dec 94)
+
+Partially restructured Cirrus driving using clean, XFree86-style
+SVGA-generalized interface. Check out timing.*, vgaregs.* and cirrus.c.
+Cirrus driver itself should now support all 542x/543x cards.
+Fix MouseSystems movement overflow.
+Fix PS/2 mouse support finally (sorry).
+Fix (old) Logitech protocol mouse handling (hopefully - I lost the
+message that contained the fix).
+Fix Cirrus bitblt bug.
+gvga6400 driver BIOS check changed; munmap seems to mess things up.
+Add vga_getpixel() (untested).
+Incorporate restorepalette patch from Charles Blake, allows custom
+textmode console colors (see utils/README).
+
+Changes from Michael Weller:
+Made GSVGAMODE parsing case insensitive, and added names for 16M32 modes.
+vgatest displays info about 16M32 modes better.
+mach32 - Support for 8bit clut on type 2 DACS.
+Added testaccel demo.
+mach32 - Support for all accelerator functions.
+Added vga_hlinelist(), vga_blitwait(), vga_ext_set(), [vga_accel()]
+mach32 - eeprom interpretation more robust and configurable for stupid AST
+	 boards.
+mach32 - changed 16M4 -> 16M32 for compatibility
+Fix: reserve memory for one screen on EACH setmode call (as the README
+     states).
+mach32 - Added support for AST style EEPROM checksums.
+Added commands to control RTS/DTR lines for multiprotocol mice.
+Fix: mach32 - VGA modes should work now even in 132 columns text modes.
+Sanity check for MAX_REGS in vga.c
+Fix: Raised MAX_REGS as was actually needed.
+Fix: Textmode utils now give errors on problems with accessing files.
+Fix: Restore of Mach32 regs after clock probe was broken (cosmetic, no
+     problems reported).
+Fix: Mach32 Dac1&4 have to use double/triple clocks in 16/24bpp.
+
+
+Changes in v1.20: (25 Nov 94)
+
+Clean up VT code a bit.
+Slight ET4000/W32p detection fix.
+Possible mach32 32bpp copyscreen fix.
+Allow VT-switching with mouse support (it was disabled because of
+interaction with an old version of selection, I take it things are
+better now?).
+Preliminary Cirrus 5434 support (untested, only 1280x1024x256 for now),
+will be fixed soon.
+New Oak driver (Christopher Wiles).
+Use seteuid instead of setuid to give up setuid-root permissions.
+Hack that may fix 132-column textmode/VGA mode problems on ET4000.
+Fix color/mono config option (mono was broken).
+Disable 320x200x256 page flipping for ET4000.
+Fix Cirrus fillblt register corruption problem.
+GVGA6400 driver (Arno Schaefer).
+vga_init now returns -1 if not on a suitable console (0 otherwise); hard
+	exit can only happen in vga_setmode (David Liu). This should help
+	programs with multiple output devices like gnuplot.
+Added mouse_init_return_fd and keyboard_init_return_fd for select() use.
+Add SIGKILL catch to raw keyboard interface.
+PS/2 mouse support possibly fixed.
+Shared library 1.2.0 (corresponds with main svgalib version number).
+
+
+Changes in v1.12: (17 June 1994)
+
+Delay console checking until actually setting a mode (should fix problems
+with device-probing programs like gnuplot).
+Fix planar mode getmodeinfo bug for Trident and others (should fix floating
+point exceptions in zgv).
+Support PS/2 mouse in config file.
+Fix one-byte-per-pixel gl_putboxmask.
+Shared library 1.1.8.
+
+Changes in v1.11: (19 May 94).
+
+Better fix for ET4000/W32 auto-detection.
+Fix typo that prevented ET3000 auto-detection.
+Clipping bug with compiled bitmaps fixed.
+Shared library 1.1.7.
+
+Changes in v1.10: (9 May 94)
+
+Possible fix for ET4000/W32 auto-detection (does iopl(3) now).
+Logitech mouse fix.
+Repeated keyboard_init/keyboard_close fix.
+vgagl fixes for mach32 'misordered' 32bpp truecolor and 32bpp paged fillbox.
+mach32 - Forgot to disable write mask for VGA framebuffer (zgv2.2 screen
+	 corruption after online help)
+mach32 - Wrong assumption about BIOS enabling the mem aperture.. was actually
+	 done by Xfree.. driver will setup linear framebuffer itself using
+	 info from the EEPROM now.
+mach32 - added mach32/mach32.std-modes info file..
+mach32 - ran a spell checker over my README's to throw away the worst errors.
+mach32 - Patched vgapix for correct RGB_MISORDERED support.
+mach32 - This needed an additional global for the modeinfo-flags (short cut is MODEFLAGS).
+mach32 - Changed blankadjust for 32bpp modes and DAC-type 2.
+mach32 - Patched mach32 autodetection code.
+mach32 - Changed 32bpp setting at all by defining a new dacmode (needed for dac-types 5)
+mach32 - Changed VFIFO handling and vfifo defaults for 16/24/32bpp modes.
+mach32 - Added fuzz factor of 0.5KHz when obeying monitor horz restriction.
+mach32 - deleted dacwidth config command (was not useful)
+mach32 - Added setuplinear command for mach32 (would be useful for cirrus too)
+mach32 - Changed order of restore of extended ati registers to obey locking..
+	 may need even more fixing..that is ensure restore of vgaregs before they are locked
+	 again when restoring extended ATI lock registers.
+mach32 - Had to change order of entries in save-/setregs array for mach32 for this.
+Shared library v1.1.6.
+
+Changes in v1.09: (2 May 94)
+
+Significant mach32 driver/docs update (potentially dangerous bug fixed).
+Some vga_draw primitives now support 32-bit pixel modes (better support is
+in vgagl).
+Cirrus 320x200x256 registers redefined to support page flipping (setmodeX
+doesn't work anymore).
+Trident 320x200x256 page-flipping disabled.
+Shared library 1.1.5.
+
+Changes in v1.08: (27 Apr 94)
+
+Improved vgagl 24-bit physical/32-bit virtual screen support (pageflipping
+really fixed, speed increase (alignment)).
+S3 driver hacked (try it if you are bold).
+Sierra 15025/26 DAC support should work for 32K modes now.
+Added PS/2 mouse support (untested).
+More vgagl 32bpp primitives.
+320x200x256 vgagl page flipping fix (this is a big one).
+Added ctrl-c detection to low-level keyboard interface.
+vgagl copyboxfromcontext added, and more efficient copyboxtocontext.
+Shared library 1.1.4.
+
+Changes in v1.07: (19 Apr 94)
+
+Moved main library source into src/. Cleaned up shared library making.
+Fix permissions of utils/convfont.
+Fix tty behaviour:
+Open /dev/tty instead of /dev/tty0 (previously non-root users could not run
+programs if /dev/tty0 was not world-readable, like in the recent slackware).
+Don't kill the terminal settings when detecting a non-graphics capable
+virtual console (stupid bug related to use of atexit()).
+Limited support for ioperm(1) by Olaf Titz. Allows non-root users to run
+svgalib binaries which are not setuid-root.
+Emulated paged copybox in vgagl (untested).
+Utility to read out the ATI mach32 EEPROM.
+Shared library 1.1.3.
+
+Changes in v1.06: (11 Apr 94)
+
+vgagl pageflipping fix for 24-bit/32-bit virtual screen.
+Fix 16 color mode availability on ATI mach32.
+Possible ET4000/W32 Sierra 15025/26 64K color fix.
+vgagl compiled bitmaps enhanced (not completely compatible with v1.05),
+but still untested.
+Possible Trident 320x200 page flipping fix.
+Shared library 1.1.2
+
+Changes in v1.05: (2 Apr 94)
+
+Some unfinished SVPMI stuff (feedback strongly encouraged).
+Added vgagl compiled bitmap functions (256 color only, untested).
+Added definitions for 32 bits per pixel truecolor modes (not used yet). I
+don't feel like adding vga_draw* functions for these; use vgagl.
+vgagl now supports VGA 16 color modes indirectly.
+Added RAW mode keyboard interface (vgakeyboard.h).
+Mouse driver fix.
+Shared library 1.1.1.
+
+Changes in v1.04: (29 Mar 94)
+
+Support for more than 1Mbyte of memory on ET4000W32i/W32p and 24-bit Sierra
+DAC (15025/6) (untested). Fixed copying 4 bytes per pixel virtual screen to
+three bytes per pixel screen (e.g. '3d' in truecolor modes). Fixed missing
+gl_enablepageflipping. Fixed Cirrus linear addressing.
+Amazing alpha ATI mach32 driver by Michael Weller; configuration file format
+extended.
+Shared library version 1.1.
+
+Changes in v1.03:
+
+EGA support fixed (Kapil Paranjabe). Added vga_safety_fork. 
+utils/Makefile fixed.
+
+Changes in v1.02:
+
+vgagl bitmap scaling improved. vga_lockvc/unlockvc should be useful now to
+avoid corruption of certain VGA registers used for drawing.
+
+Changes in v1.01:
+
+Fixed copying to planar 256 color mode in vgagl, and added page flipping
+support. Setting an SVGA mode after a planar 256 color mode clears the
+screen properly now. Shared library 1.0.10.
+
+Changes in v1.00: (Jan 94)
+
+[The version number doesn't say anything about stability/completeness etc.]
+A number of bug fixes related to Mode X (display start, console switching,
+planar 320x200x256 allowed with vga_setmodeX()).
+Added vga_copytoplanar256 for Mode X-like modes. Added smooth scrolling demo
+program. Demo programs moved to demos/.
+Cirrus linear addressing works (if you have less than 16Mb of memory); see
+demos/testlinear. Added ET3000 driver. Trident 8900 reboot-beep problem should
+be fixed.
+Shared library 1.0.9
+
+Changes in v0.99:
+
+ET4000 patches by Hartmut Schirmer: ET4000 register dumps now have extra
+registers, so old register dumps won't work; register dump program (tseng3,
+moved to et4000/ directory) supports VESA modes. Microsoft mouse handling
+bug fixed. Shared library 1.0.8.
+
+Changes in v0.98:
+
+Some minor bugfixes, low-level mouse handling rewritten (was very slow).
+Added vga_runinbackground and vga_oktowrite as a kludge to allow a graphics
+program to run in the background (not entirely safe). Disabled ET4000 clock
+detection (wasn't used yet).
+Shared library version 1.0.7.
+
+Changes in v0.97:
+
+Fixed Cirrus 1024x768x256 non-interlaced. Other modes use default (lowest)
+frequencies. Fixed bad virtual screen bug in vgagl (copyscreen).
+Incorporates patches from Hartmut Schirmer (et4000 clock frequency
+determination). Shared library 1.0.6.
+
+Changes in v0.96:
+
+Corrected et4000/et4000.default. Cirrus 1024x768x256 non-interlaced.
+Hopefully fixed Cirrus monitor settings. Cirrus blitting works again. Fixes
+in vgagl truecolor framebuffer support. Shared library 1.0.5.
+
+Changes in v0.95:
+
+Avoid writing to some reserved registers on ET4000 and Trident (fixes dual
+monitor setups) (David Monro). Cirrus 1024x768x256 was doing scary things if
+the svgalib monitor type was set to allow non-interlaced. Added Cirrus
+1024x768x16 non-interlaced and 1280x1024x16 interlaced. Shared library
+1.0.4.
+
+Changes in v0.94:
+
+Added 132x43 textmode tweaking utility. Put utilities in utils/.
+restoretextmode was not saving/restoring extended registers anymore. Shared
+library 1.0.3. Hack to prevent standard VGA modes from failing to work after
+having run XFree86 on Cirrus. gl_setcontextwidth fixed.
+
+Changes in v0.93:
+
+Oops, version 0.92 was not quite up to date. Shared library is 1.0.2. We'll
+get libvga.so.1.0.99 before the end of the year at this rate :-).
+gl_copybox truly fixed.
+
+Changes in v0.92:
+
+Fixed broken configuration file reading; some minor changes.
+Shared library is now version 1.0.1. Source is flawed.
+
+Changes in v0.91:
+
+Various fixes. Dumpreg should work better in X now. The default dynamically
+defined ET4000 registers are now in /usr/local/lib/libvga.et4000.
+Added vga_getgraphmem.
+Shared library support (requires tools 2.8 to build). This greatly reduces
+executable size and is good for binary compatibility.
+__svgalib_graph_mem is now shadowed in a read-only user-visible global
+variable (graph_mem) for easier shared library building.
+Fixed console switching bug when a textmode is set in between the setting
+of graphics modes.
+
+Oak 640x480x256 should work now.
+
+vgalgl updates. Added 4 bytes per pixel virtual screen support.
+
+Added vga_init. This will detect and initialize the driver, and give up
+supervisor rights, having obtained I/O permissions. This is the recommended
+first line of any program that uses svgalib.
+
+Should do chmod a+s on restorefont.
+
+EGA support from egalib by Kapil Paranjabe integrated into svgalib. This
+is currently untested.
+
+Mouse support (can also be used independently). Added vga_lockvc and
+vga_unlockvc; vga_getkey (read keyboard without waiting). Using the mouse
+means no console switching for now.
+
+Initial untested S3 driver. Goal is to provide support for truecolor modes
+on the 801/805/928, in SVGA mode. Properly uses monitor type variable.
+[doesn't work]
+
+Configuration file for mouse/monitor type. Monitor type not used by drivers
+yet, except Cirrus.
+
+
+Changes in v0.9:
+
+Extensive changes and restructuring, by Hartmut Schirmer. Dynamic
+(run-time) register loading from a configuration file for ET4000 cards,
+providing binary compatibility. High resolution 16-color modes (for ET4000
+at least). More stable virtual console switching.
+
+copybox, and gl_setpalettecolor bugs fixed in vgagl.
+
+Fixed setting of standard VGA mode after SVGA mode.
+
+
+Changes in v0.82:
+
+Virtual console switching cleanup.
+
+The dumpreg program now also shows extended registers.
+
+Added Oak driver, but extended registers have not been filled in. Somebody
+should run XFree86 with the Oak driver, dump the extended registers with the
+dumpreg program (make sure the Oak driver is enabled in config.h), and put
+them in oak.c. With some luck it'll work.
+
+
+Changes in v0.81:
+
+Restorefont (write option) was broken again due to bug in vga.c; gl/text.c
+was missing in v0.8. Added vga_disabledriverreport.
+
+
+Changes in v0.8:
+
+Fixed major bug in vga_getmodeinfo in vgadrv.c. This may have caused
+spic to fail on unsupported SVGA cards in 320x200x256.
+
+vga.c split, and other changes (Hartmut Schirmer). Note that mode numbers
+beyond 1024x768x256 have changed. Standard VGA modes 720x350x16 and
+720x480x16 added.
+
+Virtual console switching improved (bank/linewidth/displaystart preserved).
+
+
+Changes in v0.7:
+
+Trident textmode restoration and SVGA modes should work now on 1M cards
+(thanks to Scott Heavner).
+
+Bug fixes in vgagl.
+
+
+Changes in v0.6:
+
+Trident driver bug fixed; detection cleaned up. 800x600 and 1024x768 on 1Mb
+cards don't work correctly.
+
+Added Cirrus 800x600x16M NI (at 50 Hz), and program to set the Cirrus memory
+clock to a higher value (setmclk.c).
+
+Added framebuffer graphics library for one, two and three byte-per-pixel
+modes. Documentation improved.
+
+vga_setrgbcolor added.
+
+ET4000 Hicolor fixes (thanks to Savio Lam), and other fixes (Scott Heavner).
+
+
+Changes in v0.5:
+
+Fixed palette register timing bug (caused occasional corruption of textmode
+palette).
+
+Added function that checks the environment variable GSVGAMODE for a 
+default mode (vga_getdefaultmode). The environment string can either be a
+mode number (compatible with VGAlib Ghostscript), or a mode name as
+in (G640x480x2, G640x480x16, G640x480x256, G640x480x32K, G640x480x64K,
+G640x480x16M, PROMPT (ignore)).
+
+
+Changes in v0.4:
+
+restorefont.c as distributed in v0.3 missed a case line in a switch
+statement which made it useless.
+
+Each VGA register write in the library was producing silly debugging code
+(I forgot to restore the macro definition), making everything significantly
+larger than neccessary.
+
+Added vga_getchipset function. vgatest now only lists modes that are
+available.
+
+The ET4000 driver has been improved, including Hicolor DAC detection 
+(thanks to David Monro and Daniel Jackson).
+
+Cirrus driver:
+Fixed 5420/2/4 bug, cleaned up detection, changed the 800x600 timings, and 
+added missing modes 1024x768x256/32K/64K, as well as 320x200x15/16/24bit.
+Also, there's support for some of the accelerated features of the Cirrus
+5426, the driver provides bitblt (move box), fillblt (fill box), and
+imageblt (write bitmap from system memory) functions.
+
+Display start address can now be meaningfully changed in 16-color and planar
+256 color VGA modes for page-flipping (address is expressed as number of
+pixels).
+
+Fixed the vga_flip() functionality; if you press escape during
+vga_getch() the console is switched to textmode until another key is
+pressed. [note: this has been obsoleted by console switching]
+The default amount of video memory saved in SVGA modes is the size
+of one screen. If the program uses more (if it uses page-flipping, for
+example), you must indicate it with the vga_claimvideomemory function. This
+prevents 2048 or 1024K being saved when only a few hundred K is required.
+
+svgalib now waits until the virtual console it is running in becomes active
+before setting the first graphics mode.
+
+Implemented transparent virtual console switching (which uses vga_flip).
+

@@ -1,0 +1,23 @@
+This contains the source for a Borland C++ program that allows you to dump
+the register contents for any BIOS video mode. 'vga.exe' should work with
+any VGA/SVGA adapter. It takes a hexadecimal mode number as argument and
+writes the (VGA) register contents to the console.
+
+These printout can be used to write a new driver. Please read also 'man 7 
+svgalib.et4000' about the tseng3.exe program.
+
+trap-out.asm / .com is a DOS program which traces all I/O calls made when a
+given video mode is set by the BIOS. It was used for the TVGA driver and should
+be useful for other drivers too, esp. if no documentation is available.
+
+It spits out a long list of "T DX/I AX/L" strings where T is "I" for IN or
+"O" for OUT, DX/I is the value of DX or the immediate given value for
+ports <256, and AX/L is the value of AX or AL before the call to IN or OUT
+(yeah, the value of AX is pretty worthless before a call to IN, but oh
+well)
+
+This output is very very easily parsed into a simple C routine that calls
+port_in and port_out many many times, but will set the same mode the BIOS
+did.
+
+The trap-out program is courtesy of Ryan Rubley <rubleyr@river.it.gvsu.edu>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Locating and Calling Device Driver Functions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Enumerating Installed Devices and Loading a Driver" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('EnumeratingInstalledDevicesAndLoadingADr.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Enumerating Installed Devices and Loading a Driver" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Querying Device Configuration Information" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('QueryingDeviceConfigurationInformation.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Querying Device Configuration Information" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Loading and Initializing SciTech SNAP Graphics" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('LoadingAndInitializingSciTechSNAPGraphic.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Loading and Initializing SciTech SNAP Graphics" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h3>
+        Locating and Calling Device Driver Functions
+      </h3>
+      <p class="MsoBodyText">
+        Once you have a pointer to the device driver context structure, you then
+        need to locate the pointers to the device driver functions of interest.
+        Once a graphics device driver is loaded, the <a href="GA_queryFunctions.html">GA_queryFunctions</a> function
+        is the single entry point where you can query the driver to determine
+        what functions it supports and to obtain pointers to those functions.
+        All of the functions in the device driver are grouped together into
+        functional groups, and you can obtain pointers to each individual group
+        of functions by calling <a href="GA_queryFunctions.html">GA_queryFunctions</a> with
+        the identifier of the group you are interested in. If the driver does
+        not support a particular group of functions, it may return FALSE,
+        indicating the hardware device does not support that entire function
+        group. Within a particular group of functions, certain entry points may
+        be set to NULL if the driver or hardware does not support that
+        particular feature within the group.
+      </p>
+      <p class="MsoBodyText">
+        For example in order to call the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function
+        to enumerate the available display modes, you need to fill in the
+        structure of pointers to the main init functions. To do this, use the
+        following code (make sure you fill in the dwSize member with the size
+        of the structure you are passing in!):
+      </p>
+      <p class="Preformatted">
+        GA_initFuncs initFuncs;<br />
+        &#160;<br />
+        bool LoadInitFuncs(GA_devCtx *dc)<br />
+        {<br />
+        &#160;&#160;&#160; initFuncs.dwSize = sizeof(initFuncs);<br />
+        &#160;&#160;&#160; if
+        (!GA_queryFunctions(dc,GA_GET_INITFUNCS,&amp;initFuncs))<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; return false;<br />
+        &#160;&#160;&#160; return true;<br />
+        }
+      </p>
+      <p class="MsoBodyText">
+        Once you have the list of function pointer for the function group you are
+        interested in, you can simply call the returned functions via the
+        function pointers contained within the structure. Make sure you first
+        check that the function pointer is not NULL, since it is valid for
+        optional functions to be returned as NULL by the loaded drivers.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; You must obtain a copy of all function groups
+          (except the GA_initFuncs group) every time that you change display
+          modes, as the features and capabilities of the driver and/or hardware
+          device may change between different screen resolutions and color
+          depths.
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

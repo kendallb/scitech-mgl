@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_AttributeExtFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_AttributeExtFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaIsPanningMode&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; gaNoRefreshCtrl&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002<br />
+        &#160;&#160;&#160; } GA_AttributeExtFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for the AttributesExt member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure
+        and in the AttributesExt member of the main <a href="GA_devCtx.html">GA_devCtx</a> device
+        context block structure. These flags define the hardware capabilities
+        of the particular device or graphics mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaIsPannedMode flag is used to determine if the mode is a virtual
+        hardware panned display mode or if the mode is a non-panned display
+        mode. This flag is only ever set if you call the GetVideoModeInfoExt or
+        GetCustomVideoModeInfoExt functions, as the original versions of these
+        functions assume non panning modes will be reported. If the mode is a
+        hardware panned mode for the requested output device, it means that if
+        the mode is set while that output device is active hardware panning
+        will be enabled. It is then up to the shell driver to interface with
+        the mouse driver to implement the actual hardware panning.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaNoRefreshCtrl flag indicates that the device has no refresh
+        control. This will only be reported in the <a href="GA_devCtx.html">GA_devCtx</a> variable,
+        and is only so that the VBE/Core fallback driver can indicate whether
+        refresh control is available or not.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaIsPanningMode
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode is a virtual hardware panning display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoRefreshCtrl
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device has no refresh rate control
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

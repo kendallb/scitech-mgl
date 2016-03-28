@@ -1,0 +1,86 @@
+This file contains some talk about what is involved with a good
+register-level graphics driver interface. This is an old file,
+you might also consider reading 'man 7 svgalib.faq'
+
+Section 1: Mode Setting
+
+The following describes what happens during a mode set.
+
+A request is made for a mode with given width, height, and color
+resolution. Optionally the request can specify a specific pixel size,
+scanline offset (line width), and pixel size (e.g. 3 vs. 4 pixels for
+24-bit color modes), otherwise the driver chooses defaults for these
+properties. It is the intention that requests for resolutions that don't
+match an availabe mode timing can still be honoured by choosing a higher
+resolution (for example, 700x500 is requested and 800x600 timing is
+programmed). The scanline offset should ensure correct drawing of
+graphics. 
+
+The user-level driver tries to match the requested mode properties with
+either fixed modes defined by the selected kernel module driver, or with a
+flexible mode timing if the selected kernel module driver supports mode
+timing. In the case of fixed modes, the user-level driver must ask the
+kernel driver about the supported fixed modes, and in the case of mode
+timings, the user-level driver must ask the kernel driver about physical
+limits such as the amount of video memory, maximum pixel clocks for each
+pixel size, range and mapping of horizontal timing parameters, and the
+available pixel clock frequencies. In both cases, modes/timings that fall
+outside of the configured monitor specs (probably stored in a file in
+/etc) will not be selected. In the case of flexible mode timings, the
+highest refresh timing that is possible will be selected. 
+
+Once a mode timing or fixed mode is selected, the kernel module driver is
+requested to set the mode on the hardware. A mode state is defined which
+is a collection of VGA and driver-specific extended register values (byte
+values) that describes the mode that the video card is set to. During the
+mode set proper, the following actions are performed: 
+
+1. The registers values that make up the state are read from the video
+   card and stored in a state in system memory (this is the state of
+   the video card before the mode set).
+
+2. An initialization function modifies the values in the state according
+   to the requested mode. Nothing is written to the card; only the state
+   in system memory is changed.
+
+3. The actual mode set on the hardware is performed by writing the values
+   in the state to the corresponding registers on the video card.
+
+A special case is VGA-compatible textmode state, which would normally be
+active at the time of a graphics mode set. This mode cannot be initialized
+in the way of (2) above. Instead, the mode is saved using (1), and the
+resulting state is restored using (3) when textmode needs to be restored. 
+
+Another special case is the setting of a mode for which (1) and (2) have
+already been performed, and the resulting state has been saved. In this
+case the mode can be set accomplished by just (3), provided that certain
+hardware-specific settings on the card have not been changed in the time
+between (1) and (3) (this would normally be the case). 
+
+When a VT switch away from a graphics modes happens, the current hardware
+state should be saved, instead of the initialized mode state, since an
+application can have changed it (banking, displaystart, accelerator state
+etc.). This is subject to all the extended registers being readable, which
+may be a problem with some cards (note that for simple mode setting
+followed by textmode restoration, this is not a problem since the mode
+initialization overwrites most of the delicate extended registers, and the
+saved textmode state is largely VGA registers, and doesn't deal with
+delicate extended registers). A possible solution would be to have
+functions that save and restore or re-initialize the 'drawing' state,
+which would include banking, displaystart and accelerator registers. Upon
+VT switching back, the mode initialization function would be used followed
+by the restoring of the saved drawing state. 
+
+Section 2: What should be in the kernel driver.
+
+A decision that has to be made is whether all chipset specific settings
+should be handled within the kernel module driver. There's a fair amount
+of information required to select a suitable timing, which the user-level
+driver will have to request, and it might have to do additional queries
+during its evaluation. The abstractions used for this communication will
+include a growing number of properties to accomodate new card/chipset
+drivers. It is however desirable that the simple loading of a new module
+driver is enough to make full use it, without the requirement of having an
+updated user-level driver. 
+
+Harm Hanemaayer (hhanemaa@cs.ruu.nl)

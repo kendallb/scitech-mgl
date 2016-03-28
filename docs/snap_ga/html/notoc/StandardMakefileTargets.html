@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Standard Makefile Targets</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Standard Makefile Targets
+      </h3>
+      <p class="MsoBodyText">
+        All of the makefile utilities startup scripts support a standard set of
+        targets for controlling the compilation for the current compiler. The
+        most common commands and useful targets that you may want to use when
+        building examples and re-compiling any libraries are listed in the
+        table below:
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:1.5in;border-top:1.5pt;border-left:1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;border-style:solid;padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              Dmake
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:'solid windowtext 1.5pt';border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              Running dmake by itself in a directory will select the default
+              target for the makefile, which is usually to compile and link all
+              sample programs in that directory. Some makefiles only support
+              building libraries so the default target may produce a library
+              rather than an executable file.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              dmake –u
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              The -u command line option forces a complete re-build of all files,
+              so it is useful to re-build an entire directory from scratch.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              dmake lib
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              This builds just the library for the directory.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              dmake install
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              This builds just the library for the directory and then installs
+              the library into the appropriate c:\scitech\LIB\xxx\xx directory.
+              You should only do this once you are sure that everything is
+              working correctly! The new library will overwrite the old
+              library.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              dmake clean
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              This cleans out all object files, libraries and pre-compiled header
+              files etc from the directory, but leaves all executable files and
+              shared libraries.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="Preformatted">
+              dmake cleanexe
+            </p>
+          </td>
+          <td style="width:315.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="525" valign="top">
+            <p class="TableText">
+              This cleans out all non-source files including all executeable
+              files and shared libraries.
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

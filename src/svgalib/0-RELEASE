@@ -1,0 +1,46 @@
+This is to announce the release of svgalib 1.3.0. It has been uploaded to
+the incoming dirs of sunsite and tsx and will appear in the appropriate dirs
+(see LSM below) and on their mirrors after a (hopefully) short delay.
+
+Caveats since 1.2.13:
+ - The environment variable GSVGAMODE was renamed to SVGALIB_DEFAULT_MODE
+ - All MOUSE_* environment variables were removed.
+ - MAX_REGS was changed. This means that you MAY NO LONGER use old VGA
+   state files created with restoretextmode. Simply recreated them with
+   the new version of restoretextmode and you should be fine.
+
+Major New features since 1.2.13:
+ - Reads ~/.svgalibrc & where SVGALIB_CONFIG_FILE points.
+ - Logarithmic Mouse Acceleration & Mouse event emulation on raw keyboards
+   all configurable from a file.
+ - Added apm driver for AT3D.
+ - Added nv3 driver for Riva128.
+ - Added ET6000 driver.
+ - Mouse acceleration/override can be configured from config file.
+ - Added joystick support.
+ - Added Microsoft IntelliMouse/Logitech MouseMan+ support.
+ - Faking keyboard presses on Mousewheel turns.
+ - Added a Vesa driver: NOTE NOTE NOTE NOTE:
+   This does not mean that all so called 'vesa' cards now work as Joe
+   Blow User seems to think, this is just too difficult if not impossible.
+   You might need a decent kernel (I think 2.0.32 was reported working) and
+   nicely behaved card with a VESA bios extension in ROM. Right now, only
+   one of three (namely STB Velocity 128, AT25 and CL-5446 don't)
+   works.
+ - There seems to be a need for 512x384 mode timings. It is difficult to add
+   these for cards where predefined mode timings have to be dumped from the
+   card or bios. For those drivers flexible enough to set own timings, such
+   an example timing was added to the 'demo' libvga.config
+
+Major fixes since 1.2.13:
+ - Makefile fixes.
+ - Mach32 calculation of monitor limits in interlace modes.
+
+NOTE: There were some preversions of 1.3.0 floating through the net already,
+this, however, is the 'official' version. Finally, although the maintainer
+will try to answer any emails, it is appreciated when you mail/join the
+mailing list linux-svgalib@vger.rutgers.edu (mail a msg 'help' to
+Majordomo@vger.rutgers.edu for details on subscription) instead. I'll read
+any mail there too but the discussion/answer can be discussed by many
+people and I don't have to write the same mail every one or two days to
+different people.

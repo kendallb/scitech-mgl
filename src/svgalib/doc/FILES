@@ -1,0 +1,85 @@
+NOTE: This is an incomplete list!
+
+0-INSTALL	Documentation on installation.
+0-README	General documentation.
+svgalib.lsm	LSM entry for svgalib.
+Makefile.cfg	Configuration for everything. Be sure to issue a 'make clean'
+		if you change any non installation configuration in there.
+
+doc/		In general, docs on anything.
+doc/man?/	Manual pages on everything. See:
+doc/0-README	on how to make nice printouts of this manpages and how to
+		access the man pages without installing svgalib.
+
+src/
+    vga.h	Headerfile for library
+    vga.c	Main module
+    vgaclear.c  Routines to clear the screen.
+    vgadraw.c	Routines drawing scanlines.
+    vgaline.c	Routines drawing lines.
+    vgamodesel.c Routines to select video modes.
+    vgapal.c	Routines to deal with the color palette.
+    vgapix.c	Routines drawing pixels.
+    vgadrv.c	Standard VGA driver (also used by other drivers).
+    cirrus.c	Cirrus GD542x driver.
+    et4000.c	Tseng ET4000 driver.
+    tvga8900.c	Trident 8900/9000 driver.
+    oak.c	Oak 037/067/077 driver.
+    mach32.c	ATI Mach32 driver.
+    s3.c	S3 driver (non-functional).
+    libvga.h	Definitions shared between modules.
+    driver.h	Definitions used by chipset drivers.
+
+src/keyboard/	Driver for raw keyboard mode.
+
+src/mouse/	Driver for the mouse.
+
+utils/
+    restorefont.c Program to save and restore (corrupted) VGA textmode font.
+    convfont.c	Program to convert VGA fonts.
+    runx	Shell script to start XFree86 with font saving/restoration.
+    font8	Sample 8-line VGA font.
+    font14	Sample 14-line VGA font.
+    font16	Sample 16-line VGA font.
+    restoretextmode.c Program to save and restore VGA textmode registers.
+    savetextmode Script to save textmode registers and font.
+    textmode	Script to restore textmode registers and font.
+    restorepalette.c Program to set the VGA textmode palette to the default.
+    setmclk.c	Program to tweak memory clock of Cirrus 542x cards.
+    dumpreg.c	A program to dump VGA registers.
+
+support/
+    vga.c	DOS program to dump VGA registers
+
+gl/
+    def.h	Sources of vgagl library
+    driver.c	Primitives
+    driver.h
+    grlib.c	Main module
+    inlstring.h
+    line.c
+    palette.c
+    scale.c
+    text.c
+    vgagl.h	Headerfile of vgagl library
+
+demos/
+    vgatest.c	Mode test program
+    fun.c	Demo program with moving pixels
+    testgl.c	Test program
+    speedtest.c	Tests framebuffer video speed
+    mousetest.c	Program to test the mouse interface
+    spin.c	Program to test the 6-dimensional mouse interface
+    spintables.h Precalculated trig functions for spin
+    scrolldemo.c VGA scrolling demo (Mode X etc.)
+    testlinear.c Test linear addressing (Cirrus, Mach32).
+    3d		Binary of 3d demo. It was made by Harm Haanemayer. I don't
+		have the source I can't maintain it. If it works -> enjoy, if
+		not: *shrug*
+    testaccel.c	Test 8bit dac (some Mach32) and all blitfunctions (in most rez)
+
+threedkit/	Some nifty 3D demos (plus source) by Paul Sheer.
+
+mach32/
+    mach32info.c reads out Mach32 state and EEPROM, calcs clocks.
+    mach32.std-modes standard ATI videotimings in config file format.

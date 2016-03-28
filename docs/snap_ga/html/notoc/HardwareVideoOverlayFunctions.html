@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Hardware Video Overlay Functions</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Hardware Video Overlay Functions
+      </h2>
+      <p class="MsoBodyText">
+        Hardware video playback with multiple, independent overlay windows can be
+        implemented on compatible devices using the hardware video playback
+        functions. The functions provided by the <a href="GA_videoFuncs.html">GA_videoFuncs</a> function
+        group provide a simple interface to hardware video playback. The
+        application software does all of the decoding of video frames, and the
+        graphics driver can be used to display the video data with hardware
+        stretching and color space conversion. The steps to use hardware video
+        playback are as follows:
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        1.&#160;&#160;&#160; Determine the hardware video playback capabilities
+        for the graphics mode with the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function
+        and examining the VideoWindows member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure.
+        There is one structure in theVideoWindows list for each available
+        hardware overlay window. Each video window may have different
+        capabilities, so be sure to look for the one that supports what you
+        need (generally the first one in the list is the most capable).
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        2.&#160;&#160;&#160; Allocate an offscreen video buffer of the correct
+        dimensions and pixel format for the source video image you wish to
+        display using the <a href="AllocVideoBuffer.html">AllocVideoBuffer</a> function.
+        This function might fail if there is not enough video memory available,
+        or you request an input pixel format that is not supported.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        3.&#160;&#160;&#160; Set the video window output rectangle on the screen
+        with the <a href="SetVideoOutput.html">SetVideoOutput</a> function.
+        This function also lets you specify what features are used for
+        displaying the video, such as interpolation and color keying.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        4.&#160;&#160;&#160; Set the hardware video color key, if applicable,
+        using the <a href="SetVideoColorKey.html">SetVideoColorKey</a> function.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        5.&#160;&#160;&#160; Call <a href="StartVideoFrame.html">StartVideoFrame</a> to
+        set up for decoding the next frame of data. Calling this function
+        effectively makes a call to <a href="LockBuffer.html">LockBuffer</a> for
+        the video buffer, such that the video memory is locked down for direct
+        memory access.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        6.&#160;&#160;&#160; Decode the frame of data into the buffer returned by
+        <a href="AllocVideoBuffer.html">AllocVideoBuffer</a> above.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        7.&#160;&#160;&#160; Call <a href="EndVideoFrame.html">EndVideoFrame</a> to
+        complete the decoding of the video data and display it on the screen.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        8.&#160;&#160;&#160; Repeat steps 4-6 until the video playback is
+        complete.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

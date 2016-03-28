@@ -1,0 +1,44 @@
+Things to be added to library:
+------------------------------
+
+Linked lists, queues, dlists and deques in contiguous memory with links
+specified as integer indexes.
+
+Binary Tree class (simple)
+AVL tree class for balanced binary trees
+Red Black trees
+Skip Lists
+Splay Trees
+Heap class
+    Binomial Heaps
+    Fibonacci Heaps
+Priority Queue class
+Bit oriented sets
+    character sets
+Date class
+Time class
+B-Tree's
+B*-Tree's
+
+Notes:
+------
+
+Both AVL trees and Red/Black trees should be able to be coded as extensions
+to a standard binary tree representation.
+
+Enhancements:
+-------------
+
+Hash Tables:
+    - Modify the hash table routines to return both the size and load
+      factor for the hash table (load factor should be an integer).
+
+    - Provide a routine for searching for a GOOD hash table size given an
+      expected number of items to be stored in the array.
+
+Things to be noted:
+-------------------
+
+No memory exception handling is performed by the library. It is assumed that
+the user will provide a memory handling routine via the set_new_handler
+function or by using C++ exceptions.

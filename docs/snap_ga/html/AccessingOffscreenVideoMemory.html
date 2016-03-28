@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Accessing Offscreen Video Memory</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Multi Buffering" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MultiBuffering.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Multi Buffering" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Virtual Buffer Scrolling" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('VirtualBufferScrolling.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Virtual Buffer Scrolling" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="2D Coordinate System" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('2DCoordinateSystem.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="2D Coordinate System" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h3>
+        Accessing Offscreen Video Memory
+      </h3>
+      <p class="MsoBodyText">
+        Offscreen video memory on the controller can be used for caching bitmap
+        information to be used for fast <a href="BitBlt.html">BitBlt</a> and <a href="SrcTransBlt.html">SrcTransBlt</a> operations
+        for sprite animation.&#160; It can also be used to cache offscreen
+        bitmap data for fast GUI operations. Drawing to offscreen display
+        memory can be done in one of three ways. The first way is to simply use
+        coordinates past the last Y coordinate for the currently active draw
+        buffer, which is most useful when blitting cached bitmap data from
+        offscreen video memory to display memory. The second way is to use the <a href="SetDrawBuffer.html">SetDrawBuffer</a> function
+        to make the offscreen memory the active draw buffer with the same
+        dimensions as the main display screen. This will work on all
+        controllers and is similar to multi-buffering mentioned above, but you
+        never display from the offscreen buffer (note that you need to properly
+        account for the hardware alignment requirements for the offscreen
+        buffer starting address and scanline pitch).
+      </p>
+      <p class="MsoBodyText">
+        The third method is to use the <a href="SetDrawBuffer.html">SetDrawBuffer</a> function
+        to set the active drawing buffer to a non-conforming offscreen memory
+        buffer on hardware that can support this. This is most useful for
+        setting up offscreen ‘surfaces’ with a possibly different set of
+        dimensions to the main display mode (similar to DirectX offscreen
+        surfaces). The first two methods should be relatively straight forward,
+        but the following code can be used to implement the third case for a
+        320x240 8bpp buffer starting at the 1Mb memory boundary:
+      </p>
+      <p class="Preformatted">
+        &#160;&#160;&#160; drawBuf.dwSize = sizeof(drawBuf);<br />
+        &#160;&#160;&#160; drawBuf.Offset = 1048576;&#160;&#160; // 1Mb offset<br />
+        &#160;&#160;&#160; drawBuf.Stride = 320;<br />
+        &#160;&#160;&#160; drawBuf.Width&#160; = 320;<br />
+        &#160;&#160;&#160; drawBuf.Height = 240;<br />
+        &#160;&#160;&#160; if (state2d.SetDrawBuffer(&amp;drawBuf) != 0)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; PM_fatalError(“Unable to set
+        draw buffer!”);
+      </p>
+      <p class="MsoBodyText">
+        Note that for non-conforming draw buffers, you must ensure that the
+        Offset and Stride members are aligned to the necessary alignment values
+        defined in the BitmapStartAlign and BitmapStridePad members of the <a href="GA_devCtx.html">GA_devCtx</a> structure
+        (some hardware requires the use of the <a href="AlignLinearBuffer.html">AlignLinearBuffer</a> function
+        instead to properly align the buffers). Also be prepared for <a href="SetDrawBuffer.html">SetDrawBuffer</a> to
+        fail if the hardware cannot do this, as lots of older hardware is not
+        capable of supporting non-conforming draw buffers. The above code
+        essentially sets up the following framebuffer layout:
+      </p>
+      <p class="MsoBodyText">
+        <img border="0" width="360" height="252" src="./Images/image008.gif" />
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If you plan to utilize offscreen memory to
+          store bitmap data, please use the buffer manager functions provided
+          by the <a href="GA_bufferFuncs.html">GA_bufferFuncs</a> function
+          group to create and manage all flip buffers and offscreen buffers.
+          The buffer functions will provide for maximum compatibility across
+          multiple hardware devices, properly accounting for hardware buffer
+          alignment requirements for storing buffers in offscreen video memory.
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

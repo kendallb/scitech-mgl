@@ -1,0 +1,42 @@
+This version of the Fox and Bear uses DiamondWare's Sound ToolKit for Windows
+(the WIN-STK) for its sound support.  The WIN-STK provides a superset of the
+acclaimed API, first introduced for the DOS-STK.  It includes both 16- and
+32-bit DLLs, plus all the files to support C/C++, Visual BASIC, and Delphi.
+It's $250, royalty-free.
+
+A fully-functional demo is available from our web page (www.dw.com), our
+ftp site (ftp.dw.com), or on CompuServe (GO GAMEDEV, download DWSTKW.ZIP
+from the Music/Sound section).
+
+DiamondWare, Ltd.
+2095 N. Alma School Rd.
+Suite 12-288
+Chandler, AZ 85224
+voice: (602) 917-3474
+FAX:   (602) 917-5973
+email: support@dw.com
+CIS:   73704,245
+
+
+The music, "Funk2" was written by David. B. Schultz, of DBS music.  He
+provided both a 3MB digital file (used in the Windows FoxNBear on CD-ROM),
+and a small MIDI file (which we used in the downloaded Windows version and
+the DOS version of FoxNBear).  You can contact Dave at dbsmusic@quiknet.com
+or on CompuServe 72143,3624.  Funk2 is Copyright 1996 by DBS Music.  Used
+by permission.
+
+
+Some of the sound effects were supplied by Sound Ideas.  These sound effects
+are Copyright by Sound Ideas.  Used by permission.  For more information or
+to receive their free demo cd (of their sound effect libraries) please
+contact them directly.
+
+Sound Ideas
+105 West Beaver Creek Road, Suite 4
+Richmond Hill, Ontario, L4B 1C6
+voice:		  (905) 886-5000
+Canada toll-free: (800) 665-3000
+US toll-free:	  (800) 387-3030
+FAX:		  (905) 886-6800
+email:        info@sound-ideas.com
+

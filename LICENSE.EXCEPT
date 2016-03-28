@@ -1,0 +1,77 @@
+                SciTech FOSS License Exception
+                         June 2004
+
+The SciTech Software, Inc. Exception for non-GPL Free and Open Source
+Software-only Applications using SciTech GPL licensed tools and Libraries
+(the "FOSS Exception").
+
+1. Exception Intent
+
+We want FOSS-only (Free and Open Source Software) applications to be able
+to use GPL-licensed tools and Libraries despite the fact that not all FOSS
+licenses are compatible with the GPL. Therefore we have issued the following
+exception:
+
+2. Legal Terms and Conditions
+
+As a special exception to the terms and conditions of version 2.0 of the GPL:
+
+You are free to distribute Derivative Works that are formed entirely from
+works licensed under one or more of the licenses listed below without
+affecting the license terms of the works, as long as:
+
+   1. You obey the GNU General Public License in all respects for the Program
+      and the Derivative Work, except for identifiable sections of that work
+      which are not derived from the Program, and which can reasonably be
+      considered independent and separate works in themselves,
+
+   2. You distribute all identifiable sections of the Derivative Work which
+      are not derived from the Program, and which can reasonably be
+      considered independent and separate works in themselves, subject to one
+      of the licenses listed below,
+
+   3. The Derivative Work does not include or aggregate any part of the
+      SciTech SNAP DDK or any modifications, translations or other
+      derivatives thereof,
+
+   4. If the above conditions are not met, then the Program may only be
+      copied, modified, distributed or used under the terms and conditions of
+      the GPL or another valid licensing option from SciTech Software, Inc.
+
+License name                                Version(s)/Copyright Date
+Academic Free License                       2.0
+Apache Software License                     1.0/1.1/2.0
+Apple Public Source License                 2.0
+Artistic license                            From Perl 5.8.0
+BSD license                                 "July 22 1999"
+Common Public License                       1.0
+GNU General Public License (GPL)            2.0
+GNU Lesser General Public License (LGPL)    2.1
+Jabber Open Source License 	                1.0
+MIT license 	                            -
+Mozilla Public License (MPL) 	            1.0/1.1
+PHP License 	                            3.0
+Python license (CNRI Python License) 	    -
+Python Software Foundation License 	        2.1.1
+Sleepycat License 	                        "1999"
+W3C License 	                            "2001"
+Zlib/libpng License 	                    -
+Zope Public License 	                    2.0
+wxWindows Library Licence                   Version 3
+
+Due to the many variants of some of the above licenses, we require that any
+version follow the Open Source Definition by the Open Source Initiative
+(see opensource.org).
+
+As used in this document, the term "include or aggregate" means to embed,
+integrate, bundle, aggregate, link, distribute on the same media or in the
+same packaging, provide with instructions to download or automate any of the
+preceding processes.
+
+Terms used, but not defined, herein shall have the meaning provided in
+version 2 of the GPL.
+
+Derivative Work means a derivative work under copyright law: that is to say,
+a work containing the Program or a portion of it, either verbatim or with
+modifications and/or translated into another language.
+

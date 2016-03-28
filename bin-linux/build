@@ -1,0 +1,4 @@
+#!/bin/sh
+unset CHECKED DBG OPT OPT_SIZE BUILD_DLL IMPORT_DLL FPU CHECKS BETA
+build_it $*
+

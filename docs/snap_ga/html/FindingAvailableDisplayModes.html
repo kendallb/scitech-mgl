@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Finding Available Display Modes</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Working With Display Modes" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('WorkingWithDisplayModes.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Working With Display Modes" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Refresh Rate Control" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('RefreshRateControl.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Refresh Rate Control" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Working With Display Modes" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('WorkingWithDisplayModes.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Working With Display Modes" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h3>
+        Finding Available Display Modes
+      </h3>
+      <p class="MsoBodyText">
+        Before any of the drawing functions can be called, one of the supported
+        display modes must be initialized by the application program by calling
+        the <a href="SetVideoMode.html">SetVideoMode</a> function. The SciTech
+        SNAP Graphics Architecture does not define a standard display mode
+        numbering scheme but rather relies on the application to search through
+        the list of available display modes for one that has the desired
+        resolution and pixel depth. In order to find a valid video mode number
+        to be passed to <a href="SetVideoMode.html">SetVideoMode</a>, the <a href="GetVideoModeInfo.html">GetVideoModeInfo</a> function
+        is used to obtain specific information about all of the available video
+        modes supported by the loaded driver. The list of available video modes
+        is stored in the AvailableModes field of the <a href="GA_devCtx.html">GA_devCtx</a> structure.
+        Once the desired display mode has been identified, this display mode
+        number can be used in the call to <a href="SetVideoMode.html">SetVideoMode</a>.
+      </p>
+      <p class="MsoBodyText">
+        The general procedure you would normally follow to find the identifier
+        for a display mode with a particular X and Y resolution is as follows:
+      </p>
+      <p class="Preformatted">
+        N_uint16 FindGraphicsMode(<br />
+        &#160;&#160;&#160; GA_devCtx *dc,<br />
+        &#160;&#160;&#160; int xRes,<br />
+        &#160;&#160;&#160; int yRes,<br />
+        &#160;&#160;&#160; int bitsPerPixel)<br />
+        {<br />
+        &#160;&#160;&#160; GA_initFuncs&#160;&#160;&#160; init;<br />
+        &#160;&#160;&#160; GA_modeInfo&#160;&#160;&#160;&#160; modeInfo;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; *modes;<br />
+        <br />
+        &#160;&#160;&#160; /* Load the driver init functions */<br />
+        &#160;&#160;&#160; init.dwSize = sizeof(init);<br />
+        &#160;&#160;&#160; if
+        (!GA_queryFunctions(dc,GA_GET_INITFUNCS,&amp;init))<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; return 0xFFFF;<br />
+        <br />
+        &#160;&#160;&#160; /* Search for the display mode */<br />
+        &#160;&#160;&#160; for (modes = dc-&gt;AvailableModes; *modes !=
+        0xFFFF; modes++) {<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; modeInfo.dwSize =
+        sizeof(modeInfo);<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; if
+        (init.GetVideoModeInfo(*modes,&amp;modeInfo) != 0)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; continue;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; if (modeInfo.Attributes
+        &amp; gaIsTextMode)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; continue;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; if (modeInfo.XResolution ==
+        xRes &amp;&amp;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; modeInfo.YResolution
+        == yRes &amp;&amp;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; modeInfo.BitsPerPixel
+        == bitsPerPixel)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; return
+        *modes;<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />
+        &#160;&#160;&#160; return 0xFFFF;<br />
+        }
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

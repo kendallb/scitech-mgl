@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_BufferFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_BufferFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaBufferSysMem&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; gaBufferCached&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; gaBufferMoveable&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; gaBufferPageable&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; gaBufferPriority&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; gaBufferNoSysMem
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        0x00000020,<br />
+        &#160;&#160;&#160; gaBuffer3D&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000040,<br />
+        &#160;&#160;&#160; gaBufferFlippable&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00010000,<br />
+        &#160;&#160;&#160; gaBufferVideo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00020000,<br />
+        &#160;&#160;&#160; gaBufferDepth&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00040000,<br />
+        &#160;&#160;&#160; gaBufferTexture&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;=
+        0x00080000,<br />
+        &#160;&#160;&#160; gaBufferStencil&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00100000,<br />
+        &#160;&#160;&#160; gaBufferSpecial&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x7FFF0000<br />
+        &#160;&#160;&#160; } GA_BufferFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for buffer flags passed to the AllocBuffer function. The flags
+        define how the buffer is allocated, and the type of buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferSysMem flag indicates that the buffer is currently located in
+        system memory only. It is possible for a buffer that was allocated with
+        the gaBufferPageable and gaBufferCached flags to initially be in video
+        memory but then get paged out to system memory to make space for higher
+        priority buffers. You can also set this flag when you allocate a buffer
+        to cause the buffer to be allocated in system memory instead of video
+        memory.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferCached flag indicates that the buffer should have a system
+        memory cache allocated for it, so that it can be swapped in and out of
+        video memory as necessary. Sometimes it may be useful to have buffers
+        cached in system memory, but not have them pageable. Thus the system
+        memory cache can be used to refresh the video memory as necessary if
+        the video memory contents were lost (ie: on a focus switch etc). Note
+        that the system memory cache is not maintained automaticaly by SNAP
+        Graphics, but rather it is up to the application code to maintain the
+        contents of the system memory cache if they need to be kept in sync.
+        You can use the UpdateCache and UpdateFromCache functions to keep the
+        system memory cache in sync as necessary.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferMoveable flag indicates that the buffer should be allocated
+        on the moveable buffer heap, so that the buffer can be moved around as
+        necessary to compact the heap if it becomes fragmented. For buffers
+        that should never move in video memory, this flag should not be set and
+        the buffers will be allocated in the non-moveable or fixed heap.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferPageable flag indicates that the buffer is a low priority
+        buffer and can be paged to system memory in order to make room for
+        higher priority buffers. Setting gaBufferPageable flag will
+        automatically set the gaBufferCached flag so that there is a system
+        memory cache for the buffer. Pageable buffers will be paged back into
+        video memory when the heap becomes free of all non-pageable buffers.
+        Hence shell drivers using the buffer manager to cache bitmaps etc
+        should make those bitmaps all pageable, so that they will get pages to
+        system memory if applications need more offscreen memory (ie: 2D or 3D
+        graphics intensive apps). When the graphics intensive app exits, the
+        pageable buffers will get pages back into video memory as all
+        non-pageable buffers will have been free.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferPriority flag indicates that the buffer is a high priority
+        buffer. As long as there are any high priority buffers still allocated,
+        the buffer manager will not attempt to page back in pageable buffers
+        from system memory. Hence DirectDraw application buffers etc should be
+        marked as priority buffers, so that pageable buffers will not be
+        brought back into video memory until the DirectDraw app exits.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferNoSysMem flag is used to indicate that the surface being
+        created should only ever be allocated in video memory. If there is no
+        video memory available, the buffer allocation function will fail
+        (normally it will attempt to allocate the buffer in system memory if
+        the gaBufferCached or gaBufferPageable flags are set).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBuffer3D flag is used to indicate that the surface being created
+        should be capable for being the destination for 3D hardware rendering.
+        If you need hardware 3D capabilities for the primary and flippable
+        buffers, you should pass this flag to the InitBuffers function when you
+        initialise the buffer manager.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferFlippable flag is used to indicate whether the buffer is a
+        flippable buffer that can be viewed and made visible via the
+        MakeVisibleBuffer function. All flippable buffers must be the same
+        dimensions as the primary display mode, and are allocated when you
+        first call the InitBuffers function to initialise the buffer manager.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferVideo flag is an internal flag used to indicate that the
+        buffer is a video overlay window buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferDepth flag is an internal flag used to indicate that the
+        buffer is a hardware depth buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferTexture flag is an internal flag used to indicate that the
+        buffer is a hardware texture map.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaBufferStencil flag is an internal flag used to indicate that the
+        buffer is a hardware stencil bufer.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; These flags are also passed to the AllocBuffer
+          function to determine how the buffer should be allocated. Some of the
+          flags are internal and should never be passed to AllocBuffer as they
+          are used internally. Flags above or equal to gaVideo are used
+          internally to indicate what type of buffer is in use (since all
+          buffers are internally allocated from the same heap).
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferSysMem
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is currently located in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferCached
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is cached in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferMoveable
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer can be moved around to compact buffer heap
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferPageable
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer can be paged to system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferPriority
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a high priority bitmap
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferNoSysMem
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer should never be in system memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferFlippable
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a viewable, flippable surface
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBuffer3D
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a hardware 3D capable surface
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferVideo
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a video overlay window surface
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferDepth
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a hardware depth buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferTexture
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a hardware texture map
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferStencil
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Buffer is a hardware stencil buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaBufferSpecial
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask to determine if buffer is special buffer
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

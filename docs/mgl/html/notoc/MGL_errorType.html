@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_errorType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_errorType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; grOK&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0,<br />
+        &#160;&#160;&#160; grNoInit&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        -1,<br />
+        &#160;&#160;&#160; grNotDetected&#160;&#160; = -2,<br />
+        &#160;&#160;&#160; grDriverNotFound= -3,<br />
+        &#160;&#160;&#160; grBadDriver&#160;&#160;&#160;&#160; = -4,<br />
+        &#160;&#160;&#160; grLoadMem&#160;&#160;&#160;&#160;&#160;&#160; = -5,<br />
+        &#160;&#160;&#160; grInvalidMode&#160;&#160; = -6,<br />
+        &#160;&#160;&#160; grError&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        -8,<br />
+        &#160;&#160;&#160; grInvalidName&#160;&#160; = -9,<br />
+        &#160;&#160;&#160; grNoMem&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        -10,<br />
+        &#160;&#160;&#160; grNoModeSupport = -11,<br />
+        &#160;&#160;&#160; grInvalidFont&#160;&#160; = -12,<br />
+        &#160;&#160;&#160; grBadFontFile&#160;&#160; = -13,<br />
+        &#160;&#160;&#160; grFontNotFound&#160; = -14,<br />
+        &#160;&#160;&#160; grOldDriver&#160;&#160;&#160;&#160; = -15,<br />
+        &#160;&#160;&#160; grInvalidDevice = -16,<br />
+        &#160;&#160;&#160; grInvalidDC&#160;&#160;&#160;&#160; = -17,<br />
+        &#160;&#160;&#160; grInvalidCursor = -18,<br />
+        &#160;&#160;&#160; grCursorNotFound= -19,<br />
+        &#160;&#160;&#160; grInvalidIcon&#160;&#160; = -20,<br />
+        &#160;&#160;&#160; grIconNotFound&#160; = -21,<br />
+        &#160;&#160;&#160; grInvalidBitmap = -22,<br />
+        &#160;&#160;&#160; grBitmapNotFound= -23,<br />
+        &#160;&#160;&#160; grNewFontFile&#160;&#160; = -25,<br />
+        &#160;&#160;&#160; grNoDoubleBuff&#160; = -26,<br />
+        &#160;&#160;&#160; grNoHardwareBlt = -28,<br />
+        &#160;&#160;&#160; grNoOffscreenMem= -29,<br />
+        &#160;&#160;&#160; grInvalidPF&#160;&#160;&#160;&#160; = -30,<br />
+        &#160;&#160;&#160; grInvalidBuffer = -31,<br />
+        &#160;&#160;&#160; grNoDisplayDC&#160;&#160; = -32,<br />
+        &#160;&#160;&#160; grFailLoadRef2d = -33,<br />
+        &#160;&#160;&#160; grLastError&#160;&#160;&#160;&#160; = -34<br />
+        &#160;&#160;&#160; } MGL_errorType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the error codes returned by <a href="MGL_result.html">MGL_result</a>.
+        If a function fails for any reason, you can check the error code return
+        by <a href="MGL_result.html">MGL_result</a> to determine the cause of
+        the failure, or display an error message to the user with <a href="MGL_errorMsg.html">MGL_errorMsg</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grOK
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No error
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoInit
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Graphics driver has not been installed
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNotDetected
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Graphics hardware was not detected
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grDriverNotFound
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Graphics driver file not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grBadDriver
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                File loaded was not a graphics driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grLoadMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Not enough memory to load graphics driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidMode
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid graphics mode for selected driver
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grError
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                General graphics error
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidName
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid driver name
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Not enough memory to perform operation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoModeSupport
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Select video mode not supported by hard.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidFont
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid font data
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grBadFontFile
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                File loaded was not a font file
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grFontNotFound
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Font file was not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grOldDriver
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver file is an old version
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidDevice
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid device for selected operation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidDC
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid device context
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidCursor
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid cursor file
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grCursorNotFound
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Cursor file was not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidIcon
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid icon file
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grIconNotFound
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Icon file was not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidBitmap
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid bitmap file
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grBitmapNotFound
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bitmap file was not found
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNewFontFile
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Only Windows 2.x font files supported
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoDoubleBuff
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Double buffering is not available
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoHardwareBlt
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No hardware bitBlt for OffscreenDC
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoOffscreenMem
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                No available offscreen memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidPF
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid pixel format for memory DC
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grInvalidBuffer
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Invalid offscreem buffer
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grNoDisplayDC
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Display DC has not been created
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grFailLoadRef2d
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                2D reference rasteriser driver failed to load
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                grLastError
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Last error number in list
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

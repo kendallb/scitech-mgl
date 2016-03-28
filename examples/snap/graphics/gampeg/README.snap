@@ -1,0 +1,17 @@
+                          SciTech SNAP MPEG player
+                          ========================
+
+This sample MPEG1 and MPEG2 video player is based on the mpeg2play
+source code by Stefan Eckart, which was ported to the XvMC interface
+by Mark Vojkovich. This was then ported to the SciTech SNAP video
+overlay API's, including the hardware motion compensation API's for
+hardware accelerated DVD playback.
+
+Important Licensing Information!
+--------------------------------
+
+Please note that Commercial implementations of MPEG-1 and MPEG-2 video,
+including shareware, are subject to royalty fees to patent holders.  Many
+of these patents are general enough such that they are unavoidable
+regardless of implementation design.
+

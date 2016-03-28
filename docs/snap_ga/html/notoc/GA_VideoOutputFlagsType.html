@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_VideoOutputFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_VideoOutputFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaVideoXInterp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000001,<br />
+        &#160;&#160;&#160; gaVideoYInterp&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000002,<br />
+        &#160;&#160;&#160; gaVideoColorKeySrcSingle&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000004,<br />
+        &#160;&#160;&#160; gaVideoColorKeySrcRange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000008,<br />
+        &#160;&#160;&#160; gaVideoColorKeyDstSingle&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000010,<br />
+        &#160;&#160;&#160; gaVideoColorKeyDstRange&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x00000020<br />
+        &#160;&#160;&#160; } GA_VideoOutputFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Flags for hardware video output capabilities defined in the
+        VideoOutputFlags member of the <a href="GA_videoInf.html">GA_videoInf</a> structure.
+        These flags define the hardware video capabilities of the particular
+        graphics mode, and are only valid if the gaHaveAccelVideo flag is
+        defined in the Attributes member of the <a href="GA_modeInfo.html">GA_modeInfo</a> structure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoXInterp flag is used to determine whether the video overlay
+        window can support hardware interpolation or filtering in the X axis
+        when scaling the input image to the display. If this bit is 1, then the
+        hardware can support filtering of values in the X direction resulting
+        in better looking images when scaled from a smaller input frame.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoYInterp flag is used to determine whether the video overlay
+        window can support hardware interpolation or filtering in the Y axis
+        when scaling the input image to the display. If this bit is 1, then the
+        hardware can support filtering of values in the Y direction resulting
+        in better looking images when scaled from a smaller input frame.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoColorKeySrcSingle flag is used to determine whether the video
+        overlay window can support hardware source color keying with a single
+        source color key value. When hardware source color keying is enabled,
+        any pixel data in the incoming source video that matches the currently
+        set video color key will be ignored and not displayed on the screen,
+        essentially allowing the display data under the video overlay window to
+        show through.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoColorKeySrcRange flag is used to determine whether the video
+        overlay window can support hardware source color keying with a range of
+        color key values. This is the same as single source color keying, but
+        the color key values may be allows to fall within a range of available
+        colors (useful if data has been filtered causing the colors to change).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoColorKeyDstSingle flag is used to determine whether the video
+        overlay window can support hardware destination color keying with a
+        single destination color key value. When hardware detination color
+        keying is enabled (sometimes called blue-screening), any destination
+        pixels that the overlay window overlaps that match the currently set
+        video color key, will cause the source input pixels to be ignored,
+        essentially allowing the display data under the video overlay window to
+        show through.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaVideoColorKeyDstRange flag is used to determine whether the video
+        overlay window can support hardware destination color keying with a
+        range of color key values. This is the same as single destination color
+        keying, but the color key values may be allows to fall within a range
+        of available colors.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; These flags are also passed to the
+          SetVideoOutput function to determine what features are enabled for
+          the output window.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoXInterp
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Supports X interpolation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoYInterp
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Supports Y interpolation
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoColorKeySrcSingle
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Supports source color keying, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoColorKeySrcRange
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Supports source color keying, range of colors
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoColorKeyDstSingle
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Support destination color keying, single color
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaVideoColorKeyDstRange
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Support destination color keying, range of colors
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

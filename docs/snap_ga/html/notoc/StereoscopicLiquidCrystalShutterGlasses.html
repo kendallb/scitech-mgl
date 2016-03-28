@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Stereoscopic Liquid Crystal Shutter Glasses</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Stereoscopic Liquid Crystal Shutter Glasses
+      </h2>
+      <p class="MsoBodyText">
+        Stereoscopic liquid crystal (LC) shutter glasses are a cheap, easy
+        solution for getting real 3D stereoscopic imaging out of a standard PC
+        with any standard monitor. LC shutter glasses work by constantly
+        blanking out video information for each eye in a sequential fashion,
+        allowing the user to see the left image for a fraction of a second
+        followed by the right image, followed by the left image again etc. In
+        order to make LC shutter glasses work effectively on PC based graphics
+        controllers, some mechanism for changing the displayed video
+        information at every vertical retrace is necessary. New hardware is
+        available that will do this automatically, and the graphics device
+        driver defines the software interface necessary to allow applications
+        to use these new hardware features.
+      </p>
+      <p class="MsoBodyText">
+        The steps involved in enabling free running stereoscopic support are as
+        follows:
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        1.&#160;&#160;&#160; Set the mode via <a href="SetVideoMode.html">SetVideoMode</a> (using
+        a high refresh rate if possible, such as 120Hz to 150Hz).
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        2.&#160;&#160;&#160; Enable free running stereoscopic mode by calling <a href="EnableStereoMode.html">EnableStereoMode</a> with
+        a value of TRUE.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        3.&#160;&#160;&#160; Draw the images for both the left and right eye
+        images by using the <a href="SetDrawBuffer.html">SetDrawBuffer</a> function
+        to draw the left and right eye buffers (either side by side or
+        above/below formats will work). Once both left and right eye images are
+        rendered, the visible display buffer can be swapped as per normal using
+        the <a href="SetStereoDisplayStart.html">SetStereoDisplayStart</a> function.
+        This function takes the byte offset of the left and right images as
+        parameters, and the hardware will automatically flip between the left
+        and right eye images at every vertical retrace.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        4.&#160;&#160;&#160; To temporarily disable stereoscopic rendering, call
+        the <a href="SetStereoDisplayStart.html">SetStereoDisplayStart</a> function
+        with both the left and right start addresses set to the same buffer.
+        Although the hardware will still be in stereo mode, the screen image
+        will not change every vertical retrace period.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;" class="MsoBodyText">
+        5.&#160;&#160;&#160; Disable free running stereoscopic mode by calling <a href="EnableStereoMode.html">EnableStereoMode</a> with
+        a value of FALSE when you are done with stereoscopic viewing.
+      </p>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>
+          <p class="RelatedTopicsHeading">
+            Related Sub-Topics
+          </p>
+        </th>
+      </tr>
+    </table>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="RefreshRatesAndStereoscopicImaging.html">Refresh rates and
+          stereoscopic imaging</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="RelatedTopicsBody">
+          <a href="SoftwareDrivenDisplayStartAddressSwappin.html">Software driven
+          display start address swapping</a>
+        </p>
+      </td>
+    </tr>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

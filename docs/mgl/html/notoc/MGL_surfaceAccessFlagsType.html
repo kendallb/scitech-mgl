@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_surfaceAccessFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_surfaceAccessFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; MGL_NO_ACCESS&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0,<br />
+        &#160;&#160;&#160; MGL_VIRTUAL_ACCESS&#160; = 0x1,<br />
+        &#160;&#160;&#160; MGL_LINEAR_ACCESS&#160;&#160; = 0x2,<br />
+        &#160;&#160;&#160; MGL_SURFACE_FLAGS&#160;&#160; = 0x3,<br />
+        &#160;&#160;&#160; MGL_STEREO_ACCESS&#160;&#160; = 0x4,<br />
+        &#160;&#160;&#160; MGL_SHADOW_BUFFER&#160;&#160; = 0x8<br />
+        &#160;&#160;&#160; } MGL_surfaceAccessFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the flags for the types of direct surface access provided.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_NO_ACCESS
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Surface cannot be accessed
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_VIRTUAL_ACCESS
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Surface is virtualised
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_LINEAR_ACCESS
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Surface can be linearly accessed
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_STEREO_ACCESS
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Surface supports stereo rendering
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:144.5pt;padding:'0in .5pt 0in .5pt';" width="241" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                MGL_SHADOW_BUFFER
+              </p>
+            </td>
+            <td style="width:255.0pt;padding:'0in .5pt 0in .5pt';" width="425" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Display is using a system memory shadow buffer
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

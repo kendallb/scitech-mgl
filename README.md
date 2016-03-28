@@ -1,2 +1,3 @@
-# scitech-mgl
-SciTech Mult-platform Graphics Library
+# SciTech Mult-platform Graphics Library
+
+I was recently asked if the old source code that was publicly released for the SciTech MGL libraries was still available, but the places it used to live on the internet all disappeared. So I have uploaded the source code as it used to live in the public Perforce repository to this Github tree. I haven't compiled this in years, but since this was used by WinQuake and WinHexen, if you are looking at the old source code for those games you may find this useful.

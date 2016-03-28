@@ -1,0 +1,35 @@
+GLUT Demos Modified for Stereo Display
+
+
+Original GLUT demos from GLUT SDK posted at http://www.opengl.org
+Modified GLUT demos from SciTech MGL SDK posted at http://www.scitechsoft.com
+
+
+Stereo Parallax commands for all Demos:
+		"+" key increases viewpoint separation
+                "-" key decreases viewpoint separation
+		"*" key increases image shift adjustment
+		"/" key decreases image shift adjustment
+
+
+Gears.exe	= Rotating Gears:
+		ARROW keys rotate view axes
+
+Logo.exe	= Animated OpenGL Logo:
+		SPACE key restarts animation
+
+Morph2.exe	= Morphing Polyhedron:
+		SPACE key pauses animation
+
+Skyfly.exe	= SkyFly flight sim illustrated in OpenGL "Red Book":
+                mouse left-click accelerates
+                mouse right-click decelerates
+                mouse movement while dragging rotates view
+                SPACE key toggles navigation from mouse to ARROW keys
+		"f" key toggles fogging on/off
+
+Steam.exe	= Steam Engine Piston:
+		ARROW keys rotate view axes
+		"s" key toggles shading on/off
+		"t" key toggles texture mapping on/off
+

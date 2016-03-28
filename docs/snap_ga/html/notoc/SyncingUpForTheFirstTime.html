@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Syncing up for the first time</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Syncing up for the first time
+      </h3>
+      <p class="MsoBodyText">
+        The SciTech Perforce software repository contains a lot of code, and
+        doing a full sync will pull down well in excess of 60Mb of files! Hence
+        in order to save time for the initial sync, you can download and the
+        latest ‘full depot’ archive to your system, and then tell Perforce that
+        you have all files at the time that release was made. Then when you
+        sync up you will only pull down all the files that have changed since
+        the version of the full depot files you downloaded. You will need to
+        first download one of the following files depending on the platform you
+        are using:
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:1.75in;border-top:1.5pt;border-left:1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;border-style:solid;padding:'0in 5.4pt 0in 5.4pt';" width="210" valign="top">
+            <p class="TableText">
+              full_depot_r13.zip
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:'solid windowtext 1.5pt';border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              Complete copy of GPL depot in DOS/Win format
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.75in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="210" valign="top">
+            <p class="TableText">
+              full_depot_r13.tar.gz
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              Complete copy of GPL depot in Unix format
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        Once you have the full depot files downloaded and installed, you can do
+        the initial sync for using the following commands:
+      </p>
+      <p class="Preformatted">
+        p4 flush -f @public_release_13<br />
+        p4 sync
+      </p>
+      <p class="MsoBodyText">
+        This will tell Perforce that you have all the files at the label
+        ‘public_release_13’. You can change this label to the appropriate label
+        for the for the public release that you have downloaded. Then the 'p4
+        sync' command grabs any changes that have occurred since the
+        ‘public_release_13’ label. Once you have synced up the first time, you
+        should only need to use 'p4 sync' to get the latest updates to all the
+        files from that point forward.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

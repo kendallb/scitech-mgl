@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GM_modeInfo</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GM_modeInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; xRes;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; yRes;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bitsPerPixel;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; mode;<br />
+        &#160;&#160;&#160; int&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; pages;<br />
+        &#160;&#160; &#160;ulong&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; flags;<br />
+        &#160;&#160;&#160; char&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; driverName[60];<br />
+        &#160;&#160;&#160; GM_stretchType&#160; stretch;<br />
+        &#160;&#160;&#160; GM_stretchType&#160; windowedStretch;<br />
+        &#160;&#160;&#160; } GM_modeInfo
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        gm\gm.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The structure maintains information about the graphics modes that are
+        supported by the game framework and is passed to <a href="GM_setMode.html">GM_setMode</a> to
+        specify the mode to be initialized. Note that the xRes and yRes values
+        are the logical resolution for the mode which may be different to the
+        physical resolution, since the Game Framework also enumerates pseudo
+        modes that use stretching. Hence even if the hardware does not have
+        native support for a 320x240 mode, it may appear in the list using
+        320x480 as the real mode and a stretch factor of 1x2 or using 640x480
+        as the real mode and a stretch factor of 2x2.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to set a windowed mode directly set the mode parameter to
+        grWINDOWED and the mode will start as a windowed mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                xRes
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Logical X resolution for mode (not physical!)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                yRes
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Logical Y resolution for mode (not physical!)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitsPerPixel
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Color depth for mode. Note 16bpp includes 15bpp (5:5:5)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mode
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Fullscreen MGL mode number (-1 means windowed mode)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                pages
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of hardware display pages for mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                flags
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mode flags for the mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                driverName
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Name of driver that will be used in fullscreen modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stretch
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stretch factor for the mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:129.5pt;padding:'0in .5pt 0in .5pt';" width="216" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                windowedStretch
+              </p>
+            </td>
+            <td style="width:3.75in;padding:'0in .5pt 0in .5pt';" width="450" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stretch factor to use in windowed modes
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

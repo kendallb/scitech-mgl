@@ -1,0 +1,12 @@
+#!/bin/sh
+# Script to save VGA textmode font, run X, and restore VGA textmode font.
+
+# A more rigorous alternative is to run the 'savetextmode' script before
+# running X, and 'textmode' after. This will restore the textmode registers
+# and the VGA palette in addition to the VGA font.
+
+echo Saving font in /tmp/fontdata
+restorefont -w /tmp/fontdata
+startx
+echo Restoring font from /tmp/fontdata
+restorefont -r /tmp/fontdata

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_wmCreateWindow</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_wmCreateWindow
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Creates new window.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        window_t *MGLAPI MGL_wmCreateWindow(<br />
+        &#160;&#160;&#160; winmng_t *wm,<br />
+        &#160;&#160;&#160; window_t *parent,<br />
+        &#160;&#160;&#160; int x,<br />
+        &#160;&#160;&#160; int y,<br />
+        &#160;&#160;&#160; size_t width,<br />
+        &#160;&#160;&#160; size_t height)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                wm
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                window manager that will manage this window
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                parent
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                parent window
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                x
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                X coordinate of initial window position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                y
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Y coordinate of initial window position
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                width
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                initial window width
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:84.5pt;padding:'0in .5pt 0in .5pt';" width="141" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                height
+              </p>
+            </td>
+            <td style="width:315.0pt;padding:'0in .5pt 0in .5pt';" width="525" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                initial window height
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The created window.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Creates new window and assigns it to given window manager. The window is
+        created as invisible, you must call <a href="MGL_wmShowWindow.html">MGL_wmShowWindow</a> to
+        show it. You must also call <a href="MGL_wmSetWindowPainter.html">MGL_wmSetWindowPainter</a> to
+        set painting callback, otherwise the window will be transparent.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If parent is NULL, the window is created as top level one and its parent
+        is set to window manager's root window.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_wmCreate.html">MGL_wmCreate</a>, <a href="MGL_wmDestroyWindow.html">MGL_wmDestroyWindow</a>,
+        <a href="MGL_wmSetWindowPosition.html">MGL_wmSetWindowPosition</a>, <a href="MGL_wmSetWindowPainter.html">MGL_wmSetWindowPainter</a>,
+        <a href="MGL_wmSetWindowCursor.html">MGL_wmSetWindowCursor</a>, <a href="MGL_wmSetWindowFlags.html">MGL_wmSetWindowFlags</a>,
+        <a href="MGL_wmSetWindowUserData.html">MGL_wmSetWindowUserData</a>, <a href="MGL_wmSetWindowDestructor.html">MGL_wmSetWindowDestructor</a>,
+        <a href="MGL_wmGetWindowParent.html">MGL_wmGetWindowParent</a>, <a href="MGL_wmCoordGlobalToLocal.html">MGL_wmCoordGlobalToLocal</a>,
+        <a href="MGL_wmCoordLocalToGlobal.html">MGL_wmCoordLocalToGlobal</a>, <a href="MGL_wmGetWindowAtPosition.html">MGL_wmGetWindowAtPosition</a>,
+        <a href="MGL_wmReparentWindow.html">MGL_wmReparentWindow</a>, <a href="MGL_wmLowerWindow.html">MGL_wmLowerWindow</a>,
+        <a href="MGL_wmRaiseWindow.html">MGL_wmRaiseWindow</a>, <a href="MGL_wmShowWindow.html">MGL_wmShowWindow</a>,
+        <a href="MGL_wmInvalidateWindow.html">MGL_wmInvalidateWindow</a>, <a href="MGL_wmBeginPaint.html">MGL_wmBeginPaint</a>,
+        <a href="MGL_wmPushWindowEventHandler.html">MGL_wmPushWindowEventHandler</a>,
+        <a href="MGL_wmPopWindowEventHandler.html">MGL_wmPopWindowEventHandler</a>,
+        <a href="MGL_wmCaptureEvents.html">MGL_wmCaptureEvents</a>, <a href="MGL_wmUncaptureEvents.html">MGL_wmUncaptureEvents</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

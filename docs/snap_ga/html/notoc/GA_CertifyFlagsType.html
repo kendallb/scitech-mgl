@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_CertifyFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_CertifyFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaCertified&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x01,<br />
+        &#160;&#160;&#160; gaCertifiedDDC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x02,<br />
+        &#160;&#160;&#160; gaCertifiedStereo&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x04,<br />
+        &#160;&#160;&#160; gaCertifiedDDC_NT&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x08,<br />
+        &#160;&#160;&#160; gaCertifiedStereo_NT&#160;&#160;&#160; = 0x10<br />
+        &#160;&#160;&#160; } GA_CertifyFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Definitions for values stored in the CertifyFlags member of the <a href="GA_certifyChipInfo.html">GA_certifyChipInfo</a> and
+        structure. These flags define what certification tests have been run on
+        the included drivers.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaCertified value indicates that the driver has been certified to
+        have passed all the base certification tests, and is usually the only
+        important flag for most situations.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaCertifiedDDC value indicates that the driver has also passed all
+        Windows DDC certification tests, running on the IHV Windows drivers.
+        These tests are indepedant of the base certification tests as they are
+        dependant on proper testing with the IHV Windows drivers as well as the
+        base certification tests. The gaCertifiedDDC_NT flag is equivalent but
+        indicates that the chipset driver is also certified for DDC on the
+        Windows NT platform.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaCertifiedStereo value indicates that the driver has also passed all
+        Windows Stereo certification tests, running on the IHV Windows drivers.
+        These tests are indepedant of the base certification tests as they are
+        dependant on proper testing with the IHV Windows drivers as well as the
+        base certification tests. The gaCertifiedStereo_NT flag is equivalent
+        but indicates that the chipset driver is also certified for stereo on
+        the Windows NT platform.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaCertifiedDFPOutput value indicates that the driver has also passed
+        all the external digital flat panel tests such that attaching an
+        external digital flat panel to the graphics card will function
+        correctly.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The gaCertifiedTVOutput value indicates that the driver has also passed
+        all the external TV output tests such that attaching an external
+        television to either the composite or S-Video connectors of the
+        graphics card will function correctly.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaCertified
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver has passed all base certification tests
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaCertifiedDDC
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver has passed all Windows DDC tests
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaCertifiedStereo
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver has passed all Windows stereo tests
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaCertifiedDDC_NT
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver has passed all Windows NT DDC tests
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:154.5pt;padding:'0in .5pt 0in .5pt';" width="258" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaCertifiedStereo_NT
+              </p>
+            </td>
+            <td style="width:245.0pt;padding:'0in .5pt 0in .5pt';" width="408" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Driver has passed all Windows NT stereo tests
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

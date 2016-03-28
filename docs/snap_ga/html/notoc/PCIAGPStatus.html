@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PCIAGPStatus</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PCIAGPStatus
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; rate:4;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; fastWrite:1;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; fourGB:1;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; rsvd1:3;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; sideBandAddressing:1;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; rsvd2:14;<br />
+        &#160;&#160;&#160; uint&#160;&#160;&#160; requestQueueDepthMaximum:8;<br />
+        &#160;&#160;&#160; } PCIAGPStatus
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pcilib.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure defining the PCI AGP status register contents
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rate
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Supported AGP rate (1-8x)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fastWrite
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                AGP FastWrite supported
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fourGB
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                4GB addressing supported
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rsvd1
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved; not used
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                sideBandAddressing
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Side band addressing supported
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                rsvd2
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Reserved; not used
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:174.5pt;padding:'0in .5pt 0in .5pt';" width="291" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                requestQueueDepthMaximum
+              </p>
+            </td>
+            <td style="width:225.0pt;padding:'0in .5pt 0in .5pt';" width="375" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum request queue depth
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

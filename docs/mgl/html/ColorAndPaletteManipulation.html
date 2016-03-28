@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Color and palette manipulation</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Device context information and manipulation" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DeviceContextInformationAndManipulation.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Device context information and manipulation" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Viewport and clip rectangle manipulation" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ViewportAndClipRectangleManipulation.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Viewport and clip rectangle manipulation" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL Library Overview" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGLLibraryOverview.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL Library Overview" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        Color and palette manipulation
+      </h2>
+      <p class="MsoBodyText">
+        The following functions provide full control over colors in the SciTech
+        MGL. SciTech MGL can be running in either color index modes (4 and 8
+        bits per pixel) or RGB modes (15 bits and above modes, and also RGB 8
+        bit dithered modes). In color index modes the final color of a pixel is
+        determined by the color lookup table or palette associated with the
+        device context. SciTech MGL provides functions for setting and
+        retrieving color values in the color lookup tables for a device
+        context, and for realizing the color palette on hardware devices. 
+      </p>
+      <p class="MsoBodyText">
+        Note that all device contexts have a color lookup table even for memory
+        device contexts and RGB display device contexts. SciTech MGL will
+        convert color values in 4 and 8 bit memory devices on the fly when
+        BitBlt’ing to any other display device context with 4 bits or more of
+        pixel depth. When doing a BitBlt operation from a color index device
+        context to another color index device context, SciTech MGL will find
+        the closest color if an exact match is not found (this can be turned
+        off for speed though). When doing a BitBlt operation from a color index
+        device context to an RGB device context, the color lookup table in the
+        destination RGB device context will be used to convert the color
+        values.
+      </p>
+      <p class="MsoBodyText">
+        In order for maximum BitBlt performance when the destination device
+        context is in a color index mode, you must ensure that the color table
+        in the source device context is identical to the color table in the
+        destination device context, in which case no bitmap translation will be
+        performed (i.e.: SciTech MGL determines there is an identity palette
+        mapping). If you know that all BitBlt operations will be perform have
+        identity palettes, you can use the function <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> to
+        turn on and off this checking code to obtain higher performance. Note
+        however that this does not turn off identity palette checking when
+        BitBlt’ing to a windowed device context under Windows, as this cannot
+        be turned off.
+      </p>
+      <p class="MsoBodyText">
+        Note also that all SciTech MGL color values are passed to the SciTech MGL
+        as either a color index or a packed RGB value, packed for the correct
+        format expected by the device context. Rather than setting the color
+        value directory, you can use the utility functions <a href="MGL_setColorCI.html">MGL_setColorCI</a> and
+        <a href="MGL_setColorRGB.html">MGL_setColorRGB</a> to set the color
+        given a color index or an RGB color value. When running in RGB modes,
+        the <a href="MGL_setColorCI.html">MGL_setColorCI</a> will convert the
+        color index to the proper SciTech MGL color value using the devices
+        color lookup table. When running in color index modes, the <a href="MGL_setColorRGB.html">MGL_setColorRGB</a> will
+        set the color to the color index with the color palette entry that is
+        the closest to the passed in RGB color value. Functions and macros are
+        provided to pack RGB color values into the proper SciTech MGL color
+        values to be passed the to SciTech MGL. The MGL_pack* family of
+        functions is used to pack color values from 8 bit RGB tuples into the
+        proper SciTech MGL packed RGB color values.
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_defaultColor.html">MGL_defaultColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_fadePalette.html">MGL_fadePalette</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getBackColor.html">MGL_getBackColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getColor.html">MGL_getColor</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getDefaultPalette.html">MGL_getDefaultPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getDitherMode.html">MGL_getDitherMode</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getFontAntiAliasPalette.html">MGL_getFontAntiAliasPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getGammaRamp.html">MGL_getGammaRamp</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPalette.html">MGL_getPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPaletteEntry.html">MGL_getPaletteEntry</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPaletteSize.html">MGL_getPaletteSize</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getPaletteSnowLevel.html">MGL_getPaletteSnowLevel</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getWriteMode.html">MGL_getWriteMode</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_haveWidePalette.html">MGL_haveWidePalette</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_mapToPalette.html">MGL_mapToPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_maxColor.html">MGL_maxColor</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_packColor.html">MGL_packColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_packColorExt.html">MGL_packColorExt</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_packColorFast.html">MGL_packColorFast</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_packColorFastExt.html">MGL_packColorFastExt</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_realColor.html">MGL_realColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_realizePalette.html">MGL_realizePalette</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgbColor.html">MGL_rgbColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rotatePalette.html">MGL_rotatePalette</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setBackColor.html">MGL_setBackColor</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setColor.html">MGL_setColor</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setColorCI.html">MGL_setColorCI</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setColorRGB.html">MGL_setColorRGB</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setDefaultPalette.html">MGL_setDefaultPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setDitherMode.html">MGL_setDitherMode</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setFontAntiAliasPalette.html">MGL_setFontAntiAliasPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setGammaRamp.html">MGL_setGammaRamp</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPalette.html">MGL_setPalette</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPaletteEntry.html">MGL_setPaletteEntry</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setPaletteSnowLevel.html">MGL_setPaletteSnowLevel</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_unpackColor.html">MGL_unpackColor</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_unpackColorExt.html">MGL_unpackColorExt</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_unpackColorFast.html">MGL_unpackColorFast</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_unpackColorFastExt.html">MGL_unpackColorFastExt</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

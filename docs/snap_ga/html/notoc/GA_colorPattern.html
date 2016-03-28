@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_colorPattern</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_colorPattern
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef union {<br />
+        &#160;&#160;&#160; GA_colorPattern_1&#160;&#160; b1;<br />
+        &#160;&#160;&#160; GA_colorPattern_4&#160;&#160; b4;<br />
+        &#160;&#160;&#160; GA_colorPattern_8&#160;&#160; b8;<br />
+        &#160;&#160;&#160; GA_colorPattern_16&#160; b16;<br />
+        &#160;&#160;&#160; GA_colorPattern_24&#160; b24;<br />
+        &#160;&#160;&#160; GA_colorPattern_32&#160; b32;<br />
+        &#160;&#160;&#160; } GA_colorPattern
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Fundamental type definition for an array element of an 8x8 color bitmap
+        pattern. Each line in the pattern is represented as an array of packed
+        pixel data. In 8bpp modes there is 8 bytes per line, for 16bpp modes
+        there are 16bytes per line, for 24bpp modes there are 24bytes per line
+        and for 32bpp modes there are 32 bytes per line. Hence the size of the
+        pattern data is different depending on the color depth currently
+        active.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

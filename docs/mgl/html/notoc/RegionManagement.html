@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Region management</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h2>
+        Region management
+      </h2>
+      <p class="MsoBodyText">
+        The following functions provide support for managing complex regions, and
+        generating new complex region primitives. Complex regions are used to
+        represent 2D arbitrarily complex regions as unions of smaller
+        rectangles, and can represent shapes with complex outlines, holes in
+        the middle and even totally disjoint areas. These routines allow you to
+        create, copy, free and draw such regions, as well as generate regions
+        with specific shapes that can be combined with other regions to produce
+        more complex shapes. Once you have created a complex region, you can
+        make that region the clip region for a device context, allowing you to
+        perform complex clipping of drawing operations on a device context. You
+        can also traverse a complex region, which allows you to call a
+        particular function for every rectangle in the union of rectangles that
+        make up the complex region. 
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_clearRegion.html">MGL_clearRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_copyIntoRegion.html">MGL_copyIntoRegion</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_copyRegion.html">MGL_copyRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_drawRegion.html">MGL_drawRegion</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_freeRegion.html">MGL_freeRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_isSimpleRegion.html">MGL_isSimpleRegion</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_newRegion.html">MGL_newRegion</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnEllipse.html">MGL_rgnEllipse</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnEllipseArc.html">MGL_rgnEllipseArc</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnGetArcCoords.html">MGL_rgnGetArcCoords</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnLine.html">MGL_rgnLine</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnLineCoord.html">MGL_rgnLineCoord</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnPolygon.html">MGL_rgnPolygon</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnPolygonCnvx.html">MGL_rgnPolygonCnvx</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnPolygonCnvxFX.html">MGL_rgnPolygonCnvxFX</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnPolygonFX.html">MGL_rgnPolygonFX</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnSolidEllipse.html">MGL_rgnSolidEllipse</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnSolidEllipseArc.html">MGL_rgnSolidEllipseArc</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnSolidRect.html">MGL_rgnSolidRect</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnSolidRectCoord.html">MGL_rgnSolidRectCoord</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_rgnSolidRectPt.html">MGL_rgnSolidRectPt</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_traverseRegion.html">MGL_traverseRegion</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

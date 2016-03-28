@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Querying Device Configuration Information</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Querying Device Configuration Information
+      </h3>
+      <p class="MsoBodyText">
+        Once you have a driver loaded and initialized, it is sometimes useful to
+        inform the user what type of device was detected. Once you have a
+        pointer to the device driver initialization function group, you can use
+        the <a href="GetConfigInfo.html">GetConfigInfo</a> function to get
+        complete information about the manufacturer of the installed device,
+        the name of the device as well as information about when the device
+        driver was tested and certified. All the information is returned in the
+        <a href="GA_configInfo.html">GA_configInfo</a> structure, and can be
+        obtained as follows:
+      </p>
+      <p class="Preformatted">
+        ibool GetConfigInfo(GA_devCtx *dc)<br />
+        {<br />
+        &#160;&#160;&#160; GA_initFuncs&#160; initFuncs;<br />
+        &#160;&#160;&#160; GA_configInfo info;<br />
+        <br />
+        &#160;&#160;&#160; initFuncs.dwSize = sizeof(initFuncs);<br />
+        &#160;&#160;&#160; if
+        (!GA_queryFunctions(dc,GA_GET_INITFUNCS,&amp;initFuncs))<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; return false;<br />
+        &#160;&#160;&#160; info.dwSize = sizeof(info);<br />
+        &#160;&#160;&#160; init.GetConfigInfo(&amp;info);<br />
+        &#160;&#160;&#160; // do something useful with the information!<br />
+        &#160;&#160;&#160; return true;<br />
+        }
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; Make sure you initialize the dwSize member of
+          the <a href="GA_configInfo.html">GA_configInfo</a> structure to the
+          size of the structure being passed to <a href="GetConfigInfo.html">GetConfigInfo</a>!
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

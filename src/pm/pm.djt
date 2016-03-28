@@ -1,0 +1,204 @@
+#!docjet_editor
+
+Root = 'default.djt'
+FormatsToGenerate = 'c-printable\\\\Word Processor'
+NumberOfSpacesIndicatingPreformatted = 4
+
+[Warnings]
+OnOutOfDate = true
+OnUndocumentedParams = true
+
+[]
+'DefaultComment.C and C++ Sources.Assignment Operator' = \
+        'This sets this object (on the left-hand-side of the operator'\
+        ') to the value given on the right of the operator.'
+'PrependToComment.C and C++ Sources.Assignment Operator' = '{alias:assignment operator}\r\n'
+'DefaultComment.C and C++ Sources.Cast Operators' = \
+        'This converts the current object to a particular type.'
+'PrependToComment.C and C++ Sources.Cast Operators' = ''
+'DefaultComment.C and C++ Sources.Constructors' = \
+        'This builds an instance of the object out of its parameters.'
+'PrependToComment.C and C++ Sources.Constructors' = '{alias:constructor}\r\n\r\n'
+'DefaultComment.C and C++ Sources.Destructors' = \
+        'This destroys all the subordinate objects for this object.'
+'PrependToComment.C and C++ Sources.Destructors' = '{alias:destructor}'
+'DefaultComment.C and C++ Sources.Operator !' = \
+        'This returns the logical negation of this object.'
+'PrependToComment.C and C++ Sources.Operator !' = ''
+'DefaultComment.C and C++ Sources.Operator !=' = \
+        'This returns true if this object is not the same as the one '\
+        'on the right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator !=' = ''
+'DefaultComment.C and C++ Sources.Operator %' = \
+        'This returns the remainder of dividing this object by the va'\
+        'lue of the object on the right.'
+'PrependToComment.C and C++ Sources.Operator %' = ''
+'DefaultComment.C and C++ Sources.Operator %=' = \
+        'This sets the current object to the remainder of dividing th'\
+        'e original value of this object by the value on the right.'
+'PrependToComment.C and C++ Sources.Operator %=' = ''
+'DefaultComment.C and C++ Sources.Operator &' = \
+        'This returns the result of performing a bitwise AND operatio'\
+        'n between the current object (which is on the left-side of t'\
+        'he operator) and the object on the right side.'
+'PrependToComment.C and C++ Sources.Operator &' = ''
+'DefaultComment.C and C++ Sources.Operator &&' = \
+        'This returns true if this object and the one on the right ha'\
+        'nd side are both true.'
+'PrependToComment.C and C++ Sources.Operator &&' = ''
+'DefaultComment.C and C++ Sources.Operator &=' = \
+        'This masks the current object with the value on the right.'
+'PrependToComment.C and C++ Sources.Operator &=' = ''
+'DefaultComment.C and C++ Sources.Operator *' = \
+        'This returns the result of multiplying the current object by'\
+        ' the value of the object on the right.'
+'PrependToComment.C and C++ Sources.Operator *' = ''
+'DefaultComment.C and C++ Sources.Operator * (contents)' = \
+        'This returns the object pointed to by this object.'
+'PrependToComment.C and C++ Sources.Operator * (contents)' = ''
+'DefaultComment.C and C++ Sources.Operator *=' = \
+        'This sets the current object to the product of the original '\
+        'value of this object and the value on the right.'
+'PrependToComment.C and C++ Sources.Operator *=' = ''
+'DefaultComment.C and C++ Sources.Operator +' = \
+        'This adds the current object with the value of the object on'\
+        ' the right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator +' = ''
+'DefaultComment.C and C++ Sources.Operator +=' = \
+        'This sets the current object to the sum of the original valu'\
+        'e of this object and the value on the right.'
+'PrependToComment.C and C++ Sources.Operator +=' = ''
+'DefaultComment.C and C++ Sources.Operator -' = \
+        'This returns the result of subtracting the value of the obje'\
+        'ct on the right from this object.'
+'PrependToComment.C and C++ Sources.Operator -' = ''
+'DefaultComment.C and C++ Sources.Operator -=' = \
+        'This sets the current object to the difference between the o'\
+        'riginal value of this object and the value on the right.'
+'PrependToComment.C and C++ Sources.Operator -=' = ''
+'DefaultComment.C and C++ Sources.Operator ->' = \
+        'This returns the object pointed to this object when it is be'\
+        'ing dereferenced for the purposes of finding a component of '\
+        'the pointed-to object.'
+'PrependToComment.C and C++ Sources.Operator ->' = ''
+'DefaultComment.C and C++ Sources.Operator /' = \
+        'This divides the current object by the one on the right.'
+'PrependToComment.C and C++ Sources.Operator /' = ''
+'DefaultComment.C and C++ Sources.Operator /=' = \
+        'This sets the current object to the result of dividing the o'\
+        'riginal value of this object by the value on the right.'
+'PrependToComment.C and C++ Sources.Operator /=' = ''
+'DefaultComment.C and C++ Sources.Operator <' = \
+        'This returns true if this object is less than the one on the'\
+        ' right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator <' = ''
+'DefaultComment.C and C++ Sources.Operator <<' = \
+        'This puts a description of the current object on this stream'\
+        '.'
+'PrependToComment.C and C++ Sources.Operator <<' = ''
+'DefaultComment.C and C++ Sources.Operator <<=' = \
+        'This shifts the bits of the current object to the left.  The'\
+        ' right hand side indicates how many bits to shift.'
+'PrependToComment.C and C++ Sources.Operator <<=' = ''
+'DefaultComment.C and C++ Sources.Operator <=' = \
+        'This returns true if this object is not greater than the one'\
+        ' on the right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator <=' = ''
+'DefaultComment.C and C++ Sources.Operator ==' = \
+        'This returns true if this object is the same as the one on t'\
+        'he right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator ==' = ''
+'DefaultComment.C and C++ Sources.Operator >' = \
+        'This returns true if this object is greater than the one on '\
+        'the right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator >' = ''
+'DefaultComment.C and C++ Sources.Operator >=' = \
+        'This returns true if this object is not less than the one on'\
+        ' the right-hand-side of the operator.'
+'PrependToComment.C and C++ Sources.Operator >=' = ''
+'DefaultComment.C and C++ Sources.Operator >>' = \
+        'This sets the object on the right-hand side to the value giv'\
+        'en on the current input stream.'
+'PrependToComment.C and C++ Sources.Operator >>' = ''
+'DefaultComment.C and C++ Sources.Operator >>=' = \
+        'This shifts the bits of the current object to the right.  Th'\
+        'e right hand side indicates how many bits to shift.'
+'PrependToComment.C and C++ Sources.Operator >>=' = ''
+'DefaultComment.C and C++ Sources.Operator []' = \
+        'This returns the value that this object associates with the '\
+        'value of the object that is the parameter to this operator.'
+'PrependToComment.C and C++ Sources.Operator []' = ''
+'DefaultComment.C and C++ Sources.Operator ^' = \
+        'This returns the result of performing a bitwise Exclusive-OR'\
+        ' operation between the current object (which is on the left-'\
+        'side of the operator) and the object on the right side.'
+'PrependToComment.C and C++ Sources.Operator ^' = ''
+'DefaultComment.C and C++ Sources.Operator ^=' = \
+        'This sets the value of this object to the result of performi'\
+        'ng an exclusive or with the right-hand-side.'
+'PrependToComment.C and C++ Sources.Operator ^=' = ''
+'DefaultComment.C and C++ Sources.Operator delete' = \
+        'This frees the memory associated with this object.'
+'PrependToComment.C and C++ Sources.Operator delete' = ''
+'DefaultComment.C and C++ Sources.Operator new' = \
+        'This allocates the memory to create a new instance of this o'\
+        'bject.'
+'PrependToComment.C and C++ Sources.Operator new' = ''
+'DefaultComment.C and C++ Sources.Operator |' = \
+        'This returns the result of performing a bitwise OR operation'\
+        ' between the current object (which is on the left-side of th'\
+        'e operator) and the object on the right side.'
+'PrependToComment.C and C++ Sources.Operator |' = ''
+'DefaultComment.C and C++ Sources.Operator |=' = \
+        'This sets the value of this object to the result of performi'\
+        'ng a bitwise OR operation with the right-hand-side.'
+'PrependToComment.C and C++ Sources.Operator |=' = ''
+'DefaultComment.C and C++ Sources.Operator ||' = \
+        'This returns true if either this object or the object on the'\
+        ' right side are true.'
+'PrependToComment.C and C++ Sources.Operator ||' = ''
+'DefaultComment.C and C++ Sources.Operator ~' = \
+        'This returns the bitwise NOT of the current object.'
+'PrependToComment.C and C++ Sources.Operator ~' = ''
+'DefaultComment.C and C++ Sources.operator ++ (postfix)' = \
+        'This increments the current object, returning the value of t'\
+        'his object before the operation was peformed.'
+'PrependToComment.C and C++ Sources.operator ++ (postfix)' = ''
+'DefaultComment.C and C++ Sources.operator ++ (prefix)' = \
+        'This increments the current object.  Its return value is the'\
+        ' value of this object after the operation is performed.'
+'PrependToComment.C and C++ Sources.operator ++ (prefix)' = ''
+'DefaultComment.C and C++ Sources.operator -- (postfix)' = \
+        'This decrements the current object, returning the value of t'\
+        'his object before the operation was peformed.'
+'PrependToComment.C and C++ Sources.operator -- (postfix)' = ''
+'DefaultComment.C and C++ Sources.operator -- (prefix)' = \
+        'This decrements the current object.  Its return value is the'\
+        ' value of this object after the operation is performed.'
+'PrependToComment.C and C++ Sources.operator -- (prefix)' = ''
+
+[HookData]
+
+[Source]
+Wildcard = '..\\..\\include\\cpuinfo.h'
+Wildcard = '..\\..\\include\\drvlib\\peloader.h'
+Wildcard = '..\\..\\include\\event.h'
+Wildcard = '..\\..\\include\\pcilib.h'
+Wildcard = '..\\..\\include\\pmapi.h'
+Wildcard = '..\\..\\include\\ztimerc.h'
+Wildcard = '..\\common\\peloader.c'
+Wildcard = '.\\*.c'
+Wildcard = 'COMMON\\*.c\\'
+Wildcard = 'WIN32\\*.c\\'
+
+[Exclusion]
+Wildcard = 'common\\mtrr.c'
+Wildcard = 'common\\unixio.c'
+Wildcard = 'win32\\event.c'
+
+[Variable]
+c-html.OutputDir = 'HTML'
+c-printable.OutputDir = 'printable'
+quickref.OutputDir = 's:\\docs\\mgl\\quickref'
+
+[CommentSection]

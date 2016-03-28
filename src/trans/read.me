@@ -1,0 +1,60 @@
+                          Text Translation Tool
+                          ---------------------
+
+This is a simple but very useful text translation tool that I use all the
+time. It converts text files between MSDOS format to UNIX style format
+(CR/LF's to single LF's). It also allows you to convert tabs to a set
+number of spaces for formatting on dumb printers (I use 4 space tabs
+religously), and can strip all CR characters from a file (I use this to
+convert the output of MS word 2.0 in text format to a plain text file
+that can be read online).
+
+The program takes a set of files to convert on the command line (with
+wildcards) and formats them all in the specified manner. It can also take
+the list of files to format from a named file. It checks that ensure
+that the file is a regular file with read and write permissions, and skips
+over any binary files that may have been mistakenly specified. Thus to
+convert a set of files from an MSDOS system to UNIX, you can simple type
+the command:
+
+            trans -u *
+
+on the UNIX host, which will convert all non-binary files to text format.
+Thus it doesn't matter if there are any executables, directories, special
+files or whatever - if they are not text, they are skipped.
+
+The following shows the output of the program with no parameters:
+
+
+Trans  Version 1.1b - May 15 1992  Copyright (C) 1992 Kendall Bennett
+
+Usage: TRANS -udth [-f<name>] [files(s)]
+
+Trans translates text files from one format to another according to various
+options.
+
+Options are:
+
+  -u       - Convert to UNIX format. CR/LF's are converted to LF's
+  -d       - Convert to DOS format. LF's are converted to CR/LF's
+  -m       - Strip CR's from the file
+  -txx     - Convert TABS to xx spaces. Maximum is 40
+  -f<name> - Read names of files to format from file <name>
+  -h       - Display help screen (this screen)
+
+
+You can contact me via at any of the internet addresses listed below.
+Enjoy...
+
+Oh yeah, if you are trying to compile on some systems that purport to be
+ANSI C, you may have trouble with the debug.h header file. One example is 
+the SGI Iris 4D. It's 'ANSI' C compiler automatically defines uchar, ushort,
+uint and ulong for you (even though they are not to ANSI specs). You will 
+then need to comments these out of the debug.h header file definition.
+
++------------------------------------------+-------------------------------+
+| Kendall Bennett,                         | Internet:                     |
+| Advanced Computer Graphics Centre,       | kjb@godzilla.cgl.citri.edu.au |
+| Royal Melbourne Institute of Technology, | rcskb@minyos.xx.rmit.oz.au    |
+| Victoria, AUSTRALIA.                     |                               | 
++------------------------------------------+-------------------------------+

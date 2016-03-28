@@ -1,0 +1,4 @@
+Branch spec for Open Watcom C++ complex math library (change 17253 is pristine source!):
+
+//public/openwatcom/bld/plusplus/cpplib/complex/cpp/... //depot/devel/kendallb/scitech/src/snaprtl/complex/...
+

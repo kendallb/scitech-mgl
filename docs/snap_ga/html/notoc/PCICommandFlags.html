@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PCICommandFlags</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PCICommandFlags
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; PCI_enableIOSpace&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0001,<br />
+        &#160;&#160;&#160; PCI_enableMemorySpace&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;=
+        0x0002,<br />
+        &#160;&#160;&#160; PCI_enableBusMaster&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0004,<br />
+        &#160;&#160;&#160; PCI_enableSpecialCycles&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0008,<br />
+        &#160;&#160;&#160; PCI_enableWriteAndInvalidate&#160;&#160;&#160; =
+        0x0010,<br />
+        &#160;&#160;&#160; PCI_enableVGACompatiblePalette&#160; = 0x0020,<br />
+        &#160;&#160;&#160; PCI_enableParity&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0040,<br />
+        &#160;&#160;&#160; PCI_enableWaitCycle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0080,<br />
+        &#160;&#160;&#160; PCI_enableSerr&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0100,<br />
+        &#160;&#160;&#160; PCI_enableFastBackToBack&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0200<br />
+        &#160;&#160;&#160; } PCICommandFlags
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pcilib.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines for the <a href="PCIDeviceInfo.html">PCIDeviceInfo</a>.Command
+        field, which control which features of the device are enabled or
+        disabled. A 1 in the field means that the feature is enabled, 0 means
+        it is disabled. The names of the flags are self explanatory.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

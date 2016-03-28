@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_options</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_options
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef struct {<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; dwSize;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; memoryClock;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; defaultMemoryClock;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; maxMemoryClock;<br />
+        &#160;&#160;&#160; GA_paletteExt&#160;&#160; gammaRamp[256];<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; outputDevice;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV640PALUnder;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV640NTSCUnder;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV640PALOver;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV640NTSCOver;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV800PALUnder;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV800NTSCUnder;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV800PALOver;<br />
+        &#160;&#160;&#160; GA_TVParams&#160;&#160;&#160;&#160; TV800NTSCOver;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bRes1;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bRes2;<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; RTCFrequency;<br />
+        &#160;&#160;&#160; N_int32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; RTCAdvanceTicks;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bRes3;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; ioPort;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ioAndMask;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ioLeftOrMask;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ioRightOrMask;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ioOffOrMask;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; vSyncWidthLeft;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; vSyncWidthRight;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text80x43Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text80x50Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text80x60Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;text100x43Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text100x50Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text100x60Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text132x43Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text132x50Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; text132x60Height;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; tripleScanLowRes;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; doubleScan512;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoRefresh;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoRefreshInterlaced;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoMode;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoModeWindowed;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoBlankInterval;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoRefreshWindowed;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoRefreshWindowedInterlaced;<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoDevice;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; glassesType;<br />
+        &#160;&#160;&#160; N_uint16&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoBlankIntervalPercent;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; engineClock;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; defaultEngineClock;<br />
+        &#160;&#160;&#160; N_fix32&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; maxEngineClock;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoControlPanelOptions;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; stereoCursorRedraw;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res0[14];<br />
+        &#160;&#160;&#160; N_int16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; LCDPanelWidth;<br />
+        &#160;&#160;&#160; N_int16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; LCDPanelHeight;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bLCDExpand;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bPrefer16bpp;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bPrefer32bpp;<br />
+        &#160;&#160;&#160; N_int16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; TVMaxWidth;<br />
+        &#160;&#160;&#160; N_int16&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; TVMaxHeight;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res1[95];<br />
+        &#160;&#160;&#160; N_uint32&#160;&#160;&#160;&#160;&#160;&#160;&#160; resolutions[GA_MAX_RESOLUTIONS];<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; colorDepths[GA_MAX_COLORDEPTHS];<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; maxRefresh;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; accelType;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res2[159];<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDebugMode;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGenericRefresh;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDialAMode;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVirtualScroll;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;bDoubleBuffer;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bTripleBuffer;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareStereoSync;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bStereo;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bMultiDisplay;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bPortrait;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bFlipped;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bInvertColors;<br />
+        &#160; &#160;&#160;N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bReserved1;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bReserved2;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bVirtualDisplay;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bAGPFastWrite;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bZoom;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bMultiHead;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res3[154];<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bTVOut;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bTVTuner;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDualHead;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDPMS;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDDC;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDDCCI;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGammaCorrect;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareCursor;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareColorCursor;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareVideo;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareAccel2D;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bHardwareAccel3D;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bMonoPattern;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bTransMonoPattern;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bColorPattern;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bTransColorPattern;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bSysMem;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bLinear;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bBusMaster;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawScanList;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawEllipseList;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawFatEllipseList;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawRect;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawRectLin;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawTrap;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawLine;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDrawStippleLine;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bPutMonoImage;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bClipMonoImage;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bBitBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bBitBltPatt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bBitBltColorPatt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bSrcTransBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bDstTransBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bStretchBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bConvertBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bStretchConvertBlt;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bBitBltFx;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; bGetBitmap;<br />
+        &#160;&#160;&#160; N_uint8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; res4[256];<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; multiHeadSize;<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; multiHeadRes[GA_MAX_HEADS];<br />
+        &#160;&#160;&#160; GA_layout&#160;&#160;&#160;&#160;&#160;&#160; multiHeadBounds[GA_MAX_HEADS];<br />
+        &#160;&#160;&#160; } GA_options
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Structure returned by GetOptions, which contains configuration
+        information about the options for the installed device driver. All the
+        boolean configuration options are enabled by default and can be
+        optionally turned off by the user via the configuration functions.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This structure also contains the configuration information for the
+        software stereo page flipping support in SNAP Graphics.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you select the gaGlassesIOPort type, then you need to fill in the
+        ioPort, ioAndMask, ioLeftOrMask, ioRightOrMask and ioOffOrMask fields.
+        These fields define the values used to toggle the specified I/O port
+        when the glasses need to be flipped. First the existing value is read
+        from the specified I/O port, the AND mask in applied and then the
+        appropriate OR mask is applied depending on the state of the glasses.
+        This value is then written back to the desired I/O port.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you select the gaGlassesGenericVSync type, then you need to fill in
+        the VSyncWidthLeft and VSyncWidthRight fields, which define the
+        vertical sync width to program when the desired eye should be active.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The values in the RTCFrequency and RTCAdvanceTicks define the frequency
+        of the stereo timer interrupt, which can be used to fine tune the
+        overheads taken by the stereo page flip handler for maximum performance
+        before stuttering begins (ie: lost frames). The RTCFrequency field can
+        be any power of 2 frequency between 1024Hz and 8192H, and the
+        RTCAdvanceTicks should be a value larger than 1. For most systems an
+        RTCFrequency value of 2048 and an RTCAdvanceTicks of 2 will work well.
+        SNAP Graphics will however choose good defaults for the target OS if
+        these values are not overridden.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The dwSize member is intended for future
+          compatibility, and should be set to the size of the structure as
+          defined in this header file. Future drivers will be compatible with
+          older software by examiming this value.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dwSize
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set to size of structure in bytes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                memoryClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Currently configured memory clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                defaultMemoryClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current hardware default memory clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                maxMemoryClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum allowable memory clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gammaRamp
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Default gamma ramp for RGB display modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                outputDevice
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Currently configured output device
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV640PALUnder
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 640x480 PAL underscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV640NTSCUnder
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 640x480 NTSC underscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV640PALOver
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 640x480 PAL overscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV640NTSCOver
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 640x480 NTSC overscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV800PALUnder
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 800x600 PAL underscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV800NTSCUnder
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 800x600 NTSC underscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV800PALOver
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 800x600 PAL overscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                TV800NTSCOver
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                TV parameters for 800x600 NTSC overscan modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numHorzDisplay
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of horizontal displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numVertDisplay
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of vertical displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RTCFrequency
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Frequency for real time clock for software stereo
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                RTCAdvanceTicks
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of ticks to advance for software stereo
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                glassesType
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Type of stereo glasses defined by GA_glassesTypeFlags
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ioPort
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Generic I/O port for controlling glasses
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ioAndMask
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O port AND mask
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ioLeftOrMask
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O port OR mask when left eye is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ioRightOrMask
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O port OR mask when right eye is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ioOffOrMask
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                I/O port OR mask when glasses are off
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                vSyncWidthLeft
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical sync width when left eye is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                vSyncWidthRight
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Vertical sync width when right eye is active
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text80x43Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 80x43 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text80x50Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 80x50 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text80x60Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 80x60 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text100x43Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 100x43 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text100x50Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 100x50 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text100x60Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 100x60 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text132x43Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 132x43 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text132x50Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 132x50 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                text132x60Height
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Character height for 132x60 text mode (8,14 or 16)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                tripleScanLowRes
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True to triple scan low res modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                doubleScan512
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                True to double scan 512x384 modes
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoRefresh
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Value to use for stereo mode refresh rate
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoRefreshInterlaced
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Value to use for stereo mode interlaced refresh rate
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoMode
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stereo mode to be used for fullscreen applications
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoModeWindowed
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stereo mode to be used for windowed applications
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoBlankInterval
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stereo mode blank interval for above below format
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                stereoDevice
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Stereo device ID defined by stereo control panel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                engineClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Currently configured graphics engine clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                defaultEngineClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Current hardware default graphics engine clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                maxEngineClock
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Maximum allowable graphics engine clock
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LCDPanelWidth
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Width of attached LCD panel in pixels
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                LCDPanelHeight
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Height of attached LCD panel in lines
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bLCDExpand
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable expansion of modes to fill LCD panel
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDebugMode
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable debug log filter driver (0 is off)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bGenericRefresh
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable generic refresh rate control
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDialAMode
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable Dial-A-Mode generic mode interface
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bVirtualScroll
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable virtual scrolling functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDoubleBuffer
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable double buffering functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bTripleBuffer
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable triple buffering functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bHardwareStereoSync
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable hardware stereo sync flag
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bStereo
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable stereo display mode support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bMultiDisplay
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable multiple display mode support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bPortrait
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable portrait display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bFlipped
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable flipped display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bInvertColors
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable invert color mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bVirtualDisplay
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable virtual display mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bAGPFastWrite
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable AGP fast write (only here to be licensed)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bZoom
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable zoom support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bMultiHead
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable multi-head support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bTVOut
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable TV Output support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bTVTuner
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable TV Tuner support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDualHead
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable Dual Head CRTC support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDPMS
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DPMS Display Power Management support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDDC
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DDC Display Data Channel functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDDCCI
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DDC/CI Control Interface functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bGammaCorrect
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable gamma correction
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bHardwareCursor
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable hardware cursor
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bHardwareVideo
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable hardware video
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bHardwareAccel2D
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable hardware 2D acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bHardwareAccel3D
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable hardware 2D acceleration
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bMonoPattern
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable 8x8 mono pattern fills
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bTransMonoPattern
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable 8x8 mono transparent pattern fills
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bColorPattern
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable 8x8 color pattern fills
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bTransColorPattern
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable 8x8 color transparent pattern fills
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bSysMem
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable system memory blits
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bLinear
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable linear offscreen memory blits
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bBusMaster
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable bus mastering functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawScanList
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawScanList family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawEllipseList
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawEllipseList family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawFatEllipseList
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawFatEllipseList family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawRect
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawRect family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawRectLin
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawRectLin family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawTrap
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawTrap family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawLine
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawLine function
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDrawStippleLine
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DrawStippleLine function
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bPutMonoImage
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable PutMonoImage family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bClipMonoImage
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable ClipMonoImage family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bBitBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable BitBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bBitBltPatt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable BitBltPatt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bBitBltColorPatt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable BitBltColorPatt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bSrcTransBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable SrcTransBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bDstTransBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable DstTransBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bStretchBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable StretchBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bConvertBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable ConvertBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bStretchConvertBlt
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable StretchConvertBlt family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bBitBltFx
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable BitBltFx family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bGetBitmap
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable GetBitmap family of functions
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                multiHeadSize
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Virtual size for multi-head displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                multiHeadRes
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Physical resolutions for multi-head displays
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:169.5pt;padding:'0in .5pt 0in .5pt';" width="283" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                multiHeadBounds
+              </p>
+            </td>
+            <td style="width:230.0pt;padding:'0in .5pt 0in .5pt';" width="383" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Virtual layout for multi-head displays
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

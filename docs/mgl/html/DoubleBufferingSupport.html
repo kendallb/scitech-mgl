@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Double buffering support</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Viewport and clip rectangle manipulation" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ViewportAndClipRectangleManipulation.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Viewport and clip rectangle manipulation" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Device clearing " class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DeviceClearing.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Device clearing " src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL Library Overview" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGLLibraryOverview.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL Library Overview" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        Double buffering support
+      </h2>
+      <p class="MsoBodyText">
+        The following functions provide support for hardware double buffering on
+        display devices that have two display buffers. Hardware double
+        buffering is used to achieve flicker free animation, but drawing to a
+        hidden portion of display memory and then instantly updating the screen
+        by changing the visible display page to the previously hidden display
+        page. You can also use the <a href="MGL_setDisplayStart.html">MGL_setDisplayStart</a> function
+        to scroll around within a hardware scrolling or panning device context.
+        For combining hardware scrolling and double buffering, you can use <a href="MGL_setDisplayStart.html">MGL_setDisplayStart</a> and
+        <a href="MGL_setVisualPage.html">MGL_setVisualPage</a> together.
+      </p>
+      <table style="margin-left:41.4pt;border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_doubleBuffer.html">MGL_doubleBuffer</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getActivePage.html">MGL_getActivePage</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getCurrentScanLine.html">MGL_getCurrentScanLine</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getDisplayStart.html">MGL_getDisplayStart</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_getVisualPage.html">MGL_getVisualPage</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_isVSync.html">MGL_isVSync</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_lockToFrameRate.html">MGL_lockToFrameRate</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setActivePage.html">MGL_setActivePage</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setDisplayStart.html">MGL_setDisplayStart</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_setVisualPage.html">MGL_setVisualPage</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_singleBuffer.html">MGL_singleBuffer</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_swapBuffers.html">MGL_swapBuffers</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              <a href="MGL_vSync.html">MGL_vSync</a>
+            </p>
+          </td>
+          <td style="width:189.9pt;padding:'0in 5.4pt 0in 5.4pt';" width="317" valign="top">
+            <p class="TableText">
+              &nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

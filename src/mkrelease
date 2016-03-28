@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# Shell script to build all MGL libraries in release mode for the
+# currently active compiler. Speed optimisations are enabled, and
+# no debug information or extra runtime checks are performed.
+# We also turn down the warning level.
+
+export DBG=
+export OPT=1
+export OPT_SIZE=
+export CHECKED=
+export MAX_WARN=
+dmake build

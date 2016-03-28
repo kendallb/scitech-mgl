@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>PM_suspendAppCodesType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section4">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        PM_suspendAppCodesType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; PM_SUSPEND_APP&#160;&#160;&#160;&#160;&#160; = 0,<br />
+        &#160;&#160;&#160; PM_NO_SUSPEND_APP&#160;&#160; = 1<br />
+        &#160;&#160;&#160; } PM_suspendAppCodesType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        pmapi.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Defines the return codes that the application can return from the suspend
+        application callback registered with the PM library. The default value
+        to be returned is PM_SUSPEND_APP and this will cause the application
+        execution to be suspended until the application is re-activated again
+        by the user. During this time the application will exist on the task
+        bar under Windows 9x and Windows NT/2000/XP in minimised form.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        PM_NO_SUSPEND_APP can be used to tell the PM library to switch back to
+        the Windows desktop, but not to suspend the applications execution.
+        This must be used with care as the suspend application callback is then
+        responsible for setting a flag in the application that will stop the
+        application from doing any rendering directly to the framebuffer while
+        the application is minimised on the task bar (since the application no
+        lonter owns the screen!). This return value is most useful for
+        networked games that need to maintain network connectivity while the
+        user has temporarily switched back to the Windows desktop. Hence you
+        can ensure that you main loop continues to run, including networking
+        and AI code, but no drawing occurs to the screen.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; The PM library ensures that your application
+          will never be switched away from outside of a message processing
+          loop. Hence as long as you do not process messages inside your
+          drawing loops, you will never lose the active focus (and your
+          surfaces) while drawing, but only during event processing. The
+          exception to this is if the user hits Ctrl-Alt-Del under Windows
+          NT/2000/XP which will always cause a switch away from the application
+          immediately and force the surfaces to be lost.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_SUSPEND_APP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Suspend application execution until restored
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:139.5pt;padding:'0in .5pt 0in .5pt';" width="233" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                PM_NO_SUSPEND_APP
+              </p>
+            </td>
+            <td style="width:260.0pt;padding:'0in .5pt 0in .5pt';" width="433" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Don't suspend execution, but allow switch
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

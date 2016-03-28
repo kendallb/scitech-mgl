@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>ULZTimerOn</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        ULZTimerOn
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Starts the Ultra Long Period Zen Timer counting.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void ZAPI ULZTimerOn(void)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        ztimer.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Starts the Ultra Long Period Zen Timer counting. Once you have started
+        the timer, you can stop it with <a href="ULZTimerOff.html">ULZTimerOff</a> or
+        you can latch the current count with <a href="ULZTimerLap.html">ULZTimerLap</a>.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The Ultra Long Period Zen Timer uses the available operating system
+        services to obtain accurate timings results with as much precision as
+        the operating system provides, but with enough granularity to time
+        longer periods of time than the Long Period Zen Timer. Note that the
+        resolution of the timer ticks is not constant between different
+        platforms, and you should use the <a href="ULZTimerResolution.html">ULZTimerResolution</a> function
+        to determine the number of seconds in a single tick of the timer, and
+        use this to convert the timer counts to seconds.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Under 32-bit Windows, we use the timeGetTime function which provides a
+        resolution of 1 millisecond (0.001 of a second). Given that the timer
+        count is returned as an unsigned 32-bit integer, this we can time
+        intervals that are a maximum of 2^32 milliseconds in length (or about
+        1,200 hours or 50 days!).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Under 32-bit DOS, we use the system timer tick which runs at 18.2 times
+        per second. Given that the timer count is returned as an unsigned
+        32-bit integer, this we can time intervals that are a maximum of 2^32 *
+        (1/18.2) in length (or about 65,550 hours or 2731 days!).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="ULZTimerOff.html">ULZTimerOff</a>, <a href="ULZTimerLap.html">ULZTimerLap</a>,
+        <a href="ULZTimerCount.html">ULZTimerCount</a>, <a href="ULZElapsedTime.html">ULZElapsedTime</a>,
+        <a href="ULZReadTime.html">ULZReadTime</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

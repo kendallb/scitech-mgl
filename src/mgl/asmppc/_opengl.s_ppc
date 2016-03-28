@@ -1,0 +1,381 @@
+#***************************************************************************
+#
+#                  SciTech Multi-platform Graphics Library
+#
+#  ========================================================================
+#
+#   Copyright (C) 1991-2004 SciTech Software Inc. All rights reserved.
+#
+#   This file may be distributed and/or modified under the terms of the
+#   GNU General Public License version 2.0 as published by the Free
+#   Software Foundation and appearing in the file LICENSE.GPL included
+#   in the packaging of this file.
+#
+#   Licensees holding a valid Commercial License for this product from
+#   SciTech Software Inc. may use this file in accordance with the
+#   Commercial License Agreement provided with the Software.
+#
+#   This file is provided AS IS with NO WARRANTY OF ANY KIND INCLUDING
+#   THE WARRANTY OF DESIGN MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+#   PURPOSE.
+#
+#   See http://www.scitechsoft.com/license/ for information about
+#   the licensing options available and how to purchase a Commercial
+#   License Agreement.
+#
+#   Contact license@scitechsoft.com if any conditions of this licensing
+#   are not clear to you or you have questions about licensing options.
+#
+#  ========================================================================
+#
+# Language:    GAS
+# Environment: PowerPC SYSV ABI
+#
+# Description: OpenGL stub functions.
+#
+#***************************************************************************
+
+.include "ppcmacros.i"           # Memory model macros
+
+BEGIN_IMPORTS_DEF   _GA_glFuncs
+DECLARE_STUB glAccum
+DECLARE_STUB glAlphaFunc
+DECLARE_STUB glAreTexturesResident
+DECLARE_STUB glArrayElement
+DECLARE_STUB glBegin
+DECLARE_STUB glBindTexture
+DECLARE_STUB glBitmap
+DECLARE_STUB glBlendFunc
+DECLARE_STUB glCallList
+DECLARE_STUB glCallLists
+DECLARE_STUB glClear
+DECLARE_STUB glClearAccum
+DECLARE_STUB glClearColor
+DECLARE_STUB glClearDepth
+DECLARE_STUB glClearIndex
+DECLARE_STUB glClearStencil
+DECLARE_STUB glClipPlane
+DECLARE_STUB glColor3b
+DECLARE_STUB glColor3bv
+DECLARE_STUB glColor3d
+DECLARE_STUB glColor3dv
+DECLARE_STUB glColor3f
+DECLARE_STUB glColor3fv
+DECLARE_STUB glColor3i
+DECLARE_STUB glColor3iv
+DECLARE_STUB glColor3s
+DECLARE_STUB glColor3sv
+DECLARE_STUB glColor3ub
+DECLARE_STUB glColor3ubv
+DECLARE_STUB glColor3ui
+DECLARE_STUB glColor3uiv
+DECLARE_STUB glColor3us
+DECLARE_STUB glColor3usv
+DECLARE_STUB glColor4b
+DECLARE_STUB glColor4bv
+DECLARE_STUB glColor4d
+DECLARE_STUB glColor4dv
+DECLARE_STUB glColor4f
+DECLARE_STUB glColor4fv
+DECLARE_STUB glColor4i
+DECLARE_STUB glColor4iv
+DECLARE_STUB glColor4s
+DECLARE_STUB glColor4sv
+DECLARE_STUB glColor4ub
+DECLARE_STUB glColor4ubv
+DECLARE_STUB glColor4ui
+DECLARE_STUB glColor4uiv
+DECLARE_STUB glColor4us
+DECLARE_STUB glColor4usv
+DECLARE_STUB glColorMask
+DECLARE_STUB glColorMaterial
+DECLARE_STUB glColorPointer
+DECLARE_STUB glCopyPixels
+DECLARE_STUB glCopyTexImage1D
+DECLARE_STUB glCopyTexImage2D
+DECLARE_STUB glCopyTexSubImage1D
+DECLARE_STUB glCopyTexSubImage2D
+DECLARE_STUB glCullFace
+DECLARE_STUB glDeleteLists
+DECLARE_STUB glDeleteTextures
+DECLARE_STUB glDepthFunc
+DECLARE_STUB glDepthMask
+DECLARE_STUB glDepthRange
+DECLARE_STUB glDisable
+DECLARE_STUB glDisableClientState
+DECLARE_STUB glDrawArrays
+DECLARE_STUB __glDrawBuffer            # We handle this in C code
+DECLARE_STUB glDrawElements
+DECLARE_STUB glDrawPixels
+DECLARE_STUB glEdgeFlag
+DECLARE_STUB glEdgeFlagPointer
+DECLARE_STUB glEdgeFlagv
+DECLARE_STUB glEnable
+DECLARE_STUB glEnableClientState
+DECLARE_STUB glEnd
+DECLARE_STUB glEndList
+DECLARE_STUB glEvalCoord1d
+DECLARE_STUB glEvalCoord1dv
+DECLARE_STUB glEvalCoord1f
+DECLARE_STUB glEvalCoord1fv
+DECLARE_STUB glEvalCoord2d
+DECLARE_STUB glEvalCoord2dv
+DECLARE_STUB glEvalCoord2f
+DECLARE_STUB glEvalCoord2fv
+DECLARE_STUB glEvalMesh1
+DECLARE_STUB glEvalMesh2
+DECLARE_STUB glEvalPoint1
+DECLARE_STUB glEvalPoint2
+DECLARE_STUB glFeedbackBuffer
+DECLARE_STUB glFinish
+DECLARE_STUB glFlush
+DECLARE_STUB glFogf
+DECLARE_STUB glFogfv
+DECLARE_STUB glFogi
+DECLARE_STUB glFogiv
+DECLARE_STUB glFrontFace
+DECLARE_STUB glFrustum
+DECLARE_STUB glGenLists
+DECLARE_STUB glGenTextures
+DECLARE_STUB glGetBooleanv
+DECLARE_STUB glGetClipPlane
+DECLARE_STUB glGetDoublev
+DECLARE_STUB glGetError
+DECLARE_STUB glGetFloatv
+DECLARE_STUB glGetIntegerv
+DECLARE_STUB glGetLightfv
+DECLARE_STUB glGetLightiv
+DECLARE_STUB glGetMapdv
+DECLARE_STUB glGetMapfv
+DECLARE_STUB glGetMapiv
+DECLARE_STUB glGetMaterialfv
+DECLARE_STUB glGetMaterialiv
+DECLARE_STUB glGetPixelMapfv
+DECLARE_STUB glGetPixelMapuiv
+DECLARE_STUB glGetPixelMapusv
+DECLARE_STUB glGetPointerv
+DECLARE_STUB glGetPolygonStipple
+DECLARE_STUB glGetString
+DECLARE_STUB glGetTexEnvfv
+DECLARE_STUB glGetTexEnviv
+DECLARE_STUB glGetTexGendv
+DECLARE_STUB glGetTexGenfv
+DECLARE_STUB glGetTexGeniv
+DECLARE_STUB glGetTexImage
+DECLARE_STUB glGetTexLevelParameterfv
+DECLARE_STUB glGetTexLevelParameteriv
+DECLARE_STUB glGetTexParameterfv
+DECLARE_STUB glGetTexParameteriv
+DECLARE_STUB glHint
+DECLARE_STUB glIndexMask
+DECLARE_STUB glIndexPointer
+DECLARE_STUB glIndexd
+DECLARE_STUB glIndexdv
+DECLARE_STUB glIndexf
+DECLARE_STUB glIndexfv
+DECLARE_STUB glIndexi
+DECLARE_STUB glIndexiv
+DECLARE_STUB glIndexs
+DECLARE_STUB glIndexsv
+DECLARE_STUB glIndexub
+DECLARE_STUB glIndexubv
+DECLARE_STUB glInitNames
+DECLARE_STUB glInterleavedArrays
+DECLARE_STUB glIsEnabled
+DECLARE_STUB glIsList
+DECLARE_STUB glIsTexture
+DECLARE_STUB glLightf
+DECLARE_STUB glLightfv
+DECLARE_STUB glLighti
+DECLARE_STUB glLightiv
+DECLARE_STUB glLightModelf
+DECLARE_STUB glLightModelfv
+DECLARE_STUB glLightModeli
+DECLARE_STUB glLightModeliv
+DECLARE_STUB glLineStipple
+DECLARE_STUB glLineWidth
+DECLARE_STUB glListBase
+DECLARE_STUB glLoadIdentity
+DECLARE_STUB glLoadMatrixd
+DECLARE_STUB glLoadMatrixf
+DECLARE_STUB glLoadName
+DECLARE_STUB glLogicOp
+DECLARE_STUB glMap1d
+DECLARE_STUB glMap1f
+DECLARE_STUB glMap2d
+DECLARE_STUB glMap2f
+DECLARE_STUB glMapGrid1d
+DECLARE_STUB glMapGrid1f
+DECLARE_STUB glMapGrid2d
+DECLARE_STUB glMapGrid2f
+DECLARE_STUB glMaterialf
+DECLARE_STUB glMaterialfv
+DECLARE_STUB glMateriali
+DECLARE_STUB glMaterialiv
+DECLARE_STUB glMatrixMode
+DECLARE_STUB glMultMatrixd
+DECLARE_STUB glMultMatrixf
+DECLARE_STUB glNewList
+DECLARE_STUB glNormal3b
+DECLARE_STUB glNormal3bv
+DECLARE_STUB glNormal3d
+DECLARE_STUB glNormal3dv
+DECLARE_STUB glNormal3f
+DECLARE_STUB glNormal3fv
+DECLARE_STUB glNormal3i
+DECLARE_STUB glNormal3iv
+DECLARE_STUB glNormal3s
+DECLARE_STUB glNormal3sv
+DECLARE_STUB glNormalPointer
+DECLARE_STUB glOrtho
+DECLARE_STUB glPassThrough
+DECLARE_STUB glPixelMapfv
+DECLARE_STUB glPixelMapuiv
+DECLARE_STUB glPixelMapusv
+DECLARE_STUB glPixelStoref
+DECLARE_STUB glPixelStorei
+DECLARE_STUB glPixelTransferf
+DECLARE_STUB glPixelTransferi
+DECLARE_STUB glPixelZoom
+DECLARE_STUB glPointSize
+DECLARE_STUB glPolygonMode
+DECLARE_STUB glPolygonOffset
+DECLARE_STUB glPolygonStipple
+DECLARE_STUB glPopAttrib
+DECLARE_STUB glPopClientAttrib
+DECLARE_STUB glPopMatrix
+DECLARE_STUB glPopName
+DECLARE_STUB glPrioritizeTextures
+DECLARE_STUB glPushAttrib
+DECLARE_STUB glPushClientAttrib
+DECLARE_STUB glPushMatrix
+DECLARE_STUB glPushName
+DECLARE_STUB glRasterPos2d
+DECLARE_STUB glRasterPos2dv
+DECLARE_STUB glRasterPos2f
+DECLARE_STUB glRasterPos2fv
+DECLARE_STUB glRasterPos2i
+DECLARE_STUB glRasterPos2iv
+DECLARE_STUB glRasterPos2s
+DECLARE_STUB glRasterPos2sv
+DECLARE_STUB glRasterPos3d
+DECLARE_STUB glRasterPos3dv
+DECLARE_STUB glRasterPos3f
+DECLARE_STUB glRasterPos3fv
+DECLARE_STUB glRasterPos3i
+DECLARE_STUB glRasterPos3iv
+DECLARE_STUB glRasterPos3s
+DECLARE_STUB glRasterPos3sv
+DECLARE_STUB glRasterPos4d
+DECLARE_STUB glRasterPos4dv
+DECLARE_STUB glRasterPos4f
+DECLARE_STUB glRasterPos4fv
+DECLARE_STUB glRasterPos4i
+DECLARE_STUB glRasterPos4iv
+DECLARE_STUB glRasterPos4s
+DECLARE_STUB glRasterPos4sv
+DECLARE_STUB glReadBuffer
+DECLARE_STUB glReadPixels
+DECLARE_STUB glRectd
+DECLARE_STUB glRectdv
+DECLARE_STUB glRectf
+DECLARE_STUB glRectfv
+DECLARE_STUB glRecti
+DECLARE_STUB glRectiv
+DECLARE_STUB glRects
+DECLARE_STUB glRectsv
+DECLARE_STUB glRenderMode
+DECLARE_STUB glRotated
+DECLARE_STUB glRotatef
+DECLARE_STUB glScaled
+DECLARE_STUB glScalef
+DECLARE_STUB glScissor
+DECLARE_STUB glSelectBuffer
+DECLARE_STUB glShadeModel
+DECLARE_STUB glStencilFunc
+DECLARE_STUB glStencilMask
+DECLARE_STUB glStencilOp
+DECLARE_STUB glTexCoord1d
+DECLARE_STUB glTexCoord1dv
+DECLARE_STUB glTexCoord1f
+DECLARE_STUB glTexCoord1fv
+DECLARE_STUB glTexCoord1i
+DECLARE_STUB glTexCoord1iv
+DECLARE_STUB glTexCoord1s
+DECLARE_STUB glTexCoord1sv
+DECLARE_STUB glTexCoord2d
+DECLARE_STUB glTexCoord2dv
+DECLARE_STUB glTexCoord2f
+DECLARE_STUB glTexCoord2fv
+DECLARE_STUB glTexCoord2i
+DECLARE_STUB glTexCoord2iv
+DECLARE_STUB glTexCoord2s
+DECLARE_STUB glTexCoord2sv
+DECLARE_STUB glTexCoord3d
+DECLARE_STUB glTexCoord3dv
+DECLARE_STUB glTexCoord3f
+DECLARE_STUB glTexCoord3fv
+DECLARE_STUB glTexCoord3i
+DECLARE_STUB glTexCoord3iv
+DECLARE_STUB glTexCoord3s
+DECLARE_STUB glTexCoord3sv
+DECLARE_STUB glTexCoord4d
+DECLARE_STUB glTexCoord4dv
+DECLARE_STUB glTexCoord4f
+DECLARE_STUB glTexCoord4fv
+DECLARE_STUB glTexCoord4i
+DECLARE_STUB glTexCoord4iv
+DECLARE_STUB glTexCoord4s
+DECLARE_STUB glTexCoord4sv
+DECLARE_STUB glTexCoordPointer
+DECLARE_STUB glTexEnvf
+DECLARE_STUB glTexEnvfv
+DECLARE_STUB glTexEnvi
+DECLARE_STUB glTexEnviv
+DECLARE_STUB glTexGend
+DECLARE_STUB glTexGendv
+DECLARE_STUB glTexGenf
+DECLARE_STUB glTexGenfv
+DECLARE_STUB glTexGeni
+DECLARE_STUB glTexGeniv
+DECLARE_STUB glTexImage1D
+DECLARE_STUB glTexImage2D
+DECLARE_STUB glTexParameterf
+DECLARE_STUB glTexParameterfv
+DECLARE_STUB glTexParameteri
+DECLARE_STUB glTexParameteriv
+DECLARE_STUB glTexSubImage1D
+DECLARE_STUB glTexSubImage2D
+DECLARE_STUB glTranslated
+DECLARE_STUB glTranslatef
+DECLARE_STUB glVertex2d
+DECLARE_STUB glVertex2dv
+DECLARE_STUB glVertex2f
+DECLARE_STUB glVertex2fv
+DECLARE_STUB glVertex2i
+DECLARE_STUB glVertex2iv
+DECLARE_STUB glVertex2s
+DECLARE_STUB glVertex2sv
+DECLARE_STUB glVertex3d
+DECLARE_STUB glVertex3dv
+DECLARE_STUB glVertex3f
+DECLARE_STUB glVertex3fv
+DECLARE_STUB glVertex3i
+DECLARE_STUB glVertex3iv
+DECLARE_STUB glVertex3s
+DECLARE_STUB glVertex3sv
+DECLARE_STUB glVertex4d
+DECLARE_STUB glVertex4dv
+DECLARE_STUB glVertex4f
+DECLARE_STUB glVertex4fv
+DECLARE_STUB glVertex4i
+DECLARE_STUB glVertex4iv
+DECLARE_STUB glVertex4s
+DECLARE_STUB glVertex4sv
+DECLARE_STUB glVertexPointer
+DECLARE_STUB glViewport
+DECLARE_STUB glDrawRangeElements
+DECLARE_STUB glTexImage3D
+DECLARE_STUB glTexSubImage3D
+DECLARE_STUB glCopyTexSubImage3D
+END_IMPORTS_DEF

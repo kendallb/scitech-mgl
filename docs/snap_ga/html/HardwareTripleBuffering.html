@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Hardware Triple Buffering</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Direct Framebuffer Access" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('DirectFramebufferAccess.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Direct Framebuffer Access" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Using the Buffer Manager" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('UsingTheBufferManager.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Using the Buffer Manager" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Programming with SNAP Graphics" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ProgrammingWithSNAPGraphics.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Programming with SNAP Graphics" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h2>
+        Hardware Triple Buffering
+      </h2>
+      <p class="MsoBodyText">
+        Hardware triple buffering is supported in the SciTech SNAP Graphics
+        Architecture specification by allowing the application to schedule a
+        display start address change, and then to later determine the status of
+        the last scheduled display start address change. The <a href="SetDisplayStart.html">SetDisplayStart</a> function
+        is used to schedule the display start address change, and the <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a> function
+        is used to determine the status of the last scheduled change. The
+        following steps outline how to use hardware triple buffering:
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;tab-stops:.75in;" class="MsoBodyText">
+        1.&#160;&#160;&#160; Display from the first visible buffer, and render to
+        the second hidden buffer.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;tab-stops:.75in;" class="MsoBodyText">
+        2.&#160;&#160;&#160; Schedule a page flip for the second hidden buffer
+        that you just finished rendering with a call to <a href="SetDisplayStart.html">SetDisplayStart</a> with
+        the waitVRT flag set to 0, and start rendering immediately to the third
+        hidden buffer. The CRT controller will be currently displaying from the
+        first buffer.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;tab-stops:.75in;" class="MsoBodyText">
+        3.&#160;&#160;&#160; Before scheduling the page flip for the third hidden
+        buffer, wait until the last scheduled change has occurred by calling <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a> until
+        it returns non-zero. Schedule the page flip for the third hidden buffer
+        (call <a href="SetDisplayStart.html">SetDisplayStart</a> with the
+        waitVRT flag set to 0 again) and immediately begin rendering to the
+        first hidden buffer. The CRT controller will be currently displaying
+        from the second buffer.
+      </p>
+      <p style="margin-left:.75in;text-indent:-.25in;tab-stops:.75in;" class="MsoBodyText">
+        4.&#160;&#160;&#160; Repeat step 3 over and over cycling though each of
+        the buffers.
+      </p>
+      <p class="MsoBodyText">
+        Although the above method does require a spin loop polling on the <a href="GetDisplayStartStatus.html">GetDisplayStartStatus</a>,
+        in most cases when this function is called the page flip will already
+        have occurred and the spin loop will time out immediately. The only
+        time that this cannot occur is if the application is drawing at a frame
+        rate in excess of the current hardware refresh rate (i.e.: in excess of
+        60-85 frames per second), and the resulting frame rate for the
+        application will be pegged at the hardware refresh rate.
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+                SciTech GPL License FAQ
+                      June 2004
+
+In order to ensure that developers are fully aware of how the GPL
+license applies to SciTech developed code, we are including our GPL
+license FAQ questions along with the GNU GPL license. Please fully
+read and understand both the FAQ items as well as the GNU GPL before
+you use our software. The body of the GNU General Public License
+is included in this archive as the file LICENSE.GPL.		
+
+-----
+Q. What is the difference between the GPL and commercial tools?
+
+A. The GPL and commercial versions of our tools (such as the SciTech
+SNAP SDK and SciTech MGL) are identical code-wise. The GPL versions
+of our tools are licensed for development of free or Open Source Software
+and include complete source code freely available under the GNU General
+Public License, or GPL.
+
+You can use the GPL versions of our tools to develop software free of
+charge provided that the software you develop is released under under
+the GPL license also, or a compatible license as defined by the
+SciTech FOSS License Exception document (see LICENSE.EXCEPT). If you
+develop commercial, closed source software, SciTech offers commercial
+licenses for this purpose. Commercial customers will benefit from
+professional support services and will not be restricted by the
+conditions imposed by the GPL license.
+
+-----
+Q. Why do you offer both a commercial and a GPL version of your tools?
+
+A. SciTech has put many years of effort and development into our
+professional products and development tools. Some developers may not be
+able to afford our tools financially, so the GPL version of our tools
+allows those developers to pay for the use of those tools by making
+their software available to the free software community under a license
+compatible with the GPL license.
+
+This allows our tools to be used by the largest target audience possible,
+both those developing free software under various compatible licenses and
+those developing closed source, proprietary products. The GPL version of
+our tools also allows commercial developers interested in our tools to
+evaluate them free of charge prior to beginning commercial development.
+
+-----
+Q. Can I build and design software with the GPL versions of your tools
+and then release it under the BSD, Artistic or Mozilla licenses?
+
+A. Yes. Although the GPL license is not compatible with many Open Source
+licenses, we have issued a SciTech FOSS License Exception which allows
+the use of our GPL covered code with any of the Free or Open Source
+licenses listed in that document (see LICENSE.EXCEPT).
+
+-----
+Q. Is software based on SciTech's GPL tools really free? Does it carry
+SciTech license restrictions?
+
+A. Yes, it is really free. No, there are no special SciTech license
+restrictions on free software produced using the GPL tools. In fact,
+the opposite is true: The GPL licensing demands that the software
+developed with the GPL SDK must be free. The receivers of the software
+must have the rights to obtain the source code, change it, and
+redistribute it.
+
+-----
+Q. Can I distribute applications that are dynamically linked to SciTech GPL
+tools?
+
+A. Yes, provided that your applications are released under a license
+compatible with the SciTech FOSS License Exception document
+(see LICENSE.EXCEPT). If you do not wish to release your application
+under a license compatible with the SciTech FOSS License Exception
+document, then you must license the commercial versions from SciTech.
+Putting the SciTech GPL code into a library that is dynamically linked into
+your application does not mean you can avoid the licensing requirements of
+the GPL license.
+
+-----
+Q. Using the GPL Tools, can I make software for internal use in my
+company/organization?
+
+A. SciTech's GPL tools are not intended for such use; it is our policy that
+when you are using SciTech's tools for free, you should in return contribute
+to the free software community. If you cannot do that, you should get a
+commercial license from SciTech.
+
+Note that software developed with SciTech's GPL SDK must be distributed as
+free/Open Source software; i.e. the receivers of the software must be free to
+give it to whomever they like and must be provided with complete source code.
+Internal company distribution is no exception to this rule.
+
+-----
+Q. Why doesn't SciTech distribute its SDK under the GNU Lesser General
+Public License?
+
+A. We do not use the LGPL for any of our tools as that would encourage
+vendors to take from the free software community without giving anything
+back. In other words, if SciTech's SDK was released under the LGPL,
+commercial developers would not have to purchase the commercial versions
+of our SDK in order to make commercial/proprietary software. Instead they
+could just use the LGPL version, completely free of charge. SciTech would
+then not get the revenue necessary for improving and extending our
+products and tools, which indirectly benefits the free software community.
+

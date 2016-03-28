@@ -1,0 +1,265 @@
+
+Beta release:
+-------------
+
+ . Compile up DEC Alpha Libraries for C only.
+ . Wrap up the Macintosh C only version and send to Lion.
+
+ . Re-name and build SGI OpenGL for MGL.
+ . Do build of all MGL libraries.
+ . Test and update Delphi support for new MGL and OpenGL functions.
+ . New README.WRI
+ . New ORDER.WRI
+ . New SUPPORT.WRI
+ . New LICENSE.WRI
+
+Final Release:
+--------------
+
+ . Re-code the packed pixel ellipse functions using the new floating point
+   code and specialised putForPixels functions. We can probably make this
+   actually run quite a bit faster with the new code since we can inline
+   all the put4Pixels functions and use scanline coherence to make it
+   very fast.
+
+ . Get Stereo Support into the Game Framework and build stereo sample
+   program.
+
+ . Get Stereo Support into fullscreen OpenGL with SGI OpenGL. Add support for
+   this using the MGL's built in stereo support (ie: you first need to create
+   a stereo display DC and then start Stereo OpenGL). This should fail on
+   all OpenGL drivers that dont support stereo yet (ie: all but SGI OpenGL
+   with MGL fullscreen modes).
+
+ . Quick reference guide.
+ . Manual Cover.
+ . DOCs to printer.
+ . New CD-ROM Installer for SDD/MGL
+ . Web Site registration page.
+ . Web Site download page with registration.
+
+Technical Supports Agreements:
+------------------------------
+
+ - Free Support
+	. Newsgroups
+
+ - Standard Support (free for 30 days, $199.95 per year then $39.95 per incident (or another $199.95)).
+	. Email         (unlimited incidents)
+	. Telephone	 	(10 incidents per $300)
+
+ - Priority Support ($2500 per year, $500 per special release after that (or another $2500)).
+ 	. Email				(unlimited incidents)
+    . Telephone			(20 incidents per $2500)
+    . Special Releases	(5 special releases, with multiple bug fixes per release)
+
+ - Custom Development
+ 	. Simple changes (2-3 hours: $2500)
+    . Major changes (2-3 days: $7500)
+
+TODO:
+-----
+
+ . Test the new MGL 4.0 triple buffering support on Rendition Verite
+
+ . Add support for software stereo page flipping to the MGL.
+
+ . Port the 3DFX mini-driver to the MGL so that we can use it for Quake
+   instead of the real driver which has bugs.
+
+ . Fix the MGL internally to properly re-size the system memory buffers
+   when we are running in a window with Microsoft OpenGL or SGI OpenGL,
+   since we need to properly re-size the buffers to let them know about
+   the new size.
+
+ . Eventually recode the internal device driver interface so that it
+   passes arguments in the same format as the VBE/AF drivers, then we
+   can simply point the drawing functions at the VBE/AF driver instead of
+   at an intermediate translation layer.
+
+   In order to be able to do this, we need to be able to pass a pointer
+   to the VBE/AF device context block to the driver, and to do this
+   we need to do some internal re-structuing. Perhaps the best way to
+   approach this is to do what Microsoft did, and implement a HEL layer
+   for the VBE/AF driver in the MGL using the packed pixel functions.
+
+   Then the HEL layer functions can be added in to take over in software
+   for features that are not implemented in the hardware, and we can do
+   our entire driver model based on the same high level driver model. Then
+   the calls from the high level
+
+   Not sure what to do for functions that are not implemented in the
+   VBE/AF driver per-se (such as ellipses and so on). We could simply always
+   have software rendering functions for these, which will be done efficiently
+   in software rather than in hardware for the appropriate device driver (we
+   would need other non hardware specific driver functions).
+
+   Hmm, I like this!!!! Then we can do conformance testing on the VBE/AF
+   drivers using the HEL layer as the baseline!!
+
+Hardware OpenGL driver support:
+-------------------------------
+
+ . Change the OpenGL exports so that we can export wglGetProcAddress (or
+   perhaps MGL_glGetProcAddress() which will call the appropriate routines
+   to get the proc address for the extensions.
+
+ . Store the names of all the hardware OpenGL drivers in the registry so
+   that the MGL knows about them. Only one of these will be used as the
+   'current' driver, and the current driver can be changed through either
+   of the following means:
+
+	1. Through an external config program that will enumerate all the
+	   drivers and allow the end user to change this before running an
+	   app. The first time the MGL is run on an end user's system, this
+	   program will be run to let the user select which driver to use.
+
+	2. Through a new set of API functions that will allow the app programmer
+	   to enumerate all the available drivers, and then make one of those
+	   drivers the current driver (ie: the app can have it's own user
+	   interface for this internally, such as the console in Quake).
+
+Borland Delphi Support:
+-----------------------
+
+ . Update Borland Delphi Game Framework libraries for new changes to
+   GM_init, GM_DC and GM_driverOptions structures.
+
+DEC Alpha Problems:
+-------------------
+
+ . Fullscreen DIB's on NT (at least on the Alpha) leave black holes behind
+   on return to GDI mode. Need to update with the latest DirectDraw code
+   to get around this problem.
+
+ . Stretch blitting does not work properly in 16/24/32bpp modes. It should
+   work properly in 32bpp modes, but it appears to be broken since we dont
+   get the correct images.
+
+ . The Alpha NT 4.0 version of OpenGL does not properly handle top down
+   DIB's (actually I think regular OpenGL on Intel NT also has the
+   same problem). Need to get this fixed if we are going to support
+   software OpenGL support for Quake on NT.
+
+MGL Sample Programs bugs:
+-------------------------
+
+ . Text does not appear to be accelerated in the Demo program on the
+   ATI Mach64 VBE/AF drivers. Looks like it might have been stubbed out
+   by accident by the new stubs code and not replaced or something. Perhaps
+   it has to do with the write mode whatever that is in effect, and we
+   are getting the wrong putMonoImage routine?
+
+ . Dither does not appear to be setting the proper halftone palette
+   and hence does not work properly.
+
+3Dfx driver notes:
+------------------
+
+ . Need to add support for more graphics modes in 3Dfx drivers such as
+   512x384 and 800x600, but we need to be able to report that 800x600
+   cannot support a z-buffer.
+
+ . Need to change the fullscreen mode setting code for secondary, OpenGL
+   drivers for the 3Dfx to not use any mode below 640x480 for the
+   DirectDraw fullscreen mode so that we can still run 512x384 even if the
+   primary controller does not support this mode.
+
+   This wont be the case for a secondary controller like the NEC PowerVR
+   that draws into the framebuffer of the primary controller.
+
+ . Need to implement the fglFillRect function for fast 2D rectangle filling.
+
+Building a DDK for MGL primary drivers:
+---------------------------------------
+
+ . In the case of a primary MGL OpenGL driver, we will implement the full
+   fgl interface in the same manner as for the secondary controller like
+   the 3Dfx, and the driver itself will do all of the mode setting and
+   creation of DirectDraw objects for us, and will also expose the
+   beginDirectAccess and endDirectAccess functions which will do lock
+   and unlocks on the current surface (depending on the flags passed in).
+
+ . We should use the Cosmo libraries to code up a test driver that will
+   do this so that we can test and debug the API, and then we can define
+   that as the fullscreen driver model that SGI should put into the
+   Cosmo libraries (perhaps as the DirectDraw bindings)?
+
+   We probably then want to have Cosmo expose the internal DirectDraw
+   objects to the application like the MGL, so that we can then use regular
+   DirectDraw functions like blitting etc in our code, although if we are
+   using the OpenGL API we probably dont give a shit about this. 
+
+Things to do for the Game Framework:
+------------------------------------
+
+ . Add hot keys to switch resolutions and color depths on the fly. Same as
+   the old Fox & Bear game, and once we have the better mode enumeration
+   working this will work great.
+
+Things to do for the Sprite Manager:
+------------------------------------
+
+ . Add code to the Sprite Manager to allow it to not own the source
+   bitmaps so they wont be deleted when it is destructed.
+
+ . Add support for assembler run length encoding routines. We can change
+   the code not support any clipping, and to maintain the original bitmap
+   as well as the RLE bitmap and draw the original bitmap when clipping
+   is on (may be faster). Although clipping may be just as easy.
+
+ . Add code to the Sprite Manager so that we can change the active device
+   context and it will automatically figure out how to reload the bitmaps
+   into the new device contexts.
+
+Functions to be updated in DOC's for formatting
+-----------------------------------------------
+
+ . MGL_detectGraph - check this
+ . MGL_setDisplayStart - check this
+ . MGL_setSuspendAppCallback - check this
+ . Change table size slightly larger to suit MGL_registerAllDispDriversExt
+
+Things to get DocJet to do in the future:
+-----------------------------------------
+
+ . Get DocJet to use the AbNormal style instead of the Normal style for
+   the reference manual.
+ . Table override setting to change the table width where necessary
+
+New for def files:
+------------------
+
+Things to do for documentation:
+-------------------------------
+
+ . Get the Sprite Library C headers documented
+ . Get the Sprite Library C++ classes documented
+ . Get MGRAPH.HPP and other C++ bindings ported to new documentation format.
+ . Get ZTIMER.CPP C++ classes documented
+
+ . Get Glut library documented
+ . Get Fixed/Float math library documented
+ . Get Fixed/Float math C++ classes documented
+ . Get Techniques Class Library C++ classes documented
+ . Get Quick2D rendering C++ classes documented
+ . Get Quick3D rendering C++ classes documented
+ . Get QuickModeller C++ classes documented
+ . Get MegaVision GUI C++ classes documented
+
+Things to do for MGL 3.1:
+-------------------------
+
+ . Get the new GLUT demos included in the MGL and install archives. Check in with PVCS
+ . Port SGI Cosmo samples to Game Framework.
+
+ . Port SGI Flight to Game Framework.
+ . Add DirectDraw windowed back buffer and offscreen context support.
+ . Add support for using DirectDraw to access the front buffer for a window.
+
+OpenGL Notes:
+-------------
+
+ . Fix MESA_DEBUG so that it will dump all messages to a log file rather
+   than to stderr so that we can run the code as real windows code rather
+   than as a console app.

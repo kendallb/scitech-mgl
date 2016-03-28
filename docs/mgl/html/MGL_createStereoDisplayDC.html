@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_createStereoDisplayDC</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_createScrollingDC" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_createScrollingDC.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_createScrollingDC" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="MGL_createWindowedDC" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('MGL_createWindowedDC.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="MGL_createWindowedDC" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="External Functions" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('ExternalFunctions.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="External Functions" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_createStereoDisplayDC
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Create a new display device context for stereo LC shutter glasses
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        MGLDC * MGLAPI MGL_createStereoDisplayDC(<br />
+        &#160;&#160;&#160; int mode,<br />
+        &#160;&#160;&#160; int numBuffers,<br />
+        &#160;&#160;&#160; int refreshRate)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                mode
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Graphics mode to initialise
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                numBuffers
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of buffers to allocate for double/multi-buffering.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:109.5pt;padding:'0in .5pt 0in .5pt';" width="183" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                refreshRate
+              </p>
+            </td>
+            <td style="width:290.0pt;padding:'0in .5pt 0in .5pt';" width="483" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Requested refresh rate for the graphics mode
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the newly created display device context, NULL on failure.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Creates a new display device context for drawing information directly to
+        the hardware display device in fullscreen graphics modes. Essentially
+        this function is identical to <a href="MGL_createDisplayDC.html">MGL_createDisplayDC</a>,
+        however support for LC shutter glasses is provided and the MGL will
+        take care of automatically flipping between the left and right images
+        to create the stereo display. In some cases we may not be able to
+        initialise support for LC shutter glasses, so this function will fail.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When the device context is created, the MGL will start the graphics mode
+        specified in the mode parameter and initialize the specific device
+        driver. If any prior display device contexts exist, they will all be
+        destroyed before switching to the new display mode.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When running in stereo mode, the MGL actually allocates twice the number
+        of buffers that you request for drawing images, since we need one
+        buffer for the left eye image and another buffer for the right eye
+        image (ie: if you request two stereo buffers for double buffering, the
+        MGL will actually allocate room for four). The reason for this is that
+        when displaying one of the stereo buffers, the MGL will automatically
+        swap between the left and right eye images at every vertical retrace.
+        It also sends a signal to the LC shutter glasses to tell them to block
+        out the image for the eye that should not be seeing the image on the
+        screen (ie: when the left image is being displayed, the shutter over
+        the right eye will be blacked out). Hence by drawing images with
+        slightly different viewing parameters (ie: as viewed from the left or
+        right eye when doing 3D rendering), the user sees a single image with
+        complete with visual depth cues!
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When running in stereo mode, you have to tell the MGL which buffer you
+        want to draw to when drawing the left or right eye images. Just like
+        you normally do in double and multi-buffering, you use the <a href="MGL_setActivePage.html">MGL_setActivePage</a> function
+        to tell the MGL the active display page you wish to draw to. However in
+        stereo modes you must also pass in the MGL_LEFT_BUFFER or
+        MGL_RIGHT_BUFFER values to tell the MGL which eye you are drawing for.
+        For instance to draw to stereo page 1, left eye you would use <a href="MGL_setActivePage.html">MGL_setActivePage</a>(1
+        | MGL_LEFT_BUFFER), and for the right eye you would use <a href="MGL_setActivePage.html">MGL_setActivePage</a>(1
+        | MGL_RIGHT_BUFFER).
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; In OpenGL rendering modes, changing the draw
+          buffer is done with the OpenGL glDrawBuffer(GL_BACK_LEFT) and
+          glDrawBuffer(GL_BACK_RIGHT) functions instead of using <a href="MGL_setActivePage.html">MGL_setActivePage</a>.
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        One of the biggest drawbacks to viewing stereo images using LC shutter
+        glasses is that the refresh rate viewed in each eye is exactly half
+        that of the refresh rate of the display mode. Hence if running in a
+        display mode with a 60Hz refresh rate, the user will experience an
+        overall refresh rate of 30Hz per eye! As you can image this can be
+        extremely tiresome for extended viewing periods, so to get around this
+        the MGL allows you to pass in a value to request a higher refresh rate
+        for the mode. Ideally you want to try and use a refresh rate that is
+        twice the desired refresh rate per eye, such as 120Hz for viewing
+        images at 60Hz, however you must allow the user to override or suggest
+        a desired refresh rate as many older monitors may not be capable of
+        displaying an image at a high refresh rate like 120Hz.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The refresh rate value that you pass in is a suggested value in that the
+        MGL will attempt to set the refresh rate to this value, however if the
+        hardware does not support that refresh rate the next lowest available
+        refresh rate will be used instead. In some situations where no refresh
+        rate control is available, the value will be ignored and the adapter
+        default refresh rate will be used. If you dont care about the refresh
+        rate and want to use the adapter default setting, pass in a value of
+        MGL_DEFAULT_REFRESH.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; In the USA and Canada, the main power frequency
+          runs at 60Hz, and all fluorescent lights will be illuminating your
+          room at frequency of 60Hz. If you use a refresh rate that is not a
+          multiple of the mains frequency and you are viewing the image in a
+          room with fluorescent lights, you may experience severe beating at a
+          frequency that is the difference between the monitor refresh rate and
+          the fluorescent light frequency (ie: at 100Hz you will experience a
+          20Hz annoying beat frequency). In order to get around this problem,
+          always try to use a frequency that is double the mains frequency such
+          as 120Hz to avoid the beating, or have the user turn off their
+          fluorescent lights!
+        </p>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When you create a stereo display device context, the MGL does not
+        automatically start stereo page flipping, and you must start this with
+        a call to <a href="MGL_startStereo.html">MGL_startStereo</a>. You can
+        also turn stereo mode on an off at any time (ie: you can turn it off
+        when you go to your menu system) using the <a href="MGL_stopStereo.html">MGL_stopStereo</a> and
+        <a href="MGL_startStereo.html">MGL_startStereo</a> functions. Note that
+        when stereo mode is disabled, the MGL always displays from the left eye
+        buffer.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_createDisplayDC.html">MGL_createDisplayDC</a>, <a href="MGL_destroyDC.html">MGL_destroyDC</a>,
+        <a href="MGL_startStereo.html">MGL_startStereo</a>, <a href="MGL_stopStereo.html">MGL_stopStereo</a>,
+        <a href="MGL_setBlueCodeIndex.html">MGL_setBlueCodeIndex</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

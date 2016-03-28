@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_stretchBitmapFxSection</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_stretchBitmapFxSection
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Stretches a section of a lightweight bitmap to the specified device
+        context, while applying different effects in the process.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_stretchBitmapFxSection(<br />
+        &#160;&#160;&#160; MGLDC *dc,<br />
+        &#160;&#160;&#160; int left,<br />
+        &#160;&#160;&#160; int top,<br />
+        &#160;&#160;&#160; int right,<br />
+        &#160;&#160;&#160; int bottom,<br />
+        &#160;&#160;&#160; int dstLeft,<br />
+        &#160;&#160;&#160; int dstTop,<br />
+        &#160;&#160;&#160; int dstRight,<br />
+        &#160;&#160;&#160; int dstBottom,<br />
+        &#160;&#160;&#160; const bitmap_t *bitmap,<br />
+        &#160;&#160;&#160; bltfx_t *fx)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dc
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Device context to display bitmap on
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                left
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                top
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                right
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate of section to stretch
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstLeft
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Left coordinate to stretch bitmap to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstTop
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Top coordinate to stretch bitmap to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstRight
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Right coordinate to stretch bitmap to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                dstBottom
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bottom coordinate to stretch bitmap to
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                bitmap
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Bitmap to display
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:99.5pt;padding:'0in .5pt 0in .5pt';" width="166" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                fx
+              </p>
+            </td>
+            <td style="width:300.0pt;padding:'0in .5pt 0in .5pt';" width="500" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Information describing the effects to apply to the blit (<a href="bltfx_t.html">bltfx_t</a>)
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Stretches a section of a lightweight bitmap to the specified destination
+        rectangle on the device context, while applying optional effects. This
+        function behaves identically to the MGL_putBitmapSectionFx function,
+        except it includes the ability to stretch the bitmap at the same time.
+        You can use the flags member of the <a href="bltfx_t.html">bltfx_t</a> structure
+        to define whether stretching is done using nearest color stretching or
+        if pixel interpolation will be used. If you don't specify any flags,
+        nearest color stretching will be used. The bitmap can be in any color
+        format, and will be translated as necessary to the color format
+        required by the current device context.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When this function is called for 4 and 8 bit source bitmaps being copied
+        to either 4 or 8bpp destination device contexts, MGL first checks if
+        the color palettes for the source and destination bitmaps are the same.
+        If they are not, MGL translates the pixel values from the source bitmap
+        to the destination color palette, looking for the closest match color
+        if an exact match is not found. In order to obtain maximum performance
+        for blt’ing bitmaps in color index modes, you should ensure that the
+        color palette in the source device matches the color palette in the
+        destination device to avoid on the fly palette translation. If you know
+        in advance that the palette is identical for a series of blit
+        operations, you can turn off all identity palette checking in MGL with
+        the <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When this function is called for 4 and 8 bit source bitmaps being copied
+        to RGB destination device contexts, MGL will convert the pixels in the
+        source bitmap using the source bitmap palette to map them to the
+        destination pixel format. If however you know in advance that the
+        palette for all source bitmaps is identical for a series of blit
+        operations, you can use the <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> function
+        to disable source palette translation. In this case the MGL will
+        translate all color index bitmaps using the pre-defined color
+        translation palette stored in the destination device context. You would
+        then set the destination device context palette to the common palette
+        for all blit operations using <a href="MGL_setPalette.html">MGL_setPalette</a>.
+        If you are translating a lot of color index bitmaps, this will increase
+        performance by avoiding the need to convert the palette entries to the
+        destination pixel format for every blit operation.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note also that if the source bitmap palette pointer is set to NULL,
+        palette translation is automatically avoided (ie: has the effect of
+        forcing <a href="MGL_checkIdentityPalette.html">MGL_checkIdentityPalette</a> to
+        false just for that bitmap).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_loadBitmap.html">MGL_loadBitmap</a>, <a href="MGL_putBitmap.html">MGL_putBitmap</a>,
+        <a href="MGL_putBitmapSection.html">MGL_putBitmapSection</a>, <a href="MGL_putBitmapSrcTrans.html">MGL_putBitmapSrcTrans</a>,
+        <a href="MGL_putBitmapSrcTransSection.html">MGL_putBitmapSrcTransSection</a>,
+        <a href="MGL_putBitmapDstTrans.html">MGL_putBitmapDstTrans</a>, <a href="MGL_putBitmapDstTransSection.html">MGL_putBitmapDstTransSection</a>,
+        <a href="MGL_putBitmapMask.html">MGL_putBitmapMask</a>, <a href="MGL_putBitmapPatt.html">MGL_putBitmapPatt</a>,
+        <a href="MGL_putBitmapPattSection.html">MGL_putBitmapPattSection</a>, <a href="MGL_putBitmapFx.html">MGL_putBitmapFx</a>,
+        <a href="MGL_putBitmapFxSection.html">MGL_putBitmapFxSection</a>, <a href="MGL_stretchBitmap.html">MGL_stretchBitmap</a>,
+        <a href="MGL_stretchBitmapSection.html">MGL_stretchBitmapSection</a>, <a href="MGL_stretchBitmapFx.html">MGL_stretchBitmapFx</a>,
+        <a href="MGL_stretchBitmapFxSection.html">MGL_stretchBitmapFxSection</a>,
+        <a href="MGL_putIcon.html">MGL_putIcon</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

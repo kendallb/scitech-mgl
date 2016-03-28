@@ -1,0 +1,435 @@
+UnZip, version 5.4, 28 November 1998
+
+Features added (or removed):
+
+5.33a (05 Dec 97):
+ - expanded file-size fields for -l/-v listings [GRR, Raymond Chi]
+ - expanded file-size fields in non-verbose ZipInfo listings [Christian]
+ - WinDLL:  enabled emx/rsxnt compilation and fixed some minor bugs [Christian]
+ - Win32:  added Borland C++ makefile [E-Yen Tan]
+ - Unix:  added BINPERMS and MANPERMS variables to makefile for setting file
+    perms on installed binaries and man pages; replaced rogue "rm -f" [Quentin
+    Barnes, GRR]
+ - Unix:  added generic_shlib target for Unix DLLs [GRR, Thomas Klausner]
+
+5.33b (24 Dec 97):
+ - VMS:  added "zip -A" call to mksfx.com to fix offsets in central dir [SPC]
+ - MSDOS, WIN32: added restoration of directory attributes [SPC]
+ - IBM OS/390: new port (POSIX environment, EBCDIC) [Paul von Behrend]
+
+5.33c (15 Apr 98):
+ - OS/2: restore directory attributes (system, hidden) [Kai Uwe Rommel]
+ - WIN32: added support for RSXNTDJ 1.3.1 [E-Yen Tan, SPC]
+ - DLL: added UzpFreeMemBuffer() function to release memory allocated by
+    UzpUnzipToMemory() [Mike White]
+ - BeOS: support extraction of file attributes from BeOS extra field for
+    symbolic links [Chris Herborth]
+ - MSDOS: do not use UTC time-stamps when TZ environment not set [Cosmin Truta]
+ - WIN32: added support for GCC in Cygnus Win32 environment [Cosmin Truta]
+ - VM/CMS and MVS support, compiled on IBM OS/390 [Ian. E. Gorman]
+
+5.33d (30 Apr 98):
+ - WIN32: added support for GCC in MINGW32 environment [SPC]
+
+5.33e (28 May 98):
+ - CMS: rewrite of README.CMS, now shared between Zip and UnZip [Greg Hartwig]
+ - BeOS: enable "automatic update of mime file-info" in beos.h [Chris Herborth]
+ - AMIGA, OS2: enabled IZ_CHECK_TZ (do not use UTC time-stamps when environment
+    variable TZ is not set) [Kai Uwe Rommel, SPC]
+
+5.33f (13 Jun 98):
+ - WIN32: support free LCC compiler (new Makefile.lcc) [E-Yen Tan]
+ - MacOS: revised Macintosh port [Dirk Haase]
+
+5.33g (08 Aug 98):
+ - QDOS: much better support for SFX archives on SMS/QDOS [Jonathan Hudson]
+
+5.33h (17 Aug 98):
+ - BeOS: support restoration of directory attributes, permissions, and
+    time-stamps, similar to the UNIX port [Chris Herborth]
+
+5.33i (13 Sep 98):
+ - added handling of Mac3 and BeOS e.f. blocks to "verbose ZipInfo" and
+    "test archive" operations [SPC]
+ - added "Type & Creator" display in verbose ZipInfo mode for all Mac extra
+    fields that support this info [Dirk Haase]
+ - added support for PKWARE's PKZIP for Unix "timestamps & uid/gid" extra
+    field; modified the Unix port's attribute mapping to restore complete
+    UNIX style attributes from archives created by PKZIP for Unix [SPC]
+ - LynxOS: another variant of Unix; add OS message to unix.c's version_local()
+    and specific entry to unix/Makefile [Giuseppe Guerrini]
+
+5.33j (31 Oct 98):
+ - added cross-compiling target for QNX/Neutrino (i386 target) [Chris Herborth]
+
+5.33k (08 Nov 98):
+ - Windows (16 and 32-bit): added first pre-release of a GUI interface for
+    sfx stubs [Mike White]
+
+5.33l (12 Nov 98):
+ - Windows (16 and 32-bit): completed Windows GUISFX stub sources, integrated
+    build procedures into UnZip source tree [Mike White]
+
+5.4b (21 Nov 98):
+ - Acorn: added -F option to suppress removal of NFS filetype extension from
+    the names of extracted files [Darren Salt]
+ - Unix: added optional feature, controlled by ACORN_FTYPE_NFS compile-time
+    option, to translate Acorn RISC OS extra-field filetype info into "NFS
+    filetype extension" appended to the extracted filename. When compiled in
+    UnZip, specifying the -F option enables this feature. [Darren Salt, SPC]
+ - unzip.1: added documentation for the new Acorn NFS filetype features [SPC]
+
+Bugs fixed:
+
+5.33a (05 Dec 97):
+ - OS/2:  removed bogus "else" in UzpFileTree() [Takashi Shoda]
+ - fixed Dave Smith's name (no "D") [GRR, Dave Smith]
+ - OS/2:  turned off verbose EAs/ACLs messages if -q given [Jorgen Thomsen,
+    Christian, Kai Uwe, GRR]
+ - DLL:  eliminated dependency on non-standard strupr() [GRR, Thomas Klausner]
+ - fixed possible ANSI name-clash problem in extract.c (offended MSC 8.0)
+    [Steve Salisbury, Christian Spieler]
+ - SMS/QDOS:  fixed word-alignment bug in extra-field handling [Jonathan Hudson]
+ - VMS:  fixed minor UNZIP_CLI typo [Hunter Goatley]
+ - MSDOS: fixed DJGPP v1 support (msdos.c, makefile.dj1) [C. Spieler]
+ - WinDLL:  fixed allocation bug in windll.c (esp. affected 16-bit WiZ) [Mike
+    White, Christian Spieler]
+ - WinDLL:  fixed structs.h and windll32.mak to allow Borland apps (e.g., WiZ)
+    to work with MSVC DLL [Mike W]
+ - VMS:  recognize new RTL related version symbols of DEC C V 5.6 [C. Spieler]
+ - fixed handling of entries with extended local headers when output is
+    redirected to memory (extract.c, process.c, unzpriv.h) [Craig Forbes]
+ - fixed memory leak in the UNIX specific DIRSTAMP feature (extract.c)
+    [Craig Forbes, Christian Spieler]
+ - completely revised DIRSTAMP feature to reduce memory requirements and
+    prepare porting it to non-UNIX systems [C. Spieler]
+ - DLL:  removed bogus redirect_outfile() call from unzipToMemory() body and
+    cleaned "return value "calculation"; moved "G.C_flag = 1" into rexx_api.c,
+    entry filename matching of generic UzpUnzipToMemory() is now case-sensitive
+    [Christian Spieler (SPC)]
+ - DLL (apihelp.c): corrected help text for UzpFileTree() [SPC]
+
+5.33b (24 Dec 97):
+ - generic:  check return value of localtime() calls for NULL pointer, to avoid
+    accessing unallocated memory (fix for MSC Win32 problem) [SPC, S. Salisbury]
+ - extract.c, globals.[ch], list.c, process.c, zipinfo.c: shortened "sig..."
+    arrays to 4 chars and removed them from "struct Globals" [SPC]
+ - commented out all "struct Globals" members that are unused in fUnZip [SPC]
+ - win32/win32.c: remarkable speedup of file extractions by replacing
+    "IsFileNameValid()" with "!IsVolumeOldFAT()" and avoiding repeated
+    "GetVolumeInfo" queries for the same device. [Johnny Lee, Paul Kienitz, SPC]
+
+5.33c (15 Apr 98):
+ - OS/2 DLL (rexxapi.c): UzVer(): do not evaluate args[] past argument count
+    [Kai Uwe Rommel]
+ - WINDLL (api.c), UzpUnzipToMemory(), UzpGrep(): fixed memory leak and problem
+    with missing password query callback function when grep-ing an encrypted
+    archive (this changed the DLL API for WINDLL!!) [Mike White]
+ - VMS CLI (cmdline.c): fixed handling of /DIR=path option [Andy Harper, SPC]
+ - acorn/acorn.c: fixed conversion of time_t to 5-byte Acorn timestamp value;
+    previous code dropped carry bits [D. Krumbholz, S. Monesi, SPC]
+ - UzpPassword() (fileio.c): use FnFilter for displaying entry name
+ - WINDLL: more space for path names (260 for WIN32 LFN support) [Mike White]
+ - Unix (process.c): corrected offsets for extracting new "Ux" UID/GID fields
+    [Rudolf Cejka]
+ - fixed UnzipToMemory of stored entries, prepared support for UnzipToMemory
+    with text conversion [SPC]
+ - Unix and ports with Unix-like file permissions: Added work-around for
+    ASI/Unix & PKware/VMS generated archives where mode(=external_file_attr)
+    field has been set to 0 [SPC]
+ - SFX (unzip.c, DOS_FLX_H68_OS2_W32): fixed "access past end of argv" bug
+    in the command line parser [SPC]
+ - WIN32: fixed timezone handling for file times in stat() [SPC]
+ - general work-around for some C RTL's failure to automatically initialize
+    timezone info (e.g. Borland C) by calling tzset() at start of
+    process_zipfiles() [GRR, Cosmin Truta, SPC]
+ - WIN32: fixes for i386 assembler sources to work with Borland TASM 5.0
+    [Cosmin Truta]
+ - VM/CMS: many fixes and additions regarding query prompts, stat(), version
+    info, compilation "equipment" and system specific documentation
+    [Ian E. Gorman]
+ - MVS: changes to get first working MVS binaries (stat(), "makefile", ...)
+    [Ian E. Gorman]
+ - CMS_MVS: changed handling of trailing newlines after query prompts by using
+    a specific macro, to remove unwanted newlines in some other messages
+    [SPC]
+
+5.33d (30 Apr 98):
+ - general: removed REENTRANT only bug introduced by "Check_for_TZ" fix [SPC]
+ - extract.c: code fix for SET_DIR_ATTRIB defined without USE_EF_UT_TIME [SPC]
+ - general: added ZCONST declarations to constant definitions (especially
+     constant strings) and to "readonly" string arguments [SPC]
+ - zipinfo.c: added some typecasts to work around Turbo C++ 1.0 bug [SPC]
+ - MSDOS, makefile.bc: added "-DZCONST" to TC++v1.0 CFLAGS, compiler does not
+     accept constant far arrays [SPC]
+ - WINDLL: fixed interface of extract-to-mem functions, removed several typos
+     [Mike White]
+ - extract.c, list.c, zipinfo.c: changed several internal counter variables
+     from signed int to unsigned int [Mike White, SPC]
+ - WINDLL: moved all windll specific interface functions from api.c into
+     windll/windll.c and the corresponding declarations from unzip.h into
+     windll/decs.h [SPC]
+ - win32/win32.c: pass struct Globals to IsVolumeOldFAT() [Mike White]
+ - WINDLL: introduced new (generic DLL api) StatReportCB() function, replacing
+     sound() and ServCallBk() in the generic source; added WinStatReportCB()
+     interface wrapper which translates between windll and generic API [SPC]
+ - amiga/amiga.c: Fixed "null permission" workaround (variable reference out
+     of scope) [Paul Kienitz]
+ - VMS: added work-around for ASI/Unix & PKware/VMS generated archives where
+    mode(=external_file_attr) field has been set to 0 (see 5.33c) [SPC]
+ - AMIGA: several time_lib related clean-up fixes and updated Makefiles
+    [Paul Kienitz, Haidinger Walter]
+ - INSTALL: corrected the description of wildcard matching on DOS-like
+    file systems (handling of dots) [Paul Kienitz]
+ - amiga/time-lib.c: fixed calculation of global timezone variable [SPC]
+ - proginfo/extra.fld: added description of PKWARE's Win95/WinNT e.f. [SPC]
+ - list.c, zipinfo.c: counting of archive entries starts with 1, not 0 [SPC]
+ - ebcdic.h: applied OS/390 specific mapping changes [Paul v. Behren], added
+    note concerning EBCDIC's NL vs. LF usage and mapping consequences [SPC]
+ - win32/win32.c: fixed fs_type_info queries for paths with explicit drive
+    specification, speedup of "uses_fs_local_time?" queries [SPC]
+ - fileio.c, dos_to_unix_time(): fixed WIN32 version, added alternative code
+    for systems with working mktime() call; force use of HAVE_MKTIME version
+    for EMX and DJGPP [SPC]
+
+5.33e (28 May 98):
+ - api.c: fixed typo; added missing definition of dummyfn() in UzpDLL_Init(),
+    UzpUnzipToMemory tolerates PK_WARN errors [Peter Kunath]
+ - WinDLL cleanup:
+    * renamed several exported functions (Unz_... -> Wiz_...,
+      Uzp.. -> Wiz_..., windll_unzip -> Wiz_SingleEntryUnzip) [Mike White]
+    * removed non-working borland makefiles [Mike White]
+    * updated windll documentation [Mike White (MW), SPC]
+    * cosmetics: standardized use of Win-API style data type names [MW, SPC]
+ - win32/crc_i386.c: fixes to get it work with MSVC, again [Peter Kunath]
+ - list.c: fixed OS2DLL specific processExternally() support [P. Kunath, SPC]
+ - CMS/MVS: added "byteseek" to FOPR/FOPM options to allow change of format for
+    binary files from "RECFM=F LRECL=1" to "RECFM=V LRECL=32760" [Greg Hartwig]
+ - CMS/MVS, miscellaneous updates and fixes:
+    * disable optional MORE functionality
+    * do not disable use of signals;
+    * rewrote version() for more specific compiler/runtime info;
+    * fixed several typos (missing ';', wrong "CMS" preprocessor symbol, ...)
+    * adapted some messages to CMS/MVS specifics
+    [Greg Hartwig]
+ - CMS: changed help info to refer to "fm" rather than "exdir" [Greg Hartwig]
+ - CMS, new README.CMS: small correction in description of Zip's "-a" option;
+    binary data should NOT be zipped using this option [SPC]
+ - general: replaced ush variables pairs "dos_date" and "dos_time" by single
+    ulg "dos_datetime", to standardize Zip's and UnZip's handling of DOS
+    timestamps [SPC]
+ - unix/unix.c: fixed typo in close_outfile() [Eric Baatz]
+ - extract.c, extract_or_test_member(): moved initialization of decryption
+    in front of the "path/file exists" check to prevent the creation of
+    directories in case the password check fails. [SPC]
+ - msdos/msdos.c: added MS Quick C case to version() info [E-Yen Tan]
+
+5.33f (13 Jun 98):
+ - WINDLL: moved Wiz_NoPrinting() declaration from unzip.h into windll/decs.h;
+    modified DLLMESSAGE() prototype according to var type changes in list.c;
+    check fNoPrinting in output callback functions of windll.c [Mike White]
+ - process.c: removed superfluous fValidate test and initialized nmember in
+    do_seekable() [SPC]
+ - globals.h: fixed typo (missing ';' after "callerglobs") [Mike White]
+ - AMIGA/CMS_MVS/TANDEM/VMS mapname(): skip volume label entries [SPC]
+ - amiga/amiga.c: only suppress rootpath when user specified absolute path
+    at the rename prompt [SPC]
+ - WINDLL: updated Visual Basic example files [Raymond L. King]
+ - MacOS: renamed system-specific subdir into "macos/" [Dirk Haase, SPC]
+ - MacOS: moved most of the system-specific configuration settings and
+    declarations out of the generic files into new macos/maccfg.h [SPC]
+ - MacOS: tried to clean up mapname()/checkdir() functions; added missing
+    TIMET_TO_NATIVE macro in close_outfile() [SPC]
+ - msdos/msdos.c: revised Quick C version info to recognize QC 2.5 [SPC]
+ - UNIX: added prototype of set_direc_attribs(), corrected its calling
+    interface; fixed typo in unix/unix.c's do_wild() [SPC]
+ - api.c: adapted non-WINDLL UzpGrep() to the modified UzpUnzipToMemory()
+    interface [SPC]
+ - MacOS: fixed handling of long pathnames (> 256 chars) by removing all
+    C <--> Pascal string conversions [Dirk Haase]
+
+5.33g (08 Aug 98):
+ - QDOS, do_wild(): consistenly ignore case in name matching [Jonathan Hudson]
+ - win32/Makefile.dj: added rule to build "advapi32" import library that is
+    missing in rsxnd/dj distribution to support NTSD_EAS feature [SPC]
+ - MSDOS: little clean-up for MS Quick C version info [E-Yen Tan]
+ - win32/win32.c: fixed do_wild() (missing pair of braces); used built-in
+    dirent replacements for buggy EMX RT routines, to achieve case conservation
+    in filenames [SPC]
+ - generic: applied modifications to support latest zlib release (1.1.3),
+    especially around "crc32" code [SPC]
+ - generic: defined typedef'ed name "Uz_Globs" for "struct Globals" and use it
+    everywhere [SPC]
+ - MSDOS: prevent "macro expansion space overflow" for MSC 5.1 with DEBUG
+    enabled [SPC]
+ - WINDLL: updated Visual Basic example files [Raymond L. King]
+ - MacOS: moved FindNewExtractFolder() from helpers.c into macunzip.c [SPC]
+ - WIN32, Watcom C: copied fix in getch() from Zip 2.3e [???, SPC]
+ - TANDEM: synchronized code with Zip 2.3e (zipopen() performance improvements,
+    correct in2ex() and mapname() processing, display dates in UK format,
+    update installation procedure and README) [Dave D Smith, SPC]
+
+5.33h (17 Aug 98):
+ - BeOS: updated documentation and Makefile for better multi-platform and
+    cross-compilation support; dropped x86 specific resource files, a new
+    BeOS utility allows to apply the same resource files for all platforms
+    [Chris Herborth]
+ - unzpriv.h: removed superfluous trailing ";" from USAGE() macro definition;
+    process.c, ef_scan_for_izux(): fixed bugs in masking expressions (use '~',
+    not '!') [Johnny Lee]
+ - unzip.c, uz_opt(): clarified loop expression to keep lint quiet [SPC]
+ - regenerated ".doc" files from ".1" nroff sources, with scheduled release
+    date of September 1st, 1998 [SPC]
+ - added first try of a "real" user interface to the windll VB5 sample [SPC]
+
+5.33i (13 Sep 98):
+ - BeOS: small update to Makefile, install target [Chris Herborth]
+ - WINDLL: removed 16-bit version from windll.rc [Mike White]
+ - MSDOS: fixed timestamp conversion bug in close_outfile for djgpp by
+    revising the conversion structure layout [Tim van Holder, SPC]
+ - proginfo/extra.fld: added description of new Mac3 extra field format for
+    the Macintosh [D. Haase, SPC]
+ - vms/vms.c: fixed typos (incompletely renamed dos date/time variables
+    [Mike Freeman, SPC]
+ - atari/atari.c: fixed USE_EF_UT_TIME related typo in close_outfile [SPC]
+ - TANDEM: support "USE_EF_UT_TIME", setting of timestamps (controlled by
+    symbol LICENSE) and "setting UID/GID" [Dave D. Smith, SPC]
+ - BeOS: fixed "set UID/GID" feature: enabled "-X" option handling [SPC]
+ - AMIGA: moved N_flag definition into UzpOpts structure (unzip.h) [P. Kienitz]
+ - AMIGA, filedate.c: unconditionally depend on zip.h inclusion, to achieve
+    well defined header inclusion sequence [P. Kienitz, SPC]
+ - Win32, Makefile.wat: fixed typo (win32.obf -> win32f.obj) [P. Kienitz]
+ - zipinfo.c, zi_long(): do not increment *pEndprev when it was previously
+    set to 0L [SPC]
+ - fileio.c, UzpPassword(): for MacOS, add linebreak to long prompt [D. Haase];
+    move strings into far MSDOS memory [SPC]
+ - ttyio.h: removed declarations of getch() replacements that are defined and
+    declared in OS-specific source files (Amiga Agetch(), Mac macgetch()) [SPC]
+ - WINDLL: enhanced the VB5 example application's user interface [Mike le Voi]
+ - MacOS: support for decryption added; support pause() function (enabled
+    MORE functionality) [D. Haase]
+ - MacOS: created private set of time handling functions to work around the
+    time-stamp mess caused by weird Macintosh C runtime libs [D. Haase]
+ - MacOS: merged in MacZip beta 6 release [D. Haase, SPC]
+ - MacOS: fixed time handling (UTC vs. local time) in macstat() [SPC]
+ - MacOS: modified (fixed) timestamp setting in close_outfile(); changed
+    several function definitions that are local for mac.c into "static" [SPC]
+ - MacOS, changed Mac3 e.f. layout: added "local time - UTC" offset fields
+    for all types of native "local time" Mac timestamps; removed superfluous
+    daylight saving time flag and gmt_offset field [SPC]
+
+5.33j (31 Oct 98):
+ - zipinfo.c: fixed typo in G.statreportcb() call [Mike White]
+ - vms/vms.c: converted calling interface of VMS dos_to_unix_time() function
+    to the generic modifications introduced in 5.33e [Mike Freeman, SPC]
+ - beos/beos.[ch]: added type cast, corrected symbol names [Chris Herborth]
+ - aosvs/aosvs.c: added missing definition for message strings [SPC]
+ - crctab.c: worked around Borland TC++ 1.0 problem [SPC]
+ - WINDLL: updated example.[ch] for current DLL interface; prepared windll.c
+    for GUI SFX variant [Mike White]
+ - fileio.c: switched off ANSI-bomb filter for MacOS port [Dirk Haase, SPC]
+ - MacOS: added "NOUTC" bit to Mac3 e.f. flags word that allows to omit the
+    timezone offset fields when UTC support was disabled in MacZip [SPC]
+ - MacOS: filetime stamping takes into account the "UTCoffset" info in M3 e.f.
+    when supplied and local timezone info is considered valid [SPC]
+ - MacOS: replaced fake macfopen() function by an OS specific variant of
+    UnZip's open_outfile() function [SPC]
+ - MacOS: revised and fixed time handling in UZmacstat(); now, it relies
+    only on standard C RTL and MacOS API time functions. [SPC]
+ - MacOS: applied "const" to some formal argument declarations, where
+    appropiate [SPC]
+ - MacOS: disabled UTC timestamp support, the C rtl time functions are still
+    badly broken [SPC]
+ - MacOS: source cleanup -- removed obsolete prototype declarations and
+    unneeded (or bogus) header includes, further streamlined formatting
+    (indentation, tabs, spaces, typos) [SPC]
+ - msdos/msdos.c: added __G__ argument to z_dos_chmod() [Mike White]
+ - unzip.c, MSDOS DJGPP v2: does not use GO32 environment variables, no need
+    to report them in "unzip -v" screen []
+ - win32/win32.c: fixed 1-day offset in FileTime2utime() for compilers
+    where 64-bit integer support is missing or unknown; enabled 64bit int usage
+    in time conversion code for MS Visual C++ 5.0 and newer [SPC]
+ - msdos/msdos.c: fixed to support DJGPP v2.02 (which supplies _doserrno) [SPC]
+
+5.33k (08 Nov 98):
+ - windll/windll.c: when ifnv or xfnv parameter is NULL pointer, ensure
+    that corresponding [ix]fnc parameter is set to zero [SPC]
+ - windll/example.c: fixed dissection of command line arguments into "ifnv"
+    and "xfnv" argument lists for calling unzip32.dll entry point [SPC]
+ - BeOS: gcc is now default compiler for x86 platform; resource files
+    are "finalized" for public release [Chris Herborth]
+ - cms, mvs: removed REALLY_SHORT_SYMS work-around, cosmetic updates in
+    make procedures [Ian E. Gorman]
+ - unix/Makefile: updated VERSION for Solaris .pkg creation; use "ascii" device
+    in rules for creation of *.doc files to avoid 8-bit latin1 hyphens [SPC]
+
+5.33l (12 Nov 98):
+ - unzpriv.h: removed MacOS specific macgetenv() prototype [Dirk Haase]
+ - MacOS: revised macos/ subdir tree for MacZip beta7 release, for details
+    see macos/HISTORY.TXT [Dirk Haase]
+
+5.33m (15 Nov 98):
+ - os2/makefile.os2: link flag of gccwin32 target needs "-ladvapi32" [Kai Uwe]
+ - BeOS: final fixes for resource files [Chris Herborth]
+ - MacOS: updated documentation (macos/README, INSTALL) [Dirk Haase]
+ - Where: updated for release [SPC]
+ - INSTALL: added note about line termination chars in text files [SPC]
+ - README, version.h: removed BETA for release [SPC]
+
+5.4a (20 Nov 98):
+ - changed version number to 5.4 [Greg Roelofs, SPC]
+ - vms/vms.c: correct typo in USE_EF_UT_TIME only code [Hunter Goatley]
+ - Where: web site back to "www.cdrom.com", WiZ -> 4.1, OS/390 added [SPC]
+ - README: removed BETA note.
+ - version.h, README, docs: changed release date to 21 November 1998
+ - BeOS: resource files contain new version number [Chris Herborth]
+ - testmake.zip: updated for "5.4" [SPC]
+ - proginfo/extra.fld: new info from PKWARE's 1998/09/01 appnote.txt; corrected
+    description of obsolete "UX" extra field layout [SPC]
+ - fileio.c: suppress "symlink exists" messages when "overwrite_all" was
+    requested [Chris Herborth]
+
+5.4b (21 Nov 98):
+ - unzip.c: shortened ZipInfo banner message to prevent line wrapping [SPC]
+
+5.4c (24 Nov 98):
+ - os2/os2.c: added typecast to work around time_t being "double" in newest
+    IBM compiler (Sigh!) [Kai Uwe Rommel]
+ - os2/makefile.os2: fixed IBM C targets to get unzip32.dll compiled again,
+    corrected comments and help info [Kai Uwe Rommel]
+ - api.c, apihelp.c, globals.c, os2/os2.c: added prototype declarations and
+    some typecasts to remove compiler warnings [Kai Uwe Rommel]
+ - os2/makefile.os2, win32/makefile.emx: added -Zsys to link options of the
+    emx/rsxnt target for Win32 to create standalone binaries [Kai Uwe Rommel]
+ - unzipstb.c: "#include <stdio.h>" was missing [Kai Uwe Rommel, SPC]
+ - win32/win32.c: fixed (WATCOM & CYGWIN) getch() replacement function to
+    always restore original console input mode [SPC]
+ - win32/win32.c, win32/w32cfg.h, ttyio.h: use the WIN32 getch() replacement
+    unconditionally, to fix problem with unabsorbed LF chars under Win9x,
+    adapted win32 Makefiles and gccwin32 target in makefile.os2 [SPC]
+ - macos/source/macos.c: fixed mismatching pointer offsets and compressed sizes
+    at memextract() call for 'Mac3' extra field blocks [SPC]
+
+5.4d (27 Nov 98):
+ - MacOS: changed prototypes of mac[f]printf() to return an int number (better
+    ANSI conformance); added global setup header file for SFX stub; repaired
+    "stdout/stderr" mode of macwrite() [Dirk Haase]
+ - extract.c: in memextract(), old value of G.csize has to be retained to allow
+    e.f. decompression before starting extraction of entry's data [SPC]
+ - COPYING, amiga/time_lib.c: spelling corrections [Santiago Vila]
+ - WIN32: WinNT console defaults to OEM charset, not ANSI [SPC]
+
+5.4 (28 Nov 98)
+ - win32/win32.c: exclude getch_win32() function from WINDLL code [SPC]
+ - INSTALL: documented ACORN_FTYPE_NFS and QLZIP compile time options [SPC]
+ - win32/w32cfg.h: added compatiblity macro definition for future CYGWIN
+    releases (newer than B20) [Cosmin Truta]
+ - changed archive name from unz540d.zip to unzip540.zip
+
+==================
+
+These changes occurred in beta versions 5.33a to 5.4d.  This list may have
+left out some bugfixes and even some features...void where prohibited, your
+mileage may vary, etc., etc.
+
+Christian Spieler

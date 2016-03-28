@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_loadJPEG</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_loadJPEG
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Load a JPEG bitmap file from disk.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        bitmap_t * MGLAPI MGL_loadJPEG(<br />
+        &#160;&#160;&#160; const char *JPEGName,<br />
+        &#160;&#160;&#160; int num8BitColors)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mgraph.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Parameters
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                JPEGName
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Name of JPEG file to load
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:119.5pt;padding:'0in .5pt 0in .5pt';" width="199" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                num8BitColors
+              </p>
+            </td>
+            <td style="width:280.0pt;padding:'0in .5pt 0in .5pt';" width="467" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Number of colors for 8-bit image, 0 for RGB images, -1 for
+                grayscale
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Return Value
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Pointer to the loaded JPEG file, NULL on error.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Locates the specified JPEG file and loads it into a lightweight bitmap
+        structure. Because JPEG files are inherently 24-bit, when you load a
+        JPEG file with this function it will always be decoded as a 24-bit RGB
+        bitmap file, unless you set num8BitColors parameter. If the
+        num8BitColors parameter is set to a value other than 0, it causes the
+        JPEG decoder to quantize down to an 8 bits per pixel bitmap with an
+        optimized floyd-steinberg dither (better than the MGL's simple halftone
+        dithering, but the bitmap will contain a custom palette). The number of
+        significant colors in the output image will be set to the value you
+        specify, so you can use this to quantise down to a color table smaller
+        than 8-bits per pixel. To decode as a 24-bit image, simply set this
+        field to 0.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Note that if you set num8BitColors to -1, the JPEG decoder will decode
+        the image as a grayscale bitmap which is faster than decoding the full
+        color image (useful for preview operations etc). Note that images that
+        are decoded as grayscale are 8-bits per pixel with a grayscale color
+        map and should display as true grayscale images in all color depths.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you wish to load the bitmap as a different color depth or pixel format
+        use the <a href="MGL_loadJPEGIntoDC.html">MGL_loadJPEGIntoDC</a> function.
+        The MGL will however properly decode grayscale JPEG files, but they
+        will be loaded as a 24-bit bitmap since the MGL does not natively
+        support grayscale bitmaps.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        When MGL is searching for JPEG files it will first attempt to find the
+        files just by using the filename itself. Hence if you wish to look for
+        a specific JPEG file, you should pass the full pathname to the file
+        that you are interested in. If the filename is a simple relative
+        filename (i.e. “MYBMP.JPG”), MGL will then search in the BITMAPS
+        directory relative to the path specified in mglpath variable that was
+        passed to <a href="MGL_init.html">MGL_init</a>. As a final resort MGL
+        will also look for the files in the BITMAPS directory relative to the
+        MGL_ROOT environment variable.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If the JPEG file was not found, or an error occurred while reading the
+        JPEG file, this function will return NULL. You can check the <a href="MGL_result.html">MGL_result</a> error
+        code to determine the cause.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        The routine allocates a lightweight bitmap structure for holding the JPEG
+        file, which loads the bitmap with the minimum memory overheads. You can
+        draw the JPEG file on any device context surface using the <a href="MGL_putBitmap.html">MGL_putBitmap</a> function,
+        but you don't have the full flexibility of using a memory device
+        context for the bitmap surface. If you need more control over the
+        bitmap, you can allocate a memory device context to hold the bitmap
+        data and load the bitmap with the <a href="MGL_loadJPEGIntoDC.html">MGL_loadJPEGIntoDC</a> function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        See Also
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        <a href="MGL_unloadBitmap.html">MGL_unloadBitmap</a>, <a href="MGL_availableJPEG.html">MGL_availableJPEG</a>,
+        <a href="MGL_getJPEGSize.html">MGL_getJPEGSize</a>, <a href="MGL_loadJPEGIntoDC.html">MGL_loadJPEGIntoDC</a>,
+        <a href="MGL_saveJPEGFromDC.html">MGL_saveJPEGFromDC</a>, <a href="MGL_putBitmap.html">MGL_putBitmap</a>,
+        <a href="MGL_loadJPEGExt.html">MGL_loadJPEGExt</a>
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

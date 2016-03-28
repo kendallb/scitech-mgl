@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Enumerating Installed Devices and Loading a Driver</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Enumerating Installed Devices and Loading a Driver
+      </h3>
+      <p class="MsoBodyText">
+        Before you can use the SciTech SNAP Graphics Architecture library, you
+        must first enumerate all the devices in the system and load a device
+        driver for the selected device that you wish to control. Enumerating
+        the devices in the system is done using the <a href="GA_enumerateDevices.html">GA_enumerateDevices</a> function.
+        This function returns a count of the number of display devices
+        installed in the system. Then you call <a href="GA_loadDriver.html">GA_loadDriver</a> to
+        load and initialize a valid device driver for the device you wish to
+        control. The primary display device is always device index 0, and the
+        first secondary controller is device index 1, the next is device index
+        2 and so on. When you are finished you must then call <a href="GA_unloadDriver.html">GA_unloadDriver</a> to
+        unload the device driver from memory. If you only need to support the
+        primary display controller, you can skip the call to <a href="GA_enumerateDevices.html">GA_enumerateDevices</a> and
+        simply call <a href="GA_loadDriver.html">GA_loadDriver</a> with a
+        device index of 0. For example:
+      </p>
+      <p class="Preformatted">
+        void main(void)<br />
+        {<br />
+        &#160;&#160;&#160; GA_devCtx *dc;<br />
+        <br />
+        &#160;&#160;&#160; if ((dc = GA_loadDriver(0)) == NULL)<br />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160; PM_fatalError(“Unable to
+        load graphics driver!”);<br />
+        &#160;&#160;&#160; ... do some stuff with the driver <br />
+        &#160;&#160;&#160; GA_unloadDriver(dc);<br />
+        }
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

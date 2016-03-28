@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>GA_modeFlagsType</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section3">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        GA_modeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        typedef enum {<br />
+        &#160;&#160;&#160; gaDontClear&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x8000,<br />
+        &#160;&#160;&#160; gaLinearBuffer&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x4000,<br />
+        &#160;&#160;&#160; ga6BitDAC&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x2000,<br />
+        &#160;&#160;&#160; gaNoAccel&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x1000,<br />
+        &#160;&#160;&#160; gaRefreshCtrl&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0800,<br />
+        &#160;&#160;&#160; gaWindowedMode&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0400,<br />
+        &#160;&#160;&#160; gaPartialModeSet&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x0200,<br />
+        &#160;&#160;&#160; gaModeMask&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; =
+        0x01FF<br />
+        &#160;&#160;&#160; } GA_modeFlagsType
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        snap/graphics.h
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This enumeration defines the flags for combining with graphics mode
+        numbers to be passed to the SetVideoMode function.
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Members
+      </p>
+      <div align="center">
+        <table style="border-collapse:collapse;" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaDontClear
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Don't clear display memory
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaLinearBuffer
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable linear framebuffer mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                ga6BitDAC
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set the mode with a 6-bit RAMDAC instead of 8
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaNoAccel
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Set the mode without any acceleration support
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaRefreshCtrl
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Enable refresh rate control
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaWindowedMode
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Initialise for use in the current desktop mode
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaPartialModeSet
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Initialise the driver internals, but don't program hardware
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:134.5pt;padding:'0in .5pt 0in .5pt';" width="224" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="ParameterName">
+                gaModeMask
+              </p>
+            </td>
+            <td style="width:265.0pt;padding:'0in .5pt 0in .5pt';" width="442" valign="top">
+              <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Parameter">
+                Mask to remove flags and extract VBE mode number
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="SingleSpace">
+        &nbsp;
+      </p>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

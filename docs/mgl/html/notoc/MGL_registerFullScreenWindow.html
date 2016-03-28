@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>MGL_registerFullScreenWindow</title>
+    <link rel="StyleSheet" type="text/css" href="SciTech%20MGL%20Reference%20Guide.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section2">
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="FuncHeading3">
+        MGL_registerFullScreenWindow
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        Registers a user window with the MGL to be used for fullscreen modes
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Declaration
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="Preformatted">
+        void MGLAPI MGL_registerFullScreenWindow(<br />
+        &#160;&#160;&#160; MGL_HWND hwndFullScreen)
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Prototype In
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        mglwin.c
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MethodSection">
+        Description
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        This function allows the application to create the window used for
+        fullscreen modes, and let the MGL know about the window so it will use
+        that window instead of creating it's own fullscreen window. By default
+        when you create a fullscreen device context, the MGL will create a
+        fullscreen window that covers the entire desktop that is used to
+        capture Windows events such as keyboard events, mouse events and
+        activation events. However in some situations it is beneficial to have
+        only a single window that is used for all fullscreen graphics modes, as
+        well as windows modes (primarily to be able to properly support
+        DirectSound via a single window).
+      </p>
+      <p style="tab-stops:'.45in .7in .95in 1.2in';" class="MsoBodyText">
+        If you have registered a fullscreen window with the MGL, the MGL will
+        take that window, zoom it fullscreen and modify the window styles and
+        attributes to remove the title bar and other window decorations. When
+        the MGL then returns from fullscreen mode back to GDI mode, it will
+        restore the window back to the original position, style and state it
+        was in before the fullscreen mode was created. This allows you to
+        create a single window with the MGL and use it for both windowed modes
+        and fullscreen modes.
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; When the MGL exits via a call to MGL exit, the
+          fullscreen window that you passed in will be destroyed (necessary to
+          work around bugs in DirectDraw).
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

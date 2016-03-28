@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Windows hosted tools for RTTarget-32 (start-sdk.bat)</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="RePublicoShowHide();RePublicoBanner(1);">
+    <div class="Section1">
+      <h3>
+        Windows hosted tools for RTTarget-32 (start-sdk.bat)
+      </h3>
+      <p class="MsoBodyText">
+        In order to use the Windows hosted environment for On Time RTTarget-32
+        development, you need to additionally modify the bin\set-vars.bat batch
+        file to reference the location where you have installed the RTTarget-32
+        SDK headers and libraries.
+      </p>
+      <p class="MsoBodyText">
+        Once you have the startup file configured, you then need to run the
+        following each time you start a command shell to enable the SciTech
+        makefile utilities (a good idea to put into your startup batch files):
+      </p>
+      <p class="Preformatted">
+        call c:\scitech\bin\set-vars.bat<br />
+        call c:\scitech\bin\vc60-rtt.bat
+      </p>
+      <p class="MsoBodyText">
+        The second batch file sets up the compiler configuration for your default
+        compiler. The line above sets up for Microsoft Visual C++ 6.0 32-bit
+        RTTarget-32 compilation. You can choose from the following batch files
+        to configure the build environment for different supported compilers:
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:423.0pt;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="705" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit RTTarget-32 support:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bc50-rtt.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 RTTarget-32 programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              bcb5-rtt.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 RTTarget-32 programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc50-rtt.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 5.0 RTTarget-32 programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              vc60-rtt.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 6.0 RTTarget-32 programs
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:99.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="165" valign="top">
+            <p class="TableText">
+              ow10-rtt.bat
+            </p>
+          </td>
+          <td style="width:4.5in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="540" valign="top">
+            <p class="TableText">
+              Open Watcom C++ 1.x RTTarget-32 programs
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoNormal">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        Note that invoking these RTTarget-32 batch files may set or clear options
+        for linking with additional On Time libraries like RTFiles-32 and
+        RTKernel-32, or the DLL version of RTTarget-32. You can change the
+        environment variable options from the command line, though may wish to
+        change them by modifying the respective batch files.
+      </p>
+      <p class="MsoBodyText">
+        Also note that while On Time RTTarget-32 version 4.x release does not
+        officially support Watcom C, it is still possible to compile and link
+        with the DLL version of RTTarget-32 using OpenWatcom C 1.x and the DLL
+        import libraries provided in the On Time SDK for Microsoft Visual C. 
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; If you wish to use RTFiles-32 filesystem
+          support (controlled by the USE_RTFILES32 environment variable), you
+          will need to copy the RTFiles-32 SDK example Init.c module or similar
+          version into the PM library compilation path. This will insure that
+          the RTFiles-32 filesystem declarations are included in your SNAP
+          application and initialized at startup by RTTarget-32. If your own
+          custom modified version renamed the initialization function, you
+          should refer to the PM library source to make any changes. 
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

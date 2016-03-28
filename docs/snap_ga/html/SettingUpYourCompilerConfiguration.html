@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Generator" content="ReWorX 1.1 (021204) - http://www.republico.com" />
+    <meta name="Originator" content="Microsoft Word 9" />
+    <title>Setting up Your Compiler Configuration</title>
+    <link rel="StyleSheet" type="text/css" href="SNAP%20Graphics%20Architecture.css" />
+    <script language="JavaScript" src="RePublicoToolbar.js">
+    </script>
+    <script type="text/javascript" src="RePublico.js">
+    </script>
+  </head>
+  <body style="tab-interval:.5in;" lang="EN-US" link="blue" vlink="purple" class="rpomain" onbeforeprint="JavaScript:RePublicoOnBeforePrint();" onafterprint="JavaScript:RePublicoOnAfterPrint();" onload="JavaScript:RePublicoTrack('index.html','toc',true);RePublicoShowHide();RePublicoBanner(2);">
+    <table class="RpoToolbar" cellpadding="0" cellspacing="0" onselectstart="javascript:return false;">
+      <tr valign="middle">
+        <td>
+          <table title="Supported Browsers" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('SupportedBrowsers.html','');" onimage="./Images/RpoButtonHomeOn.gif" offimage="./Images/RpoButtonHomeOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Supported Browsers" src="./Images/RpoButtonHomeOff.gif" />
+              </td>
+              <td class="buttonText">
+                Home&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Compiling the sample programs" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('CompilingTheSamplePrograms.html','');" onimage="./Images/RpoButtonPreviousOn.gif" offimage="./Images/RpoButtonPreviousOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Compiling the sample programs" src="./Images/RpoButtonPreviousOff.gif" />
+              </td>
+              <td class="buttonText">
+                Previous&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Using the Makefile Utilities" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('UsingTheMakefileUtilities.html','');" onimage="./Images/RpoButtonNextOn.gif" offimage="./Images/RpoButtonNextOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Using the Makefile Utilities" src="./Images/RpoButtonNextOff.gif" />
+              </td>
+              <td class="buttonText">
+                Next&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table title="Compiling SciTech SNAP Graphics" class="buttonOff" cellpadding="0" cellspacing="0" onmouseover="javascript:mouseoverButton(this);" onmouseout="javascript:mouseoutButton(this);" onmousedown="javascript:mousedownButton(this);" onmouseup="javascript:mouseupButton(this);" href="JavaScript:executeButton('CompilingSciTechSNAPGraphics.html','');" onimage="./Images/RpoButtonUpOn.gif" offimage="./Images/RpoButtonUpOff.gif">
+            <tr valign="middle">
+              <td class="buttonText">
+                <img hspace="1" height="16" width="16" border="0" alt="Compiling SciTech SNAP Graphics" src="./Images/RpoButtonUpOff.gif" />
+              </td>
+              <td class="buttonText">
+                Up&nbsp;&nbsp;&nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="100%">
+        </td>
+      </tr>
+    </table>
+    <div class="Section1">
+      <h3>
+        Setting up Your Compiler Configuration
+      </h3>
+      <p class="MsoBodyText">
+        Once you have installed the source code and compiled the libraries from
+        the command line, you will need inform your compiler where the include
+        files and library files are located for your own projects. The
+        following steps provide a guide to setting things up correctly for your
+        compiler.
+      </p>
+      <p class="MsoBodyText">
+        After the files are installed, all include files into the
+        %SCITECH%\include directory under the installation directory where you
+        chose to install the product. So if you installed the product in
+        c:\scitech, the include file directory would be c:\scitech\include). If
+        you are compiling your applications from the Integrated Development
+        Environment (IDE) for your compiler, you will need to set the include
+        directories for your project file’s to include the %SCITECH%\include
+        directory.
+      </p>
+      <p class="MsoBodyText">
+        If you are compiling from the command line, you simply need to add the
+        %SCITECH%\include directory to your INCLUDE path environment variable
+        (or the command line configuration file for your compiler if it doesn’t
+        use environment variables).
+      </p>
+      <p class="MsoBodyText">
+        When the libraries are built, the library files end up under the
+        %SCITECH%\lib directory under the installation directory where you
+        chose to install the product. So if you installed the product in
+        c:\scitech, the library directory is c:\scitech\lib).&#160; Beneath
+        this directory is are debug and release directories, containing debug
+        and release versions of the libraries (depending on what you compiled
+        or installed). Beneath those two directories is a hierarchy of
+        directories containing library files for different operating systems
+        and different compilers as shown in the tables below (there may be more
+        if there are more compilers supported in a particular release):
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit DOS protected mode support:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              dos32\bc4
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ 4.52 32-bit DOS libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              dos32\bc5
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 32-bit DOS libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              dos32\wc10
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 32-bit DOS libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              dos32\wc11
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 32-bit DOS libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              dos32\dj2
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              DJGPP 2.01 32-bit DOS libraries
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit Windows:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\bc4
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ 4.52 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\bc5
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\bcb5
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\vc40
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 4.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\vc50
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 5.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\vc60
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 6.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\wc10
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              win32\wc11
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 32-bit Windows libraries
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit RTTarget-32:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              rtt32\bc50
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ 5.0 32-bit RTTarget-32 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              rtt32\bcb5
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Borland C++ Builder 5.0 32-bit RTTarget-32 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              rtt32\vc50
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 5.0 32-bit RTTarget-32 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              rtt32\vc60
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Microsoft Visual C++ 6.0 32-bit RTTarget-32 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              rtt32\ow10
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Open Watcom C++ 1.x 32-bit RTTarget-32 libraries
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              32-bit OS/2:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              os232\emx
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              GNU C++ for OS/2 libraries (emx)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              os232\va3
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              IBM VisualAge for C++ 3.0 OS/2 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              os232\va36
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              IBM VisualAge for C++ 3.65 OS/2 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              os232\wc11
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 32-bit OS/2 libraries
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              os232\ow10
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Open Watcom C++ 1.x 32-bit OS/2 libraries
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              Linux:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/x86/a
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux static libraries (x86)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/x86/so
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux shared libraries (x86)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/ppc-be/a
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux static libraries (PowerPC Big Endian)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/ppc-be/so
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux shared libraries (PowerPC Big Endian)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/alpha/a
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux static libraries (Alpha Big Endian)
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:117.0pt;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="195" valign="top">
+            <p class="TableText">
+              linux/gcc/alpha/so
+            </p>
+          </td>
+          <td style="width:297.0pt;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="495" valign="top">
+            <p class="TableText">
+              GNU C++ for Linux shared libraries (Alpha Big Endian)
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="SingleSpace">
+        &nbsp;
+      </p>
+      <table style="margin-left:23.4pt;border-collapse:collapse;border:none;" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="width:5.75in;border:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="690" colspan="2" valign="top">
+            <p class="TableTextHeading">
+              QNX:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              qnx4/wc10
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 10.6 for QNX 4
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext .5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              qnx4/wc11
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext .5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              Watcom C++ 11.0 for QNX 4
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:1.5in;border-top:none;border-left:'solid windowtext 1.5pt';border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext .5pt';padding:'0in 5.4pt 0in 5.4pt';" width="180" valign="top">
+            <p class="TableText">
+              Qnxnto
+            </p>
+          </td>
+          <td style="width:4.25in;border-top:none;border-left:none;border-bottom:'solid windowtext 1.5pt';border-right:'solid windowtext 1.5pt';padding:'0in 5.4pt 0in 5.4pt';" width="510" valign="top">
+            <p class="TableText">
+              GNU C++ for QNX Neutrino
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p class="MsoBodyText">
+        &nbsp;
+      </p>
+      <p class="MsoBodyText">
+        If you are compiling your applications from the IDE for your compiler,
+        you will need to set the library directories for your project file to
+        include the %SCITECH%\lib\… directory (select the appropriate directory
+        from Tables above). If you are compiling from the command line, you
+        simply need to add the %SCITECH%\lib\… path to your LIB path
+        environment variable (or the command line configuration file for your
+        compiler if it doesn’t use environment variables).
+      </p>
+      <p class="MsoBodyText">
+        Once you have done the above steps, you should then be able to compile
+        and link your own programs using the SDK. 
+      </p>
+      <div style="border-top:'solid windowtext .75pt';border-left:none;border-bottom:'solid windowtext .75pt';border-right:none;padding:'1.0pt 0in 1.0pt 0in';">
+        <p class="Note">
+          Note:&#160;&#160;&#160; For Watcom C++ users, by default Watcom C++
+          compiles all source code using register based parameter passing.
+          Hence by default all SciTech Software libraries are compiled with
+          register based parameter passing. If you are compiling and linking
+          you code for stack based parameter passing, you will need to link
+          with a different set of libraries. All libraries can be compiled with
+          either stack and register based calling. The stack based libraries
+          will have the same name as the register based versions of the
+          libraries, but will have an extra ‘s’ added to the front of the
+          library name. To build or link to the stack call libraries, use the
+          STKCALL=1 option to dmake.
+        </p>
+      </div>
+    </div>
+    <p class="CitationBody">
+      Copyright &#169; 2002 SciTech Software, Inc. Visit our web site at <a href="http://www.scitechsoft.com" target="_top">http://www.scitechsoft.com<a>
+    </p>
+  </body>
+</html>

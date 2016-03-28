@@ -1,0 +1,80 @@
+;****************************************************************************
+;*
+;*  ========================================================================
+;*
+;*   Copyright (C) 1991-2004 SciTech Software, Inc. All rights reserved.
+;*
+;*   This file may be distributed and/or modified under the terms of the
+;*   GNU General Public License version 2.0 as published by the Free
+;*   Software Foundation and appearing in the file LICENSE.GPL included
+;*   in the packaging of this file.
+;*
+;*   Licensees holding a valid Commercial License for this product from
+;*   SciTech Software, Inc. may use this file in accordance with the
+;*   Commercial License Agreement provided with the Software.
+;*
+;*   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING
+;*   THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+;*   PURPOSE.
+;*
+;*   See http://www.scitechsoft.com/license/ for information about
+;*   the licensing options available and how to purchase a Commercial
+;*   License Agreement.
+;*
+;*   Contact license@scitechsoft.com if any conditions of this licensing
+;*   are not clear to you, or you have questions about licensing options.
+;*
+;*  ========================================================================
+;*
+;* Language:    NetWide Assembler (NASM)
+;* Environment: Any Intel IA32 Environment
+;*
+;* Description: Macros to use for calling Virtual Device driver services
+;*              with NASM. For now only the services I need to call from
+;*              NASM are included, so you might need to add new services
+;*              as they become necessary.
+;*
+;****************************************************************************
+
+; Define VMM device ID and VMM services
+
+VMM_DEVICE_ID                       EQU 0001h
+Install_IO_Handler                  EQU 0096h
+
+; Define VDD device ID and services
+
+VDD_DEVICE_ID                       EQU 000Ah
+VDD_Get_Version                     EQU 0000h
+VDD_PIF_State                       EQU 0001h
+VDD_Get_GrabRtn                     EQU 0002h
+VDD_Hide_Cursor                     EQU 0003h
+VDD_Set_VMType                      EQU 0004h
+VDD_Get_ModTime                     EQU 0005h
+VDD_Set_HCurTrk                     EQU 0006h
+VDD_Msg_ClrScrn                     EQU 0007h
+VDD_Msg_ForColor                    EQU 0008h
+VDD_Msg_BakColor                    EQU 0009h
+VDD_Msg_TextOut                     EQU 000Ah
+VDD_Msg_SetCursPos                  EQU 000Bh
+VDD_Query_Access                    EQU 000Ch
+VDD_Check_Update_Soon               EQU 000Dh
+VDD_Get_Mini_Dispatch_Table         EQU 000Eh
+VDD_Register_Virtual_Port           EQU 000Fh
+VDD_Get_VM_Info                     EQU 0010h
+VDD_Get_Special_VM_IDs              EQU 0011h
+VDD_Register_Extra_Screen_Selector  EQU 0012h
+VDD_Takeover_VGA_Port               EQU 0013h
+VDD_Get_DISPLAYINFO                 EQU 0014h
+VDD_Do_Physical_IO                  EQU 0015h
+VDD_Set_Sleep_Flag_Addr             EQU 0016h
+
+; Define a macro for calling VxD serEQU 0000h vices. Use it as follows:
+;
+; VxDCall VXD_ID, VXD_Service
+
+%imacro VxDCall 2
+    int     20h
+    dw      %2
+    dw      %1
+%endmacro
+

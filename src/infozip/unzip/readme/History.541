@@ -1,0 +1,249 @@
+UnZip, version 5.41, 16 April 2000
+
+Features added (or removed):
+
+5.41a (21 Feb 99):
+ - Theos: added new port for the Theos system [Jean-Michel Dubois]
+ - TANDEM: updates from 10-Feb-1999; make "-a" default behaviour, new option
+    "-b" to force filecode type 180 'C' textfile creation [Dave D Smith]
+ - Added handling of Theos specific file-attribute bits to those ports that
+    support different rights setting for owner and other users. Affected
+    ports are: Acorn, AOS/VS, Atari, BeOS, QDOS, Tandem, Unix, VMS. [SPC]
+ - Extended support for "PKZIP for Unix" created external attributes from
+    Unix port to all sufficently Unix-compatible ports: Acorn, AOS/VS, Atari,
+    BeOS, QDOS, Tandem, Theos. [SPC]
+ - MacOS: support extraction of ZipIt extra fields [Dirk Haase]
+
+5.41b (11 May 99):
+ - generic (match.c): added a variant behaviour to recmatch() where wildcards
+    do not match across directory separators, controlled by preprocessor
+    option flag WILD_STOP_AT_DIR [Darren Salt]
+
+5.41c (25 Jul 99):
+ - Added support for MPE/iX, a Unix variant for HP 3000 systems, to the
+    unix port of UnZip [Jens von Buelow]
+ - TANDEM, tandem.c, tanunz.c, : support creation of SFX stub [Dave Smith]
+ - Pocket UnZip (the WinCE port) may be built for generic ANSI Win32 interface
+    (supports Win9x and WinNT4) [SPC]
+ - generic code should (partially) handle MBCS strings [SPC]
+ - WIN32 port should be able to process MBCS chars in filenames [SPC]
+
+5.41d (24 Oct 99):
+ - Novell Netware (NLM for Netware 3.x, 4.x, 5.x): new port [Vance Baarda]
+ - "re-animated" Human68k port [Shimazaki Ryo]
+ - Acorn: added "mimemap" support [Darren Salt]
+
+5.41f (29 Mar 00):
+ - Acorn: added new option "/" taking a string argument to override the setting
+    of Unzip$Exts environment variable [Darren Salt]
+
+5.41g (14 Apr 00):
+ - general: full crypt code integrated into main source distribution [SPC]
+
+
+Bugs fixed:
+
+5.41a (21 Feb 99):
+ - win32/w32cfg.h: changed __CYGWIN32__ into __CYGWIN__ everywhere, changed
+    compatiblity macro to set __CYGWIN__ when __CYGWIN32__ is found (for B19
+    and earlier) [Cosmin Truta, SPC]
+ - win32/win32.c and msdos/msdos.c, version(): moved line-break in front of the
+    OS names, to get more space for lengthy compiler version strings [SPC]
+ - crc_i386.{S|asm|c}, crc_i86.asm: avoid "specialized" assembler instructions
+    that take much more clock cycles than "standard" code on i586,i686... [SPC]
+ - added (uch) type casts to is???() macro arguments to ensure acceptance
+    of 8-bit ISO coded strings [SPC]
+ - TANDEM: updates to make/macros/doit to allow the object to be licensed;
+    fixed tandem.c in2ex() to strip names to 8 character limit; corrected
+    error detection in zipopen(), chmod(), chown() [Dave Smith]
+ - unix/unix.c, mapattr(): force setting of exec permission for directory
+    entries with DOS-style attrib info even when its subdir bit was cleared
+    [Edouart Parmelan, SPC]
+ - extended previous fix to all sufficently Unix compatible ports (Acorn,
+    AOS/VS, Atari, BeOS, QDOS, Tandem, Theos [SPC]
+ - vms/vms.c, mapattr(): code that masks delete permission for directories
+    got broken between 5.32 and 5.40 -> fixed; corrected a long-standing misuse
+    of a shift operation (was negative shift count) [Martin P.J. Zinser, SPC]
+ - unzpriv.h, fileio.c, process.c: fixed OEM vs ANSI translation for extracted
+    filenames -- added item to save "version_made_by" value in struct min_info,
+    set it in process_cdir_file_hdr() and use it in do_string() [SPC]
+ - checkdir() in system specific code, ROOT subfunction: do not modify the
+    pathcomp parameter, work on a copy instead; exit directly when rootpath
+    already initialized (processing multiple archives) [SPC]
+ - acorn/acorn.c: avoid 8-bit chars in string literals, they may not survive
+    transfers between different systems; code them as numbers instead [SPC]
+ - process.c, ef_scan_for_izux(): added special handling for compilers that
+    define time_t as floating point type (IBM C for Win32 & OS/2) [SPC]
+ - moved nroff documentation sources from unix/ into new directory man/ [SPC]
+ - MacOS: included changes of 21-Jan-99 release and additional modifications
+    as found in zip 2.3l [Dirk Haase]
+ - MacOS: fixed some spelling errors; synchronized string variable names
+    with "prior art" in other ports; moved all MacOS specific function
+    declarations from unzpriv.h into macos/source/maccfg.h [SPC]
+ - msdos/msdos.c: corrected formal parameter types for _dos_setftime() to fix
+    problem with emx 0.9d [SPC]
+ - fixed some memory leaks related to MALLOC_WORK and premature exit of
+    UnZip (free malloced G.area.Slide) [SPC]
+
+5.41b (11 May 99):
+ - zipinfo.c: Tandem e.f. display code was byte-order dependent [SPC]
+ - windll: renamed "windll/visualc/" into "windll/vc5/" and added "windll/vc6"
+    containing project files for Visual C++ 6.x [SPC]
+ - extract.c, unzpriv.h: added work-around for the PKZIP 2.5 (and newer)
+    problem with ext.-ASCII characters in entry names [SPC]
+ - zipinfo.c: fixed calculation of endprev in zi_long() (comment length
+    must not be added) [SPC]
+ - inflate.c: fixed memory leaks that showed up when processing is stopped
+    because of invalid input data or read errors [Fernando Papa, SPC]
+ - unix/Makefile: removed duplicate 3Bx target [Massimo Foppa]
+ - WIN32, fileio.c: corrected error detection for GetTimeZoneInformation()
+    call [Ken Masuyama, Johnny Lee]
+ - MacOS: included changes of 30-Mar-99 MacZip release [Dirk Haase]
+ - TANDEM: included new versions of Tandem specific code (split into generic
+    utils and UnZip-only routines; Zip-only code was cut off) [Dave Smith]
+ - generic (extract.c, process.c, list.c, unzpriv.h, zipinfo.c): modified the
+    outer loop's scanning through central directory to allow for more than 64k
+    entries in a Zip archive [SPC, triggered by report from Arnie Dak]
+
+5.41c (25 Jul 99):
+ - TANDEM, tandem.c: assume "no DST" when daylight saving time status cannot
+    be resolved [Dave Smith]
+ - WinCE: update port to release 5.41, fix bugs from WinNT builds [Johnny Lee]
+ - windll: reorganize selection code in extract_or_test_files(), resulting
+    in some minor changes to the DLL calling interface [SPC]
+ - extract.c, extract_or_test_files(): revise timestamp comparison/overwrite/
+    rename section for better readability
+ - process.c, inflate.c, explode.c, unshrink.c, unreduce.c, unzpriv.h, DLL:
+    modify FLUSH() macro, check FLUSH()/flush() return code, correct handling
+    of "user break" signal while extracting/testing an archive entry [SPC]
+ - WinCE: extend port to ANSI mode Win32 API (for Win9x), use generic DLL
+    callback StatCBFn instead of longjmp() workaround for interrupting
+    extraction, fix overwrite bug, provide MS VC6++ project file, start
+    making PUnZip MBCS-aware [SPC]
+ - generic: start making code (handling of filenames, command line, passwords,
+    comments) MBCS-aware for far-east adaptions [SPC]
+ - fileio.c: add plastchar(), zmbschr(), zmbsrchr() functions for handling
+    MBCS strings [SPC]
+ - win32: do_wild() and mapname() should now be MBCS-aware; enable MBCS-support
+    by default for all compilers except CygWin [SPC]
+ - unix: exported Unix-specific configuration settings into unix/unxcfg.h [SPC]
+ - unix/unix.c: removed all static variables, unix port should now be multi-
+    thread-safe [SPC]
+ - started incorporation of new LICENSE into the code tree [Greg Roelows, SPC]
+
+5.41d (24 Oct 99):
+ - fileio.c, unzpriv.h: renamed zmbs[r]chr() into uzmbs[r]chr(), to avoid
+    name conflicts when combining Zip and UnZip static libraries [Mike White]
+ - fileio.c, unzpriv.h: do not define/declare zmbs[r]chr() when suitable
+    MBCS runtime library support is available [SPC]
+ - win32: for MSC (and other commercial compilers), use RTL supplied
+    _mbschr() and friends [SPC]
+ - BeOS: new resource files, Makefile tweaks, modify configuration in
+    unzpriv.h (RTL supplies gmtime(), but not strnicmp()) [Chris Herborth]
+ - BeOS: rewrite info taken out of extra field when updating files or
+    directories; corrections concerning "set Mime type" [Chris Herborth]
+ - MacOS: included additions of MacZip beta release 1.04 beta 2 as of
+    02. June 1999 [Dirk Haase]
+ - unzip.c: added SETLOCALE() initialisation at start of unzip() [SPC]
+ - unreduce.c: corrected typo introduced in 5.41c Beta [Steven Salisbury]
+ - unix/unxcfg.h: #define NO_STRNICMP by default, many UNIX C RTLs do not
+    supply strnicmp() (can be overridden by defining HAVE_STRNICMP) [SPC]
+ - LICENSE: updates and clarifications [Greg Roelofs]
+ - COPYING: "tried" to update comments and history concerning "licensing
+    terms" contained in this text file, taking into account the new
+    distribution conditions as stated in LICENSE [SPC]
+ - MacOS, macstuff.[ch]: added resp. revised copyright note; it should
+    now correctly handle the requirements of the original author [Dirk Haase,
+    Onno van der Linden, Greg Roelofs, Christian Spieler]
+ - envargs.c: envargs() returns an error code instead of terminating unzip
+    execution [SPC]
+ - fileio.c, unzpriv.h: renamed macro TOLOWER() into STRLOWER(), because
+    it works on strings rather than single chars [SPC]
+ - all ports supporting wildcard searches for Zip archives: revised and
+    synchronized usage of "static" variables in do_wild(), changed logic of
+    boolean variables so that the initial value is FALSE (simplifies trans-
+    formation to thread-safe implementation) [SPC]
+ - Novell: updated old makefile.wat, following the settings used for building
+    the new Novell NLM port [SPC]
+ - TANDEM: tandem.c, fixed zgetch() function; new versions of macros and make;
+    added NO_STRNICMP to Tandem's section in unzpriv.h [Dave Smith]
+ - zipinfo.c, zi_long(): extend display of MSDOS-like file attributes to
+    support human68k specific attribute bits on all ports [SPC]
+
+5.41e (25 Mar 00):
+ - win32: added target for building the WinDLL example application uzexampl.exe
+    to all Makefiles [SPC]
+ - windll/uzexampl.c: removed some "lvalue" type-casts that were not accepted
+    by the lcc compiler [SPC]
+ - Acorn: mimemap type assignment takes precedence over evaluation of the zip
+    entry's "Text file" flag [Darren Salt]
+ - unzip.c: fit all lines to 80 characters, MVS requires this [Keith Owens]
+ - MVS: changes to compile under MVS LE (added preprocessor flags to identify
+    source modules, used for #pragma clauses to redefine csects) [Keith Owens]
+ - cmsmvs/vmmvs.c: accept quoted MVS filenames; reuse file format of existing
+    output MVS files where possible [Keith Owens]
+ - win32/win32.c: fixed name conflict for preprocessor symbol HAVE_INT64 by
+    renaming it into IZ_USE_INT64 (HAVE_INT64 may be used in system headers);
+    IBM C++ supports __int64 type as well [Kai Uwe Rommel]
+ - Novell: add forgotten #include "novell/nlmcfg.h" to unzpriv.h; modified
+    build script to be executable from novell subdirectory; added system
+    header include for setmode prototype to nlmcfg.h; fixed sequence of
+    header includes in novell.c [Vance Baarda]
+ - zipinfo.c: fixed argument list in DLL-only (*G.statreportcb)() function call
+    (pass crec.ucsize as details arg) [Mike White, SPC]
+ - WinCE: prompt user for confirmation before overwriting the registration
+    of another default handler for Zip archives [SPC]
+ - msdos/msdos.c, version_local(): add compiler version display for (old)
+    Turbo C 2.01 [Brian Lindholm]
+ - VMS: new version of makesfx.com [Martin P.J. Zinser]
+ - fileio.c, globals.h, ttyio.c, vms/vms.c, win32/win32.c: modified console
+    output handling to take into account screenwidth and possibly line wrapping
+    when counting lines for More function (still in Alpha stage, not yet
+    finished...) [Jason Hood, SPC]
+ - changed {ftp|www}.cdrom.com into {ftp|www}.freesoftware.com, updated
+    copyright note dates to 2000 [SPC]
+
+5.41f (29 Mar 00):
+ - win32/win32.c, version(): added more details of version info for
+    Borland C++ (C++ Builder) releases up to 5.5 (Builder 5) [Brad Clarke]
+ - qdos/qdos.c, QReturn(): always emit negative error codes [Jonathan Hudson]
+ - unix/unix.c, unix/Makefile: better host environment info (cc name, os name)
+    for OS/390 ["gil" (what is his real name ???)]
+ - fileio.c, UzpMessagePrnt(): fixed SCREENSIZE conditional compilation logic
+    when SCREENWIDTH or SCREENLWRAP not defined [Chris Herborth, SPC]
+ - unzpriv.h: synchronized BeOS defines for SCREENSIZE handling with the
+    Unix version [Chris Herborth, SPC]
+ - vms/vms.c: fixed screensize query functionality [Hunter Goatley, SPC]
+ - windll/windll.c, Wiz_StatReportCB(): added safety check against "details"
+    arg being NULL pointer, to please the paranoid... [SPC]
+
+5.41g (14 Apr 00):
+ - QDOS: add screensize() function to determine the screen dimensions for
+    MORE functionality (Jonathan Hudson)
+ - windll/windll.c, Wiz_StatReportCB(): deleted obsolete codeline left
+    behind from changes for 5.41e [Mike White, SPC]
+ - zipinfo.c, zi_short(): display permission info for zip entries marked as
+    "made on FAT" in UNIX style when a valid UNIX attributes word is provided
+    in the upper 16 bits of the "external attributes" longword [Greg, SPC]
+ - man/unzip.1: added description of new acorn-only option "-/" [SPC]
+ - changed {ftp|www}.freesoftware.com into {ftp|www}.info-zip.org [Greg, SPC]
+
+5.41 (16 Apr 00):
+ - os2/os2.c, os2/os2cfg.h: added support for retrieving screen size, used
+    for MORE functionality; fixed typo ("dir" -> "wild_dir) in do_wild()
+    [Kai Uwe Rommel]
+ - os2/os2acl.c: typecast isalpha() argument to int [Kai Uwe Rommel]
+ - unix/Makefile: removed remark concerning where to get full encryption
+    support from help text of default target [Jonathan Hudson, SPC]
+ - msdos/makefile.dj2: updated information in comments to current state;
+    slight modification of "local compilation options" handling
+    [Frank Donahoe, SPC]
+ - removed BETA notes for release ... [SPC]
+
+==================
+
+These changes occurred in beta versions 5.41a to 5.41g.  This list may have
+left out some bugfixes and even some features...void where prohibited, your
+mileage may vary, etc., etc.
+
+Christian Spieler
